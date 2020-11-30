@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>List</title>
+		<style>
+
+			p {
+				font-family: "Lucida Sans", fantasy;
+			}
+
+			.example img {
+				max-height: 600px;
+			}
+
+			.one-line {
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 style="font-family: Verdana, serif">Create of list</h1>
+		<p>I will create this list which you can see here for example:</p>
+		<div class="example">
+			<img src="../../images/Example/list/list1.jpg" alt="List">
+		</div>
+		<p>This is my create:</p>
+		<div style="width: 400px">
+			<h2 style="color: #666382; text-align: center">Multilevel List</h2>
+		</div>
+		<div class="one-line">
+			<ul style="list-style-type: disc">
+				<li>Bullet one</li>
+				<li>Bullet two
+					<ul style="list-style-type: circle">
+						<li>Sub of Bullet two</li>
+						<li>Another sub</li>
+					</ul>
+				</li>
+				<li>Bullet three</li>
+				<li>Bullet four</li>
+			</ul>
+		</div>
+		<div style="border-left: 1px solid black; margin-left: 12px" class="one-line">
+			<ol style="list-style-type: decimal">
+				<li>First</li>
+				<li>Second
+					<ol style="list-style-type: lower-alpha">
+						<li>Sub of Second</li>
+						<li>Another sub</li>
+					</ol>
+				</li>
+				<li>Third</li>
+				<li>Fourth</li>
+			</ol>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
+		<title>BoxModel</title>
+		<style>
+			body {
+				font-family: "Adamina", monospace;
+				font-size: 18px;
+			}
+
+			p {
+				text-indent: 35px;
+			}
+
+			span {
+				color: white;
+				letter-spacing: 2px;
+				font-size: 22px;
+			}
+
+			* {
+				max-width: 863px;
+				border-radius: 5px;
+			}
+
+			.navbar {
+				background-color: #5ca966;
+				text-align: center;
+				padding: 10px;
+				margin-bottom: 4px;
+			}
+
+			.section {
+				overflow: auto;
+				border: 2px solid #463a3a;
+				text-align: center;
+				padding: 5px;
+			}
+
+			div span{
+				width: 180px;
+				padding: 40px;
+			}
+
+			.box1 {
+				float: left;
+				background-color: #dc4d4d;
+			}
+
+			.box2 {
+				float: left;
+				background-color: #fd9a5c;
+				margin-left: 25px;
+			}
+
+			.box3{
+				float: right;
+				background-color: #e8a2af;
+			}
+
+			.footer {
+				background-color: #2795ee;
+				text-align: center;
+				padding: 10px;
+				margin-top: 4px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Create of Box Model</h1>
+		</header>
+		<section>
+			<p>I will create this box model which you can see here for example:</p>
+		</section>
+		<div>
+			<img alt="Float" src="../../images/Example/boxModel/box.png"/>
+		</div>
+		<p>This is my create:</p>
+		<nav>
+			<div class="navbar">
+				<span>Navbar</span>
+			</div>
+		</nav>
+		<article>
+			<div class="section">
+				<div>
+					<span class="box1">Section</span>
+					<span class="box2">Section</span>
+					<span class="box3">Section</span>
+				</div>
+			</div>
+		</article>
+		<footer>
+			<div class="footer">
+				<span>Footer</span>
+			</div>
+		</footer>
+	</body>
+</html>

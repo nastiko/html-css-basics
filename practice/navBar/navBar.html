@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+		<title>NavBar</title>
+		<style>
+			body {
+				font-family: "Helvetica", sans-serif;
+				font-size: 18px;
+			}
+
+			h1 {
+				text-align: center;
+			}
+
+			h2 {
+				text-indent: 40px;
+				padding-bottom: 21px;
+				font-size: 23px;
+				font-weight: 800;
+				color: #605f62;
+			}
+
+			p {
+				text-indent: 35px;
+			}
+
+			/*it will be my full content*/
+			article {
+				float: right;
+				position: relative;
+				bottom: 614px;
+				right: 6px;
+				width: 52%;
+				height: 552px;
+				font-size: 12px;
+				color: #57595f;
+				background-color: #d0dde8;
+			}
+
+			ul {
+				list-style-type: none;
+				height: 36px;
+				padding: 0;
+				margin: 0 35px 0 35px;
+				border: 1px solid transparent;
+			}
+
+			.bar1 {
+				background-color: #c2da69;
+				background-image: linear-gradient(#d3e687, #badc42);
+				border-radius: 4px;
+				box-shadow: 1px 2px #9ca2bf;
+				margin-bottom: 35px;
+			}
+
+			li {
+				float: left;
+				text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+				text-align: center;
+			}
+
+			a {
+				display: block;
+				padding: 12px;
+				border-right: 1px solid #838e95;
+				color: #494b4f;
+				text-decoration: none;
+				font-weight: bolder;
+			}
+
+			li:hover {
+				background-color: #c0cfaf;
+			}
+
+			/*create specific link*/
+			.active {
+				color: #3f4e14;
+				background-color: rgba(0, 0, 0, 0.15);
+				box-shadow: inset 0 5px 7px rgba(0, 0, 0, 0.4);
+				margin-left: 7px;
+			}
+
+			/*change text in the form*/
+			input {
+				float: right;
+				width: 201px;
+				border: 1px inset #b9ce6b;
+				border-radius: 3px;
+				background-color: #a8b868;
+				box-shadow: inset 2px 1px 2px #95a752;
+				text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+				font-size: 12px;
+				padding: 6px;
+				margin: 5px;
+			}
+
+			/*put imagine such as an icon*/
+			.form1 #search {
+				background-image: url(../../images/Example/navBar/search-icon-1.png);
+				background-repeat: no-repeat;
+				background-position: 172px;
+			}
+
+			::placeholder {
+				color: white;
+			}
+
+			.dropdown {
+				position: relative;
+			}
+
+			#first-down {
+				margin: 0;
+				left: 0;
+				top: 37px;
+			}
+
+			.dropdown-child {
+				display: none;
+				position: absolute;
+				box-shadow: 0 5px 7px rgba(0, 0, 0, 0.4);
+				left: 114px;
+				top: 0;
+			}
+
+			.dropdown:hover > .dropdown-child  {
+				display: block;
+			}
+
+			.dropdown-child li {
+				width: 150px;
+				text-align: left;
+			}
+
+			.box-decoration {
+				box-shadow: 0 5px 7px rgba(0, 0, 0, 0.4);
+			}
+
+
+
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Create of Navigation Bar</h1>
+		</header>
+		<section>
+			<p>I will create these 5 navigation menu bars which you can see here for an example:</p>
+		</section>
+		<div>
+			<img alt="Float" src="../../images/Example/navBar/navBar.png"/>
+		</div>
+		<p>This is my creative:</p>
+		<article>
+			<h2>5 Navigation Menu Bars</h2>
+			<nav>
+				<ul class="bar1">
+					<li class="active"><a href="#">Home</a></li>
+					<li class="dropdown"><a href="#">About</a>
+						<ul class="dropdown-child box-decoration" id="first-down">
+							<li><a href="#">This is a CSS Menu</a></li>
+							<li class="dropdown"><a href="#">Multilevel Links</a>
+								<ul class="dropdown-child">
+									<li><a href="#">First</a></li>
+									<li><a href="#">Second</a></li>
+								</ul>
+							</li>
+							<li class="dropdown"><a href="#">More Links</a>
+								<ul class="dropdown-child">
+									<li><a href="#">more...</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#">Portfolio</a></li>
+					<li><a href="#">Product</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Contract</a></li>
+					<form action="server">
+						<div class="form1">
+							<label for="search"></label>
+							<input type="text" id="search" name="search" placeholder="Search">
+						</div>
+					</form>
+				</ul>
+			</nav>
+		</article>
+	</body>
+</html>

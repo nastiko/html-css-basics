@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Dropdown</title>
+	</head>
+	<style>
+
+		ul {
+			border: 5px solid transparent;
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			list-style: none;
+			float: left;
+			width: 140px;
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			background-color: #8BC34A;
+			color: white;
+			border-radius: 5px;
+			letter-spacing: 5px;
+			margin: 3px;
+			padding: 10px;
+		}
+
+		/*header*/
+		.dropdown {
+			position: relative;
+		}
+
+		/*dropdown-child*/
+		.dropdown-child {
+			display: none;
+			position: absolute;
+			left: 138px;
+			top: -4px;
+		}
+
+		#first {
+			left: -4px;
+			top: 40px;
+		}
+
+		.dropdown:hover > .dropdown-child{
+			display: block;
+		}
+
+
+	</style>
+	<body>
+		<nav>
+			<ul>
+				<li class="dropdown"><a href="#">Chapter 1</a>
+					<ul class="dropdown-child" id="first">
+						<li><a href="#">First</a></li>
+						<li><a href="#">Second</a></li>
+						<li class="dropdown"><a href="#">Third</a>
+							<ul class="dropdown-child">
+								<li><a href="#">First</a></li>
+								<li><a href="#">Second</a></li>
+								<li class="dropdown"><a href="#">Third</a>
+									<ul class="dropdown-child">
+										<li class="dropdown"><a href="#">First</a>
+											<ul class="dropdown-child">
+												<li><a href="#">First</a></li>
+												<li><a href="#">Second</a></li>
+												<li><a href="#">Third</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Second</a></li>
+										<li><a href="#">Third</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#">Fourth</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Chapter 2</a></li>
+			</ul>
+		</nav>
+	</body>
+</html>

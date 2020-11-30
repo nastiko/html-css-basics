@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<title>CSS Layout</title>
+		<style>
+			body {
+				font-family: Adamina, monospace;
+				font-size: 18px;
+			}
+
+			h1 {
+				background-color: #6f9a8d;
+			}
+
+			h2 {
+				max-width: 750px;
+				text-align: center;
+			}
+
+			h3 {
+				text-align: center;
+			}
+
+			p {
+				text-indent: 35px;
+			}
+
+			q {
+				font-size: 16px;
+				font-style: oblique;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			ul li:before {
+				content: "\2022";
+				color: #347474;
+				font-weight: bold;
+				display: inline-block;
+				margin-left: 30px;
+				width: 15px;
+			}
+
+			span {
+				background-color: #f0f0f0;
+				color: #347474;
+			}
+
+			header {
+				text-align: center;
+			}
+
+			div.static {
+				position: static;
+				border: 2px solid #347474;
+			}
+
+			div.relative {
+				position: relative;
+				border: 2px solid #347474;
+				bottom: 18px;
+			}
+
+			div.fixed {
+				position: fixed;
+				border: 2px solid #347474;
+				width: 500px;
+				height: 200px;
+				top: 100px;
+				right: 0;
+			}
+
+			.material-icons {
+				font-size: 15px;
+				color: #ad6989;
+			}
+
+			div.absolute {
+				position: absolute;
+				border: 2px solid #ad6989;
+				top: 195px;
+				right: 5px;
+				width: 200px;
+				height: 100px;
+			}
+
+			div.sticky {
+				position: sticky;
+				border: 2px solid #562349;
+				background-color: #ad6989;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1> CSS Layout - The position Property</h1>
+		</header>
+		<section>
+			<p>The <span> position</span> property specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky).</p>
+			<article>
+				<h2> The position Property</h2>
+				<p>The <span> position</span> property specifies the type of positioning method used for an element.</p>
+				<p>There are five different position values:</p>
+				<ul>
+					<li>static</li>
+					<li>relative</li>
+					<li>fixed</li>
+					<li>absolute</li>
+					<li>sticky</li>
+				</ul>
+				<p>Elements are then positioned using the top, bottom, left, and right properties. However, these properties will not work unless the <span>position</span> property is set first.
+				   They also work differently depending on the position value.</p>
+				<ul>
+					<li>My first position is <span><i><b>static</b></i></span>.</li>
+				</ul>
+				<p><q>Static positioned elements are <b>not affected by the top, bottom, left,</b> and <b>right</b> properties.
+					  An element with <span><b>position: static</b></span>; is not positioned in any special way; it is always <b>positioned according to the normal flow</b> of the page.</q></p>
+				<div class="static">
+					Where will this position? Let me find out...
+				</div>
+				<ul>
+					<li>The second of position is <span><i><b>relative</b></i></span>.</li>
+				</ul>
+				<p><q>Setting the <b>top, right, bottom,</b> and <b>left</b> properties of a <span>relatively-positioned</span> element will cause it to be adjusted away from its normal position.
+					  Other content <b>will not be adjusted to fit into any gap left by the element</b>.</q></p>
+				<div class="relative">
+					Where will this position? Let me find out...
+				</div>
+				<ul>
+					<li>The third of position is <span><i><b>fixed</b></i></span>.</li>
+				</ul>
+				<p><q>An element with <span>position: fixed</span>; is positioned relative to the <b>viewport</b>, which means it always stays in the same place even if the page is scrolled.
+					  The top, right, bottom, and left properties are used to position the element. A fixed element <b>does not leave a gap in the page</b> where it would normally have been located.</q></p>
+				<div class="fixed">
+					Do you know this position? Try to catch me <i class="material-icons">computer</i>
+				</div>
+				<ul>
+					<li>My next position is <span><i><b>absolute</b></i></span>.</li>
+				</ul>
+				<p><q>An element with <span>position: absolute</span>; is positioned relative to the nearest positioned <b>ancestor</b> (instead of positioned relative to the viewport, like fixed).
+					  However; if an absolute positioned <b>element has no positioned ancestors, it uses the document body, and moves along with page scrolling</b>.
+					  A "positioned" element is one whose position is anything except static.</q></p>
+				<div class="absolute">
+					Have you done? Can you see? It is easy, just do it!
+				</div>
+				<ul>
+					<li>The last position is <span><i><b>sticky</b></i></span>.</li>
+				</ul>
+				<p><q>An element with <span>position: sticky</span>; is positioned based on the user's <b>scroll position</b>.
+					  A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport -
+					  then it "sticks" in place (like position:fixed).</q></p>
+				<div class="sticky">
+					It was hard but I realize how it works!
+				</div>
+				<p><b><span>To check it I have to add more contents!</span></b></p>
+				<div>
+					<h3>What is Loren Ipsum?</h3>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+					   took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+					   unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+					   Aldus PageMaker including versions of Lorem Ipsum.</p>
+					<h3>Why do we use it?</h3>
+					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+					   more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web
+					   page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+					   over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+					<h3>Where does it come from?</h3>
+					<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard
+					   McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through
+					   the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+					   (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
+					   "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+					<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are
+					   also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+					<h3>Where can I get some?</h3>
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look
+					   even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+					   generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
+					   combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected
+					   humour, or non-characteristic words etc.</p>
+				</div>
+				<div>
+					<h3>What is Loren Ipsum?</h3>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+					   took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+					   unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+					   Aldus PageMaker including versions of Lorem Ipsum.</p>
+					<h3>Why do we use it?</h3>
+					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+					   more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web
+					   page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+					   over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+					<h3>Where does it come from?</h3>
+					<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard
+					   McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through
+					   the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+					   (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
+					   "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+					<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are
+					   also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+					<h3>Where can I get some?</h3>
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look
+					   even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+					   generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
+					   combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected
+					   humour, or non-characteristic words etc.</p>
+				</div>
+				<div>
+					<h3>What is Loren Ipsum?</h3>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+					   took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+					   unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+					   Aldus PageMaker including versions of Lorem Ipsum.</p>
+					<h3>Why do we use it?</h3>
+					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+					   more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web
+					   page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+					   over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+					<h3>Where does it come from?</h3>
+					<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard
+					   McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through
+					   the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+					   (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
+					   "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+					<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are
+					   also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+					<h3>Where can I get some?</h3>
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look
+					   even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+					   generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words,
+					   combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected
+					   humour, or non-characteristic words etc.</p>
+				</div>
+			</article>
+		</section>
+	</body>
+</html>

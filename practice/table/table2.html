@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<style>
+
+			p {
+				font-family: "Lucida Sans", fantasy;
+			}
+
+			.example img {
+				max-height: 400px;
+			}
+
+			table, th, td {
+				border: 1px solid #afafaf;
+				border-collapse: collapse;
+				text-align: left;
+				padding: 6px;
+				line-height: 20px;
+			}
+
+			.one-line {
+				border-top:  2px solid black;
+				border-bottom: 2px solid black;
+			}
+
+			/*every col will be 25%*/
+			.col {
+				width: 25%;
+			}
+
+
+
+
+		</style>
+	</head>
+	<body>
+		<h1 style="font-family: Verdana, serif">Create of table</h1>
+		<p>I will create this table which you can see here for example:</p>
+		<div class="example">
+			<img src="../../images/Example/table/table2.jpg" alt="Table"/>
+		</div>
+		<p>This is my create:</p>
+		<table style="width: 562px">
+			<caption style="margin: 10px">A complex table</caption>
+			<tr style="background-color: #f1f1f1;">
+				<th style="width: 75%" colspan="3">Invoice#123456789</th>
+				<th colspan="1">14 January 2025</th>
+			</tr>
+
+			<tr class="one-line">
+				<td style="border-right: 2px solid black" colspan="2">
+					<b>Pay to:</b><br>
+					Acme Billing Co.<br>
+					123 Main St.<br>
+					Cityville, NA 12345<br>
+				</td>
+				<td colspan="2">
+					<b>Customer:</b><br>
+					John Smith<br>
+					321 Willow Way<br>
+					Southeast Northwestershire, MA 54321<br>
+				</td>
+			<tr style="background-color:#f1f1f1">
+				<td><b>Name/Description</b></td>
+				<td class="col" style="border-right: 2px solid black"><b>Qty.</b></td>
+				<td class="col"><b>@</b></td>
+				<td><b>Cost</b></td>
+			</tr>
+			<tr style="border-bottom: 2px solid black">
+				<td>Paperclips</td>
+				<td style="border-right: 2px solid black">1000</td>
+				<td>0.01</td>
+				<td>10.00</td>
+			</tr>
+			<tr>
+				<td>Staples(box)</td>
+				<td style="border-right: 2px solid black">100</td>
+				<td>1.00</td>
+				<td>100.00</td>
+			</tr>
+			<tr>
+				<td style="background-color: #f1f1f1" colspan="3"><b>Subtotal</b></td>
+				<td>110</td>
+			</tr>
+			<tr>
+				<td style="background-color: #f1f1f1; border-right: 2px solid black" colspan="2"><b>Tax</b></td>
+				<td>8%</td>
+				<td>8.80</td>
+			</tr>
+			<tr>
+				<td style="background-color: #f1f1f1" colspan="3"><b>Grand Total</b></td>
+				<td>$118.80</td>
+			</tr>
+		</table>
+	</body>
+</html>

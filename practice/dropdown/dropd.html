@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<title>Dropdown</title>
+	</head>
+	<style>
+
+		h1 {
+			color: #658da7;
+			font-size: 40px;
+			text-align: center;
+		}
+
+		h2 {
+			font-size: 30px;
+		}
+
+		ol {
+			color: #1b2025;
+			font-size: 19px;
+		}
+
+		q {
+			color: #658da7;
+		}
+
+		img {
+			width: 25%;
+		}
+
+		p {
+			font-size: 19px;
+			text-indent: 25px;
+		}
+
+		em {
+			color: #f32f26;
+		}
+
+		button {
+			font-size: 19px;
+			padding: 10px 16px 10px 16px;
+			background-color: #658da7;
+			border: none;
+			border-radius: 3px;
+			color: white;
+		}
+
+		.fa-caret-down {
+			font-size: 13px;
+			vertical-align: middle;
+			margin-left: 12px;
+		}
+
+		.fa-caret-right {
+			font-size: 20px;
+			vertical-align: text-bottom;
+		}
+
+		ul {
+			list-style-type: none;
+			width: 270px;
+			border: 5px solid transparent;
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+			padding: 5px;
+			display: block;
+		}
+
+		a:hover {
+			color: white;
+			background-color: #658da7;
+		}
+
+		#icon {
+			color: #8a8b8b;
+			text-indent: 52px;
+		}
+
+		/*position a block*/
+		.wrapper {
+			position: relative;
+			float: left;
+			left: 30%;
+			bottom: 315px;
+		}
+
+		/*parent*/
+		.block-container {
+			position: relative;
+		}
+
+		/*child*/
+		.dropdown-menu {
+			display: none;
+			position: absolute;
+			box-shadow: 0 4px 12px 0 #d9d9d9;
+			font-size: 19px;
+			text-indent: 15px;
+			line-height: 1.6;
+			left: 275px;
+			top: 0;
+		}
+
+		/*width of children-block*/
+		.first-box {
+			width: 187px;
+		}
+		.second-box {
+			width: 122px;
+			left: 193px;
+		}
+
+		.block-container:hover > .dropdown-menu {
+			display: block;
+		}
+
+		#first-menu {
+			left: 0;
+			top: 46px;
+		}
+
+
+	</style>
+	<body>
+		<h1>Dropdown</h1>
+		<h2>I am going to create a dropdown menu:</h2>
+		<p>The navigation bar is an important element of a website's design since it allows users to quickly visit any section within the site.
+		   If you have ever visited a website without a navigation bar, you may have found it is difficult to locate the page you need. You may
+		   have also had to click "Back" several times in order to find a link to the next section you wanted to visit. Thankfully, web design
+		   has become more standardized in recent years and nearly every website now includes a navigation bar. What must you know for creating a navigation bar:</p>
+		<div>
+			<ol>
+				<li>You need to set <em>&lsaquo;nav&rsaquo;</em> element.</li>
+				<li>You can choose 2 options for making a list inside in the <em>&lsaquo;nav&rsaquo;</em> element:
+					<ol>
+						<li>You can use any element to open the dropdown content such as <em>&lsaquo;span&rsaquo;</em> or <em>&lsaquo;button&rsaquo;</em> element or</li>
+						<li>You can make a <em>list</em> from the beginning to the end. <b>It does not matter</b>.</li>
+					</ol>
+				</li>
+				<li><b>Notice:</b> If you make a <em>horizontal navigation bar</em> you must use <em>float</em> for your list.</li>
+				<li>Do not forget about anchors, you have to set <em>display: block</em> in <em>&lsaquo;a&rsaquo;</em> element.</li>
+				<li>Create <em>first parent class</em> where you will set <em>position: relative</em> which is positioned relative to its normal position.</li>
+				<li>Create a <em>second child class</em> where you will set <em>display: none</em> and <em>position: absolute</em> which is positioned relative to the nearest positioned ancestor.</li>
+				<li>Now you will write a rule about how those elements must work together. You will use a <em>pseudo-class:hover for parent</em> and to use a <em>combinator</em> for relationship between
+					the selectors</li>
+				<li>You the navigation bar is ready for use. Great job!</li>
+			</ol>
+		</div>
+		<div>
+			<img src="../../images/Example/dropdown/dropdown.jpeg" alt="dropdown">
+		</div>
+		<div class="wrapper block-container">
+			<button>Dropdown<i class="fa fa-caret-down"></i></button>
+			<div class="dropdown-menu" id="first-menu">
+				<ul>
+					<li><a href="#">Some action</a></li>
+					<li><a href="#">Some other action</a></li>
+					<li>
+						<hr>
+					</li>
+					<li class="block-container">
+						<a href="#">Hover me for more options<i class="fa fa-caret-right"></i></a>
+						<ul class="dropdown-menu first-box">
+							<li><a href="#">Second level</a></li>
+							<li class="block-container">
+								<a href="#">Even More...<i class="fa fa-caret-right" id="icon"></i></a>
+								<ul class="dropdown-menu second-box">
+									<li><a href="#">3rd level</a></li>
+									<li><a href="#">3rd level</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Second level</a></li>
+							<li><a href="#">Second level</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

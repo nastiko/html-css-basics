@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<style>
+			p {
+				font-family: "Lucida Sans", fantasy;
+			}
+
+			.example img {
+				max-height: 600px;
+			}
+
+			table, th, td {
+				border: 2px solid white;
+				border-collapse: collapse;
+				padding: 8px;
+				text-align: center;
+			}
+
+			tr:nth-child(even) {
+				background-color: #82b21e;
+			}
+
+			thead {
+				background-color: #5c8a03;
+			}
+
+			tbody {
+				background-color: #d3e3b6;
+			}
+
+			tfoot {
+				background-color: #84a02b;
+				border-top: 3px solid #444444;
+			}
+
+			.header {
+				color: white;
+				font-size: 22px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<h1 style="font-family: Verdana, serif">Create of table</h1>
+		<p>I will create this table which you can see here for example:</p>
+		<div class="example">
+			<img src="../../images/Example/table/table3.jpg" alt="Table">
+		</div>
+		<p>This is my create:</p>
+		<table style="width: 448px;">
+			<thead>
+				<tr class="header">
+					<th><b>head1</b></th>
+					<th><b>head2</b></th>
+					<th><b>head3</b></th>
+					<th><b>head4</b></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>cell_1</td>
+					<td>cell2_1</td>
+					<td>cell3_1</td>
+					<td>cell4_1</td>
+				</tr>
+				<tr>
+					<td>cell_2</td>
+					<td>cell2_2</td>
+					<td>cell3_2</td>
+					<td>cell4_2</td>
+				</tr>
+				<tr>
+					<td>cell_3</td>
+					<td>cell2_3</td>
+					<td>cell3_3</td>
+					<td>cell4_3</td>
+				</tr>
+				<tr>
+					<td>cell_4</td>
+					<td>cell2_4</td>
+					<td>cell3_4</td>
+					<td>cell4_4</td>
+				</tr>
+				<tr>
+					<td>cell_5</td>
+					<td>cell2_5</td>
+					<td>cell3_5</td>
+					<td>cell4_5</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td><b>foot1</b></td>
+					<td><b>foot2</b></td>
+					<td><b>foot3</b></td>
+					<td><b>foot4</b></td>
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Tables</title>
+		<style>
+
+			p {
+				font-family: "Lucida Sans", fantasy;
+			}
+
+			table {
+				border-style: outset;
+				border-width: 5px;
+				border-color: lightgrey;
+				font-family: "Calibri Light", serif;
+				text-align: center;
+			}
+
+			td, th {
+				border-style: inset;
+				border-width: 1px;
+				border-color: lightgrey;
+			}
+
+			.upside-down{
+				writing-mode: vertical-lr;
+				text-orientation: upright;
+				padding: 0;
+			}
+
+		</style>
+	</head>
+	<body>
+		<h1 style="font-family: Verdana, serif">Create of table</h1>
+		<p>I will create this table which you can see here for example:</p>
+			<img src="../../images/Example/table/table1.jpg" alt="Table"/>
+		<p>This is my create:</p>
+		<table style="width:605px">
+			<tr>
+				<th>Heading 1</th>
+				<th>Heading 2</th>
+				<th>Heading 3</th>
+			</tr>
+			<tr>
+				<td style="vertical-align: top">cell 1 text</td>
+				<td>
+					cell 2 text A
+					<br>
+					cell 2 text B
+				</td>
+				<td style="vertical-align: top">cell 3 text</td>
+			<tr>
+				<td>a long piece of cell text all on one line without a break</td>
+				<td style="text-align: left"><em>cell text</em></td>
+				<td style="text-align: right">cell text aligned right</td>
+			</tr>
+			<tr>
+				<td><b>cell text</b></td>
+				<td></td>
+				<td style="background-image: url('../images/Example/table/background_image.jpg')">graphic background</td>
+			</tr>
+			<tr>
+				<td colspan="3"><b>Mid-table Heading</b></td>
+			</tr>
+			<tr>
+				<td style="text-align: left">Things to do today</td>
+				<td rowspan="5"><b class="upside-down">WEEK</b><br>
+					<b style="line-height: 1.5">26</b>
+				</td>
+				<td style="text-align: left">Monday</td>
+			</tr>
+			<tr>
+				<td style="text-align: left; background-color: #b44346">Things to do on Tuesday</td>
+				<td style="text-align: left; background-color: #b44346">Tuesday</td>
+			</tr>
+			<tr>
+				<td style="text-align: left">Thing to do today</td>
+				<td style="text-align: left">Wednesday</td>
+			</tr>
+			<tr>
+				<td style="color:#d3e3b6; text-align: center; background-color: #68a78d">Things to do today</td>
+				<td style="color:#b77d5c; background-color: #68a78d; text-align: left;">Thursday</td>
+			</tr>
+			<tr>
+				<td style="text-align: left">Stuff to tidy up <b><i>before the weekend!!!</i></b></td>
+				<td style="text-align: left">Friday</td>
+			</tr>
+		</table>
+	</body>
+</html>

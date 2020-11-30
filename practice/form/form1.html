@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:font-size="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+		<title>Form</title>
+	</head>
+	<style>
+		body {
+			font-family: "Roboto", sans-serif;
+			font-size: 18px;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		h2 {
+			font-size: 24px;
+			font-weight: lighter;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			line-height: 2.25;
+			color: #ff8f47;
+		}
+
+		p {
+			text-indent: 35px;
+			color: #676666;
+		}
+
+		span {
+			font-size: 15px;
+			letter-spacing: 1px;
+			color: #676666;
+			margin-bottom: 10px;
+		}
+
+		img {
+			padding: 0 25px 0 25px;
+		}
+
+		.flex-container {
+			display: inline-block;
+		}
+
+		.flex-container > div {
+			float: left;
+			padding: 0 20px 0 30px;
+			margin: 0 30px 0 30px;
+		}
+
+		.background {
+			width: 789px;
+			height: 448px;
+			background-color: #fca223;
+		}
+
+		#grad {
+			background-image: linear-gradient(#fda526, #ffc94a);
+		}
+
+		.white-block {
+			max-width: 675px;
+			text-align: center;
+			background-color: white;
+			margin: 25px 0 0 50px;
+			box-shadow: 0 50px 30px -30px #ab923e;
+		}
+
+		.first-box {
+			border-bottom: 1px solid #cccccd;
+			padding: 12px;
+		}
+
+		.fa-circle {
+			color: #cccccd;
+			font-size: 13px;
+			padding: 2px;
+		}
+
+		input[type="text"] {
+			width: 410px;
+			border: 1px solid #999999;
+			border-radius: 4px;
+			font-size: 17px;
+			text-indent: 12px;
+			color: darkgrey;
+			padding: 10px;
+			margin: 10px 0 23px 0;
+		}
+
+		input[type="email"]{
+			width: 410px;
+			border: 1px solid #999999;
+			border-radius: 4px;
+			font-size: 17px;
+			text-indent: 12px;
+			color: darkgrey;
+			padding: 10px;
+		}
+
+		input[type="submit"]{
+			width: 106px;
+			text-align: center;
+			font-size: 15px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			background-color: #ff7100;
+			border: 1px solid #ff7100;
+			border-radius: 4px;
+			color: white;
+			padding: 10px 0 10px 0;
+			margin: 25px 0 25px 0;
+		}
+
+
+	</style>
+	<body>
+		<h1>Form</h1>
+		<p>To create form you need to use &#60;form&#62; tag where you must set &#60;label&#62; and &#60;input&#62; attributes. Look at an exercise and try repeating that.</p>
+		<div class="flex-container">
+			<div>
+				<img src="../../images/Example/form/form1.png" alt="form">
+			</div>
+			<div class="background" id="grad">
+				<div class="white-block">
+					<div class="first-box">
+						<i class="fas fa-circle" style="color: #ff9000"></i>
+						<i class="fas fa-circle"></i>
+						<i class="fas fa-circle"></i>
+					</div>
+					<div>
+						<h2>STEP 1</h2>
+						<span>Hello there, Let's play a game.</span>
+					</div>
+					<div>
+						<form action="server">
+							<label for="name"></label><br>
+							<input type="text" id="name" name="name" value="Name">
+							<label for="email"></label><br>
+							<input type="email" id="email" name="email" value="Email">
+							<label for="start"></label><br>
+							<input type="submit" id="start" name="start" value="Start">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

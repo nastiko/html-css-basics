@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
+		<title>Floater</title>
+		<style>
+			div.relative {
+				position: relative;
+				font-size: 15px;
+				background-color: #f1f1f1;
+				max-width: 500px;
+				bottom: 30px;
+				left: 80px;
+				padding: 20px;
+			}
+
+			.clearfix1 {
+				overflow: auto;
+				padding-bottom: 16px;
+			}
+
+			.clearfix2 {
+				overflow: auto;
+				text-align: left;
+				padding-left: 78px;
+			}
+
+			.img1 {
+				float: left;
+				width: 70px;
+				padding-right: 10px;
+			}
+
+			.img2 {
+				float: right;
+				width: 70px;
+				padding-top: 5px;
+			}
+
+			body {
+				font-family: "Adamina", monospace;
+				font-size: 18px;
+			}
+
+			.example img {
+				max-height: 350px;
+			}
+
+			article {
+				background-color: #848c6a;
+				max-width: 700px;
+			}
+
+			h2 {
+				font-weight: normal;
+				color: #f1f1f1;
+				text-align: center;
+				padding: 20px;
+			}
+
+			p {
+				text-indent: 35px;
+			}
+
+			q {
+				font-size: 16px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Create of floater</h1>
+		</header>
+		<section>
+			<p>I will create this float which you can see here for example:</p>
+		</section>
+		<div class="example">
+			<img alt="Float" src="../../images/Example/float/float1.png"/>
+		</div>
+		<p>This is my create:</p>
+		<article>
+			<h2>CSS Float Property</h2>
+			<div class="relative">
+				<div class="clearfix1">
+					<img class="img1" alt="FormGet" src="../../images/Example/float/Screenshot_1.png"/>
+					<span>FormGet is an online form builder. You can create any kind of form that will help you to collect leads and payment as well. It's simple to use.</span>
+				</div>
+				<div class="clearfix2">
+					<img class="img2" alt="FormGet" src="../../images/Example/float/Screenshot_1.png"/>
+					<span>FormGet is an online form builder. You can create any kind of form that will help you to collect leads and payment as well. It's simple to use.</span>
+				</div>
+			</div>
+		</article>
+		<footer>
+			<p><q>The topic of horizontal and vertical align is very helpful for setting some pictures in the text. Read it!</q></p>
+		</footer>
+	</body>
+</html>
