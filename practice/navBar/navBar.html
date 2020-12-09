@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 		<title>NavBar</title>
 		<style>
 			body {
@@ -17,7 +18,7 @@
 
 			h2 {
 				text-indent: 40px;
-				padding-bottom: 21px;
+				padding-bottom: 13px;
 				font-size: 23px;
 				font-weight: 800;
 				color: #605f62;
@@ -27,64 +28,84 @@
 				text-indent: 35px;
 			}
 
-			/*it will be my full content*/
+			/*full content*/
 			article {
 				float: right;
 				position: relative;
-				bottom: 614px;
-				right: 6px;
-				width: 52%;
-				height: 552px;
+				bottom: 611px;
+				width: 53%;
 				font-size: 12px;
-				color: #57595f;
+				color: #605f62;
 				background-color: #d0dde8;
 			}
 
-			ul {
+			/*nav1*/
+			.nav1 ul {
 				list-style-type: none;
-				height: 36px;
 				padding: 0;
-				margin: 0 35px 0 35px;
-				border: 1px solid transparent;
+				border: 1px groove #d4e78794;
+				border-radius: 4px;
+				z-index: 5;
 			}
 
 			.bar1 {
 				background-color: #c2da69;
-				background-image: linear-gradient(#d3e687, #badc42);
-				border-radius: 4px;
+				background-image: linear-gradient(#d3e687, #9ab735bf);
 				box-shadow: 1px 2px #9ca2bf;
-				margin-bottom: 35px;
+				margin: 35px auto;
+				padding: 0 0 0 5px;
+				width: 960px;
+				height: 36px;
 			}
 
-			li {
+			.bar1 li {
 				float: left;
 				text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-				text-align: center;
 			}
 
-			a {
+			.bar1 a {
 				display: block;
 				padding: 12px;
-				border-right: 1px solid #838e95;
+				border-right: 1px solid #8aa7346e;
 				color: #494b4f;
 				text-decoration: none;
 				font-weight: bolder;
 			}
 
-			li:hover {
+			.bar1 a:hover, a:active {
+				color: white;
+			}
+
+			.bar1 li:hover {
 				background-color: #c0cfaf;
 			}
 
 			/*create specific link*/
-			.active {
+			.bar1 .active a {
 				color: #3f4e14;
-				background-color: rgba(0, 0, 0, 0.15);
-				box-shadow: inset 0 5px 7px rgba(0, 0, 0, 0.4);
-				margin-left: 7px;
+				border: 1px inset #9eb83780;
+				background-color: rgba(0, 0, 0, 0.16);
+				box-shadow: inset 0 7px 9px -4px;
+				margin-left: 5px;
+			}
+
+			/*icon*/
+			.bar1 .fa-angle-down {
+				padding: 0 8px;
+				font-size: 11px;
+			}
+
+			.bar1 .fa-angle-right {
+				font-size: 13px;
+				padding: 0 0 0 36px;
+			}
+
+			.bar1 .fa-angle-right.child {
+				padding: 0 0 0 58px;
 			}
 
 			/*change text in the form*/
-			input {
+			.bar1 input {
 				float: right;
 				width: 201px;
 				border: 1px inset #b9ce6b;
@@ -98,48 +119,414 @@
 			}
 
 			/*put imagine such as an icon*/
-			.form1 #search {
+			.bar1 .form1 #search {
 				background-image: url(../../images/Example/navBar/search-icon-1.png);
 				background-repeat: no-repeat;
-				background-position: 172px;
+				background-position: 175px;
 			}
 
-			::placeholder {
+			.bar1 ::placeholder {
 				color: white;
 			}
 
+			/*parents*/
 			.dropdown {
 				position: relative;
 			}
 
-			#first-down {
-				margin: 0;
-				left: 0;
-				top: 37px;
-			}
-
+			/*child of dropdown*/
 			.dropdown-child {
 				display: none;
 				position: absolute;
 				box-shadow: 0 5px 7px rgba(0, 0, 0, 0.4);
-				left: 114px;
+				margin: 0;
+				left: 152px;
 				top: 0;
 			}
 
-			.dropdown:hover > .dropdown-child  {
-				display: block;
+			/*child of dropdown-child*/
+			.bar1 .first-down {
+				left: 0;
+				top: 37px;
 			}
 
-			.dropdown-child li {
+			.bar1 .dropdown-child li {
 				width: 150px;
 				text-align: left;
 			}
 
-			.box-decoration {
-				box-shadow: 0 5px 7px rgba(0, 0, 0, 0.4);
+			.bar1 .dropdown:hover > .dropdown-child  {
+				display: block;
+				background-color: #c2da69;
 			}
 
+			/*nav2*/
+			.nav2 ul {
+				list-style-type: none;
+				border: 3px solid #ebf0f1;
+				border-radius: 45px;
+				z-index: 4;
+			}
 
+			.bar2 {
+				background-color: #9fbde3;;
+				background-image: linear-gradient(to bottom, #b6cfef, #6688b385);
+				box-shadow: 1px 2px #9ca2bf;
+				margin: 35px auto;
+				padding: 0 0 0 10px;
+				width: 960px;
+				height: 47px;
+			}
+
+			.bar2 li  {
+				float: left;
+				text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+			}
+
+			.bar2 a {
+				display: block;
+				padding: 18px;
+				text-decoration: none;
+				color: #48526b;
+				font-weight: bolder;
+			}
+
+			.bar2 a:hover, a:active {
+				color: white;
+			}
+
+			.bar2 input {
+				float: right;
+				background-color: #cbdcef;
+				background-image: linear-gradient(to bottom, #d6e4f4, #96aece4a);
+				width: 204px;
+				border: 1px solid #b4cce7;
+				border-radius: 40px;
+				margin: 8px 9px 0 0;
+				padding: 7px;
+				color: #62666d;
+				font-weight: 700;
+			}
+
+			.bar2::placeholder {
+				color: #63676e;
+			}
+
+			.bar2 .fa-search {
+				float: right;
+				position: relative;
+				left: 215px;
+				top: 9px;
+				font-size: 13px;
+				border-left: 1px solid #a8c1ded1;
+				padding: 8px;
+			}
+
+			.bar2 .fa-angle-down {
+				padding: 0 8px;
+				font-size: 11px;
+			}
+
+			.bar2 .fa-angle-right {
+				font-size: 13px;
+				padding: 0 0 0 25px;
+			}
+
+			.bar2 .fa-angle-right.child {
+				padding: 0 0 0 47px;
+			}
+
+			.bar2 li.home a {
+				background-color: #c2d5ec;
+				background-image: linear-gradient(to bottom, #d6e4f4, #96aece4a);
+				border: 1px solid #b1cce8;
+				border-radius: 40px;
+				padding: 6px 12px 6px 12px;
+				margin: 12px 0 0 0;
+			}
+
+			.bar2 .dropdown-child li{
+				width: 149px;
+				text-align: left;
+			}
+
+			.bar2 .second-down {
+				background-image: linear-gradient(to bottom, #b6cfef, #6688b385);
+				top: 37px;
+				left: -2px;
+				padding: 0;
+			}
+
+			.bar2 .second-down a, .second-down-left a {
+				padding: 13px;
+			}
+
+			.bar2 .second-down-left {
+				background-image: linear-gradient(to bottom, #b6cfef, #6688b385);
+				width: 105px;
+				padding: 0;
+				left: 136px;
+				top: -2px;
+			}
+
+			.bar2 .dropdown:hover > .dropdown-child  {
+				display: block;
+				background-color: #98b5da;
+				border: 1px solid #98b5da;
+				border-radius: 5px;
+			}
+
+			/*nav3*/
+			.nav3 ul {
+				list-style-type: none;
+				border: 1px outset #bcc4ca78;
+				z-index: 3;
+			}
+
+			.bar3 {
+				font-size: 11px;
+				text-align: center;
+				background-color: #ededed;
+				background-image: linear-gradient(to bottom, #fbfbfb, #c2c4d25e);
+				box-shadow: 1px 2px #cddae5;
+				margin: 20px auto;
+				padding: 0;
+				width: 960px;
+				height: 42px;
+			}
+
+			.bar3 li  {
+				float: left;
+				text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+			}
+
+			.bar3 li:hover {
+				background-color: #5c5d5f;
+			}
+
+			.bar3 a {
+				display: block;
+				text-decoration: none;
+				text-transform: uppercase;
+				color: #7a797b;
+				border-right: 1px solid #dddcdc;
+				padding: 15px 10px;
+				font-weight: bolder;
+			}
+
+			.bar3 input {
+				float: right;
+				background-color: #ffffff;
+				width: 216px;
+				border: 2px solid #d5d5d5;
+				margin: 6px 8px 0 0;
+				padding: 6px 7px 7px 35px;
+				font-weight: 500;
+			}
+
+			.bar3 ::placeholder {
+				color: #95a8b99e;
+			}
+
+			.bar3 .fa-search  {
+				float: right;
+				position: relative;
+				left: 33px;
+				top: 8px;
+				font-size: 12px;
+				font-weight: 550;
+				padding: 8px;
+				border: none;
+			}
+
+			.bar3 .fa-angle-down {
+				padding: 0 8px;
+				font-size: 11px;
+			}
+
+			.bar3 .fa-angle-right {
+				font-size: 13px;
+				padding: 0 0 0 3px;
+			}
+
+			.bar3 .fa-angle-right.child {
+				padding: 0 0 0 35px;
+			}
+
+			.bar3 a:hover, a:active {
+				color: white;
+			}
+
+			.bar3 .home {
+				background-color: #56a4e6;
+				background-image: linear-gradient(45deg, #3582c1, #7eb1e49e);
+				width: 47px;
+				height: 42px;
+			}
+
+			.bar3 .home a:hover {
+				background-color: #56a4e6;
+				background-image: linear-gradient(45deg, #3582c1, #7eb1e49e);
+			}
+
+			.bar3 .fa-home {
+				color: #ffffff;
+				font-size: 12px;
+			}
+
+			.bar3 .third-down {
+				background-color: #ededed;
+				background-image: linear-gradient(to bottom, #fbfbfb, #c2c4d25e);
+				top: 42px;
+				left: 0;
+				padding: 0;
+			}
+
+			.bar3 .third-down-left {
+				background-color: #ededed;
+				background-image: linear-gradient(to bottom, #fbfbfb, #c2c4d25e);
+				padding: 0;
+				left: 139px;
+				top: -9px;
+			}
+
+			.bar3 .dropdown-child li{
+				width: 144px;
+				text-align: left;
+			}
+
+			.bar3 .dropdown:hover > .dropdown-child  {
+				display: block;
+			}
+
+			/*nav4*/
+			.nav4 ul {
+				list-style-type: none;
+				padding: 0;
+			}
+
+			.bar4 {
+				font-size: 12px;
+				line-height: 0.8;
+				background-color: #62666d;
+				background-image: linear-gradient(0deg, #545963, #69717d);
+				text-transform: uppercase;
+				width: 960px;
+				height: 58px;
+				margin: 32px auto;
+				padding: 0;
+			}
+
+			.bar4 li {
+				float: left;
+				font-weight: 900;
+			}
+
+			.bar4 a {
+				display: block;
+				border-right: 2px solid #4a4e5561;
+				text-decoration: none;
+				color: #ffffff;
+				padding: 16px 27px 16px 13px;
+			}
+
+			.bar4 a:hover, a:active {
+				color: red;
+			}
+
+			.bar4 li:hover > a {
+				color: red;
+				background-color: #393d42f2;
+			}
+
+			.bar4 li:hover .fa-angle-down{
+				color: #00d2ff;
+			}
+
+			.bar4 sub {
+				color: #000000a8;
+				font-style: italic;
+				text-transform: initial;
+			}
+
+			.bar4 .dashboard {
+				border: none;
+				background-color: #dea61e;
+				background-image: linear-gradient(45deg, #e2a31a, #e6b12f);
+				width: 79px;
+				height: 58px;
+			}
+
+			.bar4 input {
+				float: right;
+				font-size: 12px;
+				background-color: #52565c;
+				width: 214px;
+				padding: 11px;
+				margin: 8px 8px 5px 0;
+			}
+
+			.bar4 .fa-search {
+				float: right;
+				position: relative;
+				left: 217px;
+				top: 8px;
+				font-size: 12px;
+				text-align: -webkit-center;
+				padding: 8px 8px 5px 8px;
+				margin: 4px 9px 4px 0;
+				width: 17px;
+				height: 15px;
+				color: #e5e5e5cc;
+				border-width: 2px 1px 1px 1px;
+				border-style: outset;
+				border-color: #d4e1f154 #46494e8f #8a8d90 #54585ec9;
+				background-color: #8f9295;
+				background-image: linear-gradient(45deg, #8e9094, #a7a9ac);
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+
+			.bar4 ::placeholder {
+				color: #e5e5e5cc;
+				font-weight: bold;
+			}
+
+			.bar4 .fa-angle-down {
+				color: black;
+				position: relative;
+				left: 15px;
+				top: 6px;
+				font-size: 11px;
+				font-weight: 600;
+			}
+
+			.bar4 .fa-angle-right {
+				font-size: 13px;
+				padding: 0 0 0 16px;
+			}
+
+			.bar4 .fa-angle-right.child {
+				padding: 0 0 0 52px;
+			}
+
+			.bar4 .fourth-down {
+				top: 57px;
+				left: 2px;
+			}
+
+			.bar4 .fourth-down li {
+				width: 175px;
+			}
+
+			.bar4 .fourth-down-left {
+				left: 175px;
+				top: 0px;
+			}
+
+			.bar4 .dropdown:hover > .dropdown-child {
+				display: block;
+				background-color: #333;
+			}
 
 		</style>
 	</head>
@@ -156,26 +543,33 @@
 		<p>This is my creative:</p>
 		<article>
 			<h2>5 Navigation Menu Bars</h2>
-			<nav>
+			<nav class="nav1">
 				<ul class="bar1">
 					<li class="active"><a href="#">Home</a></li>
-					<li class="dropdown"><a href="#">About</a>
-						<ul class="dropdown-child box-decoration" id="first-down">
+					<li class="dropdown"><a href="#">About<i class="fa fa-angle-down"></i></a>
+						<ul class="dropdown-child first-down">
 							<li><a href="#">This is a CSS Menu</a></li>
-							<li class="dropdown"><a href="#">Multilevel Links</a>
+							<li class="dropdown"><a href="#">Multilevel Links<i class="fa fa-angle-right"></i></a>
 								<ul class="dropdown-child">
 									<li><a href="#">First</a></li>
 									<li><a href="#">Second</a></li>
 								</ul>
 							</li>
-							<li class="dropdown"><a href="#">More Links</a>
+							<li class="dropdown"><a href="#">More Links<i class="fa fa-angle-right child"></i></a>
 								<ul class="dropdown-child">
 									<li><a href="#">more...</a></li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-					<li><a href="#">Portfolio</a></li>
+					<li class="dropdown"><a href="#">Portfolio<i class="fa fa-angle-down"></i></a>
+					<ul class="dropdown-child first-down">
+						<li><a href="#">Web Design</a></li>
+						<li><a href="#">Graphic Design</a></li>
+						<li><a href="#">Photography</a></li>
+						<li><a href="#">Product Design</a></li>
+					</ul>
+					</li>
 					<li><a href="#">Product</a></li>
 					<li><a href="#">Blog</a></li>
 					<li><a href="#">Contract</a></li>
@@ -184,6 +578,119 @@
 							<label for="search"></label>
 							<input type="text" id="search" name="search" placeholder="Search">
 						</div>
+					</form>
+				</ul>
+			</nav>
+			<nav class="nav2">
+				<ul class="bar2">
+					<li class="home"><a href="#">Home</a></li>
+					<li class="dropdown"><a href="#">About<i class="fa fa-angle-down"></i></a>
+						<ul class="dropdown-child second-down">
+							<li><a href="#">This is a CSS Menu</a></li>
+							<li class="dropdown"><a href="#">Multilevel Links<i class="fa fa-angle-right"></i></a>
+								<ul class="dropdown-child second-down-left">
+									<li><a href="#">First</a></li>
+									<li><a href="#">Second</a></li>
+								</ul>
+							</li>
+							<li class="dropdown"><a href="#">More Links<i class="fa fa-angle-right child"></i></a>
+								<ul class="dropdown-child second-down-left">
+									<li><a href="#">more...</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="#">Portfolio<i class="fa fa-angle-down"></i></a>
+						<ul class="dropdown-child second-down">
+							<li><a href="#">Web Design</a></li>
+							<li><a href="#">Graphic Design</a></li>
+							<li><a href="#">Photography</a></li>
+							<li><a href="#">Product Design</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Contact</a></li>
+					<form action="#">
+						<div class="form1">
+							<label for="search"></label>
+							<input type="text" id="search1" name="search" placeholder="Search">
+							<div><i class="fa fa-search"></i></div>
+						</div>
+					</form>
+				</ul>
+			</nav>
+			<nav class="nav3">
+				<ul class="bar3">
+					<li class="home"><a href="#"><i class="fa fa-home"></i></a></li>
+					<li class="dropdown"><a href="#">About<i class="fa fa-angle-down"></i></a>
+						<ul class="dropdown-child third-down">
+							<li><a href="#">This is a CSS Menu</a></li>
+							<li class="dropdown"><a href="#">Multilevel Links<i class="fa fa-angle-right"></i></a>
+								<ul class="dropdown-child third-down-left">
+									<li><a href="#">First</a></li>
+									<li><a href="#">Second</a></li>
+								</ul>
+							</li>
+							<li class="dropdown"><a href="#">More Links<i class="fa fa-angle-right child"></i></a>
+								<ul class="dropdown-child third-down-left">
+									<li><a href="#">more...</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="#">Portfolio<i class="fa fa-angle-down"></i></a>
+						<ul class="dropdown-child third-down">
+							<li><a href="#">Web Design</a></li>
+							<li><a href="#">Graphic Design</a></li>
+							<li><a href="#">Photography</a></li>
+							<li><a href="#">Product Design</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Contact</a></li>
+					<form action="#">
+						<label for="search2"></label>
+						<input type="search" id="search2" name="Search" placeholder="Search">
+						<div><i class="fa fa-search"></i></div>
+					</form>
+				</ul>
+			</nav>
+			<nav class="nav4">
+				<ul class="bar4">
+					<li class="dashboard"><a href="#">Home<br/><sub>dashboard</sub></a></li>
+					<li class="dropdown"><a href="#">About<i class="fa fa-angle-down"></i><br/><sub>who we are</sub></a>
+						<ul class="dropdown-child fourth-down">
+							<li><a href="#">This is a CSS Menu</a></li>
+							<li class="dropdown"><a href="#">Multilevel Links<i class="fa fa-angle-right"></i></a>
+								<ul class="dropdown-child fourth-down-left">
+									<li><a href="#">First</a></li>
+									<li><a href="#">Second</a></li>
+								</ul>
+							</li>
+							<li class="dropdown"><a href="#">More Links<i class="fa fa-angle-right child"></i></a>
+								<ul class="dropdown-child fourth-down-left">
+									<li><a href="#">more...</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="#">Portfolio<i class="fa fa-angle-down"></i><br/><sub>our best work</sub></a>
+						<ul class="dropdown-child fourth-down">
+							<li><a href="#">Web Design</a></li>
+							<li><a href="#">Graphic Design</a></li>
+							<li><a href="#">Photography</a></li>
+							<li><a href="#">Product Design</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Product<br/><sub>buy online</sub></a></li>
+					<li><a href="#">Blog<br/><sub>latest news</sub></a></li>
+					<li><a href="#">Contact<br/><sub>get in touch</sub></a></li>
+					<form action="#">
+						<label for="search3"></label>
+						<input type="search" id="search3" name="search" placeholder="Search">
+						<div><i class="fa fa-search"></i></div>
 					</form>
 				</ul>
 			</nav>
