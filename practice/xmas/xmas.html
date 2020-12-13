@@ -6,10 +6,15 @@
 </head>
 <style>
 
+    body {
+        background-color: #222;
+    }
+
     .position {
         position: relative;
         top: 300px;
         left: 716px;
+        z-index: 1;
     }
 
     div {
@@ -53,7 +58,6 @@
         margin-left: 32px;
     }
 
-
     .side-up {
         width: 0;
         height: 0;
@@ -61,8 +65,17 @@
         border-right: 25px solid transparent;
         border-top: 25px solid transparent;
         border-bottom: 40px solid #226f36;
-        z-index: 1;
         margin: -24px -26px -2px 19px;
+        animation-name: green-light;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes green-light {
+        0% {border-bottom-color: #002018;}
+        25% {border-bottom-color:  #0f3500;}
+        50% {border-bottom-color: #023026;}
+        100% {border-bottom-color: #0f3500;}
     }
 
     .side-down {
@@ -73,6 +86,100 @@
         border-bottom: 25px solid transparent;
         border-top: 40px solid red;
         margin: 0 -45px -26px 0px;
+        animation-name: red-light;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        position: relative;
+        animation-timing-function: linear;
+    }
+
+    @keyframes red-light {
+        0% {border-top-color: #8C1A27;}
+        25% {border-top-color: #022F89;}
+        50% {border-top-color: #D4A227;}
+        100% {border-top-color: #F5F5F5;}
+        from {top:0; right: 5px;}
+        to {top: 5px;}
+    }
+
+    .row2 :nth-of-type(2), .row4 :nth-of-type(2), .row6 :nth-of-type(4), .row8 :nth-of-type(10), .row9 :nth-of-type(2), .row11 :nth-of-type(10), .row12 :nth-of-type(6) {
+        animation-name: move1;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        position: relative;
+        animation-timing-function: linear;
+    }
+
+    @keyframes move1 {
+        0% {border-top-color: #D4A227;}
+        25% {border-top-color: #F5F5F5;}
+        50% {border-top-color: #8C1A27;}
+        100% {border-top-color: #022F89;}
+        from {top:0; right: 5px;}
+        to {top: 5px;}
+    }
+
+    .row3 :nth-of-type(4), .row5 :nth-of-type(2), .row6 :nth-of-type(6), .row7 :nth-of-type(2), .row8 :nth-of-type(6),
+    .row10 :nth-of-type(4n+4), .row11 :nth-of-type(10n+2), .row12 :nth-of-type(8) {
+        animation-name: move2;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        position: relative;
+        animation-timing-function: linear;
+    }
+
+    @keyframes move2 {
+        0% {border-top-color: #022F89;}
+        25% {border-top-color: #D4A227;}
+        50% {border-top-color: #F5F5F5;}
+        100% {border-top-color: #8C1A27;}
+        from {top:0; right: 5px;}
+        to {top: 5px;}
+    }
+
+    .row4 :nth-of-type(4), .row6 :nth-of-type(2), .row7 :nth-of-type(6), .row8 :nth-of-type(4), .row9 :nth-of-type(6),
+    .row10 :nth-of-type(8n+2), .row11 :nth-of-type(6), .row12 :nth-of-type(6n+4), .row12 :nth-of-type(14) {
+        animation-name: move3;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        position: relative;
+        animation-timing-function: linear;
+    }
+
+    @keyframes move3 {
+        0% {border-top-color: #F5F5F5;}
+        25% {border-top-color: #8C1A27;}
+        50% {border-top-color: #022F89;}
+        100% {border-top-color: #D4A227;}
+        from {top:0; right: 5px;}
+        to {top: 5px;}
+    }
+
+    .row5 :nth-of-type(4), .row7 :nth-of-type(4), .row8 :nth-of-type(8), .row10 :nth-of-type(6),
+    .row12 :nth-of-type(10n+2){
+        animation-name: move4;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        position: relative;
+        animation-timing-function: linear;
+    }
+
+    @keyframes move4 {
+        0% {border-top-color: #596938;}
+        25% {border-top-color: #ffd646;}
+        50% {border-top-color: #081856;}
+        100% {border-top-color: #9b2a0a;}
+        from {top:0; right: 5px;}
+        to {top: 5px;}
+    }
+
+    .snow {
+        z-index: -1;
+        position: absolute;
+    }
+
+    .snow_flake {
+        background-image: url("/images/Example/animation/snow-flake-1.png");
     }
 
 </style>
@@ -211,6 +318,26 @@
         <div class="side-down"></div>
         <div class="side-up"></div>
     </div>
+</div>
+<div class="snow">
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
+    <div class="snow_flake"></div>
 </div>
 
 </body>
