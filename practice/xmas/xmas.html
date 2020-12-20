@@ -73,10 +73,18 @@
     }
 
     @keyframes green-light {
-        0% {border-bottom-color: #002018;}
-        25% {border-bottom-color:  #0f3500;}
-        50% {border-bottom-color: #023026;}
-        100% {border-bottom-color: #0f3500;}
+        0% {
+            border-bottom-color: #002018;
+        }
+        25% {
+            border-bottom-color: #0f3500;
+        }
+        50% {
+            border-bottom-color: #023026;
+        }
+        100% {
+            border-bottom-color: #0f3500;
+        }
     }
 
     .side-down {
@@ -94,10 +102,18 @@
     }
 
     @keyframes red-light {
-        0% {border-top-color: #8C1A27;}
-        25% {border-top-color: #022F89;}
-        50% {border-top-color: #D4A227;}
-        100% {border-top-color: #F5F5F5;}
+        0% {
+            border-top-color: #8C1A27;
+        }
+        25% {
+            border-top-color: #022F89;
+        }
+        50% {
+            border-top-color: #D4A227;
+        }
+        100% {
+            border-top-color: #F5F5F5;
+        }
     }
 
     .row2 :nth-of-type(2), .row4 :nth-of-type(2), .row6 :nth-of-type(4), .row8 :nth-of-type(10), .row9 :nth-of-type(2), .row11 :nth-of-type(10), .row12 :nth-of-type(6) {
@@ -108,10 +124,18 @@
     }
 
     @keyframes move1 {
-        0% {border-top-color: #D4A227;}
-        25% {border-top-color: #F5F5F5;}
-        50% {border-top-color: #8C1A27;}
-        100% {border-top-color: #022F89;}
+        0% {
+            border-top-color: #D4A227;
+        }
+        25% {
+            border-top-color: #F5F5F5;
+        }
+        50% {
+            border-top-color: #8C1A27;
+        }
+        100% {
+            border-top-color: #022F89;
+        }
     }
 
     .row3 :nth-of-type(4), .row5 :nth-of-type(2), .row6 :nth-of-type(6), .row7 :nth-of-type(2), .row8 :nth-of-type(6),
@@ -123,10 +147,18 @@
     }
 
     @keyframes move2 {
-        0% {border-top-color: #022F89;}
-        25% {border-top-color: #D4A227;}
-        50% {border-top-color: #F5F5F5;}
-        100% {border-top-color: #8C1A27;}
+        0% {
+            border-top-color: #022F89;
+        }
+        25% {
+            border-top-color: #D4A227;
+        }
+        50% {
+            border-top-color: #F5F5F5;
+        }
+        100% {
+            border-top-color: #8C1A27;
+        }
     }
 
     .row4 :nth-of-type(4), .row6 :nth-of-type(2), .row7 :nth-of-type(6), .row8 :nth-of-type(4), .row9 :nth-of-type(6),
@@ -138,14 +170,22 @@
     }
 
     @keyframes move3 {
-        0% {border-top-color: #F5F5F5;}
-        25% {border-top-color: #8C1A27;}
-        50% {border-top-color: #022F89;}
-        100% {border-top-color: #D4A227;}
+        0% {
+            border-top-color: #F5F5F5;
+        }
+        25% {
+            border-top-color: #8C1A27;
+        }
+        50% {
+            border-top-color: #022F89;
+        }
+        100% {
+            border-top-color: #D4A227;
+        }
     }
 
     .row5 :nth-of-type(4), .row7 :nth-of-type(4), .row8 :nth-of-type(8), .row10 :nth-of-type(6),
-    .row12 :nth-of-type(10n+2){
+    .row12 :nth-of-type(10n+2) {
         animation-name: move4;
         animation-duration: 2s;
         animation-iteration-count: infinite;
@@ -153,10 +193,18 @@
     }
 
     @keyframes move4 {
-        0% {border-top-color: #FCE486;}
-        25% {border-top-color: #A9BD1F;}
-        50% {border-top-color: #081856;}
-        100% {border-top-color: #f0ccbd;}
+        0% {
+            border-top-color: #FCE486;
+        }
+        25% {
+            border-top-color: #A9BD1F;
+        }
+        50% {
+            border-top-color: #081856;
+        }
+        100% {
+            border-top-color: #f0ccbd;
+        }
     }
 
     .snow {
@@ -167,12 +215,19 @@
         border: 1px solid red;
     }
 
-    .snow_flake1, .snow_flake2, .snow_flake3, .snow_flake4, .snow_flake5 {
+    .snow_flake1, .snow_flake2, .snow_flake3, .snow_flake4, .snow_flake5, .snow_flake6, .snow_flake7, .snow_flake8,
+    .snow_flake9, .snow_flake10, .snow_flake11, .snow_flake12, .snow_flake13, .snow_flake14, .snow_flake15,
+    .snow_flake16, .snow_flake17, .snow_flake18, .snow_flake19, .snow_flake20, .snow_flake21, .snow_flake22,
+    .snow_flake23, .snow_flake24, .snow_flake25, .snow_flake26, .snow_flake27, .snow_flake28, .snow_flake29,
+    .snow_flake30 {
         position: relative;
-        width: 10px;
-        height: 11px;
         background-color: #FFFFFF;
         border-radius: 50%;
+    }
+
+    .snow_flake1, .snow_flake2, .snow_flake3, .snow_flake4, .snow_flake5 {
+        width: 10px;
+        height: 11px;
     }
 
     .snow_flake1 {
@@ -182,10 +237,13 @@
     }
 
     @keyframes snow1 {
-        from {top: 1px }
-        to {top: 520px}
+        from {
+            top: 1px
+        }
+        to {
+            top: 1000px
+        }
     }
-
 
     .snow_flake2 {
         animation: snow2 14s 1 linear;
@@ -194,8 +252,12 @@
     }
 
     @keyframes snow2 {
-        from {top: 13px }
-        to {top: 520px}
+        from {
+            top: 13px
+        }
+        to {
+            top: 1000px
+        }
     }
 
     .snow_flake3 {
@@ -205,8 +267,12 @@
     }
 
     @keyframes snow3 {
-        from {top: 71px }
-        to {top: 520px}
+        from {
+            top: 71px
+        }
+        to {
+            top: 1000px
+        }
     }
 
     .snow_flake4 {
@@ -216,8 +282,12 @@
     }
 
     @keyframes snow4 {
-        from {top: 27px }
-        to {top: 520px}
+        from {
+            top: 27px
+        }
+        to {
+            top: 1000px
+        }
     }
 
     .snow_flake5 {
@@ -227,8 +297,265 @@
     }
 
     @keyframes snow5 {
-        from {top: 9px }
-        to {top: 520px}
+        from {
+            top: 9px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake6, .snow_flake7, .snow_flake8, .snow_flake9, .snow_flake10, .snow_flake11, .snow_flake12, .snow_flake13 {
+        width: 5px;
+        height: 5px;
+    }
+
+    .snow_flake6 {
+        animation: snow6 17s ease-out 1;
+        left: -42px;
+        top: 38px;
+    }
+
+    @keyframes snow6 {
+        from {
+            top: 38px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake7 {
+        animation: snow7 17s ease-out 1;
+        left: 17px;
+        top: 29px;
+    }
+
+    @keyframes snow7 {
+        from {
+            top: 29px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake8 {
+        animation: snow8 17s ease-out 1;
+        left: 45px;
+        top: 0;
+    }
+
+    @keyframes snow8 {
+        from {
+            top: 0
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake9 {
+        animation: snow9 17s ease-out 1;
+        left: 129px;
+        top: 47px;
+    }
+
+    @keyframes snow9 {
+        from {
+            top: 47px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake10 {
+        animation: snow10 17s ease-out 1;
+        left: 224px;
+        top: 14px;
+    }
+
+    @keyframes snow10 {
+        from {
+            top: 14px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake11, .snow_flake12, .snow_flake13, .snow_flake14, .snow_flake15, .snow_flake16, .snow_flake17 {
+        width: 2px;
+        height: 2px;
+    }
+
+    .snow_flake11 {
+        animation: snow11 13s ease 1;
+        left: -67px;
+    }
+
+    @keyframes snow11 {
+        from {
+            top: 0
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake12 {
+        animation: snow12 13s ease 1;
+        left: -48px;
+        top: 57px;
+    }
+
+    @keyframes snow12 {
+        from {
+            top: 57px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake13 {
+        animation: snow13 13s ease 1;
+        left: 19px;
+        top: 25px;
+    }
+
+    @keyframes snow13 {
+        from {
+            top: 25px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake14 {
+        animation: snow14 13s ease 1;
+        left: 71px;
+        top: -6px;
+    }
+
+    @keyframes snow14 {
+        from {
+            top: -6px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake15 {
+        animation: snow15 13s ease 1;
+        left: 94px;
+        top: 15px;
+    }
+
+    @keyframes snow15 {
+        from {
+            top: 15px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake16 {
+        animation: snow16 13s ease 1;
+        left: 138px;
+        top: 34px;
+    }
+
+    @keyframes snow16 {
+        from {
+            top: 34px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake17 {
+        animation: snow17 13s ease 1;
+        left: 157px;
+        top: 2px;
+    }
+
+    @keyframes snow17 {
+        from {
+            top: 2px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake18, .snow_flake19, .snow_flake20, .snow_flake21 {
+        width: 7px;
+        height: 7px;
+    }
+
+    .snow_flake18 {
+        animation: snow18 19s linear 1;
+        left: -107px;
+        top: 84px;
+    }
+
+    @keyframes snow18 {
+        from {
+            top: 84px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake19 {
+        animation: snow19 19s linear 1;
+        left: -6px;
+        top: 5px;
+    }
+
+    @keyframes snow19 {
+        from {
+            top: 5px
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake20 {
+        animation: snow20 19s linear 1;
+        left: 55px;
+    }
+
+    @keyframes snow20 {
+        from {
+            top: 0
+        }
+        to {
+            top: 1000px
+        }
+    }
+
+    .snow_flake21 {
+        animation: snow21 19s linear 1;
+        left: 119px;
+        top: 69px;
+    }
+
+    @keyframes snow21 {
+        from {
+            top: 69px
+        }
+        to {
+            top: 1000px
+        }
     }
 
 </style>
@@ -374,6 +701,22 @@
     <div class="snow_flake3"></div>
     <div class="snow_flake4"></div>
     <div class="snow_flake5"></div>
+    <div class="snow_flake6"></div>
+    <div class="snow_flake7"></div>
+    <div class="snow_flake8"></div>
+    <div class="snow_flake9"></div>
+    <div class="snow_flake10"></div>
+    <div class="snow_flake11"></div>
+    <div class="snow_flake12"></div>
+    <div class="snow_flake13"></div>
+    <div class="snow_flake14"></div>
+    <div class="snow_flake15"></div>
+    <div class="snow_flake16"></div>
+    <div class="snow_flake17"></div>
+    <div class="snow_flake18"></div>
+    <div class="snow_flake19"></div>
+    <div class="snow_flake20"></div>
+    <div class="snow_flake21"></div>
 </div>
 
 </body>
