@@ -162,14 +162,74 @@
     .snow {
         position: fixed;
         left: 0;
-        top: 0;
-        width: 10000px;
-        height: 15000px;
-        background-image: url("https://media.giphy.com/media/CkBzt6qXCCXw4/giphy.gif");
-        background-repeat: no-repeat;
-        opacity: 0.5;
+        width: 342px;
+        height: 1000px;
+        border: 1px solid red;
     }
 
+    .snow_flake1, .snow_flake2, .snow_flake3, .snow_flake4, .snow_flake5 {
+        position: relative;
+        width: 10px;
+        height: 11px;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+    }
+
+    .snow_flake1 {
+        animation: snow1 10s 1 linear;
+        left: 10px;
+        top: 1px;
+    }
+
+    @keyframes snow1 {
+        from {top: 1px }
+        to {top: 520px}
+    }
+
+
+    .snow_flake2 {
+        animation: snow2 14s 1 linear;
+        top: 13px;
+        left: 54px;
+    }
+
+    @keyframes snow2 {
+        from {top: 13px }
+        to {top: 520px}
+    }
+
+    .snow_flake3 {
+        animation: snow3 18s 1 linear;
+        left: 100px;
+        top: 71px;
+    }
+
+    @keyframes snow3 {
+        from {top: 71px }
+        to {top: 520px}
+    }
+
+    .snow_flake4 {
+        animation: snow4 22s 1 linear;
+        left: 138px;
+        top: 27px;
+    }
+
+    @keyframes snow4 {
+        from {top: 27px }
+        to {top: 520px}
+    }
+
+    .snow_flake5 {
+        animation: snow5 26s 1 linear;
+        left: 213px;
+        top: 9px;
+    }
+
+    @keyframes snow5 {
+        from {top: 9px }
+        to {top: 520px}
+    }
 
 </style>
 <body>
