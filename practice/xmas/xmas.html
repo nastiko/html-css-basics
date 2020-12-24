@@ -212,10 +212,10 @@
 
     .snow_fly, .snow_fly1, .snow_fly2, .snow_fly3 {
         position: relative;
-        right: 476px;
-        bottom: 503px;
+        right: 499px;
+        bottom: 536px;
         width: 342px;
-        height: 1000px;
+        height: 1100px;
     }
 
     .snow_fly4 {
@@ -223,7 +223,7 @@
         right: 15px;
         top: 2px;
         width: 501px;
-        height: 1000px;
+        height: 1100px;
     }
 
     .snow_flake1, .snow_flake2, .snow_flake3, .snow_flake4, .snow_flake5, .snow_flake6, .snow_flake7, .snow_flake8,
@@ -233,7 +233,7 @@
         top: -10%;
         background-color: #FFFFFF;
         border-radius: 50%;
-        animation-name: snow1, snow-fall;
+        animation-name: snow1, snow-fall, mymove ;
         animation-iteration-count: infinite, infinite;
         animation-play-state: running, running;
     }
@@ -427,8 +427,14 @@
         }
     }
 
+    @keyframes mymove {
+        0% {opacity: 100%}
+        50% {opacity: 70%}
+        100% {opacity: 5%}
+    }
+
     .star {
-        margin: 0 222px;
+        margin: 0 0 -2px 222px;
         position: relative;
         display: block;
         width: 0;
@@ -485,8 +491,24 @@
         }
     }
 
+    button {
+        position: relative;
+        left: 415px;
+        bottom: 255px;
+        z-index: 1;
+        background-color: #ece9e8;
+        border-radius: 22px;
+        border: 1px solid #de9602;
+    }
+
+    .fa-play {
+        position: relative;
+        left: 2px;
+        color: #830e10;
+    }
 
 </style>
+<html>
 <body>
 <div class="position">
     <div class="star"></div>
@@ -624,6 +646,10 @@
         <div class="side-down"></div>
         <div class="side-up"></div>
     </div>
+</div>
+<div>
+    <audio id="player" src="../../music/xmas/2.mp3"></audio>
+    <button onclick="document.getElementById('player').play()"><i class="fa fa-play"></i></button>
 </div>
 <div class="snow_fly">
     <div class="snow_flake1"></div>
