@@ -1,104 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
-		<title>BoxModel</title>
-		<style>
-			body {
-				font-family: "Adamina", monospace;
-				font-size: 18px;
-			}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
+    <title>BoxModel</title>
+    <style>
 
-			p {
-				text-indent: 35px;
-			}
+        html {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-			span {
-				color: white;
-				letter-spacing: 2px;
-				font-size: 22px;
-			}
+        body {
+            font-family: "Adamina", monospace;
+            font-size: 18px;
+            background-color: #f5f5f5;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+        }
 
-			* {
-				max-width: 863px;
-				border-radius: 5px;
-			}
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
 
-			.navbar {
-				background-color: #5ca966;
-				text-align: center;
-				padding: 10px;
-				margin-bottom: 4px;
-			}
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
 
-			.section {
-				overflow: auto;
-				border: 2px solid #463a3a;
-				text-align: center;
-				padding: 5px;
-			}
+        h1 {
+            margin: 2vw;
+        }
 
-			div span{
-				width: 180px;
-				padding: 40px;
-			}
+        p {
+            margin-bottom: 1vw;
+        }
 
-			.box1 {
-				float: left;
-				background-color: #dc4d4d;
-			}
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #FFFFFF;
+        }
 
-			.box2 {
-				float: left;
-				background-color: #fd9a5c;
-				margin-left: 25px;
-			}
+        .example, .wrapper {
+            width: 90%;
+            margin: auto 5%;
+        }
 
-			.box3{
-				float: right;
-				background-color: #e8a2af;
-			}
+        .navbar p, .footer p {
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            letter-spacing: 2px;
+            font-size: 1em;
+            padding: 10px;
+        }
 
-			.footer {
-				background-color: #2795ee;
-				text-align: center;
-				padding: 10px;
-				margin-top: 4px;
-			}
+        .navbar p {
+            background-color: #5ca966;
+            margin-bottom: 0.2vw;
+        }
 
-		</style>
-	</head>
-	<body>
-		<header>
-			<h1>Create of Box Model</h1>
-		</header>
-		<section>
-			<p>I will create this box model which you can see here for example:</p>
-		</section>
-		<div>
-			<img alt="Float" src="../../images/Example/boxModel/box.png"/>
-		</div>
-		<p>This is my create:</p>
-		<nav>
-			<div class="navbar">
-				<span>Navbar</span>
-			</div>
-		</nav>
-		<article>
-			<div class="section">
-				<div>
-					<span class="box1">Section</span>
-					<span class="box2">Section</span>
-					<span class="box3">Section</span>
-				</div>
-			</div>
-		</article>
-		<footer>
-			<div class="footer">
-				<span>Footer</span>
-			</div>
-		</footer>
-	</body>
+        .footer p {
+            background-color: #2795ee;
+            margin-top: 0.2vw;
+        }
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            border: 2px solid #878080;
+            border-radius: 5px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .box1, .box2, .box3 {
+            width: 30.33%;
+            height: 5vw;
+            color: #FFFFFF;
+            letter-spacing: 2px;
+            border-radius: 5px;
+            padding: 1.7vw;
+        }
+
+        .box1 {
+            background-color: #dc4d4d;
+        }
+
+        .box2 {
+            background-color: #fd9a5c;
+        }
+
+        .box3 {
+            background-color: #e8a2af;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Create of Box Model</h1>
+    </header>
+    <section>
+        <p>Here is an example of the Box Model that I found on Google where I decided to practice it:</p>
+    </section>
+    <div>
+        <img class="example" alt="Float" src="../../images/example/boxModel/box.png"/>
+    </div>
+    <p>As a result, I would understand how the Box Model works and what styles I could use to create it.</p>
+    <div class="wrapper">
+        <nav class="navbar">
+            <p>Navbar</p>
+        </nav>
+        <article class="section">
+                    <div class="box1">Section</div>
+                    <div class="box2">Section</div>
+                    <div class="box3">Section</div>
+        </article>
+        <footer>
+            <div class="footer">
+                <p>Footer</p>
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
 </html>

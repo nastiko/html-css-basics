@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS Selectors</title>
+	</head>
+	<style>
+		.page {
+			width: 600px;
+			margin: 0 auto;
+		}
+
+		.synopsis {
+			color: #7E8184;
+			font-style: italic;
+		}
+
+		.synopsis em {
+			font-style: normal;
+		}
+
+		.button {
+			color: #FFF;
+			background-color: #5995DA;
+			font-weight: bold;
+			padding: 20px;
+			text-align: center;
+			border: 2px solid #5D6063;
+			border-radius: 5px;
+			width: 200px;
+			margin: 20px auto;
+		}
+
+		.call-to-action {
+			font-style: italic;
+			background-color: #EEB75A;
+		}
+	</style>
+	<body>
+		<div class="page">
+			<h1>CSS Selectors</h1>
+			<p class="synopsis">CSS Selectors allow <em>choosing</em> one of an individual HTML element in an HTML document.
+								That is <strong>super</strong> useful.</p>
+			<p>Classes are very important because they allow choosing
+			   random blocks on the page.</p>
+			<p>We are going to look at an anchors therefore for example,
+				<a href="https://internetingishard.com">Interneting Is Hard</a>, we have to set some styles.</p>
+			<div class="button">Button One</div>
+			<div class="button call-to-action">Button Two</div>
+		</div>
+	</body>
+</html>

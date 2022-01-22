@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Margin</title>
+	</head>
+	<style>
+		h1 {
+			border: 1px solid green;
+			margin-bottom: 50px;
+		}
+
+		p {
+			margin-top: 10px;
+			border: 1px solid red;
+		}
+
+		.wrapper {
+			outline: 1px solid blue;
+			display: flow-root;
+		}
+
+		.box {
+			margin: 50px;
+			color: white;
+		}
+
+		div p {
+			border-style: none;
+			background-color: #8a6d3b;
+			padding: 20px;
+		}
+
+		.empty {
+			border: 1px solid darkolivegreen;
+		}
+	</style>
+
+	<body>
+		<h1>Margin</h1>
+		<p>How doest margin work?</p>
+		<div class="wrapper">
+			<div class="box">
+				<p>Внешний отступ элемента-потомка схлопывается по вертикали с любым отступом родительского и оказывается за пределами родительского элемента.</p>
+			</div>
+			<div class="box">
+				<p>Item 1</p>
+			</div>
+			<div class="empty">
+			</div>
+			<div class="box">
+				<p>Item 2</p>
+			</div>
+			<div class="box">
+				<p>Внешний отступ элемента-потомка схлопывается по вертикали с любым отступом родительского и оказывается за пределами родительского элемента.</p>
+			</div>
+		</div>
+	</body>
+</html>
