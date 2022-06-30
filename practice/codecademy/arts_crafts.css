@@ -1,0 +1,31 @@
+.title-article {
+    background-image: url("../../images/example/codecademy/pattern.webp");
+    font-family: Helvetica, Serif, serif;
+    font-size: 100px;
+    font-weight: bold;
+    color: khaki;
+    text-align: center;
+}
+
+.title-department {
+    font-family: Helvetica, Serif, serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    background-color: MediumSpringGreen;
+}
+
+.types-craft {
+    font-size: 24px;
+}
+
+.text-description {
+    font-size: 18px;
+}
+
+.extra-info {
+    font-family: Helvetica, Serif, serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: blue;
+}
