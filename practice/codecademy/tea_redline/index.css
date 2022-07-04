@@ -1,0 +1,15 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 22px;
+    color: seashell;
+    background-color: #000000;
+    opacity: 0.9;
+}
+
+header .logo {
+    background-image: url("resources/img-tea-cozy-logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50px;
+}
