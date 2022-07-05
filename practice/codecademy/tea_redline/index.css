@@ -13,3 +13,7 @@ header .logo {
     background-size: contain;
     height: 50px;
 }
+
+.logo {
+    color: #0f3500;
+}
