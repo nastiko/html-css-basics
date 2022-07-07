@@ -1,10 +1,27 @@
 html {
     box-sizing: border-box;
+}
+
+body {
     font-family: 'Helvetica', sans-serif;
     font-size: 22px;
     color: seashell;
     background-color: #000000;
     opacity: 0.9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 68px;
+    border-bottom: 1px solid seashell;
+    width: 100%;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 header .logo {
@@ -12,10 +29,45 @@ header .logo {
     background-repeat: no-repeat;
     background-size: contain;
     height: 50px;
+    width: 100%;
+    opacity: 0.6;
+    margin-left: 10px;
 }
 
-.logo {
-    color: #0f3500;
-    background-color: #00d2ff;
-    font-family: "Adamina", monospace;
+.navbar {
+    flex-shrink: 0;
+    text-decoration: underline;
+    opacity: 0.6;
+    margin: 0 10px 0 0;
+}
+
+.navbar .navbar-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+    margin: 0 10px 0 0;
+    padding-top: 5px;
+}
+
+.bg-img {
+    background-image: url("resources/img-mission-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 700px;
+}
+
+.highlight-liner {
+    background-color: #000000;
+    position: relative;
+    top: 38%;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.highlight-liner .text-style {
+    margin: 1rem;
 }
