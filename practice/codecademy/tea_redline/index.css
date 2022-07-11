@@ -22,6 +22,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1000;
 }
 
 header .logo {
@@ -52,6 +53,11 @@ header .logo {
     padding-top: 5px;
 }
 
+main {
+    margin: 0 auto;
+    width: 1200px;
+}
+
 .bg-img {
     background-image: url("resources/img-mission-background.jpg");
     background-repeat: no-repeat;
@@ -70,4 +76,37 @@ header .logo {
 
 .highlight-liner .text-style {
     margin: 1rem;
+}
+
+.img-styles {
+    width: 300px;
+    height: 200px;
+}
+
+.title-text, .under-title {
+    text-align: center;
+}
+
+.wrap-container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.wrap-imgs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.title-img {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.bg-img_tea {
+    background-image: url("resources/img-locations-background.webp");
+    background-repeat: no-repeat;
+    background-position: center;
 }
