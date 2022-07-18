@@ -298,10 +298,19 @@ header .logo {
 }
 
 @media screen and (max-width: 970px ) {
-    header .logo, nav {
+    header .logo, .desktop-device {
         display: none;
     }
     .mobile-device {
         display: flex;
+    }
+    .navbar-mobile_device {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    .first-wrap {
+        flex-direction: column;
     }
 }
