@@ -8,7 +8,7 @@ body {
     padding: 0;
 }
 
-header {
+.desktop-device {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,7 +21,7 @@ header {
     display: none;
 }
 
-header .logo {
+.logo {
     display: flex;
     align-items: center;
 }
@@ -298,17 +298,41 @@ header .logo {
 }
 
 @media screen and (max-width: 970px ) {
-    header .logo, .desktop-device {
+    .desktop-device {
         display: none;
     }
     .mobile-device {
         display: flex;
+        align-items: center;
+        height: 64px;
+    }
+    .nav-width {
+        width: 100%;
     }
     .navbar-mobile_device {
         list-style: none;
         display: flex;
         align-items: center;
+        justify-content: space-evenly;
+        padding: 0;
         margin: 0;
+    }
+    .ic-logo, .ic-campus, .ic-online, .ic-login {
+        background-repeat: no-repeat;
+        width: 50px;
+        height: 50px;
+    }
+    .ic-logo {
+        background-image: url("images/ic-logo.svg");
+    }
+    .ic-campus {
+        background-image: url("images/ic-on-campus.svg");
+    }
+    .ic-online {
+        background-image: url("images/ic-online.svg");
+    }
+    .ic-login {
+        background-image: url("images/ic-login.svg");
     }
     .first-wrap {
         flex-direction: column;
