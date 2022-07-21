@@ -296,7 +296,7 @@ body {
 }
 
 @media screen and (max-width: 970px ) {
-    .desktop-device, .img-first_wrap, .desktop-img {
+    .desktop-device, .hide-block .desktop-img {
         display: none;
     }
     .mobile-device {
