@@ -1,0 +1,10 @@
+:root {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/*icons*/
+.icon-download {
+    background-image: url("img/download.svg");
+}
