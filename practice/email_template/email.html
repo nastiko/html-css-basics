@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>HTML email</title>
+</head>
+<style>
+
+    html {
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+    body {
+        background-color: #e8e8e8;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .wrapper {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container_1 {
+        height: 395px;
+    }
+
+    .header {
+        background-image: url(images_email/abstract.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 360px;
+    }
+
+    .logo {
+        background-image: url("images_email/logo.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 0;
+        position: relative;
+        bottom: 10px;
+        height: 45px;
+        border-bottom: 1px solid #d70080;
+        margin: 0 3vw;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 20px;
+        list-style-type: none;
+        margin-top: 1rem;
+    }
+
+    .item-style {
+        text-decoration: none;
+        font-family: 'Fira Sans',sans-serif;
+        font-size: 12px;
+    }
+
+    a:link, a:visited {
+        color: #8b7d7d;
+    }
+
+    a:hover, a:active {
+        color: #d70080;
+    }
+
+    .container_2 {
+        overflow: auto;
+    }
+
+    h2 {
+        font-family: 'Fira Sans',sans-serif;
+        font-size: 19px;
+    }
+
+    h2:first-child {
+        margin-top: 5%;
+    }
+
+    .img_training, .img_events, .img_templates {
+        background-size: cover;
+        height: 120px;
+        min-width: 120px;
+        border-radius: 10vw;
+        float: left;
+        margin: 20px;
+        box-shadow: 0 6px 22px grey;
+    }
+
+    .img_training {
+        background-image: url("images_email/courses.png");
+    }
+
+    .img_events {
+        background-image: url("images_email/events.png");
+    }
+
+    .img_templates {
+        background-image: url("images_email/templates.png");
+    }
+
+    .img_float_1 {
+        margin: 0 auto;
+        width: 92%;
+    }
+
+    p {
+        font-family: 'Fira Sans',sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+        margin-block-start: 1em;
+    }
+
+    .img_insightful, .img_marketplace, .img_leads {
+        background-size: cover;
+        height: 120px;
+        min-width: 120px;
+        border-radius: 10vw;
+        float: right;
+        margin: 20px;
+        box-shadow: 0 6px 22px grey;
+    }
+
+    .img_insightful {
+        background-image: url("images_email/insights.png");
+    }
+
+    .img_marketplace {
+        background-image: url("images_email/marketplace.png");
+    }
+
+    .img_leads {
+        background-image: url("images_email/leads.png");
+    }
+
+    .img_float_2 h2 {
+        text-align: end;
+        padding-left: 5%;
+    }
+
+    .img_float_2 p {
+        padding-left: 5%;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    .icons {
+        text-align: center;
+        border-top: 1px solid #d70080;
+        margin: 0.3vw 3vw;
+        padding-top: 0.5vw;
+    }
+
+    .policy {
+        text-align: center;
+        height: 3vh;
+    }
+
+    .text_decor {
+        text-decoration: none;
+        font-family: 'Fira Sans',sans-serif;
+        font-size: 12px;
+        color: #8b7d7d;
+        margin: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .img_insightful, .img_marketplace, .img_leads, .img_training, .img_events, .img_templates {
+            height: 16vh;
+            min-width: 3vw;
+            position: relative;
+            top: -2vw;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .logo {
+            bottom: 20px;
+        }
+        .container_1 {
+            height: 380px;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        .container_1 {
+            height: 280px;
+        }
+        .header {
+            height: 255px;
+        }
+        .text_decor {
+            font-size: 8px;
+        }
+    }
+</style>
+<body>
+<div class="wrapper">
+    <header class="container_1">
+        <div class="header"></div>
+        <div class="logo"></div>
+    </header>
+    <nav>
+        <ul class="navbar">
+            <li><a class="item-style" href="#">Dashboard</a></li>
+            <li><a class="item-style" href="#">About</a></li>
+            <li><a class="item-style" href="#">Contact</a></li>
+            <li><a class="item-style" href="#">Log in</a></li>
+        </ul>
+    </nav>
+    <div class="container_2">
+        <div>
+            <div class="img_training"></div>
+            <div class="img_float_1"><h2>Lorem Ipsum</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            </div>
+        </div>
+        <div>
+            <div class="img_insightful"></div>
+            <div class="img_float_2"><h2>Lorem Ipsum</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            </div>
+        </div>
+        <div>
+            <div class="img_events"></div>
+            <div class="img_float_1"><h2>Lorem Ipsum</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            </div>
+        </div>
+        <div>
+            <div class="img_marketplace"></div>
+            <div class="img_float_2"><h2>Lorem Ipsum</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            </div>
+        </div>
+        <div>
+            <div class="img_templates"></div>
+            <div class="img_float_1"><h2>Lorem Ipsum</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            </div>
+        </div>
+        <div>
+            <div class="img_leads"></div>
+            <div class="img_float_2"><h2>Lorem Ipsum</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            </div>
+        </div>
+    </div>
+    <div class="icons">
+        <span><a href="#"><i style="font-size: 17px; color: #8b7d7d; width: 35px; " class="fa fa-instagram"></i></a></span>
+        <span><a href="#"><i style="font-size: 17px; color: #8b7d7d; width: 35px; " class="fa fa-linkedin"></i></a></span>
+    </div>
+    <div class="policy">
+        <span><a class="text_decor" href="#">Privacy Policy</a></span>
+        <span><a class="text_decor" href="#">Terms and Conditions</a></span>
+        <span><a class="text_decor" href="#">FAQs</a></span>
+        <span><a class="text_decor" href="#">Unsubscribe from reminder emails</a></span>
+    </div>
+</div>
+</body>
+</html>
