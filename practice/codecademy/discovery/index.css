@@ -40,9 +40,37 @@ section .subtitle-info {
     margin-top: 2rem;
 }
 
+.wrap-img {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.img-style {
+    width: 100%;
+}
+
 footer .style-footer {
     font-size: 16px;
     color: gray;
     text-align: right;
     margin: 4rem 2rem;
+}
+
+@media screen and (max-width: 920px){
+    header .title-info, section .subtitle-info {
+        font-size: 30px;
+        margin: 20px
+    }
+    .fs-info {
+        font-size: 16px;
+        margin: 20px
+    }
+    .phone-img {
+        width: 50px;
+        height: 80px;
+    }
+    .wrap-img {
+        width: 100%;
+        margin: 0 auto;
+    }
 }
