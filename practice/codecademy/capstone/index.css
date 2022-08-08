@@ -286,6 +286,12 @@ body {
 }
 
 @media screen and (max-width: 970px ) {
+    .desktop-device, .desktop-img, .desktop-container, .grid-container, .img-first_wrap.hide-block,
+    .hr-first_line, .hr-second_line,
+    .video-subtitle, .video-type_course, .fourth-block_wrap,
+    .footer-list_style {
+        display: none;
+    }
     .mobile-device {
         display: flex;
         align-items: center;
