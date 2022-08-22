@@ -1,0 +1,6 @@
+@mixin gap($gap){
+  -webkit-gap: $gap;
+  -moz-gap: $gap;
+  -ms-gap: $gap;
+  gap: $gap;
+}
