@@ -1,6 +1,27 @@
+@for $j from 1 through 6 {
+  .text-#{$j} {
+    font-size: 16px *$j;
+  }
+}
+
 @mixin gap($gap){
   -webkit-gap: $gap;
   -moz-gap: $gap;
   -ms-gap: $gap;
   gap: $gap;
+}
+
+@mixin font-weight ($weight) {
+  @if $weight == light {
+    font-weight: 400;
+  }
+  @else if $weight == medium {
+    font-weight: 500;
+  }
+  @else if $weight == heavy {
+    font-weight: 600;
+  }
+  @else {
+    font-weight: normal;
+  }
 }

@@ -7,62 +7,180 @@ html {
   font-family: sans-serif;
 }
 
+body {
+  font-family: $font-lato;
+}
+
 .mobile-device {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid $color-placebo;
-    .logo {
-      background: url("../img/logo.jpg") no-repeat center;
-      background-size: contain;
-      width: 150px;
-      height: 70px;
+
+  .logo {
+    background: url("../img/logo.jpg") no-repeat center;
+    background-size: contain;
+    width: 150px;
+    height: 70px;
+  }
+
+  .style-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .categories {
+    .gap-list_categories {
+      @extend .style-list;
+      @include gap(50px);
     }
-    .style-list {
-      display: flex;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+  }
+
+  .icons {
+    .gap-list_icons {
+      @extend .style-list;
+      @include gap(20px);
     }
-    .categories {
-      .gap-list_categories {
-        @extend .style-list;
-        @include gap(50px);
-      }
+
+    .style-icon {
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
     }
-    .icons {
-      .gap-list_icons {
-        @extend .style-list;
-        @include gap(20px);
-      }
-      .style-icon {
-        width: 20px;
-        height: 20px;
-        background-repeat: no-repeat;
-      }
-      .icon-person {
-        background-image: url("../img/person.svg");
-        @extend .style-icon;
-      }
-      .icon-like {
-        background-image: url("../img/like.svg");
-        @extend .style-icon;
-      }
-      .icon-bag {
-        background-image: url("../img/bag.svg");
-        @extend .style-icon;
-          .amount-item {
-            font-size: 11px;
-            background-color: $color-black;
-            color: $color-white;
-            border-radius: 50%;
-            position: relative;
-            top: -13px;
-            left: 18px;
-            padding: 0 5px;
-          }
+
+    .icon-person {
+      background-image: url("../img/person.svg");
+      @extend .style-icon;
+    }
+
+    .icon-like {
+      background-image: url("../img/like.svg");
+      @extend .style-icon;
+    }
+
+    .icon-bag {
+      background-image: url("../img/bag.svg");
+      @extend .style-icon;
+
+      .amount-item {
+        font-size: 11px;
+        background-color: $color-black;
+        color: $color-white;
+        border-radius: 50%;
+        position: relative;
+        top: -13px;
+        left: 18px;
+        padding: 0 5px;
       }
     }
   }
+}
+
+.face-container {
+  .slide-style {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 780px;
+    position: relative;
+  }
+
+  .main-icons {
+    width: 45px;
+    height: 45px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+  }
+
+  button {
+    background-color: transparent;
+    color: $color-white;
+    transition: ease all 0.35s;
+
+    &:hover {
+      background-color: $color-sand;
+      border-color: $color-sand !important;
+      color: $color-white;
+    }
+  }
+
+
+  .slide-first {
+    background-image: url("../img/slider_1.webp");
+    position: relative;
+    text-align: center;
+    @extend .slide-style;
+
+    .inside-text {
+      display: flex;
+      align-items: center;
+      font-family: $font-cormorant;
+      color: $color-white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 100px;
+
+      .bg-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid $color-white;
+
+        &:hover {
+          background-color: $color-sand;
+          border-color: $color-sand !important;
+          color: $color-white;
+          cursor: pointer;
+        }
+      }
+
+      .large-header {
+        line-height: 1.2;
+        @include font-weight(medium)
+      }
+
+      .explore-button {
+        letter-spacing: 5px;
+        line-height: 50px;
+        text-transform: uppercase;
+        border: 2px solid $color-white;
+        padding: 0 22px;
+      }
+
+      .icon-arrow {
+        background-image: url("../img/right_arrow.svg");
+        background-repeat: no-repeat;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .arrow-left_circle {
+        background-image: url("../img/left_arrow.svg");
+        width: 20px;
+        height: 20px;
+        @extend .main-icons;
+      }
+
+      .arrow-right_circle {
+        background-image: url("../img/right_arrow.svg");
+        width: 20px;
+        height: 20px;
+        @extend .main-icons;
+      }
+    }
+  }
+}
+
+
 
 
