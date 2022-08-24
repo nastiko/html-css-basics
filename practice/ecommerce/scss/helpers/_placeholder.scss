@@ -1,3 +1,5 @@
+@import 'variables';
+
 @for $j from 1 through 6 {
   .text-#{$j} {
     font-size: 16px *$j;
@@ -23,5 +25,17 @@
   }
   @else {
     font-weight: normal;
+  }
+}
+
+%button {
+  background-color: transparent;
+  color: $color-white;
+  transition: ease all 0.35s;
+
+  &:hover {
+    background-color: $color-sand;
+    border-color: $color-sand !important;
+    color: $color-white;
   }
 }

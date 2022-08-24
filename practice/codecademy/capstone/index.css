@@ -75,7 +75,7 @@ body {
     margin: 32px 24px;
 }
 
-.img-width, .wrap-container, .img-grid {
+.img-width, .flex-container, .img-grid {
     width: 100%;
 }
 
