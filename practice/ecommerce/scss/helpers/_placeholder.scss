@@ -39,3 +39,29 @@
     color: $color-white;
   }
 }
+
+%link {
+  font-family: $font-lato;
+  font-size: 14px;
+  @include font-weight(light);
+  text-decoration: none;
+  color: $color-black;
+}
+
+%wrap-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+%flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+}
+
+%col-banner {
+  max-width: 20%;
+  flex: 0 0 20%;
+  padding: 0 5px;
+}

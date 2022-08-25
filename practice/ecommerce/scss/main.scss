@@ -171,7 +171,7 @@ body {
   }
 }
 
-//explore container
+//main styles for all blocks
 .style-text {
   text-align: center;
   text-transform: uppercase;
@@ -185,86 +185,137 @@ body {
   height: 376px;
 }
 
+.width-container {
+  @extend %wrap-container;
+}
+
+.flex-container {
+  @extend %flex-container;
+
+  .col-banner {
+    @extend %col-banner;
+  }
+}
+
+
+//explore container
 .bg-section_explore {
   background-image: url("../img/bg_line.webp");
   padding-bottom: 100px;
 
-  .wrap-container {
-    max-width: 1440px;
-    margin: 0 auto;
+  .highlight-text {
+    font-size: 14px;
+    @extend .style-text;
+  }
 
-    .highlight-text {
-      font-size: 14px;
-      @extend .style-text;
-    }
+  .header-style {
+    font-family: $font-cormorant;
+    letter-spacing: 5px;
+    @extend .style-text;
+    filter: unset;
+    padding-bottom: 30px;
+  }
 
-    .header-style {
-      font-family: $font-cormorant;
-      letter-spacing: 5px;
-      @extend .style-text;
-      filter: unset;
-      padding-bottom: 30px;
-    }
+  .col-banner {
+    @extend %col-banner;
 
-    .flex-container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin: 0 -5px;
+    .button-banners {
+      @extend %button;
+      width: 138px;
+      background-color: $color-white;
+      line-height: 38px;
+      text-align: center;
+      border: none;
+      position: relative;
+      bottom: 20px;
+      padding: 0 15px;
+      margin: 0 auto;
 
-      .col-banner {
-        max-width: 20%;
-        flex: 0 0 20%;
-        padding: 0 5px;
-        .button-banners {
-          @extend %button;
-          width: 138px;
-          background-color: $color-white;
-          line-height: 38px;
-          text-align: center;
-          border: none;
-          position: relative;
-          bottom: 20px;
-          padding: 0 15px;
-          margin: 0 auto;
-
-          a {
-            font-family: $font-lato;
-            font-size: 14px;
-            @include font-weight(light);
-            text-decoration: none;
-            color: $color-black;
-          }
-        }
-
-        .bracelets {
-          background-image: url("../img/banner_1.webp");
-          @extend .imgs-block;
-        }
-
-        .charms {
-          background-image: url("../img/banner_2.webp");
-          @extend .imgs-block;
-        }
-
-        .earrings {
-          background-image: url("../img/banner_3.webp");
-          @extend .imgs-block;
-        }
-
-        .necklaces {
-          background-image: url("../img/banner_4.webp");
-          @extend .imgs-block;
-        }
-
-        .rings {
-          background-image: url("../img/banner_5.webp");
-          @extend .imgs-block;
-        }
+      a {
+        @extend %link;
       }
     }
   }
+
+  .bracelets {
+    background-image: url("../img/banner_1.webp");
+    @extend .imgs-block;
+  }
+
+  .charms {
+    background-image: url("../img/banner_2.webp");
+    @extend .imgs-block;
+  }
+
+  .earrings {
+    background-image: url("../img/banner_3.webp");
+    @extend .imgs-block;
+  }
+
+  .necklaces {
+    background-image: url("../img/banner_4.webp");
+    @extend .imgs-block;
+  }
+
+  .rings {
+    background-image: url("../img/banner_5.webp");
+    @extend .imgs-block;
+  }
 }
+
+
+// two name's container
+.border-style {
+  padding-bottom: 75px;
+  border-bottom: 1px solid $color-placebo;
+  .img-magic {
+    background-image: url("../img/banner_6.webp");
+    @extend .imgs-block;
+  }
+
+  .img-earrings {
+    background-image: url("../img/banner_7.webp");
+    @extend .imgs-block;
+  }
+
+  .banner-wrap_info {
+    max-width: 470px;
+    text-align: center;
+    margin: 0 auto;
+
+    .title-banner {
+      font-family: $font-cormorant;
+      font-size: 24px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      margin-top: 0;
+    }
+
+    .info-banner {
+      font-size: 14px;
+      color: $color-lunar;
+      margin-bottom: 20px;
+    }
+  }
+
+  .col-lg-6 {
+    .button-banners {
+      @extend %button;
+      font-size: 11px;
+      background-color: transparent;
+      line-height: 35px;
+      text-align: center;
+      text-transform: uppercase;
+      border: 1px solid $color-black;
+      padding: 10px 25px;
+      margin: 0 auto;
+      @extend %link;
+    }
+  }
+}
+
+
+
 
 
 
