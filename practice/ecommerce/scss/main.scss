@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Lato:wght@300;400;700&display=swap');
+@import 'commonstyle';
 @import 'helpers/variables';
 @import 'helpers/placeholder';
+@import 'header';
 
 html {
   box-sizing: border-box;
@@ -9,74 +11,6 @@ html {
 
 body {
   font-family: $font-lato;
-}
-
-// header
-.mobile-device {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid $color-placebo;
-
-  .logo {
-    background: url("../img/logo.jpg") no-repeat center;
-    background-size: contain;
-    width: 150px;
-    height: 70px;
-  }
-
-  .style-list {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .categories {
-    .gap-list_categories {
-      @extend .style-list;
-      @include gap(50px);
-    }
-  }
-
-  .icons {
-    .gap-list_icons {
-      @extend .style-list;
-      @include gap(20px);
-    }
-
-    .style-icon {
-      width: 20px;
-      height: 20px;
-      background-repeat: no-repeat;
-    }
-
-    .icon-person {
-      background-image: url("../img/person.svg");
-      @extend .style-icon;
-    }
-
-    .icon-like {
-      background-image: url("../img/like.svg");
-      @extend .style-icon;
-    }
-
-    .icon-bag {
-      background-image: url("../img/bag.svg");
-      @extend .style-icon;
-
-      .amount-item {
-        font-size: 11px;
-        background-color: $color-black;
-        color: $color-white;
-        border-radius: 50%;
-        position: relative;
-        top: -13px;
-        left: 18px;
-        padding: 0 5px;
-      }
-    }
-  }
 }
 
 // slider container
@@ -171,42 +105,10 @@ body {
   }
 }
 
-//main styles for all blocks
-.style-text {
-  text-align: center;
-  text-transform: uppercase;
-  @include font-weight(medium);
-}
-
-.imgs-block {
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 376px;
-}
-
-.width-container {
-  @extend %wrap-container;
-}
-
-.flex-container {
-  @extend %flex-container;
-
-  .col-banner {
-    @extend %col-banner;
-  }
-}
-
-
 //explore container
 .bg-section_explore {
   background-image: url("../img/bg_line.webp");
   padding-bottom: 100px;
-
-  .highlight-text {
-    font-size: 14px;
-    @extend .style-text;
-  }
 
   .header-style {
     font-family: $font-cormorant;
@@ -268,6 +170,7 @@ body {
 .border-style {
   padding-bottom: 75px;
   border-bottom: 1px solid $color-placebo;
+
   .img-magic {
     background-image: url("../img/banner_6.webp");
     @extend .imgs-block;
@@ -314,6 +217,98 @@ body {
   }
 }
 
+//week's collection
+.under-header_style {
+  font-family: $font-cormorant;
+  font-size: 2.250rem !important;
+  font-weight: 500;
+  text-transform: none;
+  padding-bottom: 30px;
+  @extend .style-text;
+}
+
+.img-weeks {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 330px;
+}
+
+.col-banner_carousel {
+  @extend %col-banner_carousel;
+
+  .flex-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .button-banners {
+      @extend %button;
+      width: 45px;
+      height: 45px;
+      background-color: $color-white;
+      line-height: 45px;
+      text-align: center;
+      border: none;
+      position: relative;
+      top: 265px;
+      padding: 0 15px;
+
+      .icon-bag {
+        background-image: url("../img/bag.svg");
+        @extend .style-icon;
+      }
+
+      .icon-like {
+        background-image: url("../img/like.svg");
+
+        a {
+          @extend %link;
+        }
+      }
+    }
+  }
+
+
+  .flex-stars {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+
+    .icon-star {
+      background-image: url("../img/star.svg");
+      background-repeat: no-repeat;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .product-price {
+    @extend .style-text;
+    color: $color-sand;
+  }
+}
+
+.earrings-1 {
+  background-image: url("../img/earrings_1.webp");
+  @extend .img-weeks;
+}
+
+.earrings-2 {
+  background-image: url("../img/earrings_2.webp");
+  @extend .img-weeks;
+}
+
+.rings-1 {
+  background-image: url("../img/rings_2.webp");
+  @extend .img-weeks;
+}
+
+.rings-2 {
+  background-image: url("../img/rings_yellow.webp");
+  @extend .img-weeks;
+}
 
 
 

@@ -1,0 +1,69 @@
+@import 'helpers/variables';
+@import 'helpers/placeholder';
+@import 'commonstyle';
+
+.mobile-device {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $color-placebo;
+
+  .logo {
+    background: url("../img/logo.jpg") no-repeat center;
+    background-size: contain;
+    width: 150px;
+    height: 70px;
+  }
+
+  .style-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .categories {
+    .gap-list_categories {
+      @extend .style-list;
+      @include gap(50px);
+    }
+  }
+
+  .gap-list_icons {
+    @extend .style-list;
+    @include gap(20px);
+  }
+
+  .style-icon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+  }
+
+  .icon-person {
+    background-image: url("../img/person.svg");
+    @extend .style-icon;
+  }
+
+  .icon-like {
+    background-image: url("../img/like.svg");
+    color: black;
+    @extend .style-icon;
+  }
+
+  .icon-bag {
+    background-image: url("../img/bag.svg");
+    @extend .style-icon;
+
+    .amount-item {
+      font-size: 11px;
+      background-color: $color-black;
+      color: $color-white;
+      border-radius: 50%;
+      position: relative;
+      top: -13px;
+      left: 18px;
+      padding: 0 5px;
+    }
+  }
+}

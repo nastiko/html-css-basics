@@ -1,0 +1,49 @@
+@import 'helpers/variables';
+@import 'helpers/placeholder';
+
+//main styles for all blocks
+.style-text {
+  text-align: center;
+  text-transform: uppercase;
+  @include font-weight(medium);
+}
+
+.product-name {
+  @extend .style-text;
+  margin: 0 0 3px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  line-height: 16px;
+
+  a {
+    font-size: 12px;
+    @extend %link;
+    &:hover {
+      color: $color-sand;
+    }
+  }
+}
+
+.imgs-block {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 376px;
+}
+
+.width-container {
+  @extend %wrap-container;
+}
+
+.flex-container {
+  @extend %flex-container;
+
+  .col-banner {
+    @extend %col-banner;
+  }
+}
+
+.highlight-text {
+  font-size: 14px;
+  @extend .style-text;
+}
