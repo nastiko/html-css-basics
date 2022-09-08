@@ -34,12 +34,6 @@
     @include gap(20px);
   }
 
-  .style-icon {
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-  }
-
   .icon-person {
     background-image: url("../img/person.svg");
     @extend .style-icon;

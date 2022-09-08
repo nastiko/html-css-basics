@@ -238,33 +238,38 @@ body {
 .col-banner_carousel {
   @extend %col-banner_carousel;
 
-  .flex-links {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  .hover-element {
+    /*display: none;*/
 
-    .button-banners {
-      @extend %button;
-      width: 45px;
-      height: 45px;
-      background-color: $color-white;
-      line-height: 45px;
-      text-align: center;
-      border: none;
-      position: relative;
-      top: 265px;
-      padding: 0 15px;
+    .flex-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
 
-      .icon-bag {
-        background-image: url("../img/bag.svg");
-        @extend .style-icon;
-      }
+      .button-banners {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: #ffffff;
+        line-height: 45px;
+        text-align: center;
+        border: none;
+        position: relative;
+        top: 265px;
+        padding: 0 10px;
+        @extend %button;
+        @extend %link;
 
-      .icon-like {
-        background-image: url("../img/like.svg");
+        .icon-bag {
+          background-image: url("../img/bag.svg");
+          @extend .style-icon;
+        }
 
-        a {
-          @extend %link;
+        .icon-like {
+          background-image: url("../img/like.svg");
+          @extend .style-icon;
         }
       }
     }
