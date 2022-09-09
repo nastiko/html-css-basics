@@ -1,0 +1,59 @@
+//categories' imgs
+.bracelets {
+  background-image: url("../img/banner_1.webp");
+  @extend .imgs-block;
+}
+
+.charms {
+  background-image: url("../img/banner_2.webp");
+  @extend .imgs-block;
+}
+
+.earrings {
+  background-image: url("../img/banner_3.webp");
+  @extend .imgs-block;
+}
+
+.necklaces {
+  background-image: url("../img/banner_4.webp");
+  @extend .imgs-block;
+}
+
+.rings {
+  background-image: url("../img/banner_5.webp");
+  @extend .imgs-block;
+}
+
+
+//individual's imgs
+.img-magic {
+  background-image: url("../img/banner_6.webp");
+  @extend .imgs-block;
+}
+
+.img-earrings {
+  background-image: url("../img/banner_7.webp");
+  @extend .imgs-block;
+}
+
+
+//weeks' imgs
+.earrings-1 {
+  background-image: url("../img/earrings_1.webp");
+  @extend .img-weeks;
+}
+
+.earrings-2 {
+  background-image: url("../img/earrings_2.webp");
+  @extend .img-weeks;
+}
+
+.rings-1 {
+  background-image: url("../img/rings_2.webp");
+  @extend .img-weeks;
+}
+
+.rings-2 {
+  background-image: url("../img/rings_yellow.webp");
+  @extend .img-weeks;
+}

@@ -48,8 +48,26 @@
   @extend .style-text;
 }
 
+.large-header {
+  line-height: 1.2;
+  @include font-weight(medium)
+}
+
 .style-icon {
   width: 20px;
   height: 20px;
   background-repeat: no-repeat;
+}
+
+.button-banners {
+  font-size: 11px;
+  background-color: transparent;
+  line-height: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid $color-black;
+  cursor: pointer;
+  padding: 10px 25px;
+  margin: 0 auto;
+  @extend %link;
 }

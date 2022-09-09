@@ -3,6 +3,7 @@
 @import 'helpers/variables';
 @import 'helpers/placeholder';
 @import 'header';
+@import "imgs";
 
 html {
   box-sizing: border-box;
@@ -14,93 +15,86 @@ body {
 }
 
 // slider container
-.face-container {
-  .slide-style {
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 780px;
-    position: relative;
-  }
+.slide-style {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 780px;
+  position: relative;
+}
 
-  .main-icons {
-    width: 45px;
-    height: 45px;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    border: none;
-  }
+.main-icons {
+  width: 45px;
+  height: 45px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+}
 
-  .slide-first {
-    background-image: url("../img/slider_1.webp");
-    position: relative;
-    text-align: center;
-    @extend .slide-style;
+.slide-first {
+  background-image: url("../img/slider_1.webp");
+  position: relative;
+  text-align: center;
+  @extend .slide-style;
 
-    .inside-text {
+  .inside-text {
+    display: flex;
+    align-items: center;
+    font-family: $font-cormorant;
+    color: $color-white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 100px;
+
+    .bg-icon {
       display: flex;
       align-items: center;
-      font-family: $font-cormorant;
-      color: $color-white;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 0 100px;
+      justify-content: center;
+      background-color: transparent;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid $color-white;
 
-      .bg-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: transparent;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 1px solid $color-white;
-
-        &:hover {
-          background-color: $color-sand;
-          border-color: $color-sand !important;
-          color: $color-white;
-          cursor: pointer;
-        }
+      &:hover {
+        background-color: $color-sand;
+        border-color: $color-sand !important;
+        color: $color-white;
+        cursor: pointer;
       }
+    }
 
-      .large-header {
-        line-height: 1.2;
-        @include font-weight(medium)
-      }
+    .explore-button {
+      letter-spacing: 5px;
+      line-height: 50px;
+      text-transform: uppercase;
+      border: 2px solid $color-white;
+      padding: 0 22px;
+      @extend %button;
+    }
 
-      .explore-button {
-        letter-spacing: 5px;
-        line-height: 50px;
-        text-transform: uppercase;
-        border: 2px solid $color-white;
-        padding: 0 22px;
-        @extend %button;
-      }
+    .icon-arrow {
+      background-image: url("../img/right_arrow.svg");
+      background-repeat: no-repeat;
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      vertical-align: middle;
+    }
 
-      .icon-arrow {
-        background-image: url("../img/right_arrow.svg");
-        background-repeat: no-repeat;
-        width: 25px;
-        height: 25px;
-        display: inline-block;
-        vertical-align: middle;
-      }
+    .arrow-left_circle {
+      background-image: url("../img/left_arrow.svg");
+      width: 20px;
+      height: 20px;
+      @extend .main-icons;
+    }
 
-      .arrow-left_circle {
-        background-image: url("../img/left_arrow.svg");
-        width: 20px;
-        height: 20px;
-        @extend .main-icons;
-      }
-
-      .arrow-right_circle {
-        background-image: url("../img/right_arrow.svg");
-        width: 20px;
-        height: 20px;
-        @extend .main-icons;
-      }
+    .arrow-right_circle {
+      background-image: url("../img/right_arrow.svg");
+      width: 20px;
+      height: 20px;
+      @extend .main-icons;
     }
   }
 }
@@ -121,47 +115,21 @@ body {
   .col-banner {
     @extend %col-banner;
 
-    .button-banners {
+    .categories-button {
+      @extend .button-banners;
       @extend %button;
       width: 138px;
       background-color: $color-white;
-      line-height: 38px;
-      text-align: center;
+      text-transform: none;
       border: none;
       position: relative;
       bottom: 20px;
       padding: 0 15px;
-      margin: 0 auto;
 
-      a {
+      .link-style {
         @extend %link;
       }
     }
-  }
-
-  .bracelets {
-    background-image: url("../img/banner_1.webp");
-    @extend .imgs-block;
-  }
-
-  .charms {
-    background-image: url("../img/banner_2.webp");
-    @extend .imgs-block;
-  }
-
-  .earrings {
-    background-image: url("../img/banner_3.webp");
-    @extend .imgs-block;
-  }
-
-  .necklaces {
-    background-image: url("../img/banner_4.webp");
-    @extend .imgs-block;
-  }
-
-  .rings {
-    background-image: url("../img/banner_5.webp");
-    @extend .imgs-block;
   }
 }
 
@@ -170,16 +138,6 @@ body {
 .border-style {
   padding-bottom: 75px;
   border-bottom: 1px solid $color-placebo;
-
-  .img-magic {
-    background-image: url("../img/banner_6.webp");
-    @extend .imgs-block;
-  }
-
-  .img-earrings {
-    background-image: url("../img/banner_7.webp");
-    @extend .imgs-block;
-  }
 
   .banner-wrap_info {
     max-width: 470px;
@@ -203,15 +161,8 @@ body {
 
   .col-lg-6 {
     .button-banners {
+      @extend .button-banners;
       @extend %button;
-      font-size: 11px;
-      background-color: transparent;
-      line-height: 35px;
-      text-align: center;
-      text-transform: uppercase;
-      border: 1px solid $color-black;
-      padding: 10px 25px;
-      margin: 0 auto;
       @extend %link;
     }
   }
@@ -246,7 +197,7 @@ body {
       justify-content: center;
       gap: 10px;
 
-      .button-banners {
+      .icon-button {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -258,9 +209,10 @@ body {
         border: none;
         position: relative;
         top: 265px;
+        cursor: pointer;
         padding: 0 10px;
+        margin: 0;
         @extend %button;
-        @extend %link;
 
         .icon-bag {
           background-image: url("../img/bag.svg");
@@ -274,7 +226,6 @@ body {
       }
     }
   }
-
 
   .flex-stars {
     display: flex;
@@ -295,24 +246,55 @@ body {
   }
 }
 
-.earrings-1 {
-  background-image: url("../img/earrings_1.webp");
-  @extend .img-weeks;
+//video section
+.overtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  text-align: center;
+  font-family: $font-cormorant;
+  color: $color-white;
+  z-index: 1000;
+
+  .large-header {
+    color: $color-white;
+  }
+
+  .categories-button {
+    @extend %button;
+    background-color: $color-white;
+    line-height: 35px;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+
+    .link-style {
+      font-size: 11px;
+      padding: 40px;
+      @include font-weight(heavy);
+      @extend %link;
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
 }
 
-.earrings-2 {
-  background-image: url("../img/earrings_2.webp");
-  @extend .img-weeks;
-}
+.video-position {
+  position: relative;
+  top: 0;
+  left: 0;
 
-.rings-1 {
-  background-image: url("../img/rings_2.webp");
-  @extend .img-weeks;
-}
-
-.rings-2 {
-  background-image: url("../img/rings_yellow.webp");
-  @extend .img-weeks;
+  .video-content {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  }
 }
 
 
