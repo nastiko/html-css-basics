@@ -5,7 +5,16 @@
 .style-text {
   text-align: center;
   text-transform: uppercase;
-  @include font-weight(medium);
+  @include font-weight(heavy);
+}
+
+.header-style {
+  font-family: $font-cormorant;
+  font-size: 2.5rem;
+  text-transform: none;
+  @extend .style-text;
+  filter: unset;
+  padding-bottom: 30px;
 }
 
 .product-name {
@@ -45,6 +54,7 @@
 
 .highlight-text {
   font-size: 14px;
+  @include font-weight(medium);
   @extend .style-text;
 }
 

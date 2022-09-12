@@ -48,10 +48,18 @@
   padding: 0 5px;
 }
 
-.style-text, .highlight-text, .product-name {
+.style-text, .highlight-text, .product-name, .header-style {
   text-align: center;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.header-style {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.5rem;
+  text-transform: none;
+  filter: unset;
+  padding-bottom: 30px;
 }
 
 .product-name {
@@ -76,6 +84,7 @@
 
 .highlight-text {
   font-size: 14px;
+  font-weight: 500;
 }
 
 .large-header {
