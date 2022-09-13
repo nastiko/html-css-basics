@@ -1,3 +1,10 @@
+//banners
+.img-rock {
+  background-image: url("../img/banner_8.webp");
+  height: 498px;
+  @extend .imgs-block;
+}
+
 //categories' imgs
 .bracelets {
   background-image: url("../img/banner_1.webp");

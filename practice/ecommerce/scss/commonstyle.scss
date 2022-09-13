@@ -17,6 +17,12 @@
   padding-bottom: 30px;
 }
 
+.info-banner {
+  font-size: 14px;
+  color: $color-lunar;
+  margin-bottom: 20px;
+}
+
 .product-name {
   @extend .style-text;
   margin: 0 0 3px;
@@ -80,4 +86,9 @@
   padding: 10px 25px;
   margin: 0 auto;
   @extend %link;
+}
+
+.border-style {
+  padding-bottom: 75px;
+  border-bottom: 1px solid $color-placebo;
 }

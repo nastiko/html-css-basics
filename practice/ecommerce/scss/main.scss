@@ -127,37 +127,26 @@ body {
 
 
 // two name's container
-.border-style {
-  padding-bottom: 75px;
-  border-bottom: 1px solid $color-placebo;
+.banner-wrap_info {
+  max-width: 470px;
+  text-align: center;
+  margin: 0 auto;
 
-  .banner-wrap_info {
-    max-width: 470px;
-    text-align: center;
-    margin: 0 auto;
-
-    .title-banner {
-      font-family: $font-cormorant;
-      font-size: 24px;
-      @include font-weight(heavy);
-      text-transform: uppercase;
-      margin-bottom: 5px;
-      margin-top: 0;
-    }
-
-    .info-banner {
-      font-size: 14px;
-      color: $color-lunar;
-      margin-bottom: 20px;
-    }
+  .title-banner {
+    font-family: $font-cormorant;
+    font-size: 24px;
+    @include font-weight(heavy);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    margin-top: 0;
   }
+}
 
-  .col-lg-6 {
-    .button-banners {
-      @extend .button-banners;
-      @extend %button;
-      @extend %link;
-    }
+.col-lg-6 {
+  .button-banners {
+    @extend .button-banners;
+    @extend %button;
+    @extend %link;
   }
 }
 
@@ -262,6 +251,7 @@ body {
       padding: 40px;
       @include font-weight(heavy);
       @extend %link;
+
       &:hover {
         color: $color-white;
       }
@@ -314,6 +304,14 @@ body {
   font-size: 13px;
   text-align: center;
   padding: 2px 7px;
+}
+
+//info
+.title-info {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3.125rem;
+  @include font-weight(heavy);
+  margin-top: 40px;
 }
 
 
