@@ -85,3 +85,24 @@
   background-image: url("../img/rings_5.webp");
   @extend .img-weeks;
 }
+
+//articles
+.post-format {
+  background-image: url("../img/banner_12.jpg");
+  background-position: top;
+  height: 280px;
+  @extend .imgs-block;
+}
+
+.post-wedding {
+  background-image: url("../img/banner_10.png");
+  height: 280px;
+  @extend .imgs-block;
+}
+
+.post-gift {
+  background-image: url("../img/banner_11.jpg");
+  background-position: center;
+  height: 280px;
+  @extend .imgs-block;
+}
