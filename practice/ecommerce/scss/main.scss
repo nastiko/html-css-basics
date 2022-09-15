@@ -306,7 +306,7 @@ body {
   padding: 2px 7px;
 }
 
-//info
+//info section
 .title-info {
   font-family: "Cormorant Garamond", serif;
   font-size: 3.125rem;
@@ -314,7 +314,7 @@ body {
   margin-top: 40px;
 }
 
-//articles
+//articles section
 .padding-style {
   padding: 0 15px;
 }
@@ -349,6 +349,7 @@ body {
 
 .font-style {
   font-family: $font-lato;
+
   .name-banner {
     font-size: 12px;
     @include font-weight(medium);
@@ -364,26 +365,48 @@ body {
     line-height: 35px;
     margin-bottom: 8px;
     @extend .product-name;
+
     .link-block {
       font-size: 26px;
       font-family: $font-cormorant;
       @include font-weight(heavy);
     }
   }
-    a {
-      font-size: 14px;
-      color: $color-lunar;
-      text-decoration: underline;
-      @extend %link;
-      &:hover {
-        color: $color-sand;
-      }
-      .extra-info {
-        text-transform: none;
-        letter-spacing: 0;
+
+  a {
+    font-size: 14px;
+    color: $color-lunar;
+    text-decoration: underline;
+    @extend %link;
+
+    .extra-info {
+      text-transform: none;
+      letter-spacing: 0;
     }
   }
 }
+
+//guarantee section
+.bg-section_guarantee {
+  background-image: url("../img/line.webp");
+}
+
+.block-text_style {
+  width: 245px;
+  margin: 20px auto;
+
+  .title-icon {
+    letter-spacing: 3px;
+    @include font-weight(meadium);
+    @extend .highlight-text;
+  }
+
+  .lorem-text {
+    @extend .info-banner;
+    text-align: center;
+  }
+}
+
 
 
 

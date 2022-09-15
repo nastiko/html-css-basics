@@ -6,27 +6,39 @@
   }
 }
 
-@mixin gap($gap){
+@mixin gap($gap) {
   -webkit-gap: $gap;
   -moz-gap: $gap;
   -ms-gap: $gap;
   gap: $gap;
 }
 
-@mixin font-weight ($weight) {
+@mixin font-weight($weight) {
   @if $weight == light {
     font-weight: 400;
-  }
-  @else if $weight == medium {
+  } @else if $weight == medium {
     font-weight: 500;
-  }
-  @else if $weight == heavy {
+  } @else if $weight == heavy {
     font-weight: 600;
-  }
-  @else {
+  } @else {
     font-weight: normal;
   }
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: $color-sand;
+  }
+}
+
 
 %button {
   background-color: transparent;
@@ -70,4 +82,9 @@
   max-width: 25%;
   flex: 0 0 25%;
   padding: 0 15px;
+}
+
+%font-icon {
+  width: 16px;
+  height: 16px;
 }

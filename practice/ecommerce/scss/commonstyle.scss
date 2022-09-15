@@ -33,6 +33,7 @@
   a {
     font-size: 12px;
     @extend %link;
+
     &:hover {
       color: $color-sand;
     }
@@ -73,6 +74,13 @@
   width: 20px;
   height: 20px;
   background-repeat: no-repeat;
+}
+
+.guarantee-icon {
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  margin: 0 auto;
 }
 
 .button-banners {

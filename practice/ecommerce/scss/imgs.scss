@@ -5,7 +5,7 @@
   @extend .imgs-block;
 }
 
-//categories' imgs
+//categories' imgs section
 .bracelets {
   background-image: url("../img/banner_1.webp");
   @extend .imgs-block;
@@ -44,7 +44,7 @@
 }
 
 
-//weeks' imgs
+//weeks' imgs section
 .earrings-1 {
   background-image: url("../img/earrings_1.webp");
   @extend .img-weeks;
@@ -65,7 +65,7 @@
   @extend .img-weeks;
 }
 
-//hot list
+//hot list section
 .earrings-3 {
   background-image: url("../img/earrings_3.webp");
   @extend .img-weeks;
@@ -86,7 +86,7 @@
   @extend .img-weeks;
 }
 
-//articles
+//articles section
 .post-format {
   background-image: url("../img/banner_12.jpg");
   background-position: top;
@@ -105,4 +105,20 @@
   background-position: center;
   height: 280px;
   @extend .imgs-block;
+}
+
+//guarantee section
+.icon-world {
+  background-image: url("../img/world.svg");
+  @extend .guarantee-icon;
+}
+
+.icon-return {
+  background-image: url("../img/return.svg");
+  @extend .guarantee-icon;
+}
+
+.icon-security {
+  background-image: url("../img/security.svg");
+  @extend .guarantee-icon;
 }
