@@ -2,7 +2,7 @@
 @import 'helpers/placeholder';
 @import 'helpers/variables';
 
-
+//first footer
 .option-point {
   margin-bottom: 7px;
 }
@@ -86,11 +86,29 @@
   @extend %font-icon;
 }
 
-.icon-youtube{
+.icon-youtube {
   background-image: url("../img/youtube.svg");
   background-repeat: no-repeat;
   @extend %font-icon;
 }
+
+//second footer
+.flex-footer_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  margin: 0 -5px;
+
+  .img-payment {
+    background-image: url("../img/payment.avif");
+    background-repeat: no-repeat;
+    width: 28%;
+    height: 32px;
+  }
+}
+
+
 
 
 
