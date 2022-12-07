@@ -4,6 +4,7 @@
 @import 'helpers/placeholder';
 @import 'header';
 @import "imgs";
+@import "slider";
 
 html {
   box-sizing: border-box;
@@ -16,87 +17,42 @@ body {
 
 // slider container
 .slide-style {
+  display: flex;
+  aspect-ratio: 16 / 9;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   background-repeat: no-repeat;
   background-size: cover;
   height: 780px;
-  position: relative;
 }
 
 .main-icons {
-  width: 45px;
-  height: 45px;
+  width: 20px;
+  height: 20px;
   background-repeat: no-repeat;
   background-color: transparent;
   border: none;
 }
 
-.slide-first {
-  background-image: url("../img/slider_1.webp");
+.slide-first, .slide-second, .slide-third {
   position: relative;
   text-align: center;
   @extend .slide-style;
+  @extend .inside-text;
+  @extend .slider-img;
+}
 
-  .inside-text {
-    display: flex;
-    align-items: center;
-    font-family: $font-cormorant;
-    color: $color-white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0 100px;
+.slide-first {
+  background-image: url("../img/slider_1.webp");
+}
 
-    .bg-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 1px solid $color-white;
+.slide-second {
+  background-image: url("../img/slider_2.webp");
+}
 
-      &:hover {
-        background-color: $color-sand;
-        border-color: $color-sand !important;
-        color: $color-white;
-        cursor: pointer;
-      }
-    }
-
-    .explore-button {
-      letter-spacing: 5px;
-      line-height: 50px;
-      text-transform: uppercase;
-      border: 2px solid $color-white;
-      padding: 0 22px;
-      @extend %button;
-    }
-
-    .icon-arrow {
-      background-image: url("../img/right_arrow.svg");
-      background-repeat: no-repeat;
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-      vertical-align: middle;
-    }
-
-    .arrow-left_circle {
-      background-image: url("../img/left_arrow.svg");
-      width: 20px;
-      height: 20px;
-      @extend .main-icons;
-    }
-
-    .arrow-right_circle {
-      background-image: url("../img/right_arrow.svg");
-      width: 20px;
-      height: 20px;
-      @extend .main-icons;
-    }
-  }
+.slide-third {
+  background-image: url("../img/slider_3.webp");
 }
 
 //explore container

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Lato:wght@300;400;700&display=swap');
+@import "helpers/variables";
+@import "helpers/placeholder";
+
+.slider-img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.inside-text {
+  display: flex;
+  align-items: center;
+  font-family: $font-cormorant;
+  color: $color-white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 100px;
+
+  .bg-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid $color-white;
+
+    &:hover {
+      background-color: $color-sand;
+      border-color: $color-sand !important;
+      color: $color-white;
+      cursor: pointer;
+    }
+  }
+
+  .explore-button {
+    letter-spacing: 5px;
+    line-height: 50px;
+    text-transform: uppercase;
+    border: 2px solid $color-white;
+    padding: 0 22px;
+    @extend %button;
+  }
+
+  .icon-arrow {
+    background-image: url("../img/right_arrow.svg");
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .arrow-left_circle {
+    background-image: url("../img/left_arrow.svg");
+    width: 20px;
+    height: 20px;
+    @extend .main-icons;
+  }
+
+  .arrow-right_circle {
+    background-image: url("../img/right_arrow.svg");
+    width: 20px;
+    height: 20px;
+    @extend .main-icons;
+  }
+}

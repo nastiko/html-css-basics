@@ -2,11 +2,14 @@
 @import 'helpers/placeholder';
 @import 'commonstyle';
 
-.mobile-device {
+.desktop-device {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: $color-white;
   border-bottom: 1px solid $color-placebo;
+  position: relative;
+  z-index: 100;
 
   .logo {
     background: url("../img/logo.jpg") no-repeat center;
