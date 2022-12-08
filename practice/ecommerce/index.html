@@ -41,57 +41,71 @@
     </nav>
 </header>
 <main>
-    <section class="container-fluid slide-style px-0">
-        <div class="slide-first slider">
-            <div class="container-fluid inside-text">
-                <div class="bg-icon">
-                    <button class="arrow-left_circle"></button>
+    <section class="container-fluid position-relative px-0">
+        <div class="sliders-viewport">
+            <div class="slide-container">
+                <div id="current-slide" class="slide-first carousel_slide">
+                    <div class="container-fluid inside-text">
+                        <div class="container">
+                            <h1 class="large-header text-6">Now up to 70% off*</h1>
+                            <h3 class="text-3 pb-5">MID YEAR SALE</h3>
+                            <button class="explore-button text-1">EXPLORE BESTSELLER
+                                <span class="icon-arrow"></span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="container">
-                    <h1 class="large-header text-6">Now up to 70% off*</h1>
-                    <h3 class="text-3 pb-5">MID YEAR SALE</h3>
-                    <button class="explore-button text-1">EXPLORE BESTSELLER
-                        <span class="icon-arrow"></span>
-                    </button>
+                <div class="slide-second carousel_slide">
+                    <div class="container-fluid inside-text">
+                        <!--<div class="bg-icon">
+                            <button class="arrow-left_circle"></button>
+                        </div>-->
+                        <div class="container">
+                            <h1 class="large-header text-6">Oh, Hello Newness!</h1>
+                            <h3 class="text-3 pb-5">MID YEAR SALE</h3>
+                            <button class="explore-button text-1">EXPLORE BESTSELLER
+                                <span class="icon-arrow"></span>
+                            </button>
+                        </div>
+                        <!--<div class="bg-icon">
+                            <button class="arrow-right_circle"></button>
+                        </div>-->
+                    </div>
                 </div>
-                <div class="bg-icon">
-                    <button class="arrow-right_circle"></button>
+                <div class="slide-third carousel_slide">
+                    <div class="container-fluid inside-text">
+                        <!--<div class="bg-icon">
+                            <button class="arrow-left_circle"></button>
+                        </div>-->
+                        <div class="container">
+                            <h1 class="large-header text-6">Best of the Best</h1>
+                            <h3 class="text-3 pb-5">MID YEAR SALE</h3>
+                            <button class="explore-button text-1">EXPLORE BESTSELLER
+                                <span class="icon-arrow"></span>
+                            </button>
+                        </div>
+                        <!--<div class="bg-icon">
+                            <button class="arrow-right_circle"></button>
+                        </div>-->
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="slide-second slider">
-            <div class="container-fluid inside-text">
-                <div class="bg-icon">
-                    <button class="arrow-left_circle"></button>
-                </div>
-                <div class="container">
-                    <h1 class="large-header text-6">Oh, Hello Newness!</h1>
-                    <h3 class="text-3 pb-5">MID YEAR SALE</h3>
-                    <button class="explore-button text-1">EXPLORE BESTSELLER
-                        <span class="icon-arrow"></span>
-                    </button>
-                </div>
-                <div class="bg-icon">
-                    <button class="arrow-right_circle"></button>
-                </div>
+        <div class="position-btn_left">
+            <div id="left-click" class="bg-icon">
+                <button class="arrow-left_circle"></button>
             </div>
         </div>
-        <div class="slide-third slider">
-            <div class="container-fluid inside-text">
-                <div class="bg-icon">
-                    <button class="arrow-left_circle"></button>
-                </div>
-                <div class="container">
-                    <h1 class="large-header text-6">Best of the Best</h1>
-                    <h3 class="text-3 pb-5">MID YEAR SALE</h3>
-                    <button class="explore-button text-1">EXPLORE BESTSELLER
-                        <span class="icon-arrow"></span>
-                    </button>
-                </div>
-                <div class="bg-icon">
-                    <button class="arrow-right_circle"></button>
-                </div>
+        <div class="position-btn_right">
+            <div id="right-click" class="bg-icon">
+                <button class="arrow-right_circle"></button>
             </div>
+        </div>
+
+        <div class="carousel_nav">
+            <button class="carousel_indicator current-slide"></button>
+            <button class="carousel_indicator"></button>
+            <button class="carousel_indicator"></button>
         </div>
     </section>
     <section class="container-fluid bg-section_explore pt-5 px-0">

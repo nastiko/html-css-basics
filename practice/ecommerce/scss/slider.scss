@@ -2,6 +2,19 @@
 @import "helpers/variables";
 @import "helpers/placeholder";
 
+
+.sliders-viewport {
+  display: flex;
+  overflow-x: hidden;
+  height: 690px;
+
+  .slide-container {
+    position: relative;
+    display: flex;
+    flex: 1 0;
+  }
+}
+
 .slider-img {
   flex: 1 0 100%;
   scroll-snap-align: start;
@@ -18,24 +31,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 0 100px;
-
-  .bg-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid $color-white;
-
-    &:hover {
-      background-color: $color-sand;
-      border-color: $color-sand !important;
-      color: $color-white;
-      cursor: pointer;
-    }
-  }
 
   .explore-button {
     letter-spacing: 5px;
@@ -54,6 +49,43 @@
     display: inline-block;
     vertical-align: middle;
   }
+}
+
+//button arrow
+
+.position-btn_left {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 150px;
+}
+
+.position-btn_right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 150px;
+}
+
+.bg-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid $color-white;
+
+  &:hover {
+    background-color: $color-sand;
+    border-color: $color-sand !important;
+    color: $color-white;
+    cursor: pointer;
+  }
 
   .arrow-left_circle {
     background-image: url("../img/left_arrow.svg");
@@ -67,5 +99,36 @@
     width: 20px;
     height: 20px;
     @extend .main-icons;
+    right: -40px;
+  }
+}
+
+
+//carousel nav
+.carousel_nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+
+  .carousel_indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+
+    &:hover {
+      background-color: $color-sand;
+      border-color: $color-sand;
+      cursor: pointer;
+    }
+  }
+
+  .carousel_indicator.current-slide {
+    background-color: $color-sand;
+    border-color: $color-sand;
+    cursor: pointer;
   }
 }

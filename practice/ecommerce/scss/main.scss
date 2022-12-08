@@ -16,16 +16,6 @@ body {
 }
 
 // slider container
-.slide-style {
-  display: flex;
-  aspect-ratio: 16 / 9;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 780px;
-}
 
 .main-icons {
   width: 20px;
@@ -36,9 +26,10 @@ body {
 }
 
 .slide-first, .slide-second, .slide-third {
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   text-align: center;
-  @extend .slide-style;
   @extend .inside-text;
   @extend .slider-img;
 }
