@@ -6,26 +6,32 @@ let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 
 //Sliders
 function slider() {
-    let sliders = document.querySelectorAll('.carousel_slide');
+    let slideWidth = document.querySelector('.carousel_slide').getBoundingClientRect().width;
+    let slideCount = document.querySelectorAll('.carousel_slide').length;
+    let slideContainer = document.querySelector('.slide-container');
     let nextBtn = document.getElementById('right-click');
     let prevBtn = document.getElementById('left-click');
     let indicatorNav = document.querySelectorAll('.carousel_nav button');
-    let currentPosition = 0;
-    let viewportWidth = window.innerWidth;
-    //console.log(viewportWidth);
+    let slideShown = 1;
 
+    nextBtn.addEventListener('click', () => move('left'));
+    prevBtn.addEventListener('click', () => move('right'));
 
-    for(let i = 0; i < sliders.length; i++) {
-        sliders[i].style.left = viewportWidth * i + 'px';
+    function move(direction) {
+        let currPos = slideContainer.getBoundingClientRect().left;
+        let shift = slideWidth * (direction === 'left' ? -1 : 1);
+
+        if (direction === 'right' && slideShown <= 1) {
+            shift = 0;
+        } else if (direction === 'left' && slideCount - slideShown <= 0) {
+            shift = 0;
+        } else {
+            slideShown += direction === 'left' ? 1 : -1;
+        }
+        slideContainer.style.left = (currPos + shift).toString() + 'px';
     }
 
-    nextBtn.addEventListener('click', moveRight);
-    function moveRight() {
-        let currentSlide = document.getElementById('current-slide');
-        let nextSlide = currentSlide.nextElementSibling;
-        let amountToMove = nextSlide.style.left;
-        sliders.style.transform = 'translateX(' + amountToMove + ')';
-    }
+
 }
 
 slider();
