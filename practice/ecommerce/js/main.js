@@ -35,3 +35,22 @@ function slider() {
 }
 
 slider();
+
+//change header discount
+
+function changeDiscount() {
+    let elemSpan = document.getElementById('header-text');
+
+    let arrDiscount = [30, 50, 70];
+    let i = 0;
+
+    setInterval(function () {
+        elemSpan.textContent = `${arrDiscount[i++]}`;
+
+        if (i >= arrDiscount.length) {
+            i = 0;
+        }
+    }, 3000);
+}
+
+changeDiscount();
