@@ -4,7 +4,7 @@ let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
 });
 
-//Sliders
+//sliders
 function slider() {
     let slideWidth = document.querySelector('.carousel_slide').getBoundingClientRect().width;
     let slideCount = document.querySelectorAll('.carousel_slide').length;
@@ -34,10 +34,7 @@ function slider() {
 
 }
 
-slider();
-
 //change header discount
-
 function changeDiscount() {
     let elemSpan = document.getElementById('header-text');
 
@@ -46,11 +43,27 @@ function changeDiscount() {
 
     setInterval(function () {
         elemSpan.textContent = `${arrDiscount[i++]}`;
-
         if (i >= arrDiscount.length) {
             i = 0;
         }
     }, 3000);
+
 }
 
+//scrollUp button
+function scrollUp() {
+    let btn = document.getElementById('up-click');
+
+    window.onscroll = () => window.scrollY > 250 ? btn.style.opacity = '1' : btn.style.opacity = '0';
+
+    btn.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+}
+
+slider();
 changeDiscount();
+scrollUp();
