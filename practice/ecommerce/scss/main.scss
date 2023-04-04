@@ -91,12 +91,15 @@ body {
 }
 
 //week's collection
-.img-weeks {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 330px;
+.item-block {
+  position: relative;
+  .img-style {
+    position: absolute;
+    .img-weeks {
+      width: 100%;
+      height: 330px;
+    }
+  }
 }
 
 .col-banner_carousel {

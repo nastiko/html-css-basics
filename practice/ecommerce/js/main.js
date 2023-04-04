@@ -4,6 +4,7 @@ let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
 });
 
+
 //sliders
 function slider() {
     let slideWidth = document.querySelector('.carousel_slide').getBoundingClientRect().width;
@@ -30,9 +31,8 @@ function slider() {
         }
         slideContainer.style.left = (currPos + shift).toString() + 'px';
     }
-
-
 }
+
 
 //change header discount
 function changeDiscount() {
@@ -49,6 +49,7 @@ function changeDiscount() {
     }, 3000);
 
 }
+
 
 //scrollUp button
 function scrollUp() {
@@ -67,3 +68,63 @@ function scrollUp() {
 slider();
 changeDiscount();
 scrollUp();
+
+class Products {
+
+    #title;
+    #price;
+    #img;
+
+    constructor(title, price, img) {
+        this.#title = title;
+        this.#price = price;
+        this.#img = img;
+    }
+
+    async getProducts() {
+        fetch('https://fakestoreapi.com/products/category/jewelery')
+            .then(res=>res.json())
+            .then(json=>console.log(json));
+
+        /*for await(let item in ) {
+
+        }*/
+    }
+
+    getTemplateBlockItem(name, price, img) {
+        return '<div class="col-banner_carousel">\n' +
+            '                    <div class="earrings-1">\n' +
+            '                        <div class="hover-element">\n' +
+            '                            <div class="flex-links">\n' +
+            '                                <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">\n' +
+            '                                    <div class="icon-bag">\n' +
+            '                                        <a href="#"></a>\n' +
+            '                                    </div>\n' +
+            '                                </div>\n' +
+            '                                <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">\n' +
+            '                                    <div class="icon-like">\n' +
+            '                                        <a href="#"></a>\n' +
+            '                                    </div>\n' +
+            '                                </div>\n' +
+            '                            </div>\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="flex-stars">\n' +
+            '                        <span class="icon-star"></span>\n' +
+            '                        <span class="icon-star"></span>\n' +
+            '                        <span class="icon-star"></span>\n' +
+            '                        <span class="icon-star"></span>\n' +
+            '                        <span class="icon-star"></span>\n' +
+            '                    </div>\n' +
+            '                    <div>\n' +
+            '                        <h3 class="product-name">\n' +
+            '                            <a href="#">title</a>\n' +
+            '                        </h3>\n' +
+            '                        <p class="product-price">price</p>\n' +
+            '                    </div>\n' +
+            '                </div>'
+    }
+}
+
+let products = new Products;
+products.getProducts();
