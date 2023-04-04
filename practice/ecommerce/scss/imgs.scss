@@ -33,6 +33,7 @@
 
 
 //individual's imgs
+
 .img-magic {
   background-image: url("../img/banner_6.webp");
   @extend .imgs-block;
@@ -45,21 +46,6 @@
 
 
 //weeks' imgs section
-
-.earrings-2 {
-  background-image: url("../img/earrings_2.webp");
-  @extend .img-weeks;
-}
-
-.rings-1 {
-  background-image: url("../img/rings_2.webp");
-  @extend .img-weeks;
-}
-
-.rings-2 {
-  background-image: url("../img/rings_yellow.webp");
-  @extend .img-weeks;
-}
 
 //hot list section
 .earrings-3 {

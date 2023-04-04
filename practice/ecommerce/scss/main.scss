@@ -91,53 +91,55 @@ body {
 }
 
 //week's collection
-.item-block {
-  position: relative;
-  .img-style {
-    position: absolute;
-    .img-weeks {
-      width: 100%;
-      height: 330px;
-    }
-  }
+.img-weeks {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 330px;
 }
 
 .col-banner_carousel {
   @extend %col-banner_carousel;
 
   .hover-element {
-    /*display: none;*/
 
-    .flex-links {
+    .blocks-position {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      align-items: flex-end;
 
-      .icon-button {
+      .img-style {
+        width: 100%;
+        height: 330px;
+      }
+
+      .flex-links {
         display: flex;
-        align-items: center;
         justify-content: center;
-        width: 45px;
-        height: 45px;
-        background-color: #ffffff;
-        line-height: 45px;
-        text-align: center;
-        border: none;
-        position: relative;
-        top: 265px;
-        cursor: pointer;
-        padding: 0 10px;
-        margin: 0;
-        @extend %button;
+        position: absolute;
+        gap: 10px;
+        margin-bottom: 15px;
 
-        .icon-bag {
-          background-image: url("../img/bag.svg");
-          @extend .style-icon;
-        }
+        .icon-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 45px;
+          height: 45px;
+          background-color: #ffffff;
+          cursor: pointer;
+          @extend %button;
 
-        .icon-like {
-          background-image: url("../img/like.svg");
-          @extend .style-icon;
+          .icon-bag {
+            background-image: url("../img/bag.svg");
+            @extend .style-icon;
+          }
+
+          .icon-like {
+            background-image: url("../img/like.svg");
+            @extend .style-icon;
+          }
         }
       }
     }
@@ -146,7 +148,7 @@ body {
   .flex-stars {
     display: flex;
     justify-content: center;
-    margin: 10px 0;
+    margin-top: 15px;
 
     .icon-star {
       background-image: url("../img/star.svg");
