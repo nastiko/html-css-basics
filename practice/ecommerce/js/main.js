@@ -38,7 +38,8 @@ function slider() {
 function changeDiscount() {
     let elemSpan = document.getElementById('header-text');
 
-    let arrDiscount = [30, 50, 70];
+    let arrDiscount = [50, 70, 30];
+
     let i = 0;
 
     setInterval(function () {
@@ -46,7 +47,8 @@ function changeDiscount() {
         if (i >= arrDiscount.length) {
             i = 0;
         }
-    }, 3000);
+
+    }, 1100);
 
 }
 
@@ -82,19 +84,27 @@ class Products {
     }
 
     async getProducts() {
-        fetch('https://fakestoreapi.com/products/category/jewelery')
-            .then(res=>res.json())
-            .then(json=>console.log(json));
 
-        /*for await(let item in ) {
+        let response = await fetch('https://fakestoreapi.com/products/category/jewelery');
+        let result = await response.json();
 
-        }*/
+        for await(let item of result) {
+            this.#title = item.title;
+            this.#price = item.price;
+            this.#img = item.image;
+            let template = this.getTemplateBlockItem(this.#title, this.#price, this.#img);
+            let container = document.getElementById('container');
+            container.innerHTML += template;
+        }
     }
 
-    getTemplateBlockItem(name, price, img) {
+    getTemplateBlockItem(title, price, img) {
         return '<div class="col-banner_carousel">\n' +
-            '                    <div class="earrings-1">\n' +
-            '                        <div class="hover-element">\n' +
+            '                    <div class="hover-element">\n' +
+            '                        <div class="blocks-position">\n' +
+            '                            <img class="img-style"\n' +
+            '                                   src="' + img + '"\n' +
+            '                                   alt="' + title + '">\n' +
             '                            <div class="flex-links">\n' +
             '                                <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">\n' +
             '                                    <div class="icon-bag">\n' +
@@ -108,19 +118,21 @@ class Products {
             '                                </div>\n' +
             '                            </div>\n' +
             '                        </div>\n' +
-            '                    </div>\n' +
-            '                    <div class="flex-stars">\n' +
-            '                        <span class="icon-star"></span>\n' +
-            '                        <span class="icon-star"></span>\n' +
-            '                        <span class="icon-star"></span>\n' +
-            '                        <span class="icon-star"></span>\n' +
-            '                        <span class="icon-star"></span>\n' +
-            '                    </div>\n' +
-            '                    <div>\n' +
-            '                        <h3 class="product-name">\n' +
-            '                            <a href="#">title</a>\n' +
-            '                        </h3>\n' +
-            '                        <p class="product-price">price</p>\n' +
+            '                        <div>\n' +
+            '                            <div class="flex-stars">\n' +
+            '                                <span class="icon-star"></span>\n' +
+            '                                <span class="icon-star"></span>\n' +
+            '                                <span class="icon-star"></span>\n' +
+            '                                <span class="icon-star"></span>\n' +
+            '                                <span class="icon-star"></span>\n' +
+            '                            </div>\n' +
+            '                            <div>\n' +
+            '                                <h3 class="product-name">\n' +
+            '                                    <a href="#">'+ title +'</a>\n' +
+            '                                </h3>\n' +
+            '                                <p class="product-price">£'+ price +'</p>\n' +
+            '                            </div>\n' +
+            '                        </div>\n' +
             '                    </div>\n' +
             '                </div>'
     }
