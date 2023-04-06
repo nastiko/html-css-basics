@@ -7,6 +7,7 @@
 @import "slider";
 @import "helpers/animation";
 
+
 html {
   box-sizing: border-box;
   font-family: sans-serif;
@@ -16,8 +17,8 @@ body {
   font-family: $font-lato;
 }
 
-// slider container
 
+// slider container
 .slide-first, .slide-second, .slide-third {
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,18 +27,35 @@ body {
   @extend .inside-text;
   @extend .slider-img;
 }
-
 .slide-first {
   background-image: url("../img/slider_1.webp");
 }
-
 .slide-second {
   background-image: url("../img/slider_2.webp");
 }
-
 .slide-third {
   background-image: url("../img/slider_3.webp");
 }
+
+.sale-style {
+  color: $color-red;
+  text-shadow: 3px -2px 5px $color-black;
+}
+
+.text-show {
+  color: $color-red;
+  opacity: 1;
+  transition: all 1s ease;
+  text-shadow: 3px -2px 5px $color-black;
+}
+
+.text-fade {
+  color: $color-red;
+  opacity: 0;
+  transition: all 1s ease;
+  text-shadow: 3px -2px 5px $color-black;
+}
+
 
 //explore container
 .bg-section_explore {

@@ -1,78 +1,128 @@
-//Initialize tooltips
-let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
-});
-
-
 //sliders
-function slider() {
-    let slideWidth = document.querySelector('.carousel_slide').getBoundingClientRect().width;
-    let slideCount = document.querySelectorAll('.carousel_slide').length;
-    let slideContainer = document.querySelector('.slide-container');
-    let nextBtn = document.getElementById('right-click');
-    let prevBtn = document.getElementById('left-click');
-    let indicatorNav = document.querySelectorAll('.carousel_nav button');
-    let slideShown = 1;
+class Sliders {
 
-    nextBtn.addEventListener('click', () => move('left'));
-    prevBtn.addEventListener('click', () => move('right'));
+    #slideWidth;
+    #slideCount;
+    #slideContainer;
+    #nextBtn;
+    #prevBtn;
+    #dots;
 
-    function move(direction) {
-        let currPos = slideContainer.getBoundingClientRect().left;
-        let shift = slideWidth * (direction === 'left' ? -1 : 1);
+    #slideShown = 1;
 
-        if (direction === 'right' && slideShown <= 1) {
-            shift = 0;
-        } else if (direction === 'left' && slideCount - slideShown <= 0) {
-            shift = 0;
-        } else {
-            slideShown += direction === 'left' ? 1 : -1;
+    constructor(slideWidth, slideCount, slideContainer, nextBtn, prevBtn, dots) {
+        this.#slideWidth = slideWidth;
+        this.#slideCount = slideCount;
+        this.#slideContainer = slideContainer;
+        this.#nextBtn = nextBtn;
+        this.#prevBtn = prevBtn;
+        this.#dots = dots;
+    }
+
+    move(direction, slideSelected = 0) {
+        let currPos = this.#slideContainer.getBoundingClientRect().left;
+        let shiftSlides = 1;
+
+        if (direction === 'selected') {
+            // if dot selected is for the current slide - do nothing
+            if (this.#slideShown === slideSelected) {
+                return;
+            } else {
+                // define shift direction
+                direction = this.#slideShown > slideSelected ? 'right' : 'left';
+            }
+            // calculate number of slides to shift
+            shiftSlides = Math.abs(this.#slideShown - slideSelected);
         }
-        slideContainer.style.left = (currPos + shift).toString() + 'px';
+
+        let shiftPixel = this.#slideWidth * (direction === 'left' ? -shiftSlides : shiftSlides);
+
+
+        if (direction === 'right' && this.#slideShown <= 1) {
+            this.move('selected', this.#slideCount);
+            return;
+        } else if (direction === 'left' && this.#slideCount - this.#slideShown <= 0) {
+            this.move('selected', 1);
+            return;
+        } else {
+            this.#slideShown += direction === 'left' ? shiftSlides : -shiftSlides;
+        }
+        this.#slideContainer.style.left = (currPos + shiftPixel).toString() + 'px';
+
+        for (let i = 0; i < this.#dots.length; i++) {
+            this.#dots[i].classList.remove('current-slide');
+        }
+        this.#dots[this.#slideShown - 1].classList.add('current-slide');
+    }
+
+    init(slideWidthClass, slideCountClasses, slideContainerClass, nextBtnId, PrevBtnId, dotsClass) {
+        this.#slideWidth = document.querySelector(slideWidthClass).getBoundingClientRect().width;
+        this.#slideCount = document.querySelectorAll(slideCountClasses).length;
+        this.#slideContainer = document.querySelector(slideContainerClass);
+        this.#nextBtn = document.getElementById(nextBtnId);
+        this.#prevBtn = document.getElementById(PrevBtnId);
+        this.#dots = document.getElementsByClassName(dotsClass);
+
+        this.#nextBtn.addEventListener('click', () => this.move('left'));
+        this.#prevBtn.addEventListener('click', () => this.move('right'));
+        for (let i = 0; i < this.#dots.length; i++) {
+            this.#dots[i].addEventListener('click', () => this.move('selected', i + 1));
+        }
     }
 }
 
+class Utilities {
+    //change header discount
+    changeDiscount() {
+        function change() {
+            document.getElementById('fadeEl').setAttribute('class', 'text-fade');
 
-//change header discount
-function changeDiscount() {
-    let elemSpan = document.getElementById('header-text');
+            setTimeout(() => {
+                document.getElementById('fadeEl').innerHTML = `${arrDiscount[i++]}`;
+                document.getElementById('fadeEl').setAttribute('class', 'text-show');
+            }, 900);
 
-    let arrDiscount = [50, 70, 30];
-
-    let i = 0;
-
-    setInterval(function () {
-        elemSpan.textContent = `${arrDiscount[i++]}`;
-        if (i >= arrDiscount.length) {
-            i = 0;
+            if (i >= arrDiscount.length) {
+                i = 0;
+            }
         }
 
-    }, 1100);
+        let arrDiscount = [50, 70, 30];
+        let i = 0;
 
-}
+        setInterval(change, 2000);
+    }
 
+    //scrollUp button
+    scrollUp() {
+        let btn = document.getElementById('up-click');
 
-//scrollUp button
-function scrollUp() {
-    let btn = document.getElementById('up-click');
+        window.onscroll = () => window.scrollY > 250 ? btn.style.opacity = '1' : btn.style.opacity = '0';
 
-    window.onscroll = () => window.scrollY > 250 ? btn.style.opacity = '1' : btn.style.opacity = '0';
-
-    btn.addEventListener('click', function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
+        btn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
         });
-    });
-}
+    }
 
-slider();
-changeDiscount();
-scrollUp();
+    //Initialize tooltips
+    tooltips() {
+        let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    }
+
+    init() {
+        this.tooltips();
+        this.scrollUp();
+        this.changeDiscount();
+    }
+}
 
 class Products {
-
     #title;
     #price;
     #img;
@@ -83,7 +133,7 @@ class Products {
         this.#img = img;
     }
 
-    async getProducts() {
+    async renderProducts() {
 
         let response = await fetch('https://fakestoreapi.com/products/category/jewelery');
         let result = await response.json();
@@ -128,15 +178,12 @@ class Products {
             '                            </div>\n' +
             '                            <div>\n' +
             '                                <h3 class="product-name">\n' +
-            '                                    <a href="#">'+ title +'</a>\n' +
+            '                                    <a href="#">' + title + '</a>\n' +
             '                                </h3>\n' +
-            '                                <p class="product-price">£'+ price +'</p>\n' +
+            '                                <p class="product-price">£' + price + '</p>\n' +
             '                            </div>\n' +
             '                        </div>\n' +
             '                    </div>\n' +
             '                </div>'
     }
 }
-
-let products = new Products;
-products.getProducts();

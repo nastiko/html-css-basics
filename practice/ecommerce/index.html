@@ -47,7 +47,8 @@
                 <div class="slide-first carousel_slide">
                     <div class="container-fluid inside-text">
                         <div class="container">
-                            <h1 class="large-header text-6">Now up to <span id="header-text">30</span>% off*</h1>
+                            <h1 class="large-header text-6">Now up to <span id="fadeEl" class="text-show">30</span><span
+                                    class="sale-style">%</span> off*</h1>
                             <h3 class="text-3 pb-5">MID YEAR SALE</h3>
                             <button class="explore-button text-1">EXPLORE BESTSELLER
                                 <span class="icon-arrow"></span>
@@ -57,9 +58,6 @@
                 </div>
                 <div class="slide-second carousel_slide">
                     <div class="container-fluid inside-text">
-                        <!--<div class="bg-icon">
-                            <button class="arrow-left_circle"></button>
-                        </div>-->
                         <div class="container">
                             <h1 class="large-header text-6">Oh, Hello Newness!</h1>
                             <h3 class="text-3 pb-5">MID YEAR SALE</h3>
@@ -67,16 +65,10 @@
                                 <span class="icon-arrow"></span>
                             </button>
                         </div>
-                        <!--<div class="bg-icon">
-                            <button class="arrow-right_circle"></button>
-                        </div>-->
                     </div>
                 </div>
                 <div class="slide-third carousel_slide">
                     <div class="container-fluid inside-text">
-                        <!--<div class="bg-icon">
-                            <button class="arrow-left_circle"></button>
-                        </div>-->
                         <div class="container">
                             <h1 class="large-header text-6">Best of the Best</h1>
                             <h3 class="text-3 pb-5">MID YEAR SALE</h3>
@@ -84,9 +76,6 @@
                                 <span class="icon-arrow"></span>
                             </button>
                         </div>
-                        <!--<div class="bg-icon">
-                            <button class="arrow-right_circle"></button>
-                        </div>-->
                     </div>
                 </div>
             </div>
@@ -492,7 +481,7 @@
     <div class="container-fluid px-0">
         <div class="width-container px-2">
             <div class="flex-footer_container ps-3 pe-0">
-                <p class="info-banner m-0">Copyright © 2022 Anastasia Hrynkevich</p>
+                <p class="info-banner m-0">Copyright © 2023 Anastasia Hrynkevich</p>
                 <div class="img-payment"></div>
             </div>
         </div>
@@ -503,4 +492,13 @@
 </div>
 </body>
 <script src="js/main.js"></script>
+<script>
+    let products = new Products;
+    let sliders = new Sliders();
+    let utils = new Utilities();
+
+    products.renderProducts();
+    sliders.init('.carousel_slide', '.carousel_slide', '.slide-container', 'right-click', 'left-click', 'carousel_indicator');
+    utils.init();
+</script>
 </html>
