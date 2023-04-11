@@ -150,40 +150,108 @@ class Products {
 
     getTemplateBlockItem(title, price, img) {
         return '<div class="col-banner_carousel">\n' +
-            '                    <div class="hover-element">\n' +
-            '                        <div class="blocks-position">\n' +
-            '                            <img class="img-style"\n' +
-            '                                   src="' + img + '"\n' +
-            '                                   alt="' + title + '">\n' +
-            '                            <div class="flex-links">\n' +
-            '                                <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">\n' +
-            '                                    <div class="icon-bag">\n' +
-            '                                        <a href="#"></a>\n' +
-            '                                    </div>\n' +
-            '                                </div>\n' +
-            '                                <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">\n' +
-            '                                    <div class="icon-like">\n' +
-            '                                        <a href="#"></a>\n' +
-            '                                    </div>\n' +
-            '                                </div>\n' +
+            '        <div class="hover-element">\n' +
+            '             <div class="blocks-position">\n' +
+            '                  <img class="img-style"\n' +
+            '                       src="' + img + '"\n' +
+            '                       alt="' + title + '">\n' +
+            '                  <div class="flex-links">\n' +
+            '                       <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">\n' +
+            '                            <div class="icon-bag">\n' +
+            '                                 <a href="#"></a>\n' +
             '                            </div>\n' +
-            '                        </div>\n' +
-            '                        <div>\n' +
-            '                            <div class="flex-stars">\n' +
-            '                                <span class="icon-star"></span>\n' +
-            '                                <span class="icon-star"></span>\n' +
-            '                                <span class="icon-star"></span>\n' +
-            '                                <span class="icon-star"></span>\n' +
-            '                                <span class="icon-star"></span>\n' +
+            '                       </div>\n' +
+            '                       <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">\n' +
+            '                            <div class="icon-like">\n' +
+            '                                 <a href="#"></a>\n' +
             '                            </div>\n' +
-            '                            <div>\n' +
-            '                                <h3 class="product-name">\n' +
-            '                                    <a href="#">' + title + '</a>\n' +
-            '                                </h3>\n' +
-            '                                <p class="product-price">£' + price + '</p>\n' +
-            '                            </div>\n' +
-            '                        </div>\n' +
-            '                    </div>\n' +
-            '                </div>'
+            '                       </div>\n' +
+            '                  </div>\n' +
+            '             </div>\n' +
+            '             <div>\n' +
+            '                  <div class="flex-stars">\n' +
+            '                       <span class="icon-star"></span>\n' +
+            '                       <span class="icon-star"></span>\n' +
+            '                       <span class="icon-star"></span>\n' +
+            '                       <span class="icon-star"></span>\n' +
+            '                       <span class="icon-star"></span>\n' +
+            '                  </div>\n' +
+            '                  <div>\n' +
+            '                       <h3 class="product-name">\n' +
+            '                           <a href="#">' + title + '</a>\n' +
+            '                       </h3>\n' +
+            '                       <p class="product-price">£' + price + '</p>\n' +
+            '                  </div>\n' +
+            '             </div>\n' +
+            '        </div>\n' +
+            '   </div>'
     }
 }
+
+class Countdown {
+    constructor(days, hours, mins, secs) {
+        this.days = days;
+        this.hours = hours;
+        this.mins = mins;
+        this.secs = secs;
+    }
+
+    countDownTo() {
+        //countdown to
+        let contDate = new Date('December 31, 2023 00:00:00').getTime();
+        //current time
+        let now = new Date().getTime();
+        //the finished number in milliseconds
+        return contDate - now;
+    }
+
+    calculateTime() {
+        let seconds = 1000;
+        let minutes = seconds * 60;
+        let hours = minutes * 60;
+        let days = hours * 24;
+
+        let textDay = Math.floor(this.countDownTo / days);
+        let textHour = Math.floor((this.countDownTo % days) / hours);
+        let textMinutes = Math.floor((this.countDownTo % hours) / minutes);
+        let textSecond = Math.floor((this.countDownTo % minutes) / seconds);
+
+        this.days.innerHTML = textDay;
+        this.hours.innerHTML = textHour;
+        this.mins.innerHTML = textMinutes;
+        this.secs.innerHTML = textSecond;
+
+        if(textDay < 100) {
+            this.days.innerHTML = '0' + textDay;
+        } else if(textDay < 10) {
+            this.days.innerHTML = '00' + textDay;
+        }
+
+        if(textHour < 10) {
+            this.hours.innerHTML = '0' + textHour;
+        }
+
+        if(textMinutes < 10) {
+            this.mins.innerHTML = '0' + textMinutes;
+        }
+
+        if(textSecond < 10) {
+            this.secs.innerHTML = '0' + textSecond;
+        }
+    }
+
+    setInterval() {
+        setInterval(this.calculateTime, 1000);
+    }
+
+    init(daysId, hoursId, minsId, secsId) {
+        this.days = document.getElementById(daysId);
+        this.hours = document.getElementById(hoursId);
+        this.mins = document.getElementById(minsId);
+        this.secs = document.getElementById(secsId);
+    }
+}
+
+let time = new Countdown();
+time.init('days', 'hours', 'mins', 'secs');
+time.setInterval();
