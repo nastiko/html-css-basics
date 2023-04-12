@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Lato:wght@300;400;700&display=swap');
+@import 'commonstyle';
+@import 'helpers/variables';
+@import 'helpers/placeholder';
+@import 'header';
+
+
+//title section
+.bg-title_section {
+  background-image: url("../img/slider_4.webp");
+  background-position: right;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 720px;
+
+  .page-title {
+    color: $color-black;
+  }
+
+  .page-highlighter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+    margin-bottom: 2rem;
+    @include font-weight(heavy);
+
+    .prev-link {
+      color: $color-lunar;
+
+      &:hover {
+        color: $color-sand;
+      }
+    }
+
+    .arrow-backup {
+      background-image: url("../img/right_backup.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 10px;
+      height: 15px;
+      margin: 0;
+    }
+  }
+
+  //slider
+  .carousel-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .block-item {
+      width: 195px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 15px;
+      color: $color-black;
+      @include font-weight(heavy);
+
+      .title-item_style {
+        font-size: 14px;
+        color: $color-black;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        @include font-weight(heavy);
+
+        &:hover {
+          color: $color-sand;
+        }
+      }
+    }
+  }
+}
+
+//slider imgs
+
+.bg-item_earrings {
+  background-image: url("../img/slider_5.webp");
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+}
+
+.bg-item_necklaces {
+  background-image: url("../img/slider_6.webp");
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+}
+
+.bg-item_bracelets {
+  background-image: url("../img/slider_9.webp");
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+}
+
+.bg-item_wedding {
+  background-image: url("../img/slider_8.avif");
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+}
+
+
+.position-left_backup {
+  position: absolute;
+  top: 75%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.position-right_backup {
+  position: absolute;
+  top: 75%;
+  transform: translateY(-50%);
+}
+
+.icon-left_backup {
+  width: 25px;
+  height: 25px;
+  background-image: url(../img/left_backup.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  position: absolute;
+  left: 28rem;
+  transform: translateY(-50%);
+}
+
+.icon-right_backup {
+  width: 25px;
+  height: 25px;
+  background-image: url(../img/right_backup.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  position: absolute;
+  left: 25rem;
+  transform: translateY(-50%);
+}
