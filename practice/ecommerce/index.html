@@ -193,19 +193,19 @@
                         </div>
                         <div class="time-box">
                             <div>
-                                <span id="days" class="countdown">0</span>
+                                <span id="days-25%" class="countdown">0</span>
                                 <span class="block-box">days</span>
                             </div>
                             <div>
-                                <span id="hours" class="countdown">0</span>
+                                <span id="hours-25%" class="countdown">0</span>
                                 <span class="block-box">hours</span>
                             </div>
                             <div>
-                                <span id="mins"  class="countdown">0</span>
+                                <span id="mins-25%"  class="countdown">0</span>
                                 <span class="block-box">mins</span>
                             </div>
                             <div>
-                                <span id="secs" class="countdown">0</span>
+                                <span id="secs-25%" class="countdown">0</span>
                                 <span class="block-box">secs</span>
                             </div>
                         </div>
@@ -263,19 +263,19 @@
                         </div>
                         <div class="time-box">
                             <div>
-                                <span class="countdown">565</span>
+                                <span id="days-20%" class="countdown">565</span>
                                 <span class="block-box">days</span>
                             </div>
                             <div>
-                                <span class="countdown">08</span>
+                                <span id="hours-20%" class="countdown">08</span>
                                 <span class="block-box">hours</span>
                             </div>
                             <div>
-                                <span class="countdown">07</span>
+                                <span id="mins-20%" class="countdown">07</span>
                                 <span class="block-box">mins</span>
                             </div>
                             <div>
-                                <span class="countdown">25</span>
+                                <span id="secs-20%" class="countdown">25</span>
                                 <span class="block-box">secs</span>
                             </div>
                         </div>
@@ -496,9 +496,17 @@
     let products = new Products;
     let sliders = new Sliders();
     let utils = new Utilities();
+    let time = new Countdown();
+    let hotSale = new HotSale();
 
     products.renderProducts();
     sliders.init('.carousel_slide', '.carousel_slide', '.slide-container', 'right-click', 'left-click', 'carousel_indicator');
     utils.init();
+
+    time.init('days-25%', 'hours-25%', 'mins-25%', 'secs-25%', 'December 31, 2023 00:00:00');
+    time.setInterval();
+
+    hotSale.init('days-20%', 'hours-20%', 'mins-20%', 'secs-20%', 'October 13, 2023 00:00:00');
+    hotSale.setInterval();
 </script>
 </html>

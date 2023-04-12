@@ -189,16 +189,17 @@ class Products {
 }
 
 class Countdown {
-    constructor(days, hours, mins, secs) {
+    constructor(days, hours, mins, secs, dateTo) {
         this.days = days;
         this.hours = hours;
         this.mins = mins;
         this.secs = secs;
+        this.dateTo = dateTo;
     }
 
     countDownTo() {
         //countdown to
-        let contDate = new Date('December 31, 2023 00:00:00').getTime();
+        let contDate = new Date(this.dateTo).getTime();
         //current time
         let now = new Date().getTime();
         //the finished number in milliseconds
@@ -211,47 +212,51 @@ class Countdown {
         let hours = minutes * 60;
         let days = hours * 24;
 
-        let textDay = Math.floor(this.countDownTo / days);
-        let textHour = Math.floor((this.countDownTo % days) / hours);
-        let textMinutes = Math.floor((this.countDownTo % hours) / minutes);
-        let textSecond = Math.floor((this.countDownTo % minutes) / seconds);
+        let textDay = Math.floor(this.countDownTo() / days);
+        let textHour = Math.floor((this.countDownTo() % days) / hours);
+        let textMinutes = Math.floor((this.countDownTo() % hours) / minutes);
+        let textSecond = Math.floor((this.countDownTo() % minutes) / seconds);
 
         this.days.innerHTML = textDay;
         this.hours.innerHTML = textHour;
         this.mins.innerHTML = textMinutes;
         this.secs.innerHTML = textSecond;
 
-        if(textDay < 100) {
+        if (textDay < 100) {
             this.days.innerHTML = '0' + textDay;
-        } else if(textDay < 10) {
+        } else if (textDay < 10) {
             this.days.innerHTML = '00' + textDay;
         }
 
-        if(textHour < 10) {
+        if (textHour < 10) {
             this.hours.innerHTML = '0' + textHour;
         }
 
-        if(textMinutes < 10) {
+        if (textMinutes < 10) {
             this.mins.innerHTML = '0' + textMinutes;
         }
 
-        if(textSecond < 10) {
+        if (textSecond < 10) {
             this.secs.innerHTML = '0' + textSecond;
         }
     }
 
     setInterval() {
-        setInterval(this.calculateTime, 1000);
+        let time = this;
+        setInterval(() => time.calculateTime(), 1000);
     }
 
-    init(daysId, hoursId, minsId, secsId) {
+    init(daysId, hoursId, minsId, secsId, date) {
         this.days = document.getElementById(daysId);
         this.hours = document.getElementById(hoursId);
         this.mins = document.getElementById(minsId);
         this.secs = document.getElementById(secsId);
+        this.dateTo = date;
     }
 }
 
-let time = new Countdown();
-time.init('days', 'hours', 'mins', 'secs');
-time.setInterval();
+class HotSale extends Countdown {
+    constructor() {
+        super();
+    }
+}
