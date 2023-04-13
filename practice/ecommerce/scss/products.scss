@@ -5,11 +5,12 @@
 @import 'header';
 
 
-//title section
+// Title section
 .bg-title_section {
   background-image: url("../img/slider_4.webp");
   background-position: right;
   background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 720px;
 
@@ -50,6 +51,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include font-weight(heavy);
 
     .block-item {
       width: 195px;
@@ -58,14 +60,12 @@
       flex-direction: column;
       gap: 15px;
       color: $color-black;
-      @include font-weight(heavy);
 
       .title-item_style {
         font-size: 14px;
         color: $color-black;
         letter-spacing: 2px;
         text-transform: uppercase;
-        @include font-weight(heavy);
 
         &:hover {
           color: $color-sand;
@@ -75,78 +75,254 @@
   }
 }
 
-//slider imgs
-
-.bg-item_earrings {
-  background-image: url("../img/slider_5.webp");
+// Slider imgs
+.img-item {
   width: 115px;
   height: 115px;
   border-radius: 50%;
   background-repeat: no-repeat;
 }
 
-.bg-item_necklaces {
-  background-image: url("../img/slider_6.webp");
-  width: 115px;
-  height: 115px;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-}
-
-.bg-item_bracelets {
-  background-image: url("../img/slider_9.webp");
-  width: 115px;
-  height: 115px;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-}
-
-.bg-item_wedding {
-  background-image: url("../img/slider_8.avif");
-  width: 115px;
-  height: 115px;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-}
-
-
+// Left & Right arrows in Sliders block
 .position-left_backup {
-  position: absolute;
-  top: 75%;
-  transform: translateY(-50%);
+  @extend %common-arrows_position;
   left: 0;
+
+  .icon-left_backup {
+    background-image: url(../img/left_backup.svg);
+    @extend %common-arrows_style;
+    left: 28rem;
+  }
 }
 
 .position-right_backup {
-  position: absolute;
-  top: 75%;
-  transform: translateY(-50%);
+  @extend %common-arrows_position;
+
+  .icon-right_backup {
+    background-image: url(../img/right_backup.svg);
+    @extend %common-arrows_style;
+    left: 25rem;
+  }
 }
 
-.icon-left_backup {
-  width: 25px;
-  height: 25px;
-  background-image: url(../img/left_backup.svg);
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-position: center;
-  background-size: contain;
-  border: none;
-  position: absolute;
-  left: 28rem;
-  transform: translateY(-50%);
+// Nav filter bar
+.position-nav_filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .filter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .icon-filter {
+      background-image: url("../img/filter.svg");
+      background-size: contain;
+      width: 35px;
+      height: 35px;
+      border: 2px solid $color-black;
+      padding: 2px;
+      cursor: pointer;
+    }
+  }
+
+  .grids-icon_position {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+  }
 }
 
-.icon-right_backup {
-  width: 25px;
-  height: 25px;
-  background-image: url(../img/right_backup.svg);
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-position: center;
-  background-size: contain;
+.grids-block_style {
+  border: 1px solid $color-jupiter;
+}
+
+// Dropdown menu
+.alphabetically-dropdown {
+  height: 37px;
   border: none;
+  font-size: 15px;
+  background-color: $color-jupiter;
+  padding: 0 20px 0 15px;
+}
+
+.dropdown-toggle::after {
+  margin-left: 10px;
+}
+
+.dropdown-menu {
+  width: 100%;
+  border-radius: 0;
+
+  .dropdown-item:is(:focus, :hover) {
+    background-color: $color-jupiter;
+  }
+}
+
+//Change grid of products
+.icon-grid_3x3 {
+  background-image: url("../img/grid-3x3.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+  margin-right: 4px;
+}
+
+.icon-grid_4x3 {
+  background-image: url("../img/grid-4x3.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+  margin-right: 8px;
+}
+
+.icon-list_task {
+  background-image: url("../img/list-task.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 33px;
+  height: 33px;
+  margin-right: 8px;
+}
+
+//Template products
+.icon-search {
+  background-image: url("../img/search.svg");
+  @extend .style-icon;
+}
+
+.btn-cart_style {
+  position: relative;
+  text-align: center;
+
+  display: block;
+  background-color: transparent;
+  border: 1px solid black;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all .2s ease;
+  padding: 10px 15px;
+  margin: 0 auto;
+}
+
+.btn-cart_style:before {
+  content: attr(data-front);
+  opacity: 1;
+  transition: 0.5s;
+  padding: 0 20px;
+  transform: translateY(0) rotate(0);
+}
+
+.btn-cart_style:after {
+  content: "";
+  background-image: url(../img/bag.svg);
+  background-repeat: no-repeat;
   position: absolute;
-  left: 25rem;
-  transform: translateY(-50%);
+  top: 8px;
+  left: 67px;
+  font-size: 20px;
+  opacity: 0;
+  width: 80px;
+  height: 35px;
+  transition: 0.5s;
+  filter: brightness(0) invert(1);
+}
+
+.btn-cart_style:hover {
+  background-color: $color-sand;
+  color: $color-white;
+  border: none;
+}
+
+.btn-cart_style:hover::before {
+  opacity: 0;
+  transform: translateY(0) rotate(0);
+}
+
+.btn-cart_style:hover::after {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+.btn-cart_style:is(:hover::before, :hover::after) {
+  cursor: pointer;
+}
+
+//Pagination
+.pagination-position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .pagination {
+    --bs-pagination-border-radius: none;
+    --bs-pagination-color: #868686;
+    --bs-pagination-padding-x: 15px;
+    --bs-pagination-padding-y: 6px;
+    --bs-pagination-hover-color: var(--bs-white);
+    --bs-pagination-focus-color: var(--bs-white);
+    --bs-pagination-hover-bg: #cb8161;
+    gap: 10px;
+
+    .page-link {
+      width: 42px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    .next-icon {
+      display: block;
+      height: 20px;
+      background-image: url("../img/right_arrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position-x: 10px;
+      position: relative;
+      top: 8px;
+      filter: brightness(0) saturate(100%) invert(59%) sepia(1%) saturate(684%) hue-rotate(71deg) brightness(90%) contrast(82%);
+
+      &:hover {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}
+
+//Offcanvas style
+.filter-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.color-antique {
+  background-color: $color-antique;
+}
+
+.color-bone {
+  background-color: $color-bone;
+}
+
+.color-chestnut {
+  background-color: $color-chesthut;
+}
+
+.color-eggshell {
+  background-color: $color-eggshell;
+}
+
+.color-gadien {
+background: $color-gadien;
+}
+
+.color-grullo {
+  background-color: $color-grullo;
+}
+
+.color-pinetree {
+  background-color: $color-pinetree;
 }

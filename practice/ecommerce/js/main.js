@@ -149,42 +149,38 @@ class Products {
     }
 
     getTemplateBlockItem(title, price, img) {
-        return '<div class="col-banner_carousel">\n' +
-            '        <div class="hover-element">\n' +
-            '             <div class="blocks-position">\n' +
-            '                  <img class="img-style"\n' +
+        return ' <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">\n' +
+            '                    <div class="blocks-position">\n' +
+            '                       <img class="img-style"\n' +
             '                       src="' + img + '"\n' +
             '                       alt="' + title + '">\n' +
-            '                  <div class="flex-links">\n' +
-            '                       <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">\n' +
-            '                            <div class="icon-bag">\n' +
-            '                                 <a href="#"></a>\n' +
+            '                        <div class="flex-links">\n' +
+            '                            <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">\n' +
+            '                                <div class="icon-bag">\n' +
+            '                                    <a href="#"></a>\n' +
+            '                                </div>\n' +
             '                            </div>\n' +
-            '                       </div>\n' +
-            '                       <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">\n' +
-            '                            <div class="icon-like">\n' +
-            '                                 <a href="#"></a>\n' +
+            '                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">\n' +
+            '                                <div class="icon-like">\n' +
+            '                                    <a href="#"></a>\n' +
+            '                                </div>\n' +
             '                            </div>\n' +
-            '                       </div>\n' +
-            '                  </div>\n' +
-            '             </div>\n' +
-            '             <div>\n' +
-            '                  <div class="flex-stars">\n' +
-            '                       <span class="icon-star"></span>\n' +
-            '                       <span class="icon-star"></span>\n' +
-            '                       <span class="icon-star"></span>\n' +
-            '                       <span class="icon-star"></span>\n' +
-            '                       <span class="icon-star"></span>\n' +
-            '                  </div>\n' +
-            '                  <div>\n' +
-            '                       <h3 class="product-name">\n' +
-            '                           <a href="#">' + title + '</a>\n' +
-            '                       </h3>\n' +
-            '                       <p class="product-price">£' + price + '</p>\n' +
-            '                  </div>\n' +
-            '             </div>\n' +
-            '        </div>\n' +
-            '   </div>'
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                    <div class="flex-stars">\n' +
+            '                        <span class="icon-star"></span>\n' +
+            '                        <span class="icon-star"></span>\n' +
+            '                        <span class="icon-star"></span>\n' +
+            '                        <span class="icon-star"></span>\n' +
+            '                        <span class="icon-star"></span>\n' +
+            '                    </div>\n' +
+            '                    <div>\n' +
+            '                        <h3 class="product-name">\n' +
+            '                            <a href="#">' + title + '</a>\n' +
+            '                        </h3>\n' +
+            '                        <p class="product-price">£' + price + '</p>\n' +
+            '                    </div>\n' +
+            '                </div>'
     }
 }
 
