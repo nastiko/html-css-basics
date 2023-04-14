@@ -1,7 +1,10 @@
+@import "commonstyle";
+@import "main";
+
 //banners
 .img-rock {
   background-image: url("../img/banner_8.webp");
-  height: 498px;
+  height: 497px;
   @extend .imgs-block;
 }
 
