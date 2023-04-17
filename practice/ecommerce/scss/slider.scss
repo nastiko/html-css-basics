@@ -34,6 +34,15 @@
   transform: translate(-50%, -50%);
   padding: 0 100px;
 
+  .h1-style {
+    font-size: 96px;
+  }
+
+  .h3-style {
+    font-size: 48px;
+    padding-bottom: 3rem;
+  }
+
   .explore-button {
     letter-spacing: 5px;
     line-height: 50px;
@@ -65,7 +74,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 150px;
+  left: 100px;
 }
 
 .position-btn_right {
@@ -138,5 +147,70 @@
     background-color: $color-sand;
     border-color: $color-sand;
     cursor: pointer;
+  }
+}
+
+// @media query
+@media only screen and (max-width: 1200px) {
+  .h1-style {
+    font-size: 70px;
+  }
+  .h3-style {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .sliders-viewport {
+    height: 400px;
+  }
+
+  .bg-icon {
+    width: 40px;
+    height: 40px;
+    display: none;
+  }
+
+  .inside-text {
+    padding: 0;
+
+    .h1-style {
+      font-size: 70px;
+    }
+
+    .h3-style {
+      font-size: 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 778px) {
+  .inside-text {
+    .h1-style {
+      font-size: 50px;
+    }
+
+    .h3-style {
+      font-size: 30px;
+      padding-bottom: 2rem;
+    }
+
+    .explore-button {
+      line-height: 34px;
+      padding: 0 15px;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .inside-text {
+    .h1-style {
+      font-size: 45px;
+    }
+
+    .h3-style {
+      font-size: 25px;
+    }
   }
 }

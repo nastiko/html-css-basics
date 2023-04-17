@@ -142,45 +142,21 @@ class Products {
             this.#title = item.title;
             this.#price = item.price;
             this.#img = item.image;
-            let template = this.getTemplateBlockItem(this.#title, this.#price, this.#img);
+            let template = await this.getTemplateBlockItem(this.#title, this.#price, this.#img);
             let container = document.getElementById('container');
             container.innerHTML += template;
         }
     }
 
-    getTemplateBlockItem(title, price, img) {
-        return ' <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">\n' +
-            '                    <div class="blocks-position">\n' +
-            '                       <img class="img-style"\n' +
-            '                       src="' + img + '"\n' +
-            '                       alt="' + title + '">\n' +
-            '                        <div class="flex-links">\n' +
-            '                            <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">\n' +
-            '                                <div class="icon-bag">\n' +
-            '                                    <a href="#"></a>\n' +
-            '                                </div>\n' +
-            '                            </div>\n' +
-            '                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">\n' +
-            '                                <div class="icon-like">\n' +
-            '                                    <a href="#"></a>\n' +
-            '                                </div>\n' +
-            '                            </div>\n' +
-            '                        </div>\n' +
-            '                    </div>\n' +
-            '                    <div class="flex-stars">\n' +
-            '                        <span class="icon-star"></span>\n' +
-            '                        <span class="icon-star"></span>\n' +
-            '                        <span class="icon-star"></span>\n' +
-            '                        <span class="icon-star"></span>\n' +
-            '                        <span class="icon-star"></span>\n' +
-            '                    </div>\n' +
-            '                    <div>\n' +
-            '                        <h3 class="product-name">\n' +
-            '                            <a href="#">' + title + '</a>\n' +
-            '                        </h3>\n' +
-            '                        <p class="product-price">£' + price + '</p>\n' +
-            '                    </div>\n' +
-            '                </div>'
+    async getTemplateBlockItem(title, price, img) {
+        let response = await fetch('template/product_item.html');
+        let result = await response.text();
+
+        result = result.replaceAll('VAR_TITLE', title);
+        result = result.replaceAll('VAR_PRICE', price);
+        result = result.replaceAll('VAR_IMG', img);
+
+        return result;
     }
 }
 

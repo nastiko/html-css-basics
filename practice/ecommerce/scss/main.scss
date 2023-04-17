@@ -5,6 +5,7 @@
 @import 'header';
 @import "slider";
 @import "helpers/animation";
+@import "imgs";
 
 
 html {
@@ -17,21 +18,23 @@ body {
 }
 
 
-// slider container
+// Slider container
 .slide-first, .slide-second, .slide-third {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   text-align: center;
-  @extend .inside-text;
   @extend .slider-img;
 }
+
 .slide-first {
   background-image: url("../img/slider_1.webp");
 }
+
 .slide-second {
   background-image: url("../img/slider_2.webp");
 }
+
 .slide-third {
   background-image: url("../img/slider_3.webp");
 }
@@ -56,34 +59,47 @@ body {
 }
 
 
-//explore container
+// Explore container
 .bg-section_explore {
   background-image: url("../img/bg_line.webp");
-  padding-bottom: 100px;
+  padding-bottom: 4rem;
+}
 
-  .col-banner {
-    @extend %col-banner;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  justify-items: center;
+  grid-column-gap: 15px;
+  grid-row-gap: 3rem;
+}
 
-    .categories-button {
-      @extend .button-banners;
-      @extend %button;
-      width: 138px;
-      background-color: $color-white;
-      text-transform: none;
-      border: none;
-      position: relative;
-      bottom: 20px;
-      padding: 0 15px;
+.grid-area {
+  position: relative;
 
-      .link-style {
-        @extend %link;
-      }
+  .categories-button {
+    width: 100%;
+    letter-spacing: 0;
+    background-color: $color-white;
+    border: none;
+    position: absolute;
+    bottom: -15px;
+    padding: 5px 0;
+    @extend .button-banners;
+    @extend %button;
+
+    .link-style {
+      @extend %link;
     }
   }
 }
 
 
-// two name's container
+// Two name's container
+.row.utilities {
+  justify-content: space-around;
+}
+
 .banner-wrap_info {
   max-width: 470px;
   text-align: center;
@@ -97,9 +113,7 @@ body {
     margin-bottom: 5px;
     margin-top: 0;
   }
-}
 
-.col-lg-6 {
   .button-banners {
     @extend .button-banners;
     @extend %button;
@@ -107,77 +121,84 @@ body {
   }
 }
 
-//week's collection
-.img-weeks {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 330px;
-}
 
+// Week's collection & Template of products
+.grid-products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-column-gap: 20px;
+  grid-row-gap: 3rem;
 
-// Template of products
-.blocks-position {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  .grid-area {
+    position: relative;
 
-  .img-style {
-    width: 100%;
-    height: 330px;
-    object-fit: contain;
-  }
-
-  .flex-links {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    gap: 10px;
-    margin-bottom: 15px;
-
-    .icon-button {
+    .blocks-position {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      width: 45px;
-      height: 45px;
-      background-color: #ffffff;
-      cursor: pointer;
-      @extend %button;
+      align-items: center;
 
-      .icon-bag {
-        background-image: url("../img/bag.svg");
-        @extend .style-icon;
+      .img-style {
+        width: 230px;
+        height: 130px;
+        object-fit: contain;
       }
 
-      .icon-like {
-        background-image: url("../img/like.svg");
-        @extend .style-icon;
+      .flex-links {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 15px;
+        gap: 10px;
+        margin-bottom: 15px;
+
+        .icon-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 45px;
+          height: 45px;
+          background-color: #ffffff;
+          cursor: pointer;
+          @extend %button;
+
+          .icon-bag {
+            background-image: url("../img/bag.svg");
+            @extend .style-icon;
+          }
+
+          .icon-like {
+            background-image: url("../img/like.svg");
+            @extend .style-icon;
+          }
+        }
+      }
+
+      .flex-stars {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+
+        .icon-star {
+          background-image: url("../img/star.svg");
+          background-repeat: no-repeat;
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .product-price {
+        @extend .style-text;
+        color: $color-sand;
+        margin-bottom: 0.5rem;
       }
     }
   }
 }
 
-.flex-stars {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-
-  .icon-star {
-    background-image: url("../img/star.svg");
-    background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
-  }
-}
-
-.product-price {
-  @extend .style-text;
-  color: $color-sand;
-  margin-bottom: 0.5rem;
-}
-
+//////////
 //video section
 .overtext {
   display: flex;
@@ -195,25 +216,26 @@ body {
   .large-header {
     color: $color-white;
   }
+}
 
-  .categories-button {
-    @extend %button;
-    background-color: $color-white;
-    line-height: 35px;
-    letter-spacing: 3px;
-    text-align: center;
-    text-transform: uppercase;
-    border: none;
+// not correct style for categories button - check it
+.categories-button {
+  @extend %button;
+  background-color: $color-white;
+  line-height: 35px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
 
-    .link-style {
-      font-size: 11px;
-      padding: 40px;
-      @include font-weight(heavy);
-      @extend %link;
+  .link-style {
+    font-size: 11px;
+    /*padding: 40px;*/
+    @include font-weight(heavy);
+    @extend %link;
 
-      &:hover {
-        color: $color-white;
-      }
+    &:hover {
+      color: $color-white;
     }
   }
 }
@@ -240,8 +262,9 @@ body {
   text-align: center;
   background-color: white;
   border: 2px solid $color-sand;
-  position: relative;
-  top: 230px;
+  position: absolute;
+  bottom: 105px;
+  right: 27px;
   padding: 3px 20px;
   margin: 0 auto;
 
@@ -389,6 +412,75 @@ body {
   vertical-align: middle;
   border: none;
 }
+
+// @media query
+
+@media only screen and (max-width: 1500px) and (min-width: 992px) {
+  .bracelets, .charms, .earrings, .necklaces, .rings {
+    width: 275px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 0;
+  }
+
+}
+
+@media only screen and (max-width: 1275px) and (min-width: 992px) {
+  .bg-section_explore {
+    padding-bottom: 50px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 0;
+  }
+
+  .row.utilities {
+    margin: 0;
+  }
+
+  .grid-products {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 778px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0;
+  }
+
+  .grid-products {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 778px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-products {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .row.utilities {
+    padding: 0 1rem;
+    margin: 0;
+  }
+
+  .img-style {
+    width: 125px !important;
+  }
+}
+
 
 
 

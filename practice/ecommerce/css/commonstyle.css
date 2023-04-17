@@ -31,14 +31,11 @@ ul {
 a {
   text-decoration: none;
 }
-a:hover {
-  color: #cb8161;
-}
 
 .button-banners, .product-name a {
   font-family: "Lato", sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   text-decoration: none;
   color: #000000;
 }
@@ -48,19 +45,7 @@ a:hover {
   margin: 0 auto;
 }
 
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 0 -5px;
-}
-
-.flex-container .col-banner {
-  max-width: 20%;
-  flex: 0 0 20%;
-  padding: 0 5px;
-}
-
+/*PRODUCTS PAGE*/
 .style-text, .highlight-text, .product-name, .header-style {
   text-align: center;
   text-transform: uppercase;
@@ -94,11 +79,13 @@ a:hover {
   color: #cb8161;
 }
 
-.imgs-block {
+.img-block {
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
+  background-size: auto;
+  background-position: right;
+  width: 273px;
   height: 376px;
+  position: relative;
 }
 
 .highlight-text {
@@ -115,6 +102,8 @@ a:hover {
   width: 20px;
   height: 20px;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .guarantee-icon {
@@ -125,8 +114,6 @@ a:hover {
 }
 
 .button-banners {
-  font-size: 11px;
-  background-color: transparent;
   line-height: 35px;
   text-align: center;
   text-transform: uppercase;
@@ -136,9 +123,8 @@ a:hover {
   margin: 0 auto;
 }
 
-.border-style {
-  padding-bottom: 75px;
-  border-bottom: 1px solid #e7e7e7;
-}
+/*.border-style {
+  border-bottom: 1px solid $color-placebo;
+}*/
 
 /*# sourceMappingURL=commonstyle.css.map */

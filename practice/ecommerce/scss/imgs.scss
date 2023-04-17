@@ -1,50 +1,55 @@
 @import "commonstyle";
-@import "main";
 
 //banners
 .img-rock {
-  background-image: url("../img/banner_8.webp");
   height: 497px;
-  @extend .imgs-block;
+  background-image: url("../img/banner_8.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
 }
 
 //categories' imgs section
 .bracelets {
   background-image: url("../img/banner_1.webp");
-  @extend .imgs-block;
+  @extend .img-block;
 }
 
 .charms {
   background-image: url("../img/banner_2.webp");
-  @extend .imgs-block;
+  @extend .img-block;
 }
 
 .earrings {
   background-image: url("../img/banner_3.webp");
-  @extend .imgs-block;
+  @extend .img-block;
 }
 
 .necklaces {
   background-image: url("../img/banner_4.webp");
-  @extend .imgs-block;
+  @extend .img-block;
 }
 
 .rings {
   background-image: url("../img/banner_5.webp");
-  @extend .imgs-block;
+  @extend .img-block;
 }
 
 
 //individual's imgs
 
 .img-magic {
+  width: 100%;
   background-image: url("../img/banner_6.webp");
-  @extend .imgs-block;
+  background-size: cover;
+  @extend .img-block;
 }
 
 .img-earrings {
+  width: 100%;
   background-image: url("../img/banner_7.webp");
-  @extend .imgs-block;
+  background-size: cover;
+  @extend .img-block;
 }
 
 
@@ -53,22 +58,18 @@
 //hot list section
 .earrings-3 {
   background-image: url("../img/earrings_3.webp");
-  @extend .img-weeks;
 }
 
 .earrings-6 {
   background-image: url("../img/earrings_6.webp");
-  @extend .img-weeks;
 }
 
 .rings-transparent {
   background-image: url("../img/rings_transparent.webp");
-  @extend .img-weeks;
 }
 
 .rings-5 {
   background-image: url("../img/rings_5.webp");
-  @extend .img-weeks;
 }
 
 //articles section
@@ -76,20 +77,20 @@
   background-image: url("../img/banner_12.jpg");
   background-position: top;
   height: 280px;
-  @extend .imgs-block;
+  @extend .img-block;
 }
 
 .post-wedding {
   background-image: url("../img/banner_10.png");
   height: 280px;
-  @extend .imgs-block;
+  @extend .img-block;
 }
 
 .post-gift {
   background-image: url("../img/banner_11.jpg");
   background-position: center;
   height: 280px;
-  @extend .imgs-block;
+  @extend .img-block;
 }
 
 //guarantee section

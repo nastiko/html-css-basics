@@ -40,23 +40,17 @@
   }
 }
 
-.imgs-block {
+.img-block {
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
+  background-size: auto;
+  background-position: right;
+  width: 273px;
   height: 376px;
+  position: relative;
 }
 
 .width-container {
   @extend %wrap-container;
-}
-
-.flex-container {
-  @extend %flex-container;
-
-  .col-banner {
-    @extend %col-banner;
-  }
 }
 
 .highlight-text {
@@ -86,8 +80,6 @@
 }
 
 .button-banners {
-  font-size: 11px;
-  background-color: transparent;
   line-height: 35px;
   text-align: center;
   text-transform: uppercase;

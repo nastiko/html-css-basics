@@ -19,21 +19,50 @@
 </head>
 <body>
 <header>
-    <nav class="desktop-device px-5">
+    <nav class="desktop-device width-container">
+        <div class="nav-menu_mobile" data-bs-toggle="offcanvas" data-bs-target="#nav-menu_mobile">
+            <div class="icon-menu"></div>
+        </div>
+        <div class="offcanvas offcanvas-start" id="nav-menu_mobile">
+            <div class="offcanvas-header">
+                <h1 class="offcanvas-title">Close</h1>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul>
+                    <li><a class="offcanvas-list" href="#">Jewellery</a></li>
+                    <li>
+                        <hr>
+                    </li>
+                    <li><a class="offcanvas-list" href="#">Sale</a></li>
+                    <li>
+                        <hr>
+                    </li>
+                    <li><a class="offcanvas-list" href="#">Gifts</a></li>
+                    <li>
+                        <hr>
+                    </li>
+                    <li><a class="offcanvas-list" href="#">Blog</a></li>
+                    <li>
+                        <hr>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div class="logo"></div>
-        <div class="categories">
+        <div class="categories display-none_mobile">
             <ul class="gap-list_categories">
-                <li>JEWELLERY</li>
-                <li>SALE</li>
-                <li>GIFTS</li>
-                <li>BLOG</li>
+                <li><a class="display-list_style" href="#">Jewellery</a></li>
+                <li><a class="display-list_style" href="#">Sale</a></li>
+                <li><a class="display-list_style" href="#">Gifts</a></li>
+                <li><a class="display-list_style" href="#">Blog</a></li>
             </ul>
         </div>
         <div>
             <ul class="gap-list_icons">
-                <li class="icon-person"></li>
-                <li class="icon-like"></li>
-                <li class="icon-bag pe-5">
+                <li class="icon-person display-none_mobile"></li>
+                <li class="icon-like display-none_mobile"></li>
+                <li class="icon-bag me-3">
                     <span class="amount-item">0</span>
                 </li>
             </ul>
@@ -45,11 +74,12 @@
         <div class="sliders-viewport">
             <div class="slide-container">
                 <div class="slide-first carousel_slide">
-                    <div class="container-fluid inside-text">
+                    <div class="container-fluid inside-text width-container">
                         <div class="container">
-                            <h1 class="large-header text-6">Now up to <span id="fadeEl" class="text-show">30</span><span
+                            <h1 class="large-header h1-style">Now up to <span id="fadeEl"
+                                                                              class="text-show">30</span><span
                                     class="sale-style">%</span> off*</h1>
-                            <h3 class="text-3 pb-5">MID YEAR SALE</h3>
+                            <h3 class="h3-style">MID YEAR SALE</h3>
                             <button class="explore-button text-1">EXPLORE BESTSELLER
                                 <span class="icon-arrow"></span>
                             </button>
@@ -59,8 +89,8 @@
                 <div class="slide-second carousel_slide">
                     <div class="container-fluid inside-text">
                         <div class="container">
-                            <h1 class="large-header text-6">Oh, Hello Newness!</h1>
-                            <h3 class="text-3 pb-5">MID YEAR SALE</h3>
+                            <h1 class="large-header h1-style">Oh, Hello Newness!</h1>
+                            <h3 class="h3-style">MID YEAR SALE</h3>
                             <button class="explore-button text-1">EXPLORE BESTSELLER
                                 <span class="icon-arrow"></span>
                             </button>
@@ -70,8 +100,8 @@
                 <div class="slide-third carousel_slide">
                     <div class="container-fluid inside-text">
                         <div class="container">
-                            <h1 class="large-header text-6">Best of the Best</h1>
-                            <h3 class="text-3 pb-5">MID YEAR SALE</h3>
+                            <h1 class="large-header h1-style">Best of the Best</h1>
+                            <h3 class="h3-style">MID YEAR SALE</h3>
                             <button class="explore-button text-1">EXPLORE BESTSELLER
                                 <span class="icon-arrow"></span>
                             </button>
@@ -101,32 +131,32 @@
         <div class="width-container">
             <h5 class="highlight-text">Shop by</h5>
             <h3 class="header-style">Explore the Range</h3>
-            <div class="flex-container">
-                <div class="col-banner">
+            <div class="grid-container">
+                <div class="grid-area">
                     <div class="bracelets"></div>
                     <div class="categories-button">
                         <a class="link-style" href="#">Shop Bracelets</a>
                     </div>
                 </div>
-                <div class="col-banner">
+                <div class="grid-area">
                     <div class="charms"></div>
                     <div class="categories-button">
                         <a class="link-style" href="#">Shop Charms</a>
                     </div>
                 </div>
-                <div class="col-banner">
+                <div class="grid-area">
                     <div class="earrings"></div>
                     <div class="categories-button">
                         <a class="link-style" href="#">Shop Earrings</a>
                     </div>
                 </div>
-                <div class="col-banner">
+                <div class="grid-area">
                     <div class="necklaces"></div>
                     <div class="categories-button">
                         <a class="link-style" href="#">Shop Necklaces</a>
                     </div>
                 </div>
-                <div class="col-banner">
+                <div class="grid-area">
                     <div class="rings"></div>
                     <div class="categories-button">
                         <a class="link-style" href="#">Shop Rings</a>
@@ -137,10 +167,10 @@
     </section>
     <section class="container-fluid border-style pt-5 px-0">
         <div class="width-container">
-            <div class="row flex-container">
-                <div class="col-lg-6">
+            <div class="row utilities">
+                <div class="col-md-6 col-sm-10 col-12">
                     <div class="img-magic"></div>
-                    <div class="banner-wrap_info pt-4">
+                    <div class="banner-wrap_info pt-4 mb-4">
                         <h3 class="title-banner">Elizabeth Stenhouse</h3>
                         <p class="info-banner">Elevate your ear party with a choice of mix and matched stacks or
                             striking solo
@@ -149,11 +179,12 @@
                         <a class="button-banners" href="#">Shop Now</a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-md-6 col-sm-10 col-12">
                     <div class="img-earrings"></div>
-                    <div class="banner-wrap_info pt-4">
+                    <div class="banner-wrap_info pt-4 mb-4">
                         <h3 class="title-banner">Heather Cohen® Earrings</h3>
-                        <p class="info-banner">Transition your outfits from day to night in one easy step with the power
+                        <p class="info-banner">Transition your outfits from day to night in one easy step with the
+                            power
                             of a unique, luxe layered look</p>
                         <a class="button-banners" href="#">Shop Now</a>
                     </div>
@@ -161,13 +192,25 @@
             </div>
         </div>
     </section>
-    <section class="container-fluid py-5 px-0">
+    <hr>
+    <section class="container-fluid px-0 mt-5">
+        <div class="width-container mb-5">
+            <h5 class="highlight-text">Discover this week's</h5>
+            <h3 class="header-style">Jewellery Favourites</h3>
+            <div id="container" class="grid-products"></div>
+        </div>
+    </section>
+
+    <!--<section class="container-fluid px-0 mt-5">
         <div class="width-container px-2">
             <h5 class="highlight-text">Discover this week's</h5>
             <h3 class="header-style">Jewellery Favourites</h3>
             <div id="container" class="row"></div>
         </div>
-    </section>
+    </section>-->
+
+
+
     <section class="container-fluid px-0 pb-3">
         <div class="overtext">
             <h1 class="large-header text-5">Stand Out In Style</h1>
@@ -185,47 +228,54 @@
         <div class="width-container px-2">
             <h5 class="highlight-text">On trend hot jewellery</h5>
             <h3 class="header-style">The Hot List</h3>
-            <div class="flex-container">
-                <div class="col-banner_carousel">
-                    <div class="earrings-6">
-                        <div class="pt-2 ps-3">
-                            <span class="red-box">25%</span>
-                        </div>
-                        <div class="time-box">
-                            <div>
-                                <span id="days-25%" class="countdown">0</span>
-                                <span class="block-box">days</span>
-                            </div>
-                            <div>
-                                <span id="hours-25%" class="countdown">0</span>
-                                <span class="block-box">hours</span>
-                            </div>
-                            <div>
-                                <span id="mins-25%"  class="countdown">0</span>
-                                <span class="block-box">mins</span>
-                            </div>
-                            <div>
-                                <span id="secs-25%" class="countdown">0</span>
-                                <span class="block-box">secs</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
+            <div id="container_2" class="row">
+                <div class="col-xxl-3 col-lg-6 col-sm-12 position-relative">
                     <div>
-                        <h3 class="product-name">
-                            <a href="#">Bold Hoops</a>
-                        </h3>
-                        <p class="product-price">£120</p>
+                        <div class="blocks-position">
+                            <div class="pt-2 ps-3 position-absolute">
+                                <span class="red-box">25%</span>
+                            </div>
+                            <img class="img-style" src="img/earrings_6.webp" alt="Bold Hoops">
+                            <div class="time-box">
+                                <div>
+                                    <span id="days-25%" class="countdown">0</span>
+                                    <span class="block-box">days</span>
+                                </div>
+                                <div>
+                                    <span id="hours-25%" class="countdown">0</span>
+                                    <span class="block-box">hours</span>
+                                </div>
+                                <div>
+                                    <span id="mins-25%" class="countdown">0</span>
+                                    <span class="block-box">mins</span>
+                                </div>
+                                <div>
+                                    <span id="secs-25%" class="countdown">0</span>
+                                    <span class="block-box">secs</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex-stars">
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                                <span class="icon-star"></span>
+                            </div>
+                            <div>
+                                <h3 class="product-name">
+                                    <a href="#">Bold Hoops</a>
+                                </h3>
+                                <p class="product-price">£120</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-banner_carousel">
-                    <div class="rings-transparent"></div>
+                <div class="col-xxl-3 col-lg-6 col-sm-12 col-sm-12">
+                    <div class="blocks-position">
+                        <img class="img-style" src="img/rings_transparent.webp" alt="MEDIUM TUBE HOOPS">
+                    </div>
                     <div class="flex-stars">
                         <span class="icon-star"></span>
                         <span class="icon-star"></span>
@@ -240,8 +290,10 @@
                         <p class="product-price">£80</p>
                     </div>
                 </div>
-                <div class="col-banner_carousel">
-                    <div class="rings-5"></div>
+                <div class="col-xxl-3 col-lg-6 col-sm-12 col-sm-12">
+                    <div class="blocks-position">
+                        <img class="img-style" src="img/rings_5.webp" alt="Croissant Dome Hoops">
+                    </div>
                     <div class="flex-stars">
                         <span class="icon-star"></span>
                         <span class="icon-star"></span>
@@ -256,38 +308,51 @@
                         <p class="product-price">£75</p>
                     </div>
                 </div>
-                <div class="col-banner_carousel">
-                    <div class="earrings-3">
-                        <div class="pt-2 ps-3">
-                            <span class="red-box">20%</span>
+                <div class="col-xxl-3 col-lg-6 col-sm-12 col-sm-12 position-relative">
+                    <div class="pt-2 ps-3 position-absolute">
+                        <span class="red-box">20%</span>
+                    </div>
+                    <div class="blocks-position">
+                        <img class="img-style" src="img/earrings_3.webp" alt="Stars hoops">
+                    </div>
+                    <div class="time-box">
+                        <div>
+                            <span id="days-20%" class="countdown">565</span>
+                            <span class="block-box">days</span>
                         </div>
-                        <div class="time-box">
-                            <div>
-                                <span id="days-20%" class="countdown">565</span>
-                                <span class="block-box">days</span>
+                        <div>
+                            <span id="hours-20%" class="countdown">08</span>
+                            <span class="block-box">hours</span>
+                        </div>
+                        <div>
+                            <span id="mins-20%" class="countdown">07</span>
+                            <span class="block-box">mins</span>
+                        </div>
+                        <div>
+                            <span id="secs-20%" class="countdown">25</span>
+                            <span class="block-box">secs</span>
+                        </div>
+                    </div>
+                    <div class="flex-links">
+                        <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
+                            <div class="icon-bag">
+                                <a href="#"></a>
                             </div>
-                            <div>
-                                <span id="hours-20%" class="countdown">08</span>
-                                <span class="block-box">hours</span>
-                            </div>
-                            <div>
-                                <span id="mins-20%" class="countdown">07</span>
-                                <span class="block-box">mins</span>
-                            </div>
-                            <div>
-                                <span id="secs-20%" class="countdown">25</span>
-                                <span class="block-box">secs</span>
+                        </div>
+                        <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
+                            <div class="icon-like">
+                                <a href="#"></a>
                             </div>
                         </div>
                     </div>
+                    <div class="flex-stars">
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                        <span class="icon-star"></span>
+                    </div>
                     <div>
-                        <div class="flex-stars">
-                            <span class="icon-star"></span>
-                            <span class="icon-star"></span>
-                            <span class="icon-star"></span>
-                            <span class="icon-star"></span>
-                            <span class="icon-star"></span>
-                        </div>
                         <h3 class="product-name">
                             <a href="#">Stars hoops</a>
                         </h3>
@@ -303,10 +368,13 @@
                 <div class="col-lg-6">
                     <div class="pt-4 pe-5">
                         <h3 class="title-info mb-4">Jewellery Online at the Most Affordable Price</h3>
-                        <p class="info-banner mb-4">Behind our 15-year success is our panel of expert jewellers who have
-                            been scouring the entire globe in pursuit of the best and most stunning jewellery that can
+                        <p class="info-banner mb-4">Behind our 15-year success is our panel of expert jewellers who
+                            have
+                            been scouring the entire globe in pursuit of the best and most stunning jewellery that
+                            can
                             be offered at affordable price for you.</p>
-                        <p class="info-banner mb-4">Visit our online catalogue and shop for the finest earrings, rings,
+                        <p class="info-banner mb-4">Visit our online catalogue and shop for the finest earrings,
+                            rings,
                             bracelets, watches, silver, and the most luxurious gemstones.</p>
                         <a class="button-banners" href="#">Shop Now</a>
                     </div>
