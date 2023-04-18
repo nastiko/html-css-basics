@@ -18,44 +18,11 @@ body {
 }
 
 
-// Slider container
-.slide-first, .slide-second, .slide-third {
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  text-align: center;
-  @extend .slider-img;
-}
-
-.slide-first {
-  background-image: url("../img/slider_1.webp");
-}
-
-.slide-second {
-  background-image: url("../img/slider_2.webp");
-}
-
-.slide-third {
-  background-image: url("../img/slider_3.webp");
-}
-
-.sale-style {
-  color: $color-red;
-  text-shadow: 3px -2px 5px $color-black;
-}
-
-.text-show {
-  color: $color-red;
-  opacity: 1;
-  transition: all 1s ease;
-  text-shadow: 3px -2px 5px $color-black;
-}
-
-.text-fade {
-  color: $color-red;
-  opacity: 0;
-  transition: all 1s ease;
-  text-shadow: 3px -2px 5px $color-black;
+// Bth main style for class "button-banners"
+.button-banners {
+  @extend .button-banners;
+  @extend %button;
+  @extend %link;
 }
 
 
@@ -67,11 +34,9 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   justify-items: center;
-  grid-column-gap: 15px;
-  grid-row-gap: 3rem;
+  gap: 2rem;
 }
 
 .grid-area {
@@ -86,10 +51,13 @@ body {
     bottom: -15px;
     padding: 5px 0;
     @extend .button-banners;
-    @extend %button;
 
     .link-style {
       @extend %link;
+    }
+
+    &:hover {
+      background-color: $color-sand;
     }
   }
 }
@@ -113,93 +81,78 @@ body {
     margin-bottom: 5px;
     margin-top: 0;
   }
-
-  .button-banners {
-    @extend .button-banners;
-    @extend %button;
-    @extend %link;
-  }
 }
 
 
 // Week's collection & Template of products
-.grid-products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  align-items: center;
-  grid-column-gap: 20px;
-  grid-row-gap: 3rem;
+.grid-area {
+  position: relative;
 
-  .grid-area {
-    position: relative;
+  .blocks-position {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    .blocks-position {
+    .img-style {
+      width: 230px;
+      height: 130px;
+      object-fit: contain;
+    }
+
+    .flex-links {
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
+      position: relative;
+      top: 15px;
+      gap: 10px;
+      margin-bottom: 15px;
 
-      .img-style {
-        width: 230px;
-        height: 130px;
-        object-fit: contain;
-      }
-
-      .flex-links {
+      .icon-button {
         display: flex;
+        align-items: center;
         justify-content: center;
-        position: relative;
-        top: 15px;
-        gap: 10px;
-        margin-bottom: 15px;
+        width: 45px;
+        height: 45px;
+        background-color: #ffffff;
+        cursor: pointer;
+        @extend %button;
 
-        .icon-button {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 45px;
-          height: 45px;
-          background-color: #ffffff;
-          cursor: pointer;
-          @extend %button;
-
-          .icon-bag {
-            background-image: url("../img/bag.svg");
-            @extend .style-icon;
-          }
-
-          .icon-like {
-            background-image: url("../img/like.svg");
-            @extend .style-icon;
-          }
+        .icon-bag {
+          background-image: url("../img/bag.svg");
+          @extend .style-icon;
         }
-      }
 
-      .flex-stars {
-        display: flex;
-        justify-content: center;
-        margin-top: 15px;
-
-        .icon-star {
-          background-image: url("../img/star.svg");
-          background-repeat: no-repeat;
-          width: 20px;
-          height: 20px;
+        .icon-like {
+          background-image: url("../img/like.svg");
+          @extend .style-icon;
         }
-      }
-
-      .product-price {
-        @extend .style-text;
-        color: $color-sand;
-        margin-bottom: 0.5rem;
       }
     }
   }
+
+  .flex-stars {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+
+    .icon-star {
+      background-image: url("../img/star.svg");
+      background-repeat: no-repeat;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .product-price {
+    @extend .style-text;
+    color: $color-sand;
+    margin-bottom: 0.5rem;
+  }
 }
 
-//////////
-//video section
+
+// Video section
 .overtext {
   display: flex;
   justify-content: center;
@@ -214,11 +167,11 @@ body {
   z-index: 1000;
 
   .large-header {
+    font-size: $space-78;
     color: $color-white;
   }
 }
 
-// not correct style for categories button - check it
 .categories-button {
   @extend %button;
   background-color: $color-white;
@@ -230,7 +183,7 @@ body {
 
   .link-style {
     font-size: 11px;
-    /*padding: 40px;*/
+    padding: 13px 30px;
     @include font-weight(heavy);
     @extend %link;
 
@@ -252,7 +205,18 @@ body {
   }
 }
 
-//hot list
+
+// Hot list
+#container_2 .grid-container {
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.img-style_template {
+  width: 330px;
+  height: 330px;
+  object-fit: contain;
+}
+
 .time-box {
   width: 85%;
   text-transform: uppercase;
@@ -288,15 +252,16 @@ body {
   padding: 2px 7px;
 }
 
-//info section
+
+// Info section
 .title-info {
   font-family: "Cormorant Garamond", serif;
-  font-size: 3.125rem;
+  font-size: $space-48_24;
   @include font-weight(heavy);
   margin-top: 40px;
 }
 
-//articles section
+// Articles section
 .padding-style {
   padding: 0 15px;
 }
@@ -413,71 +378,33 @@ body {
   border: none;
 }
 
+
 // @media query
 
-@media only screen and (max-width: 1500px) and (min-width: 992px) {
-  .bracelets, .charms, .earrings, .necklaces, .rings {
-    width: 275px;
-  }
-
-  .grid-container {
-    grid-template-columns: repeat(5, 1fr);
-    grid-column-gap: 0;
-  }
-
-}
-
-@media only screen and (max-width: 1275px) and (min-width: 992px) {
-  .bg-section_explore {
-    padding-bottom: 50px;
-  }
-
-  .grid-container {
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 0;
-  }
-
-  .row.utilities {
-    margin: 0;
-  }
-
-  .grid-products {
-    grid-template-columns: repeat(2, 1fr);
-
+@media only screen and (max-width: 60em) {
+  .border-style {
+    margin-top: 0 !important;
   }
 }
 
-@media only screen and (max-width: 992px) and (min-width: 778px) {
-  .grid-container {
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 0;
-  }
-
-  .grid-products {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 2rem;
-  }
-}
-
-@media only screen and (max-width: 778px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-products {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 2rem;
-  }
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 50em) {
   .row.utilities {
     padding: 0 1rem;
     margin: 0;
   }
 
-  .img-style {
-    width: 125px !important;
+  .overtext .link-style {
+    padding: 13px 15px;
+  }
+
+  .img-rock {
+    height: 316px;
+  }
+}
+
+@media only screen and (max-width: 30em) {
+  .blocks-position, .col-padding {
+    padding: 0 1rem;
   }
 }
 

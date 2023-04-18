@@ -10,7 +10,7 @@
 
 .header-style {
   font-family: $font-cormorant;
-  font-size: 2.5rem;
+  font-size: $space-40;
   text-transform: none;
   @extend .style-text;
   filter: unset;
@@ -89,7 +89,3 @@
   margin: 0 auto;
   @extend %link;
 }
-
-/*.border-style {
-  border-bottom: 1px solid $color-placebo;
-}*/

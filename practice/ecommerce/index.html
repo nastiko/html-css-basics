@@ -91,7 +91,7 @@
                         <div class="container">
                             <h1 class="large-header h1-style">Oh, Hello Newness!</h1>
                             <h3 class="h3-style">MID YEAR SALE</h3>
-                            <button class="explore-button text-1">EXPLORE BESTSELLER
+                            <button class="explore-button">EXPLORE BESTSELLER
                                 <span class="icon-arrow"></span>
                             </button>
                         </div>
@@ -168,7 +168,7 @@
     <section class="container-fluid border-style pt-5 px-0">
         <div class="width-container">
             <div class="row utilities">
-                <div class="col-md-6 col-sm-10 col-12">
+                <div class="col-md-6 col-sm-10 col-12 mb-4">
                     <div class="img-magic"></div>
                     <div class="banner-wrap_info pt-4 mb-4">
                         <h3 class="title-banner">Elizabeth Stenhouse</h3>
@@ -179,7 +179,7 @@
                         <a class="button-banners" href="#">Shop Now</a>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-10 col-12">
+                <div class="col-md-6 col-sm-10 col-12 mb-4">
                     <div class="img-earrings"></div>
                     <div class="banner-wrap_info pt-4 mb-4">
                         <h3 class="title-banner">Heather Cohen® Earrings</h3>
@@ -192,29 +192,18 @@
             </div>
         </div>
     </section>
-    <hr>
+    <hr class="m-0">
     <section class="container-fluid px-0 mt-5">
         <div class="width-container mb-5">
             <h5 class="highlight-text">Discover this week's</h5>
             <h3 class="header-style">Jewellery Favourites</h3>
-            <div id="container" class="grid-products"></div>
+            <div id="container" class="grid-container"></div>
         </div>
     </section>
-
-    <!--<section class="container-fluid px-0 mt-5">
-        <div class="width-container px-2">
-            <h5 class="highlight-text">Discover this week's</h5>
-            <h3 class="header-style">Jewellery Favourites</h3>
-            <div id="container" class="row"></div>
-        </div>
-    </section>-->
-
-
-
     <section class="container-fluid px-0 pb-3">
         <div class="overtext">
-            <h1 class="large-header text-5">Stand Out In Style</h1>
-            <div class="categories-button">
+            <h1 class="large-header">Stand Out In Style</h1>
+            <div class="categories-button mt-2">
                 <a class="link-style" href="#">Discover Now</a>
             </div>
         </div>
@@ -225,56 +214,54 @@
         </div>
     </section>
     <section class="container-fluid border-style py-5 px-0">
-        <div class="width-container px-2">
+        <div class="width-container">
             <h5 class="highlight-text">On trend hot jewellery</h5>
             <h3 class="header-style">The Hot List</h3>
-            <div id="container_2" class="row">
-                <div class="col-xxl-3 col-lg-6 col-sm-12 position-relative">
-                    <div>
-                        <div class="blocks-position">
-                            <div class="pt-2 ps-3 position-absolute">
-                                <span class="red-box">25%</span>
-                            </div>
-                            <img class="img-style" src="img/earrings_6.webp" alt="Bold Hoops">
-                            <div class="time-box">
-                                <div>
-                                    <span id="days-25%" class="countdown">0</span>
-                                    <span class="block-box">days</span>
-                                </div>
-                                <div>
-                                    <span id="hours-25%" class="countdown">0</span>
-                                    <span class="block-box">hours</span>
-                                </div>
-                                <div>
-                                    <span id="mins-25%" class="countdown">0</span>
-                                    <span class="block-box">mins</span>
-                                </div>
-                                <div>
-                                    <span id="secs-25%" class="countdown">0</span>
-                                    <span class="block-box">secs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex-stars">
-                                <span class="icon-star"></span>
-                                <span class="icon-star"></span>
-                                <span class="icon-star"></span>
-                                <span class="icon-star"></span>
-                                <span class="icon-star"></span>
+            <div id="container_2" class="grid-container">
+                <div class="grid-area">
+                    <div class="pt-2 ps-3 position-absolute">
+                        <span class="red-box">25%</span>
+                    </div>
+                    <div class="blocks-position">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
+                        <div class="time-box">
+                            <div>
+                                <span id="days-25%" class="countdown">0</span>
+                                <span class="block-box">days</span>
                             </div>
                             <div>
-                                <h3 class="product-name">
-                                    <a href="#">Bold Hoops</a>
-                                </h3>
-                                <p class="product-price">£120</p>
+                                <span id="hours-25%" class="countdown">0</span>
+                                <span class="block-box">hours</span>
+                            </div>
+                            <div>
+                                <span id="mins-25%" class="countdown">0</span>
+                                <span class="block-box">mins</span>
+                            </div>
+                            <div>
+                                <span id="secs-25%" class="countdown">0</span>
+                                <span class="block-box">secs</span>
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xxl-3 col-lg-6 col-sm-12 col-sm-12">
+                <div class="grid-area">
                     <div class="blocks-position">
-                        <img class="img-style" src="img/rings_transparent.webp" alt="MEDIUM TUBE HOOPS">
+                        <img class="img-style_template" src="img/rings_transparent.webp" alt="MEDIUM TUBE HOOPS">
                     </div>
                     <div class="flex-stars">
                         <span class="icon-star"></span>
@@ -290,9 +277,9 @@
                         <p class="product-price">£80</p>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-lg-6 col-sm-12 col-sm-12">
+                <div class="grid-area">
                     <div class="blocks-position">
-                        <img class="img-style" src="img/rings_5.webp" alt="Croissant Dome Hoops">
+                        <img class="img-style_template" src="img/rings_5.webp" alt="Croissant Dome Hoops">
                     </div>
                     <div class="flex-stars">
                         <span class="icon-star"></span>
@@ -308,12 +295,12 @@
                         <p class="product-price">£75</p>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-lg-6 col-sm-12 col-sm-12 position-relative">
+                <div class="grid-area">
                     <div class="pt-2 ps-3 position-absolute">
                         <span class="red-box">20%</span>
                     </div>
                     <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_3.webp" alt="Stars hoops">
+                        <img class="img-style_template" src="img/earrings_3.webp" alt="Stars hoops">
                     </div>
                     <div class="time-box">
                         <div>
@@ -362,11 +349,12 @@
             </div>
         </div>
     </section>
-    <section class="container-fluid border-style pt-5 px-0">
+    <hr class="m-0">
+    <section class="container-fluid border-style my-5">
         <div class="width-container">
-            <div class="row flex-container">
-                <div class="col-lg-6">
-                    <div class="pt-4 pe-5">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-padding mb-5">
+                    <div>
                         <h3 class="title-info mb-4">Jewellery Online at the Most Affordable Price</h3>
                         <p class="info-banner mb-4">Behind our 15-year success is our panel of expert jewellers who
                             have
@@ -379,18 +367,19 @@
                         <a class="button-banners" href="#">Shop Now</a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 col-md-12">
                     <div class="img-rock"></div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="container-fluid border-style py-5 px-0">
+    <hr class="m-0">
+    <section class="container-fluid border-style py-5">
         <div class="width-container px-2">
             <h5 class="highlight-text">News & Inspired</h5>
             <h3 class="header-style">Jewellery Style Files</h3>
-            <div class="flex-container">
-                <div class="col-4 padding-style">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="post-wedding">
                         <div class="date-block">
                             <ul>
@@ -408,7 +397,7 @@
                         <a class="extra-info" href="#">Read More</a>
                     </div>
                 </div>
-                <div class="col-4 padding-style ps-0">
+                <div class="col-lg-4 col-md-6 col-sm-10 ps-0">
                     <div class="post-format">
                         <div class="date-block">
                             <ul>
@@ -426,7 +415,7 @@
                         <a class="extra-info" href="#">Read More</a>
                     </div>
                 </div>
-                <div class="col-4 padding-style pe-0">
+                <div class="col-lg-4 col-md-6 col-sm-10 pe-0">
                     <div class="post-gift">
                         <div class="date-block">
                             <ul>
@@ -448,9 +437,9 @@
         </div>
     </section>
     <section class="container-fluid bg-section_guarantee border-style py-5 px-0">
-        <div class="width-container px-2">
-            <div class="flex-container">
-                <div class="col-4 padding-style">
+        <div class="width-container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-12 padding-style">
                     <div class="icon-world"></div>
                     <div class="block-text_style">
                         <h3 class="title-icon">Shipping Worldwide</h3>
@@ -458,7 +447,7 @@
                             adipiscing elit</p>
                     </div>
                 </div>
-                <div class="col-4 padding-style ps-0">
+                <div class="col-lg-4 col-sm-12 padding-style">
                     <div class="icon-return"></div>
                     <div class="block-text_style">
                         <h3 class="title-icon">14 Days Return</h3>
@@ -466,7 +455,7 @@
                             adipiscing elit</p>
                     </div>
                 </div>
-                <div class="col-4 padding-style pe-0">
+                <div class="col-lg-4 col-sm-12 padding-style">
                     <div class="icon-security"></div>
                     <div class="block-text_style">
                         <h3 class="title-icon">Security Payment</h3>
@@ -481,8 +470,8 @@
 <footer>
     <div class="container-fluid border-style py-5 px-0">
         <div class="width-container px-2">
-            <div class="flex-container">
-                <div class="col-3 padding-style">
+            <div class="grid-container">
+                <div class="grid-area">
                     <h3 class="title-text text-1">Customer Services</h3>
                     <ul>
                         <li class="option-point"><a class="info-banner" href="#">Contact Us</a></li>
@@ -493,7 +482,7 @@
                         <li class="option-point"><a class="info-banner" href="#">Shipping & Returns</a></li>
                     </ul>
                 </div>
-                <div class="col-3 padding-style">
+                <div class="grid-area">
                     <h3 class="title-text text-1">About Us</h3>
                     <ul>
                         <li class="option-point"><a class="info-banner" href="#">About Us</a></li>
@@ -504,7 +493,7 @@
                         <li class="option-point"><a class="info-banner" href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-3 padding-style">
+                <div class="grid-area">
                     <h3 class="title-text text-1">Catalog</h3>
                     <ul>
                         <li class="option-point"><a class="info-banner" href="#">Earrings</a></li>
@@ -515,7 +504,7 @@
                         <li class="option-point"><a class="info-banner" href="#">Studs</a></li>
                     </ul>
                 </div>
-                <div class="col-3 padding-style pe-0">
+                <div class="grid-area">
                     <h3 class="title-text text-1">Our Newsletter</h3>
                     <p class="info-banner">Sign up for the latest Ice offers and exclusives.</p>
                     <form action="#">

@@ -3,6 +3,7 @@
 @import "helpers/placeholder";
 
 
+// Slider container
 .sliders-viewport {
   display: flex;
   overflow-x: hidden;
@@ -15,6 +16,45 @@
     left: 0;
     transition: all .5s ease-in-out;
   }
+}
+
+.slide-first, .slide-second, .slide-third {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  @extend .slider-img;
+}
+
+.slide-first {
+  background-image: url("../img/slider_1.webp");
+}
+
+.slide-second {
+  background-image: url("../img/slider_2.webp");
+}
+
+.slide-third {
+  background-image: url("../img/slider_3.webp");
+}
+
+.sale-style {
+  color: $color-red;
+  text-shadow: 3px -2px 5px $color-black;
+}
+
+.text-show {
+  color: $color-red;
+  opacity: 1;
+  transition: all 1s ease;
+  text-shadow: 3px -2px 5px $color-black;
+}
+
+.text-fade {
+  color: $color-red;
+  opacity: 0;
+  transition: all 1s ease;
+  text-shadow: 3px -2px 5px $color-black;
 }
 
 .slider-img {
@@ -32,23 +72,28 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0 100px;
+  padding: 0 50px;
+
+  .container {
+    text-shadow: 3px -2px 10px black;
+  }
 
   .h1-style {
-    font-size: 96px;
+    font-size: $space-96;
   }
 
   .h3-style {
-    font-size: 48px;
-    padding-bottom: 3rem;
+    font-size: $space-48;
   }
 
   .explore-button {
+    font-size: $space-20;
     letter-spacing: 5px;
     line-height: 50px;
     text-transform: uppercase;
     border: 2px solid $color-white;
     padding: 0 22px;
+    margin-top: 3rem;
     @extend %button;
   }
 
@@ -62,8 +107,8 @@
   }
 }
 
-//button arrow
 
+// Button arrow
 .main-icons {
   background-repeat: no-repeat;
   background-color: transparent;
@@ -121,7 +166,7 @@
 }
 
 
-//carousel nav
+// Carousel nav
 .carousel_nav {
   display: flex;
   justify-content: center;
@@ -150,67 +195,27 @@
   }
 }
 
-// @media query
-@media only screen and (max-width: 1200px) {
-  .h1-style {
-    font-size: 70px;
-  }
-  .h3-style {
-    font-size: 40px;
-  }
-}
 
-@media only screen and (max-width: 992px) {
+// @media query
+@media only screen and (max-width: 50em) {
   .sliders-viewport {
     height: 400px;
   }
 
   .bg-icon {
-    width: 40px;
-    height: 40px;
     display: none;
   }
 
   .inside-text {
     padding: 0;
 
-    .h1-style {
-      font-size: 70px;
-    }
-
-    .h3-style {
-      font-size: 40px;
-    }
-  }
-}
-
-@media only screen and (max-width: 778px) {
-  .inside-text {
-    .h1-style {
-      font-size: 50px;
-    }
-
-    .h3-style {
-      font-size: 30px;
-      padding-bottom: 2rem;
-    }
-
     .explore-button {
       line-height: 34px;
       padding: 0 15px;
       letter-spacing: 2px;
+      margin-top: 1rem;
     }
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .inside-text {
-    .h1-style {
-      font-size: 45px;
-    }
 
-    .h3-style {
-      font-size: 25px;
-    }
-  }
-}

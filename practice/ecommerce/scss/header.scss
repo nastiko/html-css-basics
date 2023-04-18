@@ -83,13 +83,13 @@
 
 
 // NavBar of the header for mobile
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 100em) {
   .desktop-device {
     padding: 0 1rem;
   }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 50em) {
   .display-none_mobile {
     display: none;
   }
@@ -145,12 +145,6 @@
         color: $color-sand;
       }
     }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .desktop-device {
-    padding: 0 2rem;
   }
 }
 

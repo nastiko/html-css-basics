@@ -1,15 +1,16 @@
 @import "commonstyle";
 
-//banners
+// Banners
 .img-rock {
   height: 497px;
   background-image: url("../img/banner_8.webp");
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right;
+  background-size: cover;
+  background-position: center;
 }
 
-//categories' imgs section
+
+// Categories' imgs section
 .bracelets {
   background-image: url("../img/banner_1.webp");
   @extend .img-block;
@@ -36,8 +37,7 @@
 }
 
 
-//individual's imgs
-
+// Individual's imgs
 .img-magic {
   width: 100%;
   background-image: url("../img/banner_6.webp");
@@ -53,9 +53,7 @@
 }
 
 
-//weeks' imgs section
-
-//hot list section
+// Hot list section
 .earrings-3 {
   background-image: url("../img/earrings_3.webp");
 }
@@ -72,28 +70,34 @@
   background-image: url("../img/rings_5.webp");
 }
 
-//articles section
-.post-format {
-  background-image: url("../img/banner_12.jpg");
-  background-position: top;
-  height: 280px;
+
+// Articles section
+.post-wedding {
+  background-image: url("../img/banner_10.png");
+  background-size: contain;
+  width: 450px;
+  height: 237px;
   @extend .img-block;
 }
 
-.post-wedding {
-  background-image: url("../img/banner_10.png");
-  height: 280px;
+.post-format {
+  background-image: url("../img/banner_12.jpg");
+  background-position: top;
+  width: 450px;
+  height: 237px;
   @extend .img-block;
 }
 
 .post-gift {
   background-image: url("../img/banner_11.jpg");
   background-position: center;
-  height: 280px;
+  width: 450px;
+  height: 237px;
   @extend .img-block;
 }
 
-//guarantee section
+
+// Guarantee section
 .icon-world {
   background-image: url("../img/world.svg");
   @extend .guarantee-icon;
