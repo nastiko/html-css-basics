@@ -74,24 +74,26 @@
 // Articles section
 .post-wedding {
   background-image: url("../img/banner_10.png");
-  background-size: contain;
-  width: 450px;
+  background-size: cover;
+  width: 400px;
   height: 237px;
   @extend .img-block;
 }
 
 .post-format {
   background-image: url("../img/banner_12.jpg");
+  background-size: cover;
   background-position: top;
-  width: 450px;
+  width: 400px;
   height: 237px;
   @extend .img-block;
 }
 
 .post-gift {
   background-image: url("../img/banner_11.jpg");
+  background-size: cover;
   background-position: center;
-  width: 450px;
+  width: 400px;
   height: 237px;
   @extend .img-block;
 }

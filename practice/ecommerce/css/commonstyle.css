@@ -29,10 +29,14 @@ ul {
 }
 
 a {
+  font-size: 12px;
   text-decoration: none;
 }
+a:hover {
+  color: #cb8161;
+}
 
-.button-banners, .product-name a {
+.button-banners, a {
   font-family: "Lato", sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -72,10 +76,7 @@ a {
   font-weight: 500;
   line-height: 16px;
 }
-.product-name a {
-  font-size: 12px;
-}
-.product-name a:hover {
+.product-name:hover {
   color: #cb8161;
 }
 

@@ -30,13 +30,8 @@
   font-weight: 500;
   line-height: 16px;
 
-  a {
-    font-size: 12px;
-    @extend %link;
-
-    &:hover {
-      color: $color-sand;
-    }
+  &:hover {
+    color: $color-sand;
   }
 }
 

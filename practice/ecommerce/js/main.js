@@ -71,6 +71,102 @@ class Sliders {
     }
 }
 
+class WrapSlider {
+
+    #slides;
+    #slideViewport;
+    #sliderContent;
+    #prevBtn;
+    #nextBtn;
+
+    #currPosition = 0;
+
+    constructor(slides, slideViewport, sliderContent, prevBtn, nextBtn) {
+        this.#slides = slides;
+        this.#slideViewport = slideViewport;
+        this.#sliderContent = sliderContent;
+        this.#prevBtn = prevBtn;
+        this.#nextBtn = nextBtn;
+    }
+
+    getWidth() {
+        let elem = document.querySelector('.slide');
+
+        return elem.offsetWidth;
+    }
+
+    getMaxWidth() {
+        return this.getWidth() * this.#slides.length;
+    }
+
+    getVisibleCount() {
+        let cntVisible = 0;
+
+        for(let i = 0; i < this.#slides.length; i++) {
+            let isVisible = this.isInViewport(this.#slides[i]);
+
+            if(isVisible) {
+                cntVisible++;
+            }
+        }
+
+        return cntVisible;
+    }
+
+
+    isInViewport(element) {
+        let positionViewportRight = this.getWidth();
+
+        if(element.style.left < 0) {
+            return false;
+        } else if(element.style.left >= positionViewportRight) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    slideRight() {
+        let totalElements = Math.abs(this.#currPosition) + this.getVisibleCount() * this.getWidth();
+
+        if(totalElements < this.getMaxWidth()) {
+            this.#currPosition -= this.getWidth();
+        }
+    }
+
+    init(slidesClass, slideViewportClass, sliderContentClass, prevBtnClass, nextBtnClass,) {
+        this.#slides = document.querySelectorAll(slidesClass);
+        this.#slideViewport = document.querySelector(slideViewportClass);
+        this.#sliderContent = document.querySelector(sliderContentClass);
+
+        this.#prevBtn = document.querySelector(prevBtnClass);
+        this.#nextBtn = document.querySelector(nextBtnClass);
+
+        //this.#prevBtn.addEventListener('click', () => this.slideRight());
+        this.#nextBtn.addEventListener('click', () => this.slideRight());
+    }
+
+    initSlider(slidesVisible) {
+        let slidesCount = Math.floor((window.innerWidth - (this.getWidth() / 1)) / this.getWidth());
+        let sliderWidth = (slidesCount <= 0 ? 1 : slidesCount) * this.getWidth() + 65;
+        this.#sliderContent.setAttribute('style', `width: ${sliderWidth}px`);
+
+        let sliderContentWidth = (this.#slides.length * this.getWidth() + 300).toString();
+        this.#slideViewport.setAttribute('style', `width: ${sliderContentWidth}px`);
+
+
+    }
+}
+
+let wrapSlider = new WrapSlider();
+
+wrapSlider.init('#slider-content .slide', '.grid-wrap', '.slider-content', '.icon-left_prev', '.icon-right_next');
+wrapSlider.initSlider();
+
+
+
+
+
 class Utilities {
     //change header discount
     changeDiscount() {

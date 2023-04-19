@@ -3,7 +3,7 @@
 @import 'helpers/variables';
 @import 'helpers/placeholder';
 @import 'header';
-@import "slider";
+@import "sliders";
 @import "helpers/animation";
 @import "imgs";
 
@@ -181,15 +181,8 @@ body {
   text-transform: uppercase;
   border: none;
 
-  .link-style {
-    font-size: 11px;
-    padding: 13px 30px;
-    @include font-weight(heavy);
-    @extend %link;
-
-    &:hover {
-      color: $color-white;
-    }
+  .button-banners {
+    border: none;
   }
 }
 
@@ -261,79 +254,8 @@ body {
   margin-top: 40px;
 }
 
-// Articles section
-.padding-style {
-  padding: 0 15px;
-}
 
-.date-block {
-  width: 57px;
-  height: 57px;
-  background-color: $color-white;
-  border-radius: 50%;
-  position: relative;
-  top: 10px;
-  left: 10px;
-
-  ul {
-    font-size: 14px;
-    @include font-weight(heavy);
-    width: 57px;
-    height: 57px;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-
-    .border-box {
-      border: 1px solid $color-lunar;
-      width: 25px;
-    }
-  }
-}
-
-.font-style {
-  font-family: $font-lato;
-
-  .name-banner {
-    font-size: 12px;
-    @include font-weight(medium);
-    color: $color-lunar;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-top: 20px;
-  }
-
-  .name-block {
-    text-transform: none;
-    text-align: inherit;
-    line-height: 35px;
-    margin-bottom: 8px;
-    @extend .product-name;
-
-    .link-block {
-      font-size: 26px;
-      font-family: $font-cormorant;
-      @include font-weight(heavy);
-    }
-  }
-
-  a {
-    font-size: 14px;
-    color: $color-lunar;
-    text-decoration: underline;
-    @extend %link;
-
-    .extra-info {
-      text-transform: none;
-      letter-spacing: 0;
-    }
-  }
-}
-
-//guarantee section
+// Guarantee section
 .bg-section_guarantee {
   background-image: url("../img/line.webp");
 }
@@ -354,7 +276,8 @@ body {
   }
 }
 
-//scroll-up block
+
+// Scroll-up block
 .bg-scroll_up {
   background-color: $color-sand;
   height: 45px;
@@ -380,7 +303,6 @@ body {
 
 
 // @media query
-
 @media only screen and (max-width: 60em) {
   .border-style {
     margin-top: 0 !important;
@@ -391,10 +313,6 @@ body {
   .row.utilities {
     padding: 0 1rem;
     margin: 0;
-  }
-
-  .overtext .link-style {
-    padding: 13px 15px;
   }
 
   .img-rock {

@@ -23,6 +23,7 @@ $font-lato: 'Lato', sans-serif;
 
 
 $space-20: clamp(1rem, -0.04rem + 1.76vw, 1.25rem);
+$space-26: clamp(1.5rem, calc(1.10rem + 0.60vw), 1.60rem);
 $space-40: clamp(1.5rem, calc(1.44rem + 4.07vw), 2.25rem);
 $space-48: clamp(1.5rem, calc(-0.16rem + 3.61vw), 3rem);
 $space-48_24: clamp(1.5rem, 1.44rem + 4.07vw, 3rem);

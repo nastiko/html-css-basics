@@ -3,7 +3,7 @@
 @import "helpers/placeholder";
 
 
-// Slider container
+// Slider container for main section
 .sliders-viewport {
   display: flex;
   overflow-x: hidden;
@@ -196,6 +196,101 @@
 }
 
 
+// Slider container for articles "Jewellery style files"
+.slider-content {
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.grid-wrap {
+  display: flex;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: start;
+  gap: 2rem;
+  margin-inline: auto;
+}
+
+.date-block {
+  width: 57px;
+  height: 57px;
+  background-color: $color-white;
+  border-radius: 50%;
+  position: relative;
+  top: 10px;
+  left: 10px;
+
+  ul {
+    font-size: 14px;
+    @include font-weight(heavy);
+    width: 57px;
+    height: 57px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    .border-box {
+      border: 1px solid $color-lunar;
+      width: 25px;
+    }
+  }
+}
+
+.font-style {
+  font-family: $font-lato;
+
+  .name-banner {
+    font-size: 12px;
+    @include font-weight(medium);
+    color: $color-lunar;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+
+  .name-block {
+    text-transform: none;
+    text-align: inherit;
+    line-height: 35px;
+    margin-bottom: 8px;
+    font-size: $space-26;
+    font-family: $font-cormorant;
+    @include font-weight(heavy);
+  }
+
+  .extra-info {
+    text-transform: none;
+    letter-spacing: 0;
+    color: $color-lunar;
+    text-decoration: underline;
+    @extend %link;
+
+    &:hover {
+      color: $color-sand;
+    }
+  }
+}
+
+
+.icon-left_prev {
+  background-image: url(../img/left_backup.svg);
+  position: absolute;
+  top: 60%;
+  left: -5px;
+  @extend %common-arrows_style;
+}
+
+.icon-right_next {
+  background-image: url(../img/right_backup.svg);
+  position: absolute;
+  top: 60%;
+  right: -5px;
+  @extend %common-arrows_style;
+}
+
+
 // @media query
 @media only screen and (max-width: 50em) {
   .sliders-viewport {
@@ -217,5 +312,6 @@
     }
   }
 }
+
 
 
