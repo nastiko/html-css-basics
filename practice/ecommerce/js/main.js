@@ -73,41 +73,41 @@ class Sliders {
 
 class WrapSlider {
 
-    #slides;
-    #slideViewport;
-    #sliderContent;
+    #slides;                   // 4 slides
+    #sliderViewport;           // Show px block which has visible slides inside
+    #sliderBlock               // Show block which has visible slides inside with margin outside
+    #sliderGridContent;        // How many px has the hidden block - 1900px
+    #sliderGap = 32;
+
     #prevBtn;
     #nextBtn;
 
     #currPosition = 0;
 
-    constructor(slides, slideViewport, sliderContent, prevBtn, nextBtn) {
+    constructor(slides, sliderBlock, sliderGridContent, prevBtn, nextBtn) {
         this.#slides = slides;
-        this.#slideViewport = slideViewport;
-        this.#sliderContent = sliderContent;
+        this.#sliderBlock = sliderBlock;
+        this.#sliderGridContent = sliderGridContent;
         this.#prevBtn = prevBtn;
         this.#nextBtn = nextBtn;
     }
 
-    getWidth() {
+    // Get width only one slide
+    getWidthOneSlide() {
         let elem = document.querySelector('.slide');
-
-        return elem.offsetWidth;
+        return elem.offsetWidth + this.#sliderGap;
     }
 
+    // Get max-width all slides
     getMaxWidth() {
-        return this.getWidth() * this.#slides.length;
+        return (this.getWidthOneSlide() * this.#slides.length) - this.#sliderGap;
     }
 
     getVisibleCount() {
         let cntVisible = 0;
 
-        for(let i = 0; i < this.#slides.length; i++) {
-            let isVisible = this.isInViewport(this.#slides[i]);
-
-            if(isVisible) {
-                cntVisible++;
-            }
+        for (let i = 0; i < this.#slides.length; i++) {
+            this.isInViewport(this.#slides[i]) ? cntVisible++ : false;
         }
 
         return cntVisible;
@@ -115,11 +115,11 @@ class WrapSlider {
 
 
     isInViewport(element) {
-        let positionViewportRight = this.getWidth();
+        let positionViewportRight = this.#sliderViewport.offsetWidth;
 
-        if(element.style.left < 0) {
+        if (element.getBoundingClientRect().left < 0) {
             return false;
-        } else if(element.style.left >= positionViewportRight) {
+        } else if (element.getBoundingClientRect().left >= positionViewportRight) {
             return false;
         } else {
             return true;
@@ -127,44 +127,42 @@ class WrapSlider {
     }
 
     slideRight() {
-        let totalElements = Math.abs(this.#currPosition) + this.getVisibleCount() * this.getWidth();
+        let totalWidth = Math.abs(this.#currPosition) + this.getVisibleCount() * (this.getWidthOneSlide());
 
-        if(totalElements < this.getMaxWidth()) {
-            this.#currPosition -= this.getWidth();
+        if (totalWidth < this.getMaxWidth()) {
+            this.#currPosition -= this.getWidthOneSlide();
+            this.#sliderGridContent.setAttribute('style', `transform: translateX(${this.#currPosition}px)`);
         }
     }
 
-    init(slidesClass, slideViewportClass, sliderContentClass, prevBtnClass, nextBtnClass,) {
+    init(slidesClass, sliderViewportClass, sliderBlockClass, sliderGridContentClass, prevBtnClass, nextBtnClass) {
         this.#slides = document.querySelectorAll(slidesClass);
-        this.#slideViewport = document.querySelector(slideViewportClass);
-        this.#sliderContent = document.querySelector(sliderContentClass);
+        this.#sliderViewport = document.querySelector(sliderViewportClass);
+
+        this.#sliderBlock = document.querySelector(sliderBlockClass);
+        this.#sliderGridContent = document.querySelector(sliderGridContentClass);
 
         this.#prevBtn = document.querySelector(prevBtnClass);
         this.#nextBtn = document.querySelector(nextBtnClass);
 
-        //this.#prevBtn.addEventListener('click', () => this.slideRight());
+        this.#prevBtn.addEventListener('click', () => this.slideRight());
         this.#nextBtn.addEventListener('click', () => this.slideRight());
     }
 
     initSlider(slidesVisible) {
-        let slidesCount = Math.floor((window.innerWidth - (this.getWidth() / 1)) / this.getWidth());
-        let sliderWidth = (slidesCount <= 0 ? 1 : slidesCount) * this.getWidth() + 65;
-        this.#sliderContent.setAttribute('style', `width: ${sliderWidth}px`);
+        let slidesCount = Math.floor((window.innerWidth - this.#sliderGap) / this.getWidthOneSlide());
+        let sliderWidth = (slidesCount <= 0 ? 1 : slidesCount) * this.getWidthOneSlide() - this.#sliderGap;
+        this.#sliderBlock.setAttribute('style', `width: ${sliderWidth}px`);
 
-        let sliderContentWidth = (this.#slides.length * this.getWidth() + 300).toString();
-        this.#slideViewport.setAttribute('style', `width: ${sliderContentWidth}px`);
-
-
+        let sliderGridContentWidth = this.#slides.length * this.getWidthOneSlide();
+        this.#sliderGridContent.setAttribute('style', `width: ${sliderGridContentWidth}px`);
     }
 }
 
 let wrapSlider = new WrapSlider();
 
-wrapSlider.init('#slider-content .slide', '.grid-wrap', '.slider-content', '.icon-left_prev', '.icon-right_next');
+wrapSlider.init('.slider-content .slide', '.slider-viewport', '.slider-content', '.grid-wrap', '.icon-left_prev', '.icon-right_next');
 wrapSlider.initSlider();
-
-
-
 
 
 class Utilities {
