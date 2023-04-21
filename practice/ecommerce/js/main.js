@@ -71,39 +71,39 @@ class Sliders {
     }
 }
 
-class WrapSlider {
+class BlockSlider {
 
-    #slides;                   // 4 slides
-    #sliderViewport;           // Show px block which has visible slides inside
-    #sliderBlock               // Show block which has visible slides inside with margin outside
-    #sliderGridContent;        // How many px has the hidden block - 1900px
-    #sliderGap = 32;
+    #slides;
+    #sliderWrapperBlock
+    #sliderHiddenContent;
+    #sliderLeftMargin = 25;
 
     #prevBtn;
     #nextBtn;
 
     #currPosition = 0;
 
-    constructor(slides, sliderBlock, sliderGridContent, prevBtn, nextBtn) {
+    constructor(slides, sliderWrapperBlock, sliderHiddenContent, prevBtn, nextBtn) {
         this.#slides = slides;
-        this.#sliderBlock = sliderBlock;
-        this.#sliderGridContent = sliderGridContent;
+        this.#sliderWrapperBlock = sliderWrapperBlock;
+        this.#sliderHiddenContent = sliderHiddenContent;
+
         this.#prevBtn = prevBtn;
         this.#nextBtn = nextBtn;
     }
 
     // Get width only one slide
     getWidthOneSlide() {
-        let elem = document.querySelector('.slide');
-        return elem.offsetWidth + this.#sliderGap;
+        let elem = document.querySelector('.block-img');
+        return elem.offsetWidth + this.#sliderLeftMargin;
     }
 
     // Get max-width all slides
     getMaxWidth() {
-        return (this.getWidthOneSlide() * this.#slides.length) - this.#sliderGap;
+        return (this.getWidthOneSlide() * this.#slides.length);
     }
 
-    getVisibleCount() {
+    /*getVisibleCount() {
         let cntVisible = 0;
 
         for (let i = 0; i < this.#slides.length; i++) {
@@ -115,7 +115,7 @@ class WrapSlider {
 
 
     isInViewport(element) {
-        let positionViewportRight = this.#sliderViewport.offsetWidth;
+        let positionViewportRight = this.#sliderWrapperBlock.clientWidth;
 
         if (element.getBoundingClientRect().left < 0) {
             return false;
@@ -131,38 +131,38 @@ class WrapSlider {
 
         if (totalWidth < this.getMaxWidth()) {
             this.#currPosition -= this.getWidthOneSlide();
-            this.#sliderGridContent.setAttribute('style', `transform: translateX(${this.#currPosition}px)`);
+            this.#sliderHiddenContent.setAttribute('style', `transform: translateX(${this.#currPosition}px)`);
         }
-    }
+    }*/
 
-    init(slidesClass, sliderViewportClass, sliderBlockClass, sliderGridContentClass, prevBtnClass, nextBtnClass) {
-        this.#slides = document.querySelectorAll(slidesClass);
-        this.#sliderViewport = document.querySelector(sliderViewportClass);
+    init(allSlides, wrapperClass, hiddenContentClass, prevBtnClass, nextBtnClass) {
+        this.#slides = document.querySelectorAll(allSlides);
+        this.#sliderWrapperBlock = document.querySelector(wrapperClass);
+        this.#sliderHiddenContent = document.querySelector(hiddenContentClass);
 
-        this.#sliderBlock = document.querySelector(sliderBlockClass);
-        this.#sliderGridContent = document.querySelector(sliderGridContentClass);
 
-        this.#prevBtn = document.querySelector(prevBtnClass);
+        //this.#prevBtn = document.querySelector(prevBtnClass);
         this.#nextBtn = document.querySelector(nextBtnClass);
 
-        this.#prevBtn.addEventListener('click', () => this.slideRight());
+        //this.#prevBtn.addEventListener('click', () => this.slideRight());
         this.#nextBtn.addEventListener('click', () => this.slideRight());
     }
 
-    initSlider(slidesVisible) {
-        let slidesCount = Math.floor((window.innerWidth - this.#sliderGap) / this.getWidthOneSlide());
-        let sliderWidth = (slidesCount <= 0 ? 1 : slidesCount) * this.getWidthOneSlide() - this.#sliderGap;
-        this.#sliderBlock.setAttribute('style', `width: ${sliderWidth}px`);
+    calculateWidth() {
+        let slidesCount = Math.floor(window.innerWidth / this.getWidthOneSlide());
+        let sliderWidth = (slidesCount <= 0 ? 1 : slidesCount) * this.getWidthOneSlide() - this.#sliderLeftMargin;
+        this.#sliderWrapperBlock.setAttribute('style', `width: ${sliderWidth}px`);
 
-        let sliderGridContentWidth = this.#slides.length * this.getWidthOneSlide();
-        this.#sliderGridContent.setAttribute('style', `width: ${sliderGridContentWidth}px`);
+        let sliderHiddenContentWidth = this.#slides.length * this.getWidthOneSlide();
+        this.#sliderHiddenContent.setAttribute('style', `width: ${sliderHiddenContentWidth}px`);
     }
 }
 
-let wrapSlider = new WrapSlider();
+let blockSlider = new BlockSlider();
 
-wrapSlider.init('.slider-content .slide', '.slider-viewport', '.slider-content', '.grid-wrap', '.icon-left_prev', '.icon-right_next');
-wrapSlider.initSlider();
+blockSlider.init('.carousel-imgs .block-img', '.wrapper', '.carousel-imgs', '.icon-left_prev', '.icon-right_next');
+blockSlider.getMaxWidth()
+blockSlider.calculateWidth();
 
 
 class Utilities {

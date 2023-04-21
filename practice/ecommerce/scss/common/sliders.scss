@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Lato:wght@300;400;700&display=swap');
-@import "helpers/variables";
-@import "helpers/placeholder";
+@import "../helpers/variables";
+@import "../helpers/placeholder";
+@import "../common/commonstyle";
 
 
 // Slider container for main section
@@ -27,15 +28,15 @@
 }
 
 .slide-first {
-  background-image: url("../img/slider_1.webp");
+  background-image: url("../../img/slider_1.webp");
 }
 
 .slide-second {
-  background-image: url("../img/slider_2.webp");
+  background-image: url("../../img/slider_2.webp");
 }
 
 .slide-third {
-  background-image: url("../img/slider_3.webp");
+  background-image: url("../../img/slider_3.webp");
 }
 
 .sale-style {
@@ -98,7 +99,7 @@
   }
 
   .icon-arrow {
-    background-image: url("../img/right_arrow.svg");
+    background-image: url("../../img/right_arrow.svg");
     background-repeat: no-repeat;
     width: 25px;
     height: 25px;
@@ -150,14 +151,14 @@
   }
 
   .arrow-left_circle {
-    background-image: url("../img/left_arrow.svg");
+    background-image: url("../../img/left_arrow.svg");
     width: 20px;
     height: 20px;
     @extend .main-icons;
   }
 
   .arrow-right_circle {
-    background-image: url("../img/right_arrow.svg");
+    background-image: url("../../img/right_arrow.svg");
     width: 20px;
     height: 20px;
     @extend .main-icons;
@@ -196,18 +197,28 @@
 }
 
 
-// Slider container for articles "Jewellery style files"
-.slider-content {
-  margin: 0 auto;
-  overflow: hidden;
-}
 
-.grid-wrap {
-  display: flex;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: start;
-  gap: 2rem;
-  margin-inline: auto;
+////////////// TEST
+// Slider container for articles "Jewellery style files"
+
+.wrapper {
+  max-width: 1350px;
+  position: relative;
+  margin: 0 50px;
+
+  .carousel-imgs {
+    display: flex;
+    overflow: hidden;
+
+    .block-img {
+      margin-left: 25px;
+    }
+
+    .block-img:first-child {
+      margin-left: 0;
+    }
+  }
+
 }
 
 .date-block {
@@ -275,21 +286,20 @@
 
 
 .icon-left_prev {
-  background-image: url(../img/left_backup.svg);
+  background-image: url(../../img/left_backup.svg);
   position: absolute;
-  top: 60%;
-  left: -5px;
+  top: 50%;
+  left: -55px;
   @extend %common-arrows_style;
 }
 
 .icon-right_next {
-  background-image: url(../img/right_backup.svg);
+  background-image: url(../../img/right_backup.svg);
   position: absolute;
-  top: 60%;
-  right: -5px;
+  top: 50%;
+  right: -45px;
   @extend %common-arrows_style;
 }
-
 
 // @media query
 @media only screen and (max-width: 50em) {

@@ -1,6 +1,6 @@
-@import 'commonstyle';
-@import 'helpers/placeholder';
-@import 'helpers/variables';
+@import '../helpers/variables';
+@import '../helpers/placeholder';
+@import '../common/commonstyle';
 
 // First footer
 .justify-items {
@@ -66,7 +66,7 @@
     position: relative;
 
     .icon-email {
-      background-image: url("../img/email.svg");
+      background-image: url("../../img/email.svg");
       display: block;
       @extend .style-icon;
       margin: 0 auto;
@@ -95,25 +95,25 @@
 }
 
 .icon-facebook {
-  background-image: url("../img/facebook.svg");
+  background-image: url("../../img/facebook.svg");
   background-repeat: no-repeat;
   @extend %font-icon;
 }
 
 .icon-twitter {
-  background-image: url("../img/twitter.svg");
+  background-image: url("../../img/twitter.svg");
   background-repeat: no-repeat;
   @extend %font-icon;
 }
 
 .icon-instagram {
-  background-image: url("../img/instagram.svg");
+  background-image: url("../../img/instagram.svg");
   background-repeat: no-repeat;
   @extend %font-icon;
 }
 
 .icon-youtube {
-  background-image: url("../img/youtube.svg");
+  background-image: url("../../img/youtube.svg");
   background-repeat: no-repeat;
   @extend %font-icon;
 }
@@ -128,7 +128,7 @@
 }
 
 .img-payment {
-  background-image: url("../img/payment.avif");
+  background-image: url("../../img/payment.avif");
   background-repeat: no-repeat;
   width: 397px;
   height: 32px;

@@ -1,5 +1,5 @@
-@import 'helpers/variables';
-@import 'helpers/placeholder';
+@import '../helpers/variables';
+@import '../helpers/placeholder';
 @import 'commonstyle';
 
 .desktop-device {
@@ -12,7 +12,7 @@
   z-index: 100;
 
   .logo {
-    background: url("../img/logo.jpg") no-repeat center;
+    background: url("../../img/logo.jpg") no-repeat center;
     background-size: contain;
     width: 150px;
     height: 70px;
@@ -54,18 +54,18 @@
   }
 
   .icon-person {
-    background-image: url("../img/person.svg");
+    background-image: url("../../img/person.svg");
     @extend .style-icon;
   }
 
   .icon-like {
-    background-image: url("../img/like.svg");
+    background-image: url("../../img/like.svg");
     color: black;
     @extend .style-icon;
   }
 
   .icon-bag {
-    background-image: url("../img/bag.svg");
+    background-image: url("../../img/bag.svg");
     @extend .style-icon;
 
     .amount-item {
@@ -100,7 +100,7 @@
     .icon-menu {
       width: 20px;
       height: 20px;
-      background-image: url("../img/menu.svg");
+      background-image: url("../../img/menu.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -127,7 +127,7 @@
     .btn-close {
       width: 16px;
       height: 16px;
-      background: url("../img/close.svg");
+      background: url("../../img/close.svg");
       background-size: contain;
       padding: 0;
       margin: 0;

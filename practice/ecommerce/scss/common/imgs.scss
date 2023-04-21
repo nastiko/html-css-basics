@@ -1,9 +1,9 @@
-@import "commonstyle";
+@import "../common/commonstyle";
 
 // Banners
 .img-rock {
   height: 497px;
-  background-image: url("../img/banner_8.webp");
+  background-image: url("../../img/banner_8.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -12,27 +12,27 @@
 
 // Categories' imgs section
 .bracelets {
-  background-image: url("../img/banner_1.webp");
+  background-image: url("../../img/banner_1.webp");
   @extend .img-block;
 }
 
 .charms {
-  background-image: url("../img/banner_2.webp");
+  background-image: url("../../img/banner_2.webp");
   @extend .img-block;
 }
 
 .earrings {
-  background-image: url("../img/banner_3.webp");
+  background-image: url("../../img/banner_3.webp");
   @extend .img-block;
 }
 
 .necklaces {
-  background-image: url("../img/banner_4.webp");
+  background-image: url("../../img/banner_4.webp");
   @extend .img-block;
 }
 
 .rings {
-  background-image: url("../img/banner_5.webp");
+  background-image: url("../../img/banner_5.webp");
   @extend .img-block;
 }
 
@@ -40,14 +40,14 @@
 // Individual's imgs
 .img-magic {
   width: 100%;
-  background-image: url("../img/banner_6.webp");
+  background-image: url("../../img/banner_6.webp");
   background-size: cover;
   @extend .img-block;
 }
 
 .img-earrings {
   width: 100%;
-  background-image: url("../img/banner_7.webp");
+  background-image: url("../../img/banner_7.webp");
   background-size: cover;
   @extend .img-block;
 }
@@ -55,25 +55,25 @@
 
 // Hot list section
 .earrings-3 {
-  background-image: url("../img/earrings_3.webp");
+  background-image: url("../../img/earrings_3.webp");
 }
 
 .earrings-6 {
-  background-image: url("../img/earrings_6.webp");
+  background-image: url("../../img/earrings_6.webp");
 }
 
 .rings-transparent {
-  background-image: url("../img/rings_transparent.webp");
+  background-image: url("../../img/rings_transparent.webp");
 }
 
 .rings-5 {
-  background-image: url("../img/rings_5.webp");
+  background-image: url("../../img/rings_5.webp");
 }
 
 
 // Articles section
 .post-wedding {
-  background-image: url("../img/banner_10.png");
+  background-image: url("../../img/banner_10.png");
   background-size: cover;
   width: 400px;
   height: 237px;
@@ -81,7 +81,7 @@
 }
 
 .post-format {
-  background-image: url("../img/banner_12.jpg");
+  background-image: url("../../img/banner_12.jpg");
   background-size: cover;
   background-position: top;
   width: 400px;
@@ -90,7 +90,7 @@
 }
 
 .post-gift {
-  background-image: url("../img/banner_11.jpg");
+  background-image: url("../../img/banner_11.jpg");
   background-size: cover;
   background-position: center;
   width: 400px;
@@ -101,16 +101,16 @@
 
 // Guarantee section
 .icon-world {
-  background-image: url("../img/world.svg");
+  background-image: url("../../img/world.svg");
   @extend .guarantee-icon;
 }
 
 .icon-return {
-  background-image: url("../img/return.svg");
+  background-image: url("../../img/return.svg");
   @extend .guarantee-icon;
 }
 
 .icon-security {
-  background-image: url("../img/security.svg");
+  background-image: url("../../img/security.svg");
   @extend .guarantee-icon;
 }
