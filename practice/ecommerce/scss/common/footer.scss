@@ -154,11 +154,6 @@
 }
 
 @media only screen and (max-width: 30em) {
-  .date-block {
-    margin: 0 2rem;
-    left: 0;
-  }
-
   .justify-items {
     grid-template-areas: 'one' 'two' 'three' 'four';
     padding: 0 1rem;

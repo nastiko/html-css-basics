@@ -73,23 +73,14 @@ class Sliders {
 
 class BlockSlider {
 
-    #slides;
-    #sliderWrapperBlock
     #sliderHiddenContent;
-    #sliderLeftMargin = 25;
+    #clickBtns;
 
-    #prevBtn;
-    #nextBtn;
+    #sliderLeftMargin = 70;
 
-    #currPosition = 0;
-
-    constructor(slides, sliderWrapperBlock, sliderHiddenContent, prevBtn, nextBtn) {
-        this.#slides = slides;
-        this.#sliderWrapperBlock = sliderWrapperBlock;
+    constructor(sliderHiddenContent, clickBtn) {
         this.#sliderHiddenContent = sliderHiddenContent;
-
-        this.#prevBtn = prevBtn;
-        this.#nextBtn = nextBtn;
+        this.#clickBtns = clickBtn;
     }
 
     // Get width only one slide
@@ -98,71 +89,24 @@ class BlockSlider {
         return elem.offsetWidth + this.#sliderLeftMargin;
     }
 
-    // Get max-width all slides
-    getMaxWidth() {
-        return (this.getWidthOneSlide() * this.#slides.length);
-    }
-
-    /*getVisibleCount() {
-        let cntVisible = 0;
-
-        for (let i = 0; i < this.#slides.length; i++) {
-            this.isInViewport(this.#slides[i]) ? cntVisible++ : false;
-        }
-
-        return cntVisible;
-    }
-
-
-    isInViewport(element) {
-        let positionViewportRight = this.#sliderWrapperBlock.clientWidth;
-
-        if (element.getBoundingClientRect().left < 0) {
-            return false;
-        } else if (element.getBoundingClientRect().left >= positionViewportRight) {
-            return false;
-        } else {
-            return true;
+    move() {
+        for(let i = 0; i < this.#clickBtns.length; i++) {
+            this.#clickBtns[i].addEventListener('click', () => {
+                this.#sliderHiddenContent.scrollLeft += this.getWidthOneSlide() * (this.#clickBtns[i].id === 'left' ? -1: 1);
+            });
         }
     }
 
-    slideRight() {
-        let totalWidth = Math.abs(this.#currPosition) + this.getVisibleCount() * (this.getWidthOneSlide());
-
-        if (totalWidth < this.getMaxWidth()) {
-            this.#currPosition -= this.getWidthOneSlide();
-            this.#sliderHiddenContent.setAttribute('style', `transform: translateX(${this.#currPosition}px)`);
-        }
-    }*/
-
-    init(allSlides, wrapperClass, hiddenContentClass, prevBtnClass, nextBtnClass) {
-        this.#slides = document.querySelectorAll(allSlides);
-        this.#sliderWrapperBlock = document.querySelector(wrapperClass);
+    init(hiddenContentClass, clickBtnsClass) {
         this.#sliderHiddenContent = document.querySelector(hiddenContentClass);
-
-
-        //this.#prevBtn = document.querySelector(prevBtnClass);
-        this.#nextBtn = document.querySelector(nextBtnClass);
-
-        //this.#prevBtn.addEventListener('click', () => this.slideRight());
-        this.#nextBtn.addEventListener('click', () => this.slideRight());
-    }
-
-    calculateWidth() {
-        let slidesCount = Math.floor(window.innerWidth / this.getWidthOneSlide());
-        let sliderWidth = (slidesCount <= 0 ? 1 : slidesCount) * this.getWidthOneSlide() - this.#sliderLeftMargin;
-        this.#sliderWrapperBlock.setAttribute('style', `width: ${sliderWidth}px`);
-
-        let sliderHiddenContentWidth = this.#slides.length * this.getWidthOneSlide();
-        this.#sliderHiddenContent.setAttribute('style', `width: ${sliderHiddenContentWidth}px`);
+        this.#clickBtns = document.querySelectorAll(clickBtnsClass);
     }
 }
 
 let blockSlider = new BlockSlider();
 
-blockSlider.init('.carousel-imgs .block-img', '.wrapper', '.carousel-imgs', '.icon-left_prev', '.icon-right_next');
-blockSlider.getMaxWidth()
-blockSlider.calculateWidth();
+blockSlider.init('.carousel-imgs', '.click-btn');
+blockSlider.move();
 
 
 class Utilities {

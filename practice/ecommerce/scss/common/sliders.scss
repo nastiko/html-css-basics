@@ -202,21 +202,16 @@
 // Slider container for articles "Jewellery style files"
 
 .wrapper {
-  max-width: 1350px;
+  max-width: 1440px;
   position: relative;
-  margin: 0 50px;
+  padding: 0 50px;
+  margin-inline: auto;
 
   .carousel-imgs {
     display: flex;
-    overflow: hidden;
-
-    .block-img {
-      margin-left: 25px;
-    }
-
-    .block-img:first-child {
-      margin-left: 0;
-    }
+    flex-wrap: nowrap;
+    gap: 70px;
+    overflow: auto;
   }
 
 }
@@ -289,7 +284,7 @@
   background-image: url(../../img/left_backup.svg);
   position: absolute;
   top: 50%;
-  left: -55px;
+  left: -5px;
   @extend %common-arrows_style;
 }
 
@@ -297,7 +292,7 @@
   background-image: url(../../img/right_backup.svg);
   position: absolute;
   top: 50%;
-  right: -45px;
+  right: -5px;
   @extend %common-arrows_style;
 }
 
@@ -321,6 +316,16 @@
       margin-top: 1rem;
     }
   }
+}
+
+@media only screen and (max-width: 30em) {
+ .wrapper {
+   padding: 0 32px;
+
+   .block-img {
+     width: 324px;
+   }
+ }
 }
 
 
