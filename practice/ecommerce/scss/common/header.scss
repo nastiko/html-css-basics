@@ -10,6 +10,9 @@
   border-bottom: 1px solid $color-placebo;
   position: relative;
   z-index: 100;
+  @media only screen and (max-width: 100em) {
+    padding: 0 1rem;
+  }
 
   .logo {
     background: url("../../img/logo.jpg") no-repeat center;
@@ -51,6 +54,9 @@
 
   .nav-menu_mobile {
     display: none;
+    @media only screen and (max-width: 50em) {
+      display: block !important;
+    }
   }
 
   .icon-person {
@@ -83,28 +89,18 @@
 
 
 // NavBar of the header for mobile
-@media only screen and (max-width: 100em) {
-  .desktop-device {
-    padding: 0 1rem;
-  }
-}
-
 @media only screen and (max-width: 50em) {
   .display-none_mobile {
     display: none;
   }
 
-  .nav-menu_mobile {
-    display: block !important;
-
-    .icon-menu {
-      width: 20px;
-      height: 20px;
-      background-image: url("../../img/menu.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-    }
+  .icon-menu {
+    width: 20px;
+    height: 20px;
+    background-image: url("../../img/menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 
   .offcanvas {
@@ -135,7 +131,6 @@
   }
 
   .offcanvas-body {
-
     .offcanvas-list {
       text-transform: uppercase;
       font-size: 13px;
@@ -147,4 +142,6 @@
     }
   }
 }
+
+
 

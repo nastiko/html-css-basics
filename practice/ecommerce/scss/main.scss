@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Lato:wght@300;400;700&display=swap');
-@import 'helpers/variables';
-@import 'helpers/placeholder';
-@import 'common/commonstyle';
+@import "helpers/variables";
+@import "helpers/placeholder";
+@import "common/commonstyle";
 
 
 html {
   box-sizing: border-box;
   font-family: sans-serif;
+  @media only screen and (max-width: 30em) {
+    overflow-x: hidden;
+  }
 }
 
 body {
@@ -26,41 +29,34 @@ body {
 .bg-section_explore {
   background-image: url("../img/bg_line.webp");
   padding-bottom: 4rem;
-}
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  justify-items: center;
-  gap: 2rem;
-}
+  .grid-area {
+    position: relative;
 
-.grid-area {
-  position: relative;
+    .categories-button {
+      width: 100%;
+      letter-spacing: 0;
+      background-color: $color-white;
+      border: none;
+      position: absolute;
+      bottom: -15px;
+      padding: 5px 0;
+      @extend .button-banners;
 
-  .categories-button {
-    width: 100%;
-    letter-spacing: 0;
-    background-color: $color-white;
-    border: none;
-    position: absolute;
-    bottom: -15px;
-    padding: 5px 0;
-    @extend .button-banners;
+      .link-style {
+        @extend %link;
+      }
 
-    .link-style {
-      @extend %link;
-    }
-
-    &:hover {
-      background-color: $color-sand;
+      &:hover {
+        background-color: $color-sand;
+      }
     }
   }
 }
 
 
 // Two name's container
-.row.utilities {
+.utilities {
   justify-content: space-around;
 }
 
@@ -80,70 +76,96 @@ body {
 }
 
 
-// Week's collection & Template of products
-.grid-area {
-  position: relative;
+// Hot list
+#container_2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  align-content: center;
+  gap: 3rem;
 
-  .blocks-position {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  @media only screen and (max-width: 30em) {
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    grid-column-gap: 30px;
+    grid-row-gap: 1rem;
+    padding: 0 1rem;
 
-    .img-style {
-      width: 230px;
-      height: 130px;
-      object-fit: contain;
+    .grid-area {
+      .time-box {
+        display: none;
+      }
     }
 
-    .flex-links {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      top: 15px;
-      gap: 10px;
-      margin-bottom: 15px;
+    .product-name {
+      a {
+        font-size: 10px;
+      }
+    }
 
-      .icon-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 45px;
-        height: 45px;
-        background-color: #ffffff;
-        cursor: pointer;
-        @extend %button;
+    .product-price {
+      font-size: 14px;
+    }
+  }
 
-        .icon-bag {
-          background-image: url("../img/bag.svg");
-          @extend .style-icon;
-        }
+  .box-inside_grid {
+    width: 330px;
+    position: relative;
+    margin-inline: auto;
+    @media only screen and (max-width: 30em) {
+      width: 175px;
+      height: 175px;
+    }
 
-        .icon-like {
-          background-image: url("../img/like.svg");
-          @extend .style-icon;
-        }
+    .sale-display {
+      position: absolute;
+      z-index: 1000;
+      top: 10px;
+      left: 10px;
+
+      .red-box {
+        background-color: $color-red;
+        color: $color-white;
+        font-size: 13px;
+        text-align: center;
+        padding: 2px 7px;
       }
     }
   }
 
-  .flex-stars {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-
-    .icon-star {
-      background-image: url("../img/star.svg");
-      background-repeat: no-repeat;
-      width: 20px;
-      height: 20px;
+  .img-style_template {
+    width: 330px;
+    height: 330px;
+    object-fit: contain;
+    @media only screen and (max-width: 30em) {
+      width: 175px;
+      height: 175px;
     }
   }
 
-  .product-price {
-    @extend .style-text;
-    color: $color-sand;
-    margin-bottom: 0.5rem;
+  .time-box {
+    width: 90%;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border: 2px solid $color-sand;
+    position: absolute;
+    bottom: 15px;
+    right: 17px;
+    padding: 3px 20px;
+    margin: 0 auto;
+
+    .countdown {
+      color: $color-sand;
+      @include font-weight(heavy);
+    }
+
+    .block-box {
+      display: block;
+      font-size: 11px;
+      @include font-weight(medium);
+    }
   }
 }
 
@@ -195,51 +217,59 @@ body {
 }
 
 
-// Hot list
-#container_2 .grid-container {
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-}
+// Week's collection & Template of products
+#container {
+  .grid-area {
+    position: relative;
+    @media only screen and (max-width: 30em) {
+      width: 355px;
+    }
 
-.img-style_template {
-  width: 330px;
-  height: 330px;
-  object-fit: contain;
-}
+    .blocks-position {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-.time-box {
-  width: 85%;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-  background-color: white;
-  border: 2px solid $color-sand;
-  position: absolute;
-  bottom: 105px;
-  right: 27px;
-  padding: 3px 20px;
-  margin: 0 auto;
+      .img-style {
+        width: 230px;
+        height: 130px;
+        object-fit: contain;
+      }
 
-  .countdown {
-    color: $color-sand;
-    @include font-weight(heavy);
+      .flex-links {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 15px;
+        gap: 10px;
+        margin-bottom: 15px;
+
+        .icon-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 45px;
+          height: 45px;
+          background-color: #ffffff;
+          cursor: pointer;
+          @extend %button;
+
+          .icon-bag {
+            background-image: url("../img/bag.svg");
+            @extend .style-icon;
+          }
+
+          .icon-like {
+            background-image: url("../img/like.svg");
+            @extend .style-icon;
+          }
+        }
+      }
+    }
   }
-
-  .block-box {
-    display: block;
-    font-size: 11px;
-    @include font-weight(medium);
-  }
 }
 
-.red-box {
-  background-color: $color-red;
-  color: $color-white;
-  font-size: 13px;
-  text-align: center;
-  padding: 2px 7px;
-}
 
 
 // Info section
@@ -273,29 +303,29 @@ body {
 }
 
 
-// Scroll-up block
-.bg-scroll_up {
-  background-color: $color-sand;
-  height: 45px;
-  width: 45px;
-  inset: auto 20px 20px auto;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: .3s;
-}
-
-.up-icon {
-  width: 25px;
-  height: 25px;
-  background-image: url("../img/up_arrow.svg");
-  background-repeat: no-repeat;
-  background-color: transparent;
-  vertical-align: middle;
-  border: none;
-}
+//// Scroll-up block
+//.bg-scrollUp {
+//  background-color: $color-sand;
+//  height: 45px;
+//  width: 45px;
+//  inset: auto 20px 20px auto;
+//  position: fixed;
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//  opacity: 0;
+//  transition: .3s;
+//}
+//
+//.up-icon {
+//  width: 25px;
+//  height: 25px;
+//  background-image: url("../img/up_arrow.svg");
+//  background-repeat: no-repeat;
+//  background-color: transparent;
+//  vertical-align: middle;
+//  border: none;
+//}
 
 
 // @media query
@@ -305,19 +335,8 @@ body {
   }
 }
 
-@media only screen and (max-width: 50em) {
-  .row.utilities {
-    padding: 0 1rem;
-    margin: 0;
-  }
-
-  .img-rock {
-    height: 316px;
-  }
-}
-
 @media only screen and (max-width: 30em) {
-  .blocks-position, .col-padding {
+  .col-padding {
     padding: 0 1rem;
   }
 }

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/common/sliders.css">
     <link rel="stylesheet" href="css/common/imgs.css">
     <link rel="stylesheet" href="css/common/footer.css">
+    <link rel="stylesheet" href="css/scrolling/scrollUp.css">
     <title>E-Commerce</title>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
@@ -168,8 +169,8 @@
     </section>
     <section class="container-fluid border-style pt-5 px-0">
         <div class="width-container">
-            <div class="row utilities">
-                <div class="col-md-6 col-sm-10 col-12 mb-4 ps-2">
+            <div class="row mobile-row_utilities utilities">
+                <div class="col-md-6 col-sm-10 col-12 mb-4">
                     <div class="img-magic"></div>
                     <div class="banner-wrap_info pt-4 mb-4">
                         <h3 class="title-banner">Elizabeth Stenhouse</h3>
@@ -180,7 +181,7 @@
                         <a class="button-banners" href="#">Shop Now</a>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-10 col-12 mb-4 pe-2">
+                <div class="col-md-6 col-sm-10 col-12 mb-4">
                     <div class="img-earrings"></div>
                     <div class="banner-wrap_info pt-4 mb-4">
                         <h3 class="title-banner">Heather Cohen® Earrings</h3>
@@ -194,57 +195,39 @@
         </div>
     </section>
     <hr class="m-0">
-    <section class="container-fluid px-0 mt-5">
-        <div class="width-container mb-5">
-            <h5 class="highlight-text">Discover this week's</h5>
-            <h3 class="header-style">Jewellery Favourites</h3>
-            <div id="container" class="grid-container"></div>
-        </div>
-    </section>
-    <section class="container-fluid px-0 pb-3">
-        <div class="overtext">
-            <h1 class="large-header">Stand Out In Style</h1>
-            <div class="categories-button mt-2">
-                <a class="button-banners" href="#">Discover Now</a>
-            </div>
-        </div>
-        <div class="video-position">
-            <video class="video-content" autoplay muted loop>
-                <source src="video/jewellery_story.mp4" type="video/mp4">
-            </video>
-        </div>
-    </section>
     <section class="container-fluid border-style py-5 px-0">
         <div class="width-container">
             <h5 class="highlight-text">On trend hot jewellery</h5>
             <h3 class="header-style">The Hot List</h3>
-            <div id="container_2" class="grid-container">
+            <div id="container_2">
                 <div class="grid-area">
-                    <div class="pt-2 ps-3 position-absolute">
-                        <span class="red-box">25%</span>
-                    </div>
-                    <div class="blocks-position">
-                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
-                        <div class="time-box">
-                            <div>
-                                <span id="days-25%" class="countdown">0</span>
-                                <span class="block-box">days</span>
-                            </div>
-                            <div>
-                                <span id="hours-25%" class="countdown">0</span>
-                                <span class="block-box">hours</span>
-                            </div>
-                            <div>
-                                <span id="mins-25%" class="countdown">0</span>
-                                <span class="block-box">mins</span>
-                            </div>
-                            <div>
-                                <span id="secs-25%" class="countdown">0</span>
-                                <span class="block-box">secs</span>
+                    <div class="box-inside_grid">
+                        <div class="sale-display">
+                            <span class="red-box">25%</span>
+                        </div>
+                        <div class="blocks-position">
+                            <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
+                            <div class="time-box">
+                                <div>
+                                    <span id="days-25%" class="countdown">0</span>
+                                    <span class="block-box">days</span>
+                                </div>
+                                <div>
+                                    <span id="hours-25%" class="countdown">0</span>
+                                    <span class="block-box">hours</span>
+                                </div>
+                                <div>
+                                    <span id="mins-25%" class="countdown">0</span>
+                                    <span class="block-box">mins</span>
+                                </div>
+                                <div>
+                                    <span id="secs-25%" class="countdown">0</span>
+                                    <span class="block-box">secs</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="col-padding">
                         <div class="flex-stars">
                             <span class="icon-star"></span>
                             <span class="icon-star"></span>
@@ -261,64 +244,70 @@
                     </div>
                 </div>
                 <div class="grid-area">
-                    <div class="blocks-position">
+                    <div class="blocks-position box-inside_grid">
                         <img class="img-style_template" src="img/rings_transparent.webp" alt="MEDIUM TUBE HOOPS">
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
+                    <div class="col-padding">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">MEDIUM TUBE HOOPS</a>
+                            </h3>
+                            <p class="product-price">£80</p>
+                        </div>
                     </div>
                 </div>
                 <div class="grid-area">
-                    <div class="blocks-position">
+                    <div class="blocks-position box-inside_grid">
                         <img class="img-style_template" src="img/rings_5.webp" alt="Croissant Dome Hoops">
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">Croissant Dome Hoops</a>
-                        </h3>
-                        <p class="product-price">£75</p>
+                    <div class="col-padding">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Croissant Dome Hoops</a>
+                            </h3>
+                            <p class="product-price">£75</p>
+                        </div>
                     </div>
                 </div>
                 <div class="grid-area">
-                    <div class="pt-2 ps-3 position-absolute">
-                        <span class="red-box">20%</span>
-                    </div>
-                    <div class="blocks-position">
-                        <img class="img-style_template" src="img/earrings_3.webp" alt="Stars hoops">
-                    </div>
-                    <div class="time-box">
-                        <div>
-                            <span id="days-20%" class="countdown">565</span>
-                            <span class="block-box">days</span>
+                    <div class="box-inside_grid">
+                        <div class="sale-display">
+                            <span class="red-box">20%</span>
                         </div>
-                        <div>
-                            <span id="hours-20%" class="countdown">08</span>
-                            <span class="block-box">hours</span>
-                        </div>
-                        <div>
-                            <span id="mins-20%" class="countdown">07</span>
-                            <span class="block-box">mins</span>
-                        </div>
-                        <div>
-                            <span id="secs-20%" class="countdown">25</span>
-                            <span class="block-box">secs</span>
+                        <div class="blocks-position">
+                            <img class="img-style_template" src="img/earrings_3.webp" alt="Stars hoops">
+                            <div class="time-box">
+                                <div>
+                                    <span id="days-20%" class="countdown">565</span>
+                                    <span class="block-box">days</span>
+                                </div>
+                                <div>
+                                    <span id="hours-20%" class="countdown">08</span>
+                                    <span class="block-box">hours</span>
+                                </div>
+                                <div>
+                                    <span id="mins-20%" class="countdown">07</span>
+                                    <span class="block-box">mins</span>
+                                </div>
+                                <div>
+                                    <span id="secs-20%" class="countdown">25</span>
+                                    <span class="block-box">secs</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="flex-links">
@@ -333,21 +322,44 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
                     <div>
-                        <h3 class="product-name">
-                            <a href="#">Stars hoops</a>
-                        </h3>
-                        <p class="product-price">£125</p>
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Stars hoops</a>
+                            </h3>
+                            <p class="product-price">£125</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="container-fluid px-0">
+        <div class="overtext">
+            <h1 class="large-header">Stand Out In Style</h1>
+            <div class="categories-button mt-2">
+                <a class="button-banners" href="#">Discover Now</a>
+            </div>
+        </div>
+        <div class="video-position">
+            <video class="video-content" autoplay muted loop>
+                <source src="video/jewellery_story.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+    <section class="container-fluid px-0 pt-5">
+        <div class="width-container mb-5">
+            <h5 class="highlight-text">Discover this week's</h5>
+            <h3 class="header-style">Jewellery Favourites</h3>
+            <div id="container" class="grid-container"></div>
         </div>
     </section>
     <hr class="m-0">
@@ -376,20 +388,19 @@
     </section>
     <hr class="m-0">
     <section class="container-fluid border-style py-5">
-        <div class="width-container">
+        <div class="width-container position-relative">
             <h5 class="highlight-text">News & Inspired</h5>
             <h3 class="header-style">Jewellery Style Files</h3>
             <div class="wrapper">
                 <div class="carousel-imgs">
                     <div class="block-img">
-                        <div class="post-wedding">
-                            <div class="date-block">
-                                <ul>
-                                    <li>19</li>
-                                    <li class="border-box"></li>
-                                    <li>July</li>
-                                </ul>
-                            </div>
+                        <img class="img-banner" src="img/banner_10.png" alt="Hypoallergenic Wedding Bands">
+                        <div class="date-block">
+                            <ul>
+                                <li>19</li>
+                                <li class="border-box"></li>
+                                <li>July</li>
+                            </ul>
                         </div>
                         <div class="font-style">
                             <h3 class="name-banner">Necklaces</h3>
@@ -398,14 +409,13 @@
                         </div>
                     </div>
                     <div class="block-img">
-                        <div class="post-format">
-                            <div class="date-block">
-                                <ul>
-                                    <li>19</li>
-                                    <li class="border-box"></li>
-                                    <li>July</li>
-                                </ul>
-                            </div>
+                        <img class="img-banner" src="img/banner_12.jpg" alt="Unique First Anniversary Gift Idea">
+                        <div class="date-block">
+                            <ul>
+                                <li>21</li>
+                                <li class="border-box"></li>
+                                <li>Aug</li>
+                            </ul>
                         </div>
                         <div class="font-style">
                             <h3 class="name-banner">Necklaces</h3>
@@ -414,14 +424,13 @@
                         </div>
                     </div>
                     <div class="block-img">
-                        <div class="post-gift">
-                            <div class="date-block">
-                                <ul>
-                                    <li>7</li>
-                                    <li class="border-box"></li>
-                                    <li>Sep</li>
-                                </ul>
-                            </div>
+                        <img class="img-banner" src="img/banner_11.jpg" alt="COVID-19 Wedding Planning Advice">
+                        <div class="date-block">
+                            <ul>
+                                <li>7</li>
+                                <li class="border-box"></li>
+                                <li>Sep</li>
+                            </ul>
                         </div>
                         <div class="font-style">
                             <h3 class="name-banner">Necklaces</h3>
@@ -430,57 +439,39 @@
                         </div>
                     </div>
                     <div class="block-img">
-                        <div class="post-wedding">
-                            <div class="date-block">
-                                <ul>
-                                    <li>19</li>
-                                    <li class="border-box"></li>
-                                    <li>July</li>
-                                </ul>
-                            </div>
+                        <img class="img-banner" src="img/banner_9.webp" alt="Glossary of jewellery terms">
+                        <div class="date-block">
+                            <ul>
+                                <li>12</li>
+                                <li class="border-box"></li>
+                                <li>Oct</li>
+                            </ul>
                         </div>
                         <div class="font-style">
                             <h3 class="name-banner">Necklaces</h3>
-                            <h3 class="name-block">Hypoallergenic Wedding Bands</h3>
+                            <h3 class="name-block">Glossary Of Jewellery Terms</h3>
                             <a class="extra-info" href="#">Read More</a>
                         </div>
                     </div>
                     <div class="block-img">
-                        <div class="post-gift">
-                            <div class="date-block">
-                                <ul>
-                                    <li>7</li>
-                                    <li class="border-box"></li>
-                                    <li>Sep</li>
-                                </ul>
-                            </div>
+                        <img class="img-banner" src="img/banner_14.webp" alt="Traveling Solo is awesome">
+                        <div class="date-block">
+                            <ul>
+                                <li>5</li>
+                                <li class="border-box"></li>
+                                <li>Nov</li>
+                            </ul>
                         </div>
                         <div class="font-style">
                             <h3 class="name-banner">Necklaces</h3>
-                            <h3 class="name-block">COVID-19 Wedding Planning Advice</h3>
-                            <a class="extra-info" href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="block-img">
-                        <div class="post-format">
-                            <div class="date-block">
-                                <ul>
-                                    <li>19</li>
-                                    <li class="border-box"></li>
-                                    <li>July</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="font-style">
-                            <h3 class="name-banner">Necklaces</h3>
-                            <h3 class="name-block">Unique First Anniversary Gift Idea</h3>
+                            <h3 class="name-block">Traveling Solo Is Awesome</h3>
                             <a class="extra-info" href="#">Read More</a>
                         </div>
                     </div>
                 </div>
-                <div id="left" class="icon-left_prev click-btn"></div>
-                <div id="right" class="icon-right_next click-btn"></div>
             </div>
+            <div data-direction="left" class="icon-left_prev click-btn"></div>
+            <div data-direction="right" class="icon-right_next click-btn"></div>
         </div>
     </section>
     <section class="container-fluid bg-section_guarantee border-style py-5 px-0">
@@ -602,12 +593,14 @@
 <script>
     let products = new Products;
     let sliders = new Sliders();
+    let blockSlider = new BlockSlider();
     let utils = new Utilities();
     let time = new Countdown();
     let hotSale = new HotSale();
 
     products.renderProducts();
     sliders.init('.carousel_slide', '.carousel_slide', '.slide-container', 'right-click', 'left-click', 'carousel_indicator');
+    blockSlider.init('.wrapper');
     utils.init();
 
     time.init('days-25%', 'hours-25%', 'mins-25%', 'secs-25%', 'December 31, 2023 00:00:00');

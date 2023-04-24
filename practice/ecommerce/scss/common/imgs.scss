@@ -7,6 +7,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  @media only screen and (max-width: 50em) {
+    height: 316px;
+  }
 }
 
 
@@ -68,34 +71,6 @@
 
 .rings-5 {
   background-image: url("../../img/rings_5.webp");
-}
-
-
-// Articles section
-.post-wedding {
-  background-image: url("../../img/banner_10.png");
-  background-size: cover;
-  width: 400px;
-  height: 237px;
-  @extend .img-block;
-}
-
-.post-format {
-  background-image: url("../../img/banner_12.jpg");
-  background-size: cover;
-  background-position: top;
-  width: 400px;
-  height: 237px;
-  @extend .img-block;
-}
-
-.post-gift {
-  background-image: url("../../img/banner_11.jpg");
-  background-size: cover;
-  background-position: center;
-  width: 400px;
-  height: 237px;
-  @extend .img-block;
 }
 
 

@@ -73,41 +73,91 @@ class Sliders {
 
 class BlockSlider {
 
-    #sliderHiddenContent;
+    #slides;
+    #sliderBlock;
+    #sliderContainer;
+
     #clickBtns;
 
-    #sliderLeftMargin = 70;
+    #currPosition = 0;
 
-    constructor(sliderHiddenContent, clickBtn) {
-        this.#sliderHiddenContent = sliderHiddenContent;
-        this.#clickBtns = clickBtn;
+    constructor(slides, sliderBlock, sliderContainer, clickBtns) {
+        this.#slides = slides;
+        this.#sliderBlock = sliderBlock;
+        this.#sliderContainer = sliderContainer;
+        this.#clickBtns = clickBtns;
     }
 
-    // Get width only one slide
-    getWidthOneSlide() {
-        let elem = document.querySelector('.block-img');
-        return elem.offsetWidth + this.#sliderLeftMargin;
-    }
+    isInViewport(element) {
+        let positionViewportRight = this.#sliderBlock.clientWidth;
 
-    move() {
-        for(let i = 0; i < this.#clickBtns.length; i++) {
-            this.#clickBtns[i].addEventListener('click', () => {
-                this.#sliderHiddenContent.scrollLeft += this.getWidthOneSlide() * (this.#clickBtns[i].id === 'left' ? -1: 1);
-            });
+        if (element.getBoundingClientRect().left < 0) {
+            return false;
+        } else if (element.getBoundingClientRect().left >= positionViewportRight) {
+            return false;
+        } else {
+            return true;
         }
     }
 
-    init(hiddenContentClass, clickBtnsClass) {
-        this.#sliderHiddenContent = document.querySelector(hiddenContentClass);
-        this.#clickBtns = document.querySelectorAll(clickBtnsClass);
+    getElementWidth(element, withMargin = true, withPadding = true, withBorder = true) {
+        let style = element.currentStyle || window.getComputedStyle(element),
+            width = element.offsetWidth, // or use style.width
+            margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight),
+            padding = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight),
+            border = parseFloat(style.borderLeftWidth) + parseFloat(style.borderRightWidth);
+
+        return width - (withPadding ? padding : 0) + (withBorder ? border : 0) + (withMargin ? margin : 0);
+    }
+
+    // Get width only one slide
+    getSlideWidth(withMargin = true, withPadding = true, withBorder = true) {
+        let element = document.querySelector('.block-img');
+        return this.getElementWidth(element, withMargin, withPadding, withBorder);
+    }
+
+    // Get width only one slide
+    getSlideGap() {
+        return this.getSlideWidth() - this.getSlideWidth(false);
+    }
+
+    move(direction) {
+        let shiftPixel = this.getSlideWidth() * (direction === 'left' ? 1 : -1);
+
+        if (direction === 'right' && this.isInViewport(this.#slides[this.#slides.length - 1])) {
+            return;
+        } else if (direction === 'left' && this.isInViewport(this.#slides[0])) {
+            return;
+        }
+
+        let currPos = this.#currPosition * this.getSlideWidth();
+        this.#sliderContainer.style.transform = `translateX(${currPos + shiftPixel}px)`;
+        this.#currPosition += direction === 'left' ? 1 : -1;
+    }
+
+    init(wrapperClass, allSlides = '.block-img', hiddenContentClass = '.carousel-imgs', clickBtnsClass = '.click-btn') {
+        this.#sliderBlock = document.querySelector(wrapperClass);
+        this.#slides = this.#sliderBlock.querySelectorAll(allSlides);
+        this.#sliderContainer = this.#sliderBlock.querySelector(hiddenContentClass);
+        this.#clickBtns = this.#sliderBlock.parentElement.querySelectorAll(clickBtnsClass);
+
+        this.calculateWidth();
+
+        for (let i = 0; i < this.#clickBtns.length; i++) {
+            this.#clickBtns[i].addEventListener('click', () => this.move(this.#clickBtns[i].dataset.direction));
+        }
+    }
+
+    calculateWidth() {
+        let innerWidth = this.#sliderBlock.closest('.width-container').clientWidth - this.getSlideGap();
+        let slidesCount = Math.floor((innerWidth - this.getSlideGap()) / this.getSlideWidth());
+        let sliderWidth = (slidesCount <= 0 ? 1 : slidesCount) * this.getSlideWidth() - this.getSlideGap();
+        this.#sliderBlock.setAttribute('style', `width: ${sliderWidth}px`);
+
+        let sliderHiddenContentWidth = (this.#slides.length * this.getSlideWidth());
+        this.#sliderContainer.setAttribute('style', `width: ${sliderHiddenContentWidth}px`);
     }
 }
-
-let blockSlider = new BlockSlider();
-
-blockSlider.init('.carousel-imgs', '.click-btn');
-blockSlider.move();
-
 
 class Utilities {
     //change header discount
