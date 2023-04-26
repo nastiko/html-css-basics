@@ -24,20 +24,27 @@ body {
 // flex-wrap imgs
 .wrap-flex_container {
   justify-content: center;
+  margin: 3rem 0;
+  @media only screen and (max-width: 62em) {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
 }
 
 .flex-wrap_imgs {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   height: 600px;
   position: sticky;
   top: 30px;
+  padding: 0;
 
   @media only screen and (max-width: 62em) {
     height: auto;
-    //justify-content: flex-start;
+    justify-content: center;
     position: relative;
     top: 0;
+    padding-left: 1rem;
   }
 
   @media only screen and (max-width: 37em) {
@@ -48,19 +55,21 @@ body {
   .foundation-img {
     .show-img {
       max-width: 100%;
-      padding: 1rem;
+      padding-right: 1rem;
     }
   }
 
   .extra-imgs {
     display: flex;
     flex-direction: column;
-    overflow: auto;
-    padding: 1rem 1rem 0 0;
+    overflow: hidden;
+    @media only screen and (max-width: 80em) {
+      padding-right: 1rem;
+    }
     @media only screen and (max-width: 37em) {
       flex-direction: row;
       overflow-x: hidden;
-      padding: 0 1rem;
+      padding-top: 1rem;
     }
 
     .sample-img {
@@ -80,54 +89,42 @@ body {
 
 .flex-wrap_info {
   flex-grow: 1;
-  margin-top: 3rem;
   @media only screen and (max-width: 62em) {
     flex-grow: 0;
-    margin-top: 0;
+    margin-top: 2rem;
+    padding: 0 1rem;
   }
 
   .location-item {
     display: flex;
-    @media only screen and (max-width: 60em) {
-      padding: 0 1rem;
-      margin-top: 1rem;
-    }
-    @media only screen and (max-width: 30em) {
-      padding: 0 1rem;
-      margin-top: 2rem;
+
+    .page-highlighter {
+      margin-bottom: 0;
     }
   }
 
-  .col-padding {
-    @media only screen and (max-width: 60em) {
-      padding: 0 1rem;
-    }
+  .flex-product_info {
+    margin-top: 10px;
 
-    .flex-product_info {
-      .product-name {
-        a {
-          font-family: $font-cormorant;
-          font-size: 42px;
-          text-transform: capitalize;
-          @include font-weight(heavy);
-          line-height: 1.2;
-          color: #000;
-          @media only screen and (max-width: 30em) {
-            font-size: 30px;
-          }
-        }
-      }
-
-      .product-price {
-        font-size: 22px;
-        @include font-weight(light);
+    .product-name {
+      font-size: 42px;
+      font-family: $font-cormorant;
+      text-transform: capitalize;
+      @include font-weight(heavy);
+      line-height: 1.2;
+      color: #000;
+      @media only screen and (max-width: 30em) {
+        font-size: 30px;
       }
     }
 
-    .description {
-      margin-top: 2rem;
+    .product-price {
+      font-size: 22px;
+      @include font-weight(light);
     }
+  }
 
+  .description {
     .title-block {
       font-size: 16px;
       font-family: $font-cormorant;
@@ -162,8 +159,8 @@ body {
       align-items: center;
       gap: 25px;
       @media only screen and (max-width: 30em) {
-      gap: 10px;
-    }
+        gap: 10px;
+      }
 
       .add-remove_tem {
         height: 45px;
@@ -174,7 +171,7 @@ body {
         align-items: center;
         justify-content: space-between;
         gap: 15px;
-        border: 1px solid $color-black;
+        border: 1px solid $color-lunar;
 
         button {
           background-color: transparent;
@@ -205,39 +202,39 @@ body {
       }
 
       button {
+        flex: 1;
+        height: 46px;
         font-size: 16px;
+        font-weight: 300;
         text-transform: uppercase;
         letter-spacing: 1px;
-        font-weight: 300;
-        background: rgba(0,0,0,.75);
         color: $color-white;
-        flex: 1;
+        background: rgba(0, 0, 0, .75);
         border: none;
-        height: 46px;
 
         &:hover {
           background-color: $color-sand;
         }
       }
-    }
 
-    .icon-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 45px;
-      height: 45px;
-      background-color: $color-white;
-      cursor: pointer;
-      @extend %button;
+      .icon-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: $color-white;
+        cursor: pointer;
+        @extend %button;
 
-      .icon-like {
-        background-image: url("../img/like.svg");
-        @extend .style-icon;
+        .icon-like {
+          background-image: url("../img/like.svg");
+          @extend .style-icon;
+        }
       }
     }
 
-    button {
+    .btn-buy_now {
       width: 100%;
       height: 45px;
       font-size: 16px;
@@ -250,7 +247,7 @@ body {
       padding: 0 15px;
 
       &:hover {
-        background: rgba(0,0,0,.75);
+        background: rgba(0, 0, 0, .75);
       }
     }
 
@@ -281,23 +278,41 @@ body {
       letter-spacing: 0;
       position: relative;
       cursor: pointer;
-      border-bottom: 1px solid $color-lunar;
+      border: none;
       padding: 0;
-      margin-bottom: 1.5rem;
 
       &:after {
         content: url("../img/down_arrow.svg");
         position: absolute;
         inset: 0 0 auto auto;
+        transform: rotate(0);
       }
     }
 
-  }
-
-  hr {
-    @media only screen and (max-width: 62em) {
-      margin: 1rem;
+    .description-info {
+      ul {
+        list-style: disc;
+        padding-left: 40px;
+        margin-bottom: 1rem;
+      }
     }
   }
+}
+
+.hidden {
+  min-height: 0;
+  max-height: 0;
+  opacity: 0;
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+}
+
+
+.visible {
+  max-height: 900px;
+  opacity: 1;
+  margin-top: 1rem;
+  -webkit-transition: all .5s ease-in;
+  transition: all .5s ease-in;
 }
 

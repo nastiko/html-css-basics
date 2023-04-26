@@ -72,9 +72,9 @@
 </header>
 <hr class="m-0">
 <main>
-    <section class="width-container <!--border-danger border-->">
+    <section class="width-container">
         <div class="row wrap-flex_container">
-            <div class="col-xl-7 col-lg-8 col-md-10 col-12 flex-wrap_imgs mt-4">
+            <div class="col-xl-7 col-lg-8 col-md-10 col-12 flex-wrap_imgs">
                 <div class="foundation-img">
                     <img class="show-img" src="img/view_item/size_600x600/ring_transparent%5B600x600%5D.webp"
                          alt="Transparent ring">
@@ -102,7 +102,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-10 col-12 flex-wrap_info">
                 <div class="location-item">
-                    <p class="page-highlighter mb-2">
+                    <p class="page-highlighter">
                         <a class="prev-link" href="index.html">Home</a>
                         <span class="arrow-backup"></span>
                         <a class="prev-link" href="index.html">Bracelets</a>
@@ -110,24 +110,20 @@
                         <a class="text-body">Twin Hoops</a>
                     </p>
                 </div>
-                <div class="col-padding mt-2">
-                    <div class="flex-stars justify-content-start mb-3">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div class="flex-product_info">
-                        <h3 class="product-name text-start mb-3">
-                            <a href="#">Croissant Dome Hoops</a>
-                        </h3>
-                        <p class="product-price text-start">£75</p>
-                    </div>
+                <div class="flex-stars justify-content-start">
+                    <span class="icon-star"></span>
+                    <span class="icon-star"></span>
+                    <span class="icon-star"></span>
+                    <span class="icon-star"></span>
+                    <span class="icon-star"></span>
                 </div>
-                <hr class="my-4">
-                <div class="col-padding">
-                    <p class="description">
+                <div class="flex-product_info">
+                    <h3 class="product-name text-start">Croissant Dome Hoops</h3>
+                    <p class="product-price text-start">£75</p>
+                </div>
+                <hr>
+                <div class="description">
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore
                         et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
@@ -138,7 +134,7 @@
                         This product is available.
                     </p>
                     <h3 class="title-block">Color</h3>
-                    <div class="block-color_wrap mb-4">
+                    <div class="block-color_wrap mb-3">
                         <div class="filter-color color-transparent"
                              data-bs-toggle="tooltip"
                              title="Transparent">
@@ -154,28 +150,26 @@
                         <div class="filter-color color-haywain" data-bs-toggle="tooltip"
                              title="Hay Wain"></div>
                     </div>
-                    <p>
-                        <a class="link-popup">Size Guide</a>
-                    </p>
-                    <div class="add-cart mb-4">
+                    <a class="link-popup">Size Guide</a>
+                    <div class="add-cart my-4">
                         <div class="add-remove_tem">
-                            <button>
+                            <button class="p-0">
                                 <span class="icon-minus"></span>
                             </button>
                             <strong class="m-0 amount-items">1</strong>
-                            <button>
+                            <button class="p-0">
                                 <span class="icon-plus"></span>
                             </button>
                         </div>
                         <button>Add to cart</button>
-                        <div class="icon-button border border-dark" data-bs-toggle="tooltip" title="Wishlist">
+                        <div class="icon-button border border-secondary" data-bs-toggle="tooltip" title="Wishlist">
                             <div class="icon-like">
                                 <a href="#"></a>
                             </div>
                         </div>
                     </div>
-                    <button>Buy it now</button>
-                    <hr class="mx-0 my-5">
+                    <button class="btn-buy_now">Buy it now</button>
+                    <hr class="my-4">
                     <p>ID:
                         <span class="highlight-text">D11111</span>
                     </p>
@@ -189,34 +183,50 @@
                         <a class="icon-facebook me-2"></a>
                         <a class="icon-twitter"></a>
                     </p>
-                    <div class="my-5">
-                        <button type="button">Description</button>
-                        <div class="description hiding-img">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                                been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                                galley of type and scrambled it to make a type specimen book. It has survived not only five
-                                centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                                passages, and more recently with desktop publishing software like Aldus PageMaker including
-                                versions of Lorem Ipsum.</p>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a
-                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
-                                here', making it look like readable English. </p>
-                            <ul>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                <li>Vivamus dictum urna id mi elementum feugiat.</li>
-                                <li>Proin laoreet augue a aliquam sollicitudin.</li>
-                                <li>Morbi ac tellus sit amet nisi rhoncus aliquet.</li>
-                                <li>Pellentesque in nisl nec eros faucibus vulputate sit amet vitae mi.</li>
-                                <li>Nunc rhoncus augue non mauris ultrices, eget volutpat quam condimentum.</li>
-                            </ul>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                                classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock</p>
+                    <div class="my-4">
+                        <div class="description-info mb-4">
+                            <button class="btn-description_info border-bottom" type="button">Description</button>
+                            <div class="hidden">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum
+                                    has
+                                    been the industry's standard dummy text ever since the 1500s, when an unknown
+                                    printer
+                                    took a
+                                    galley of type and scrambled it to make a type specimen book. It has survived not
+                                    only
+                                    five
+                                    centuries, but also the leap into electronic typesetting, remaining essentially
+                                    unchanged.
+                                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                                    Ipsum
+                                    passages, and more recently with desktop publishing software like Aldus PageMaker
+                                    including
+                                    versions of Lorem Ipsum.</p>
+                                <p>It is a long established fact that a reader will be distracted by the readable
+                                    content of
+                                    a
+                                    page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                                    more-or-less normal distribution of letters, as opposed to using 'Content here,
+                                    content
+                                    here', making it look like readable English. </p>
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                                    <li>Vivamus dictum urna id mi elementum feugiat.</li>
+                                    <li>Proin laoreet augue a aliquam sollicitudin.</li>
+                                    <li>Morbi ac tellus sit amet nisi rhoncus aliquet.</li>
+                                    <li>Pellentesque in nisl nec eros faucibus vulputate sit amet vitae mi.</li>
+                                    <li>Nunc rhoncus augue non mauris ultrices, eget volutpat quam condimentum.</li>
+                                </ul>
+                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                                    piece of
+                                    classical Latin literature from 45 BC, making it over 2000 years old. Richard
+                                    McClintock.</p>
+                            </div>
                         </div>
-                        <button type="button">Shipping</button>
-                        <div class="shipping hiding-img">
-                            <p>
+                        <div class="description-info  mb-4">
+                            <button class="btn-description_info border-bottom" type="button">Shipping</button>
+                            <p class="hidden">
                                 For orders placed before 7am AEDT, we endeavour to process the same business day. Orders
                                 placed
                                 after 11am AEDT will be processed the next business day.
@@ -225,31 +235,32 @@
                                 All Auguste orders are hand-picked and packed with love from Poole, Dorset.
                             </p>
                         </div>
-                        <button type="button">Review</button>
-                        <div class="hiding-img">
-                            <div class="flex-stars">
-                                <span class="icon-star"></span>
-                                <span class="icon-star"></span>
-                                <span class="icon-star"></span>
-                                <span class="icon-star"></span>
-                                <span class="icon-star"></span>
+                        <div class="description-info mb-4">
+                            <button class="btn-description_info border-bottom" type="button">Review</button>
+                            <div class="hidden">
+                                <div class="flex-stars">
+                                    <span class="icon-star"></span>
+                                    <span class="icon-star"></span>
+                                    <span class="icon-star"></span>
+                                    <span class="icon-star"></span>
+                                    <span class="icon-star"></span>
+                                </div>
+                                <p>Not yet review</p>
+                                <button><span>Icon</span>Write review</button>
                             </div>
-                            <p>Not yet review</p>
-                            <button><span>Icon</span>Write review</button>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-    <section class="container-fluid border-style py-5 px-0">
+    <section class="container-fluid block-may_like">
         <div class="width-container">
-            <h5 class="header-style">You may Also Like</h5>
+            <h5 class="title-header">You may Also Like</h5>
             <div id="container_2">
                 <div class="grid-area">
                     <div class="blocks-position box-inside_grid">
-                        <img class="img-style_template" src="img/rings_transparent.webp" alt="MEDIUM TUBE HOOPS">
+                        <img class="img-style_template" src="img/earrings_5.webp" alt="Oval Cut Earrings">
                     </div>
                     <div class="col-padding">
                         <div class="flex-stars">
@@ -261,15 +272,15 @@
                         </div>
                         <div>
                             <h3 class="product-name">
-                                <a href="#">Bold Hoops</a>
+                                <a href="#">Oval Cut Earrings</a>
                             </h3>
-                            <p class="product-price">£120</p>
+                            <p class="product-price">£89</p>
                         </div>
                     </div>
                 </div>
                 <div class="grid-area">
                     <div class="blocks-position box-inside_grid">
-                        <img class="img-style_template" src="img/rings_transparent.webp" alt="MEDIUM TUBE HOOPS">
+                        <img class="img-style_template" src="img/necklaces_1.jpg" alt="Aquamarine & Diamond">
                     </div>
                     <div class="col-padding">
                         <div class="flex-stars">
@@ -281,15 +292,15 @@
                         </div>
                         <div>
                             <h3 class="product-name">
-                                <a href="#">MEDIUM TUBE HOOPS</a>
+                                <a href="#">Aquamarine & Diamond</a>
                             </h3>
-                            <p class="product-price">£80</p>
+                            <p class="product-price">£115</p>
                         </div>
                     </div>
                 </div>
                 <div class="grid-area">
                     <div class="blocks-position box-inside_grid">
-                        <img class="img-style_template" src="img/rings_5.webp" alt="Croissant Dome Hoops">
+                        <img class="img-style_template" src="img/earrings_9.jpg" alt="Twins Earrings">
                     </div>
                     <div class="col-padding">
                         <div class="flex-stars">
@@ -301,9 +312,9 @@
                         </div>
                         <div>
                             <h3 class="product-name">
-                                <a href="#">Croissant Dome Hoops</a>
+                                <a href="#">Twins Stars</a>
                             </h3>
-                            <p class="product-price">£75</p>
+                            <p class="product-price">£150</p>
                         </div>
                     </div>
                 </div>
@@ -313,7 +324,7 @@
                             <span class="red-box">35%</span>
                         </div>
                         <div class="blocks-position">
-                            <img class="img-style_template" src="img/earrings_3.webp" alt="Stars hoops">
+                            <img class="img-style_template" src="img/rings_2.webp" alt="Triangle Ring">
                             <div class="time-box">
                                 <div>
                                     <span id="days-20%" class="countdown">565</span>
@@ -356,9 +367,9 @@
                         </div>
                         <div>
                             <h3 class="product-name">
-                                <a href="#">Stars hoops</a>
+                                <a href="#">Triangle Ring</a>
                             </h3>
-                            <p class="product-price">£125</p>
+                            <p class="product-price">£135</p>
                         </div>
                     </div>
 
@@ -451,6 +462,7 @@
     <button class="up-icon"></button>
 </div>
 <script src="js/main.js"></script>
+<script src="js/view-item.js"></script>
 <script>
     let utils = new Utilities();
 
