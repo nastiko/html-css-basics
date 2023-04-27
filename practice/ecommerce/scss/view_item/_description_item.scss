@@ -142,6 +142,13 @@ body {
       margin: 0;
       text-decoration: underline;
       @include font-weight(heavy);
+      cursor: pointer;
+
+      &:hover {
+        &::before {
+          filter: invert(86%) sepia(30%) saturate(5923%) hue-rotate(318deg) brightness(90%) contrast(73%);
+        }
+      }
 
       &::before {
         content: url("../img/ruler.svg");
@@ -281,11 +288,12 @@ body {
       border: none;
       padding: 0;
 
-      &:after {
+      span {
         content: url("../img/down_arrow.svg");
+        width: 10px;
+        height: 10px;
         position: absolute;
-        inset: 0 0 auto auto;
-        transform: rotate(0);
+        inset: 17px 5px auto auto;
       }
     }
 
@@ -296,8 +304,38 @@ body {
         margin-bottom: 1rem;
       }
     }
+
+    .btn-review {
+      font-size: 13px;
+      border: 2px solid $color-black;
+      background-color: transparent;
+      line-height: 52px;
+      text-transform: uppercase;
+      position: relative;
+      padding: 0 45px;
+      margin-bottom: 40px;
+
+      span {
+        content: url("../img/pen.svg");
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        vertical-align: sub;
+        margin-right: 5px;
+      }
+
+      &:hover {
+        background-color: $color-black;
+        color: $color-white;
+
+        span {
+          filter: invert(1);
+        }
+      }
+    }
   }
 }
+
 
 .hidden {
   min-height: 0;
@@ -314,5 +352,11 @@ body {
   margin-top: 1rem;
   -webkit-transition: all .5s ease-in;
   transition: all .5s ease-in;
+}
+
+.rotate {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 

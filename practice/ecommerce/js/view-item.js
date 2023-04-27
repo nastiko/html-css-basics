@@ -12,21 +12,18 @@ class ProductInfo {
         element.classList.toggle('visible');
     }
 
-    transformIcon() {
-        //this.#iconsTransform.style.transform = 'rotate(180deg)';
+    transformIcon(icon) {
+        icon.classList.toggle('rotate');
     }
 
-    init(descBtnClass, descInfo = '.hidden', iconsTransform = '.btn-description-info.border-bottom::after') {
+    init(descBtnClass, descInfo = '.hidden', iconsTransform = '.icon') {
         this.#descriptionBtn = document.querySelectorAll(descBtnClass);
         this.#iconsTransform = document.querySelectorAll(iconsTransform);
 
         for (let i = 0; i < this.#descriptionBtn.length; i++) {
             this.#descriptionBtn[i].addEventListener('click', () => this.showVisible(this.#descriptionBtn[i].querySelector(descInfo)));
+            this.#descriptionBtn[i].addEventListener('click', () => this.transformIcon(this.#descriptionBtn[i].querySelector(iconsTransform)));
         }
-
-        // for (let j = 0; j < this.#iconsTransform; j++) {
-        //     this.#iconsTransform[j].addEventListener('click', () => this.transformIcon());
-        // }
     }
 }
 
