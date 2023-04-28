@@ -29,3 +29,32 @@ class ProductInfo {
 
 let productInfo = new ProductInfo();
 productInfo.init('.description-info');
+
+
+class PopUp {
+    #popUp;
+    #linkPopUp;
+    #closePopUp;
+
+    constructor(popUpClass, closePopUpBtn, linkPopUpClass) {
+        this.#popUp = document.querySelector(popUpClass);
+        this.#linkPopUp = document.querySelector(linkPopUpClass);
+        this.#closePopUp = this.#popUp.querySelector(closePopUpBtn);
+    }
+
+    showPopUp() {
+        this.#popUp.classList.add('active');
+    }
+
+    closePopUp() {
+        this.#popUp.classList.remove('active');
+    }
+
+    init() {
+        this.#linkPopUp.addEventListener('click', () => this.showPopUp());
+        this.#closePopUp.addEventListener('click', () => this.closePopUp());
+    }
+}
+
+let sizeGuide = new PopUp('div.popup', '.popup-close_icon', '.link-popup');
+sizeGuide.init();
