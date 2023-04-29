@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Lato:wght@300;400;700&display=swap');
 @import "../helpers/variables";
 @import "../helpers/placeholder";
-@import "../common/commonstyle";
 
-
-// Slider container for main section
 .sliders-viewport {
   display: flex;
   overflow-x: hidden;
@@ -31,15 +27,15 @@
 }
 
 .slide-first {
-  background-image: url("../../img/slider_1.webp");
+  background-image: url("../img/slider_1.webp");
 }
 
 .slide-second {
-  background-image: url("../../img/slider_2.webp");
+  background-image: url("../img/slider_2.webp");
 }
 
 .slide-third {
-  background-image: url("../../img/slider_3.webp");
+  background-image: url("../img/slider_3.webp");
 }
 
 .sale-style {
@@ -99,6 +95,7 @@
     line-height: 50px;
     text-transform: uppercase;
     border: 2px solid $color-white;
+    background-color: transparent;
     padding: 0 22px;
     margin-top: 3rem;
     @extend %button;
@@ -111,7 +108,7 @@
   }
 
   .icon-arrow {
-    background-image: url("../../img/right_arrow.svg");
+    background-image: url("../img/right_arrow.svg");
     background-repeat: no-repeat;
     width: 25px;
     height: 25px;
@@ -166,14 +163,14 @@
   }
 
   .arrow-left_circle {
-    background-image: url("../../img/left_arrow.svg");
+    background-image: url("../img/left_arrow.svg");
     width: 20px;
     height: 20px;
     @extend .main-icons;
   }
 
   .arrow-right_circle {
-    background-image: url("../../img/right_arrow.svg");
+    background-image: url("../img/right_arrow.svg");
     width: 20px;
     height: 20px;
     @extend .main-icons;
@@ -210,115 +207,3 @@
     cursor: pointer;
   }
 }
-
-
-// Slider container for articles "Jewellery style files"
-.wrapper {
-  position: relative;
-  overflow: hidden;
-  margin-inline: auto;
-
-  .carousel-imgs {
-    font-size: 0;
-    transition: transform 1s;
-  }
-
-  .block-img {
-    display: inline-block;
-    position: relative;
-    vertical-align: top;
-    margin-right: 20px;
-    @media only screen and (max-width: 30em) {
-      width: 324px;
-    }
-
-    .img-banner {
-      width: 400px;
-      height: 237px;
-      object-fit: cover;
-    }
-  }
-}
-
-.date-block {
-  width: 57px;
-  height: 57px;
-  background-color: $color-white;
-  border-radius: 50%;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-
-  ul {
-    font-size: 14px;
-    @include font-weight(heavy);
-    width: 57px;
-    height: 57px;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-
-    .border-box {
-      border: 1px solid $color-lunar;
-      width: 25px;
-    }
-  }
-}
-
-.font-style {
-  font-family: $font-lato;
-
-  .name-banner {
-    font-size: 12px;
-    @include font-weight(medium);
-    color: $color-lunar;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-top: 20px;
-  }
-
-  .name-block {
-    text-transform: none;
-    text-align: inherit;
-    line-height: 35px;
-    margin-bottom: 8px;
-    font-size: $space-26;
-    font-family: $font-cormorant;
-    @include font-weight(heavy);
-  }
-
-  .extra-info {
-    text-transform: none;
-    letter-spacing: 0;
-    color: $color-lunar;
-    text-decoration: underline;
-    @extend %link;
-
-    &:hover {
-      color: $color-sand;
-    }
-  }
-}
-
-
-.icon-left_prev {
-  background-image: url(../../img/left_backup.svg);
-  position: absolute;
-  top: 55%;
-  left: -0px;
-  @extend %common-arrows_style;
-}
-
-.icon-right_next {
-  background-image: url(../../img/right_backup.svg);
-  position: absolute;
-  top: 55%;
-  right: -0px;
-  @extend %common-arrows_style;
-}
-
-
-

@@ -10,10 +10,7 @@
           rel="stylesheet">
     <link rel="stylesheet" href="css/libraries/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/common/header.css">
-    <link rel="stylesheet" href="css/common/sliders.css">
-    <link rel="stylesheet" href="css/common/imgs.css">
-    <link rel="stylesheet" href="css/common/footer.css">
+    <!--<link rel="stylesheet" href="css/common/sliders.css">-->
     <link rel="stylesheet" href="css/scrolling/scrollUp.css">
     <title>E-Commerce</title>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
@@ -51,7 +48,7 @@
                 </ul>
             </div>
         </div>
-        <div class="logo"></div>
+        <a href="index.html" class="logo"></a>
         <div class="categories display-none_mobile">
             <ul class="gap-list_categories">
                 <li><a class="display-list_style" href="#">Jewellery</a></li>
@@ -169,8 +166,8 @@
     </section>
     <section class="container-fluid border-style pt-5 px-0">
         <div class="width-container">
-            <div class="row mobile-row_utilities utilities">
-                <div class="col-md-6 col-sm-10 col-12 mb-4">
+            <div class="row utilities">
+                <div class="col-md-6 col-sm-10 col-12 mb-4 padding-img">
                     <div class="img-magic"></div>
                     <div class="banner-wrap_info pt-4 mb-4">
                         <h3 class="title-banner">Elizabeth Stenhouse</h3>
@@ -181,7 +178,7 @@
                         <a class="button-banners" href="#">Shop Now</a>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-10 col-12 mb-4">
+                <div class="col-md-6 col-sm-10 col-12 mb-4 padding-img">
                     <div class="img-earrings"></div>
                     <div class="banner-wrap_info pt-4 mb-4">
                         <h3 class="title-banner">Heather Cohen® Earrings</h3>
@@ -345,7 +342,7 @@
     <section class="container-fluid px-0">
         <div class="overtext">
             <h1 class="large-header">Stand Out In Style</h1>
-            <div class="categories-button mt-2">
+            <div class="mt-2">
                 <a class="button-banners" href="#">Discover Now</a>
             </div>
         </div>
@@ -544,8 +541,8 @@
                 </div>
                 <div class="grid-item">
                     <h3 class="title-text text-1">Our Newsletter</h3>
-                    <p class="info-banner">Sign up for the latest Ice offers and exclusives.</p>
-                    <form action="#">
+                    <p class="info-banner m-0">Sign up for the latest Ice offers and exclusives.</p>
+                    <form action="#" class="my-3">
                         <div class="form-icon_container">
                             <input class="input-style" type="email" name="email" placeholder="Your email" required>
                             <button class="button-style" type="submit">
@@ -553,20 +550,24 @@
                             </button>
                         </div>
                     </form>
-                    <div class="flex-icon_container pt-4">
-                        <div class="bg-circle">
-                            <a class="icon-facebook" href="https://en-gb.facebook.com/" target="_blank"></a>
-                        </div>
-                        <div class="bg-circle">
-                            <a class="icon-twitter" href="https://twitter.com/i/flow/login" target="_blank"></a>
-                        </div>
-                        <div class="bg-circle">
-                            <a class="icon-instagram" href="https://www.instagram.com/" target="_blank"></a>
-                        </div>
-                        <div class="bg-circle">
-                            <a class="icon-youtube" href="https://www.youtube.com/" target="_blank"></a>
-                        </div>
-                    </div>
+                    <ul class="flex-icon_container">
+                        <li class="bg-circle">
+                            <a class="icon-facebook" href="https://en-gb.facebook.com/"
+                               target="_blank"></a>
+                        </li>
+                        <li class="bg-circle">
+                            <a class="icon-twitter" href="https://twitter.com/i/flow/login"
+                               target="_blank"></a>
+                        </li>
+                        <li class="bg-circle">
+                            <a class="icon-instagram" href="https://www.instagram.com/"
+                               target="_blank"></a>
+                        </li>
+                        <li class="bg-circle">
+                            <a class="icon-youtube" href="https://www.youtube.com/"
+                               target="_blank"></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

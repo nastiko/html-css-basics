@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Lato:wght@300;400;700&display=swap');
 @import "helpers/variables";
 @import "helpers/placeholder";
-@import "common/commonstyle";
+@import "index/all_index";
+@import "commonstyle/all_commonstyle";
 
 
 html {
@@ -17,66 +18,11 @@ body {
 }
 
 
-// Bth main style for class "button-banners"
-.button-banners {
-  @extend .button-banners;
-  @extend %button;
-  @extend %link;
-}
 
 
-// Explore container
-.bg-section_explore {
-  background-image: url("../img/bg_line.webp");
-  padding-bottom: 4rem;
-
-  .grid-area {
-    position: relative;
-
-    .categories-button {
-      width: 100%;
-      letter-spacing: 0;
-      background-color: $color-white;
-      border: none;
-      position: absolute;
-      bottom: -15px;
-      padding: 5px 0;
-      @extend .button-banners;
-
-      .link-style {
-        @extend %link;
-      }
-
-      &:hover {
-        background-color: $color-sand;
-      }
-    }
-  }
-}
 
 
-// Two name's container
-.utilities {
-  justify-content: space-around;
-}
-
-.banner-wrap_info {
-  max-width: 470px;
-  text-align: center;
-  margin: 0 auto;
-
-  .title-banner {
-    font-family: $font-cormorant;
-    font-size: 24px;
-    @include font-weight(heavy);
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    margin-top: 0;
-  }
-}
-
-
-// Hot list
+// Hot list    NEED TO FIX
 #container_2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -173,51 +119,7 @@ body {
 }
 
 
-// Video section
-.overtext {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 600px;
-  position: absolute;
-  text-align: center;
-  font-family: $font-cormorant;
-  color: $color-white;
-  z-index: 1000;
 
-  .large-header {
-    font-size: $space-78;
-    color: $color-white;
-  }
-}
-
-.categories-button {
-  @extend %button;
-  background-color: $color-white;
-  line-height: 35px;
-  letter-spacing: 3px;
-  text-align: center;
-  text-transform: uppercase;
-  border: none;
-
-  .button-banners {
-    border: none;
-  }
-}
-
-.video-position {
-  position: relative;
-  top: 0;
-  left: 0;
-
-  .video-content {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-  }
-}
 
 
 // Week's collection & Template of products

@@ -100,16 +100,7 @@
   margin: 0 auto;
 }
 
-.button-banners {
-  line-height: 35px;
-  text-align: center;
-  text-transform: uppercase;
-  border: 1px solid $color-black;
-  cursor: pointer;
-  padding: 10px 25px;
-  margin: 0 auto;
-  @extend %link;
-}
+
 
 //Show the correct chapter
 .page-highlighter {

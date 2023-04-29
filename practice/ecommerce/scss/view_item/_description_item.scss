@@ -145,7 +145,7 @@ body {
       cursor: pointer;
 
       &:hover {
-        &::before {
+        &:before {
           filter: invert(86%) sepia(30%) saturate(5923%) hue-rotate(318deg) brightness(90%) contrast(73%);
         }
       }
@@ -295,6 +295,12 @@ body {
         position: absolute;
         inset: 17px 5px auto auto;
       }
+
+      .rotate {
+        -moz-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
     }
 
     .description-info {
@@ -302,6 +308,22 @@ body {
         list-style: disc;
         padding-left: 40px;
         margin-bottom: 1rem;
+      }
+
+      .hidden {
+        min-height: 0;
+        max-height: 0;
+        opacity: 0;
+        -webkit-transition: all .4s ease-out;
+        transition: all .4s ease-out;
+      }
+
+      .visible {
+        max-height: 900px;
+        opacity: 1;
+        margin-top: 1rem;
+        -webkit-transition: all .5s ease-in;
+        transition: all .5s ease-in;
       }
     }
 
@@ -334,29 +356,5 @@ body {
       }
     }
   }
-}
-
-
-.hidden {
-  min-height: 0;
-  max-height: 0;
-  opacity: 0;
-  -webkit-transition: all .4s ease-out;
-  transition: all .4s ease-out;
-}
-
-
-.visible {
-  max-height: 900px;
-  opacity: 1;
-  margin-top: 1rem;
-  -webkit-transition: all .5s ease-in;
-  transition: all .5s ease-in;
-}
-
-.rotate {
-  -moz-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
 }
 

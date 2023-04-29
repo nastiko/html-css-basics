@@ -13,49 +13,6 @@
 }
 
 
-// Categories' imgs section
-.bracelets {
-  background-image: url("../../img/banner_1.webp");
-  @extend .img-block;
-}
-
-.charms {
-  background-image: url("../../img/banner_2.webp");
-  @extend .img-block;
-}
-
-.earrings {
-  background-image: url("../../img/banner_3.webp");
-  @extend .img-block;
-}
-
-.necklaces {
-  background-image: url("../../img/banner_4.webp");
-  @extend .img-block;
-}
-
-.rings {
-  background-image: url("../../img/banner_5.webp");
-  @extend .img-block;
-}
-
-
-// Individual's imgs
-.img-magic {
-  width: 100%;
-  background-image: url("../../img/banner_6.webp");
-  background-size: cover;
-  @extend .img-block;
-}
-
-.img-earrings {
-  width: 100%;
-  background-image: url("../../img/banner_7.webp");
-  background-size: cover;
-  @extend .img-block;
-}
-
-
 // Hot list section
 .earrings-3 {
   background-image: url("../../img/earrings_3.webp");

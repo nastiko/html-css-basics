@@ -1,6 +1,5 @@
 @import '../helpers/variables';
 @import '../helpers/placeholder';
-@import 'commonstyle';
 
 .desktop-device {
   display: flex;
@@ -15,7 +14,7 @@
   }
 
   .logo {
-    background: url("../../img/logo.jpg") no-repeat center;
+    background: url("../img/logo.jpg") no-repeat center;
     background-size: contain;
     width: 150px;
     height: 70px;
@@ -59,21 +58,22 @@
     }
   }
 
-  .icon-person {
-    background-image: url("../../img/person.svg");
+  .icon-person, .icon-like, .icon-bag {
     @extend .style-icon;
+    cursor: pointer;
+  }
+
+  .icon-person {
+    background-image: url("../img/person.svg");
   }
 
   .icon-like {
-    background-image: url("../../img/like.svg");
+    background-image: url("../img/like.svg");
     color: black;
-    @extend .style-icon;
   }
 
   .icon-bag {
-    background-image: url("../../img/bag.svg");
-    @extend .style-icon;
-
+    background-image: url("../img/bag.svg");
     .amount-item {
       font-size: 11px;
       background-color: $color-black;
@@ -86,62 +86,3 @@
     }
   }
 }
-
-
-// NavBar of the header for mobile
-@media only screen and (max-width: 50em) {
-  .display-none_mobile {
-    display: none;
-  }
-
-  .icon-menu {
-    width: 20px;
-    height: 20px;
-    background-image: url("../../img/menu.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-
-  .offcanvas {
-    font-family: Lato, sans-serif;
-  }
-
-  .offcanvas-header {
-    background: $color-sand;
-    justify-content: flex-end;
-    gap: 10px;
-    padding: 15px 25px;
-
-    .offcanvas-title {
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: $color-white;
-      text-transform: uppercase;
-    }
-
-    .btn-close {
-      width: 16px;
-      height: 16px;
-      background: url("../../img/close.svg");
-      background-size: contain;
-      padding: 0;
-      margin: 0;
-    }
-  }
-
-  .offcanvas-body {
-    .offcanvas-list {
-      text-transform: uppercase;
-      font-size: 13px;
-      color: black;
-
-      &:hover {
-        color: $color-sand;
-      }
-    }
-  }
-}
-
-
-

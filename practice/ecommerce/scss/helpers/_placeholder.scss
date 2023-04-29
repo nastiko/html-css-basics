@@ -25,10 +25,6 @@
   }
 }
 
-.row.mobile-row_utilities {
-  padding: 0;
-}
-
 ul {
   list-style: none;
   padding: 0;
@@ -38,7 +34,6 @@ ul {
 a {
   font-size: 12px;
   text-decoration: none;
-  @extend %link;
 
   &:hover {
     color: $color-sand;
@@ -47,7 +42,6 @@ a {
 
 
 %button {
-  background-color: transparent;
   color: $color-white;
   transition: ease all 0.35s;
 
@@ -56,14 +50,6 @@ a {
     border-color: $color-sand !important;
     color: $color-white;
   }
-}
-
-%link {
-  font-family: $font-lato;
-  font-size: 14px;
-  @include font-weight(medium);
-  text-decoration: none;
-  color: $color-black;
 }
 
 %wrap-container {

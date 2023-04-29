@@ -1,0 +1,53 @@
+@import "../helpers/variables";
+@import "../helpers/placeholder";
+//@import "../commonstyle/all_commonstyle";
+
+.overtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  text-align: center;
+  font-family: $font-cormorant;
+  color: $color-white;
+  z-index: 1000;
+
+  .large-header {
+    font-size: $space-78;
+    color: $color-white;
+  }
+}
+
+.categories-button {
+  @extend %button;
+  background-color: $color-white;
+  line-height: 35px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+
+  .button-banners {
+
+    cursor: pointer;
+    padding: 10px 25px;
+    margin: 0 auto;
+    @extend .button-banners;
+  }
+
+}
+
+.video-position {
+  position: relative;
+  top: 0;
+  left: 0;
+
+  .video-content {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  }
+}

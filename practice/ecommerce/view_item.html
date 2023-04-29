@@ -10,9 +10,8 @@
           rel="stylesheet">
     <link rel="stylesheet" href="css/libraries/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/view_item.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/common/header.css">
-    <link rel="stylesheet" href="css/common/footer.css">
+    <!--<link rel="stylesheet" href="css/main.css">-->
+    <!--<link rel="stylesheet" href="css/common/footer.css">-->
     <title>View Item</title>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
@@ -50,7 +49,7 @@
                 </ul>
             </div>
         </div>
-        <div class="logo"></div>
+        <a href="index.html" class="logo"></a>
         <div class="categories display-none_mobile">
             <ul class="gap-list_categories">
                 <li><a class="display-list_style" href="#">Jewellery</a></li>
@@ -265,12 +264,12 @@
     <section class="container-fluid block-may_like">
         <div class="width-container">
             <h5 class="title-header">You may Also Like</h5>
-            <div id="container_2">
-                <div class="grid-area">
-                    <div class="blocks-position box-inside_grid">
+            <div class="grid-basic_container">
+                <div class="grid">
+                    <div class="img-container">
                         <img class="img-style_template" src="img/earrings_5.webp" alt="Oval Cut Earrings">
                     </div>
-                    <div class="col-padding">
+                    <div class="info-container">
                         <div class="flex-stars">
                             <span class="icon-star"></span>
                             <span class="icon-star"></span>
@@ -286,11 +285,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-area">
-                    <div class="blocks-position box-inside_grid">
+                <div class="grid">
+                    <div class="img-container">
                         <img class="img-style_template" src="img/necklaces_1.jpg" alt="Aquamarine & Diamond">
                     </div>
-                    <div class="col-padding">
+                    <div class="info-container">
                         <div class="flex-stars">
                             <span class="icon-star"></span>
                             <span class="icon-star"></span>
@@ -306,11 +305,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-area">
-                    <div class="blocks-position box-inside_grid">
+                <div class="grid">
+                    <div class="img-container">
                         <img class="img-style_template" src="img/earrings_9.jpg" alt="Twins Earrings">
                     </div>
-                    <div class="col-padding">
+                    <div class="info-container">
                         <div class="flex-stars">
                             <span class="icon-star"></span>
                             <span class="icon-star"></span>
@@ -326,30 +325,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-area">
-                    <div class="box-inside_grid">
+                <div class="grid">
+                    <div class="img-container">
                         <div class="sale-display">
                             <span class="red-box">35%</span>
                         </div>
-                        <div class="blocks-position">
-                            <img class="img-style_template" src="img/rings_2.webp" alt="Triangle Ring">
-                            <div class="time-box">
-                                <div>
-                                    <span id="days-20%" class="countdown">565</span>
-                                    <span class="block-box">days</span>
-                                </div>
-                                <div>
-                                    <span id="hours-20%" class="countdown">08</span>
-                                    <span class="block-box">hours</span>
-                                </div>
-                                <div>
-                                    <span id="mins-20%" class="countdown">07</span>
-                                    <span class="block-box">mins</span>
-                                </div>
-                                <div>
-                                    <span id="secs-20%" class="countdown">25</span>
-                                    <span class="block-box">secs</span>
-                                </div>
+                        <img class="img-style_template" src="img/rings_2.webp" alt="Triangle Ring">
+                        <div class="time-box">
+                            <div>
+                                <span id="days-20%" class="countdown">565</span>
+                                <span class="block-box">days</span>
+                            </div>
+                            <div>
+                                <span id="hours-20%" class="countdown">08</span>
+                                <span class="block-box">hours</span>
+                            </div>
+                            <div>
+                                <span id="mins-20%" class="countdown">07</span>
+                                <span class="block-box">mins</span>
+                            </div>
+                            <div>
+                                <span id="secs-20%" class="countdown">25</span>
+                                <span class="block-box">secs</span>
                             </div>
                         </div>
                     </div>
@@ -365,7 +362,7 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="info-container">
                         <div class="flex-stars">
                             <span class="icon-star"></span>
                             <span class="icon-star"></span>
@@ -425,8 +422,8 @@
                 </div>
                 <div class="grid-item">
                     <h3 class="title-text text-1">Our Newsletter</h3>
-                    <p class="mb-3">Sign up for the latest Ice offers and exclusives.</p>
-                    <form action="#" class="mb-3">
+                    <p class="m-0">Sign up for the latest Ice offers and exclusives.</p>
+                    <form action="#" class="my-3">
                         <div class="form-icon_container">
                             <input class="input-style" type="email" name="email" placeholder="Your email" required>
                             <button class="button-style" type="submit">
