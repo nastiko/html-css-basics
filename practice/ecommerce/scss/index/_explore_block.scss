@@ -12,14 +12,18 @@
 
 .categories-button {
   width: 100%;
+  line-height: 35px;
   letter-spacing: 0;
   background-color: $color-white;
   border: none;
   position: absolute;
   bottom: -15px;
   padding: 5px 0;
+  @extend %button;
 
   .link-style {
+    width: 100%;
+    display: block;
     font-size: 14px;
     color: $color-black;
 

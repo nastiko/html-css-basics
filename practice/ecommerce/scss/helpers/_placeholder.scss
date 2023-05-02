@@ -33,6 +33,7 @@ ul {
 
 a {
   font-size: 12px;
+  color: $color-black;
   text-decoration: none;
 
   &:hover {
@@ -43,6 +44,9 @@ a {
 
 %button {
   color: $color-white;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
   transition: ease all 0.35s;
 
   &:hover {

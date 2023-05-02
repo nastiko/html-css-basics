@@ -231,7 +231,7 @@ class Products {
             this.#price = item.price;
             this.#img = item.image;
             let template = await this.getTemplateBlockItem(this.#title, this.#price, this.#img);
-            let container = document.getElementById('container');
+            let container = document.querySelector('[data-container="week-collection"]');
             container.innerHTML += template;
         }
     }
@@ -307,10 +307,10 @@ class Countdown {
     }
 
     init(daysId, hoursId, minsId, secsId, date) {
-        this.days = document.getElementById(daysId);
-        this.hours = document.getElementById(hoursId);
-        this.mins = document.getElementById(minsId);
-        this.secs = document.getElementById(secsId);
+        this.days = document.querySelector(daysId);
+        this.hours = document.querySelector(hoursId);
+        this.mins = document.querySelector(minsId);
+        this.secs = document.querySelector(secsId);
         this.dateTo = date;
     }
 }

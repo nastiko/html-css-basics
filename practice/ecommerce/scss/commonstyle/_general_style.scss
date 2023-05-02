@@ -8,6 +8,26 @@
   @include font-weight(heavy);
 }
 
+//link-style inside block or btn
+
+.button-banners {
+  background-color: $color-white;
+  line-height: 35px;
+  border: 1px solid $color-black;
+  @extend %button;
+}
+
+.link-style {
+  width: 100%;
+  display: block;
+  color: $color-black;
+  padding: 0 25px;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
 .header-style {
   font-family: $font-cormorant;
   font-size: $space-40;
@@ -21,13 +41,6 @@
   font-size: 14px;
   color: $color-lunar;
   margin-bottom: 20px;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  justify-items: center;
-  gap: 2rem;
 }
 
 .product-name {
@@ -46,19 +59,6 @@
   @extend .style-text;
   color: $color-sand;
   margin-bottom: 0.5rem;
-}
-
-.flex-stars {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-
-  .icon-star {
-    background-image: url("../../img/star.svg");
-    background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
-  }
 }
 
 .img-block {
@@ -99,7 +99,6 @@
   background-repeat: no-repeat;
   margin: 0 auto;
 }
-
 
 
 //Show the correct chapter
@@ -193,5 +192,11 @@
   .color-haywain {
     background: $color-haywain;
   }
+}
 
+// @media query
+@media only screen and (max-width: 60em) {
+  .border-style {
+    margin-top: 0 !important;
+  }
 }

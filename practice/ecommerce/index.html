@@ -10,8 +10,6 @@
           rel="stylesheet">
     <link rel="stylesheet" href="css/libraries/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <!--<link rel="stylesheet" href="css/common/sliders.css">-->
-    <link rel="stylesheet" href="css/scrolling/scrollUp.css">
     <title>E-Commerce</title>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
@@ -169,13 +167,15 @@
             <div class="row utilities">
                 <div class="col-md-6 col-sm-10 col-12 mb-4 padding-img">
                     <div class="img-magic"></div>
-                    <div class="banner-wrap_info pt-4 mb-4">
+                    <div class="banner-wrap_info py-4">
                         <h3 class="title-banner">Elizabeth Stenhouse</h3>
                         <p class="info-banner">Elevate your ear party with a choice of mix and matched stacks or
                             striking solo
                             statements.
                         </p>
-                        <a class="button-banners" href="#">Shop Now</a>
+                        <button class="button-banners">
+                            <a class="link-style" href="#">Shop Now</a>
+                        </button>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-10 col-12 mb-4 padding-img">
@@ -185,7 +185,9 @@
                         <p class="info-banner">Transition your outfits from day to night in one easy step with the
                             power
                             of a unique, luxe layered look</p>
-                        <a class="button-banners" href="#">Shop Now</a>
+                        <button class="button-banners">
+                            <a class="link-style" href="#">Shop Now</a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -196,35 +198,33 @@
         <div class="width-container">
             <h5 class="highlight-text">On trend hot jewellery</h5>
             <h3 class="header-style">The Hot List</h3>
-            <div id="container_2">
-                <div class="grid-area">
-                    <div class="box-inside_grid">
+            <div class="grid-basic_container">
+                <div class="grid">
+                    <div class="img-container">
                         <div class="sale-display">
                             <span class="red-box">25%</span>
                         </div>
-                        <div class="blocks-position">
-                            <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
-                            <div class="time-box">
-                                <div>
-                                    <span id="days-25%" class="countdown">0</span>
-                                    <span class="block-box">days</span>
-                                </div>
-                                <div>
-                                    <span id="hours-25%" class="countdown">0</span>
-                                    <span class="block-box">hours</span>
-                                </div>
-                                <div>
-                                    <span id="mins-25%" class="countdown">0</span>
-                                    <span class="block-box">mins</span>
-                                </div>
-                                <div>
-                                    <span id="secs-25%" class="countdown">0</span>
-                                    <span class="block-box">secs</span>
-                                </div>
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
+                        <div class="time-box">
+                            <div>
+                                <span data-days="25" class="countdown">0</span>
+                                <span class="block-box">days</span>
+                            </div>
+                            <div>
+                                <span data-hours="25" class="countdown">0</span>
+                                <span class="block-box">hours</span>
+                            </div>
+                            <div>
+                                <span data-mins="25" class="countdown">0</span>
+                                <span class="block-box">mins</span>
+                            </div>
+                            <div>
+                                <span data-secs="25" class="countdown">0</span>
+                                <span class="block-box">secs</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-padding">
+                    <div class="info-container">
                         <div class="flex-stars">
                             <span class="icon-star"></span>
                             <span class="icon-star"></span>
@@ -240,11 +240,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-area">
-                    <div class="blocks-position box-inside_grid">
+                <div class="grid">
+                    <div class="img-container">
                         <img class="img-style_template" src="img/rings_transparent.webp" alt="MEDIUM TUBE HOOPS">
                     </div>
-                    <div class="col-padding">
+                    <div class="info-container">
                         <div class="flex-stars">
                             <span class="icon-star"></span>
                             <span class="icon-star"></span>
@@ -260,11 +260,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-area">
-                    <div class="blocks-position box-inside_grid">
+                <div class="grid">
+                    <div class="img-container">
                         <img class="img-style_template" src="img/rings_5.webp" alt="Croissant Dome Hoops">
                     </div>
-                    <div class="col-padding">
+                    <div class="info-container">
                         <div class="flex-stars">
                             <span class="icon-star"></span>
                             <span class="icon-star"></span>
@@ -280,46 +280,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-area">
-                    <div class="box-inside_grid">
+                <div class="grid">
+                    <div class="img-container">
                         <div class="sale-display">
                             <span class="red-box">20%</span>
                         </div>
-                        <div class="blocks-position">
-                            <img class="img-style_template" src="img/earrings_3.webp" alt="Stars hoops">
-                            <div class="time-box">
-                                <div>
-                                    <span id="days-20%" class="countdown">565</span>
-                                    <span class="block-box">days</span>
-                                </div>
-                                <div>
-                                    <span id="hours-20%" class="countdown">08</span>
-                                    <span class="block-box">hours</span>
-                                </div>
-                                <div>
-                                    <span id="mins-20%" class="countdown">07</span>
-                                    <span class="block-box">mins</span>
-                                </div>
-                                <div>
-                                    <span id="secs-20%" class="countdown">25</span>
-                                    <span class="block-box">secs</span>
-                                </div>
+                        <img class="img-style_template" src="img/earrings_3.webp" alt="Stars hoops">
+                        <div class="time-box">
+                            <div>
+                                <span data-days="20" class="countdown">565</span>
+                                <span class="block-box">days</span>
+                            </div>
+                            <div>
+                                <span data-hours="20" class="countdown">08</span>
+                                <span class="block-box">hours</span>
+                            </div>
+                            <div>
+                                <span data-mins="20" class="countdown">07</span>
+                                <span class="block-box">mins</span>
+                            </div>
+                            <div>
+                                <span data-secs="20" class="countdown">25</span>
+                                <span class="block-box">secs</span>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-links">
-                        <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                            <div class="icon-bag">
-                                <a href="#"></a>
-                            </div>
-                        </div>
-                        <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                            <div class="icon-like">
-                                <a href="#"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
+                    <div class="info-container">
                         <div class="flex-stars">
                             <span class="icon-star"></span>
                             <span class="icon-star"></span>
@@ -342,9 +328,9 @@
     <section class="container-fluid px-0">
         <div class="overtext">
             <h1 class="large-header">Stand Out In Style</h1>
-            <div class="mt-2">
-                <a class="button-banners" href="#">Discover Now</a>
-            </div>
+            <button class="button-video mt-2">
+                <a class="link-style" href="#">Discover Now</a>
+            </button>
         </div>
         <div class="video-position">
             <video class="video-content" autoplay muted loop>
@@ -356,7 +342,7 @@
         <div class="width-container mb-5">
             <h5 class="highlight-text">Discover this week's</h5>
             <h3 class="header-style">Jewellery Favourites</h3>
-            <div id="container" class="grid-container"></div>
+            <div class="grid-container" data-container="week-collection"></div>
         </div>
     </section>
     <hr class="m-0">
@@ -374,7 +360,10 @@
                         <p class="info-banner mb-4">Visit our online catalogue and shop for the finest earrings,
                             rings,
                             bracelets, watches, silver, and the most luxurious gemstones.</p>
-                        <a class="button-banners" href="#">Read more</a>
+                        <button class="button-banners">
+                            <a class="link-style" href="#">Read more</a>
+                        </button>
+
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
@@ -494,7 +483,7 @@
                     <div class="icon-security"></div>
                     <div class="block-text_style">
                         <h3 class="title-icon">Security Payment</h3>
-                        <p class="lorem-text">Lorem ipsum dolor sit amet, consectetur
+                        <p class="lorem-text mb-0">Lorem ipsum dolor sit amet, consectetur
                             adipiscing elit</p>
                     </div>
                 </div>
@@ -604,10 +593,10 @@
     blockSlider.init('.wrapper');
     utils.init();
 
-    time.init('days-25%', 'hours-25%', 'mins-25%', 'secs-25%', 'December 31, 2023 00:00:00');
+    time.init('[data-days="25"]', '[data-hours="25"]', '[data-mins="25"]', '[data-secs="25"]', 'December 31, 2023 00:00:00');
     time.setInterval();
 
-    hotSale.init('days-20%', 'hours-20%', 'mins-20%', 'secs-20%', 'October 13, 2023 00:00:00');
+    hotSale.init('[data-days="20"]', '[data-hours="20"]', '[data-mins="20"]', '[data-secs="20"]', 'October 13, 2023 00:00:00');
     hotSale.setInterval();
 </script>
 </html>

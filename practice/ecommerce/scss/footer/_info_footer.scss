@@ -37,7 +37,7 @@
 
 .title-text {
   font-family: $font-cormorant;
-  text-align: start;
+  text-align: start !important;
   @include font-weight(heavy);
   @extend .highlight-text;
   margin-bottom: 20px;

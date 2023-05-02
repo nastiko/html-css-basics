@@ -1,0 +1,76 @@
+@import "../helpers/placeholder";
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  justify-items: center;
+  gap: 2rem;
+
+  .grid-area {
+    position: relative;
+
+    .blocks-position {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .img-style {
+        width: 230px;
+        height: 130px;
+        object-fit: contain;
+      }
+
+      .flex-links {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 15px;
+        gap: 10px;
+        margin-bottom: 15px;
+
+        .icon-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 45px;
+          height: 45px;
+          background-color: #ffffff;
+          cursor: pointer;
+          @extend %button;
+
+          .icon-bag {
+            background-image: url("../img/bag.svg");
+            @extend .style-icon;
+          }
+
+          .icon-like {
+            background-image: url("../img/like.svg");
+            @extend .style-icon;
+          }
+        }
+      }
+
+      .info-container {
+        width: 100%;
+        @media only screen and (max-width: 30em) {
+          width: 355px;
+        }
+
+        .flex-stars {
+          display: flex;
+          justify-content: center;
+          margin-top: 15px;
+
+          .icon-star {
+            background-image: url("../img/star.svg");
+            background-repeat: no-repeat;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+

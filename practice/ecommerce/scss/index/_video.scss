@@ -1,6 +1,5 @@
 @import "../helpers/variables";
 @import "../helpers/placeholder";
-//@import "../commonstyle/all_commonstyle";
 
 .overtext {
   display: flex;
@@ -21,23 +20,16 @@
   }
 }
 
-.categories-button {
-  @extend %button;
+.button-video {
+  font-family: $font-lato;
   background-color: $color-white;
-  line-height: 35px;
-  letter-spacing: 3px;
-  text-align: center;
-  text-transform: uppercase;
   border: none;
+  @extend %button;
 
-  .button-banners {
-
-    cursor: pointer;
-    padding: 10px 25px;
-    margin: 0 auto;
-    @extend .button-banners;
+  .link-style {
+    @include font-weight(heavy);
+    padding: 13px 30px;
   }
-
 }
 
 .video-position {
