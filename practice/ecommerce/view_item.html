@@ -10,12 +10,9 @@
           rel="stylesheet">
     <link rel="stylesheet" href="css/libraries/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/view_item.css">
-    <!--<link rel="stylesheet" href="css/main.css">-->
-    <!--<link rel="stylesheet" href="css/common/footer.css">-->
     <title>View Item</title>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/scrolling/scrollUp.css">
 </head>
 <body>
 <header>
@@ -333,19 +330,19 @@
                         <img class="img-style_template" src="img/rings_2.webp" alt="Triangle Ring">
                         <div class="time-box">
                             <div>
-                                <span id="days-20%" class="countdown">565</span>
+                                <span data-days="35" class="countdown">565</span>
                                 <span class="block-box">days</span>
                             </div>
                             <div>
-                                <span id="hours-20%" class="countdown">08</span>
+                                <span data-hours="35" class="countdown">08</span>
                                 <span class="block-box">hours</span>
                             </div>
                             <div>
-                                <span id="mins-20%" class="countdown">07</span>
+                                <span data-mins="35" class="countdown">07</span>
                                 <span class="block-box">mins</span>
                             </div>
                             <div>
-                                <span id="secs-20%" class="countdown">25</span>
+                                <span data-secs="35" class="countdown">25</span>
                                 <span class="block-box">secs</span>
                             </div>
                         </div>
@@ -386,7 +383,7 @@
 <footer>
     <div class="container-fluid border-style py-5 px-0">
         <div class="width-container">
-            <div class="grid-container justify-items">
+            <div class="grid-footer_container">
                 <div class="grid-item">
                     <h3 class="title-text text-1">Customer Services</h3>
                     <ul>
@@ -422,7 +419,7 @@
                 </div>
                 <div class="grid-item">
                     <h3 class="title-text text-1">Our Newsletter</h3>
-                    <p class="m-0">Sign up for the latest Ice offers and exclusives.</p>
+                    <p class="info-banner m-0">Sign up for the latest Ice offers and exclusives.</p>
                     <form action="#" class="my-3">
                         <div class="form-icon_container">
                             <input class="input-style" type="email" name="email" placeholder="Your email" required>
@@ -473,8 +470,11 @@
 <script src="js/main.js"></script>
 <script src="js/view-item.js"></script>
 <script>
+    let hotSale = new HotSale();
     let utils = new Utilities();
 
+    hotSale.init('[data-days="35"]', '[data-hours="35"]', '[data-mins="35"]', '[data-secs="35"]', 'November 25, 2023 00:00:00');
+    hotSale.setInterval();
     utils.scrollUp();
 </script>
 </body>

@@ -309,22 +309,6 @@ body {
         padding-left: 40px;
         margin-bottom: 1rem;
       }
-
-      .hidden {
-        min-height: 0;
-        max-height: 0;
-        opacity: 0;
-        -webkit-transition: all .4s ease-out;
-        transition: all .4s ease-out;
-      }
-
-      .visible {
-        max-height: 900px;
-        opacity: 1;
-        margin-top: 1rem;
-        -webkit-transition: all .5s ease-in;
-        transition: all .5s ease-in;
-      }
     }
 
     .btn-review {
@@ -356,5 +340,21 @@ body {
       }
     }
   }
+}
+
+.hidden {
+  min-height: 0;
+  max-height: 0;
+  opacity: 0;
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+}
+
+.visible {
+  max-height: 900px;
+  opacity: 1;
+  margin-top: 1rem;
+  -webkit-transition: all .5s ease-in;
+  transition: all .5s ease-in;
 }
 

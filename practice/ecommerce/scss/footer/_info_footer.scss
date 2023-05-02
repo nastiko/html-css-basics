@@ -1,12 +1,15 @@
 @import "../helpers/variables";
 @import "../helpers/placeholder";
 
-.justify-items {
+.grid-footer_container {
+  display: grid;
   grid-template-areas: 'one two three four';
-  justify-items: inherit;
+  justify-content: space-between;
 
-  @media only screen and (max-width: 62em) {
+
+  @media only screen and (max-width: 48em) {
     grid-template-areas: 'one two' 'three four';
+    grid-row-gap: 2rem;
     padding: 0 1rem;
   }
 
@@ -36,10 +39,11 @@
 }
 
 .title-text {
+  font-size: 14px;
   font-family: $font-cormorant;
-  text-align: start !important;
+  color: $color-black;
+  text-transform: uppercase;
   @include font-weight(heavy);
-  @extend .highlight-text;
   margin-bottom: 20px;
 }
 
