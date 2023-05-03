@@ -1,34 +1,35 @@
 class ProductInfo {
 
+    #mainBlock;
     #descriptionBtn;
+    #accordionContent;
     #iconsTransform;
 
-    constructor(descriptionBtn, iconsTransform) {
-        this.#descriptionBtn = descriptionBtn;
-        this.#iconsTransform = iconsTransform
+    constructor(mainBlock, descBtnClass = '.btn-description_info', accordionContent = '.accordion-content', iconsTransform = '.icon') {
+        this.#mainBlock = document.querySelector(mainBlock);
+        this.#descriptionBtn = descBtnClass;
+        this.#iconsTransform = iconsTransform;
+        this.#accordionContent = accordionContent;
     }
 
-    showVisible(element) {
-        element.classList.toggle('visible');
-    }
+    toggleVisible(element) {
+        let content = element.parentNode.querySelector(this.#accordionContent);
+        let icon = element.parentNode.querySelector(this.#iconsTransform);
 
-    transformIcon(icon) {
+        content.classList.toggle('visible');
         icon.classList.toggle('rotate');
     }
 
-    init(descBtnClass, descInfo = '.hidden', iconsTransform = '.icon') {
-        this.#descriptionBtn = document.querySelectorAll(descBtnClass);
-        this.#iconsTransform = document.querySelectorAll(iconsTransform);
-
-        for (let i = 0; i < this.#descriptionBtn.length; i++) {
-            this.#descriptionBtn[i].addEventListener('click', () => this.showVisible(this.#descriptionBtn[i].querySelector(descInfo)));
-            this.#descriptionBtn[i].addEventListener('click', () => this.transformIcon(this.#descriptionBtn[i].querySelector(iconsTransform)));
+    init() {
+        let buttons = this.#mainBlock.querySelectorAll(this.#descriptionBtn);
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', () => this.toggleVisible(buttons[i]));
         }
     }
 }
 
-let productInfo = new ProductInfo();
-productInfo.init('.description-info');
+let productInfo = new ProductInfo('.description');
+productInfo.init();
 
 
 class PopUp {

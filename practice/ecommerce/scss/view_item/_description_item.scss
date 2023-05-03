@@ -34,7 +34,8 @@ body {
 .flex-wrap_imgs {
   display: flex;
   justify-content: flex-start;
-  height: 600px;
+  flex-direction: column;
+  height: 700px;
   position: sticky;
   top: 30px;
   padding: 0;
@@ -53,6 +54,9 @@ body {
   }
 
   .foundation-img {
+    display: flex;
+    overflow: hidden;
+
     .show-img {
       max-width: 100%;
       padding-right: 1rem;
@@ -61,15 +65,13 @@ body {
 
   .extra-imgs {
     display: flex;
-    flex-direction: column;
     overflow: hidden;
+    padding-top: 1rem;
     @media only screen and (max-width: 80em) {
       padding-right: 1rem;
     }
     @media only screen and (max-width: 37em) {
-      flex-direction: row;
       overflow-x: hidden;
-      padding-top: 1rem;
     }
 
     .sample-img {
@@ -304,6 +306,7 @@ body {
     }
 
     .description-info {
+
       ul {
         list-style: disc;
         padding-left: 40px;
@@ -342,7 +345,7 @@ body {
   }
 }
 
-.hidden {
+.accordion-content {
   min-height: 0;
   max-height: 0;
   opacity: 0;
