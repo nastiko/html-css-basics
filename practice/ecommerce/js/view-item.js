@@ -28,10 +28,6 @@ class ProductInfo {
     }
 }
 
-let productInfo = new ProductInfo('.description');
-productInfo.init();
-
-
 class PopUp {
     #popUp;
     #linkPopUp;
@@ -57,5 +53,38 @@ class PopUp {
     }
 }
 
-let sizeGuide = new PopUp('div.popup', '.popup-close_icon', '.link-popup');
-sizeGuide.init();
+class ShowDiffStyle {
+
+    #imgsSample;
+    #imgActive;
+    #imgTemplate;
+
+    constructor(imgsSample, imgActive, imgTemplate) {
+        this.#imgsSample = document.getElementsByClassName(imgsSample);
+        this.#imgActive = document.getElementsByClassName(imgActive);
+        this.#imgTemplate = document.querySelector(imgTemplate);
+    }
+
+    show(event) {
+        if (this.#imgActive.length > 0) {
+            this.#imgActive[0].classList.remove('active');
+        }
+
+        this.#imgTemplate.classList.add('active');
+        this.#imgTemplate.src = event.target.dataset.image;
+
+
+    }
+
+    init() {
+        for (let i = 0; i < this.#imgsSample.length; i++) {
+            this.#imgsSample[i].addEventListener('click', (event) => this.show(event));
+        }
+    }
+}
+
+class MobileShowDiffStyle extends ShowDiffStyle {
+    constructor(imgsSample, imgActive, imgTemplate) {
+        super(imgsSample, imgActive, imgTemplate);
+    }
+}

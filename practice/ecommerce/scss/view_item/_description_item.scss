@@ -15,12 +15,6 @@ body {
   line-height: 1.75;
 }
 
-
-// for JS
-.hiding-img {
-  display: none;
-}
-
 // flex-wrap imgs
 .wrap-flex_container {
   justify-content: center;
@@ -35,7 +29,7 @@ body {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  height: 700px;
+  height: 600px;
   position: sticky;
   top: 30px;
   padding: 0;
@@ -59,32 +53,9 @@ body {
 
     .show-img {
       max-width: 100%;
+      width: 600px;
+      object-fit: cover;
       padding-right: 1rem;
-    }
-  }
-
-  .extra-imgs {
-    display: flex;
-    overflow: hidden;
-    padding-top: 1rem;
-    @media only screen and (max-width: 80em) {
-      padding-right: 1rem;
-    }
-    @media only screen and (max-width: 37em) {
-      overflow-x: hidden;
-    }
-
-    .sample-img {
-      max-width: 100%;
-      width: 118px;
-      height: auto;
-      @media only screen and (max-width: 30em) {
-        width: 86px;
-      }
-
-      &:is(:hover, :focus) {
-        border: 1px solid $color-black;
-      }
     }
   }
 }
@@ -133,9 +104,52 @@ body {
       color: #000;
     }
 
+    .extra-imgs {
+      display: flex;
+      gap: 20px;
+      padding-bottom: 1rem;
+      @media only screen and (max-width: 75em) {
+        display: none;
+      }
+      @media only screen and (max-width: 80em) {
+        padding-right: 1rem;
+      }
+      @media only screen and (max-width: 37em) {
+        overflow-x: hidden;
+      }
+
+      .sample-img {
+        max-width: 100%;
+        width: 118px;
+        height: auto;
+        cursor: pointer;
+
+        @media only screen and (max-width: 30em) {
+          width: 86px;
+        }
+      }
+    }
+
     .block-color_wrap {
+      display: none;
       justify-content: flex-start;
       gap: 20px;
+      @media only screen and (max-width: 75em) {
+        display: flex;
+      }
+    }
+
+    .sample-img, .filter-color {
+      opacity: .5;
+
+      .active {
+        opacity: 1;
+      }
+
+      &:is(:hover, :focus) {
+        border: 1px solid $color-black;
+        opacity: 1;
+      }
     }
 
     .link-popup {
@@ -306,6 +320,20 @@ body {
     }
 
     .description-info {
+      .accordion-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows .5s;
+
+        .accordion-answer_inner {
+          margin-top: 1rem;
+          overflow: hidden;
+        }
+      }
+
+      .visible {
+        grid-template-rows: 1fr;
+      }
 
       ul {
         list-style: disc;
@@ -343,21 +371,5 @@ body {
       }
     }
   }
-}
-
-.accordion-content {
-  min-height: 0;
-  max-height: 0;
-  opacity: 0;
-  -webkit-transition: all .4s ease-out;
-  transition: all .4s ease-out;
-}
-
-.visible {
-  max-height: 900px;
-  opacity: 1;
-  margin-top: 1rem;
-  -webkit-transition: all .5s ease-in;
-  transition: all .5s ease-in;
 }
 
