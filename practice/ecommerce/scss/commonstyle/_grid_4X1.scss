@@ -12,6 +12,7 @@
   }
 
   @media only screen and (max-width: 30em) {
+    justify-content: space-between;
     padding: 0 1rem;
 
     .product-name {
@@ -23,6 +24,10 @@
     .product-price {
       font-size: 14px;
     }
+  }
+
+  @media only screen and (max-width: 23em) {
+    justify-content: space-around;
   }
 
   .grid {
@@ -85,6 +90,11 @@
       height: 175px;
     }
 
+    @media only screen and (max-width: 23em) {
+      width: 165px;
+      height: 165px;
+    }
+
     .img-style_template {
       width: 330px;
       height: 330px;
@@ -94,9 +104,15 @@
         width: 275px;
         height: 275px;
       }
+
       @media only screen and (max-width: 35em) {
         width: 175px;
         height: 175px;
+      }
+
+      @media only screen and (max-width: 23em) {
+        width: 165px;
+        height: 165px;
       }
     }
 

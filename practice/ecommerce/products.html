@@ -9,31 +9,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@300;400;700&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="css/libraries/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/common/commonstyle.css">
     <link rel="stylesheet" href="css/products.css">
-    <link rel="stylesheet" href="css/common/header.css">
-    <link rel="stylesheet" href="css/common/footer.css">
     <title>Products</title>
     <script src="js/bootstrap/bootstrap.bundle.js"></script>
 </head>
 <body>
 <header>
-    <nav class="desktop-device px-5">
-        <div class="logo"></div>
-        <div class="categories">
+    <nav class="desktop-device width-container">
+        <div class="nav-menu_mobile" data-bs-toggle="offcanvas" data-bs-target="#nav-menu_mobile">
+            <div class="icon-menu"></div>
+        </div>
+        <div class="offcanvas offcanvas-start" id="nav-menu_mobile">
+            <div class="offcanvas-header">
+                <h1 class="offcanvas-title">Close</h1>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul>
+                    <li><a class="offcanvas-list" href="#">Jewellery</a></li>
+                    <li>
+                        <hr>
+                    </li>
+                    <li><a class="offcanvas-list" href="#">Sale</a></li>
+                    <li>
+                        <hr>
+                    </li>
+                    <li><a class="offcanvas-list" href="#">Gifts</a></li>
+                    <li>
+                        <hr>
+                    </li>
+                    <li><a class="offcanvas-list" href="#">Blog</a></li>
+                    <li>
+                        <hr>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a href="index.html" class="logo"></a>
+        <div class="categories display-none_mobile">
             <ul class="gap-list_categories">
-                <li>JEWELLERY</li>
-                <li>SALE</li>
-                <li>GIFTS</li>
-                <li>BLOG</li>
+                <li><a class="display-list_style" href="#">Jewellery</a></li>
+                <li><a class="display-list_style" href="#">Sale</a></li>
+                <li><a class="display-list_style" href="#">Gifts</a></li>
+                <li><a class="display-list_style" href="#">Blog</a></li>
             </ul>
         </div>
         <div>
             <ul class="gap-list_icons">
-                <li class="icon-person"></li>
-                <li class="icon-like"></li>
-                <li class="icon-bag pe-5">
+                <li class="icon-person display-none_mobile"></li>
+                <li class="icon-like display-none_mobile"></li>
+                <li class="icon-bag me-3">
                     <span class="amount-item">0</span>
                 </li>
             </ul>
@@ -44,14 +69,14 @@
     <section class="container-fluid bg-title_section position-relative mb-5">
         <div class="container-fluid inside-text flex-column">
             <div class="container text-center page-title">
-                <h1 class="large-header text-5">Products</h1>
-                <h6 class="page-highlighter">
+                <h1 class="large-header h1-style">Products</h1>
+                <p class="page-highlighter">
                     <a class="prev-link" href="index.html">Home</a>
                     <span class="arrow-backup"></span>
                     <a>Products</a>
-                </h6>
+                </p>
             </div>
-            <div class="container carousel-items">
+            <div class="container items-collection">
                 <div class="block-item">
                     <img class="img-item" src="img/slider_5.webp" alt="Earrings">
                     <h6>
@@ -76,24 +101,12 @@
                         <a class="title-item_style" href="#">Wedding & Bridal</a>
                     </h6>
                 </div>
-                <!--<div class="block-item">
-                    <img class="img-item" src="img/......" alt="Shop Earrings">
-                    <h6>
-                        <a class="title-item_style" href="#">Shop earrings</a>
-                    </h6>
-                </div>-->
-            </div>
-            <div class="position-left_backup">
-                <button class="icon-left_backup"></button>
-            </div>
-            <div class="position-right_backup">
-                <button class="icon-right_backup"></button>
             </div>
         </div>
     </section>
-    <section class="container-fluid px-5">
+    <section class="container-fluid">
         <div class="width-container">
-            <nav class="position-nav_filter mb-5 px-1">
+            <nav class="position-nav_filter mb-5">
                 <div class="filter-container">
                     <div class="icon-filter" data-bs-toggle="offcanvas" data-bs-target="#demo"></div>
                     <div class="offcanvas offcanvas-start" id="demo">
@@ -135,7 +148,7 @@
                                 </div>
                                 <div class="block-list_style flex-list_style not-allowed disabled">
                                     <div>
-                                        <input class="me-1" type="checkbox">
+                                        <input class="me-1 not-allowed" type="checkbox" disabled>
                                         <span><del>Out of stock</del></span>
                                     </div>
                                     <span class="count"><del>0</del></span>
@@ -262,382 +275,335 @@
                     </ul>
                 </div>
             </nav>
-            <div class="row mb-5">
-                <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-                    <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_6.webp" alt="Earring">
+            <div class="grid-basic_container px-0 mb-5">
+                <div class="grid">
+                    <div class="img-container">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
                         <div class="flex-links">
                             <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                                <div class="icon-search">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                                <div class="icon-like">
+                                <div class="icon-bag">
                                     <a href="#"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
-                        <button class="btn-cart_style mb-4" data-front="Add to cart" data-back=""></button>
+                    <div class="info-container">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-                    <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_6.webp" alt="Earring">
+                <div class="grid">
+                    <div class="img-container">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
                         <div class="flex-links">
                             <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                                <div class="icon-search">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                                <div class="icon-like">
+                                <div class="icon-bag">
                                     <a href="#"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
-                        <button class="btn-cart_style mb-4" data-front="Add to cart" data-back=""></button>
+                    <div class="info-container">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-                    <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_6.webp" alt="Earring">
+                <div class="grid">
+                    <div class="img-container">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
                         <div class="flex-links">
                             <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                                <div class="icon-search">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                                <div class="icon-like">
+                                <div class="icon-bag">
                                     <a href="#"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
-                        <button class="btn-cart_style mb-4" data-front="Add to cart" data-back=""></button>
+                    <div class="info-container">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-                    <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_6.webp" alt="Earring">
+                <div class="grid">
+                    <div class="img-container">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
                         <div class="flex-links">
                             <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                                <div class="icon-search">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                                <div class="icon-like">
+                                <div class="icon-bag">
                                     <a href="#"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
-                        <button class="btn-cart_style mb-4" data-front="Add to cart" data-back=""></button>
+                    <div class="info-container">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-                    <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_6.webp" alt="Earring">
+                <div class="grid">
+                    <div class="img-container">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
                         <div class="flex-links">
                             <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                                <div class="icon-search">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                                <div class="icon-like">
+                                <div class="icon-bag">
                                     <a href="#"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
-                        <button class="btn-cart_style mb-4" data-front="Add to cart" data-back=""></button>
+                    <div class="info-container">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-                    <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_6.webp" alt="Earring">
+                <div class="grid">
+                    <div class="img-container">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
                         <div class="flex-links">
                             <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                                <div class="icon-search">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                                <div class="icon-like">
+                                <div class="icon-bag">
                                     <a href="#"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
-                        <button class="btn-cart_style mb-4" data-front="Add to cart" data-back=""></button>
+                    <div class="info-container">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-                    <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_6.webp" alt="Earring">
+                <div class="grid">
+                    <div class="img-container">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
                         <div class="flex-links">
                             <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                                <div class="icon-search">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                                <div class="icon-like">
+                                <div class="icon-bag">
                                     <a href="#"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
-                        <button class="btn-cart_style mb-4" data-front="Add to cart" data-back=""></button>
+                    <div class="info-container">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-                    <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_6.webp" alt="Earring">
+                <div class="grid">
+                    <div class="img-container">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
                         <div class="flex-links">
                             <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                                <div class="icon-search">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                                <div class="icon-like">
+                                <div class="icon-bag">
                                     <a href="#"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
-                        <button class="btn-cart_style mb-4" data-front="Add to cart" data-back=""></button>
+                    <div class="info-container">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-                    <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_6.webp" alt="Earring">
+                <div class="grid">
+                    <div class="img-container">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
                         <div class="flex-links">
                             <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                                <div class="icon-search">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                                <div class="icon-like">
+                                <div class="icon-bag">
                                     <a href="#"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
-                        <button class="btn-cart_style mb-4" data-front="Add to cart" data-back=""></button>
+                    <div class="info-container">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-                    <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_6.webp" alt="Earring">
+                <div class="grid">
+                    <div class="img-container">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
                         <div class="flex-links">
                             <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                                <div class="icon-search">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                                <div class="icon-like">
+                                <div class="icon-bag">
                                     <a href="#"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
-                        <button class="btn-cart_style mb-4" data-front="Add to cart" data-back=""></button>
+                    <div class="info-container">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-                    <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_6.webp" alt="Earring">
+                <div class="grid">
+                    <div class="img-container">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
                         <div class="flex-links">
                             <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                                <div class="icon-search">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                                <div class="icon-like">
+                                <div class="icon-bag">
                                     <a href="#"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
-                        <button class="btn-cart_style mb-4" data-front="Add to cart" data-back=""></button>
+                    <div class="info-container">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12">
-                    <div class="blocks-position">
-                        <img class="img-style" src="img/earrings_6.webp" alt="Earring">
+                <div class="grid">
+                    <div class="img-container">
+                        <img class="img-style_template" src="img/earrings_6.webp" alt="Bold Hoops">
                         <div class="flex-links">
                             <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">
-                                <div class="icon-search">
-                                    <a href="#"></a>
-                                </div>
-                            </div>
-                            <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">
-                                <div class="icon-like">
+                                <div class="icon-bag">
                                     <a href="#"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-stars">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div>
-                    <div>
-                        <h3 class="product-name">
-                            <a href="#">MEDIUM TUBE HOOPS</a>
-                        </h3>
-                        <p class="product-price">£80</p>
-                        <button class="btn-cart_style mb-4" data-front="Add to cart" data-back=""></button>
+                    <div class="info-container">
+                        <div class="flex-stars">
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                            <span class="icon-star"></span>
+                        </div>
+                        <div>
+                            <h3 class="product-name">
+                                <a href="#">Bold Hoops</a>
+                            </h3>
+                            <p class="product-price">£120</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="pagination-position pb-5">
                 <ul class="pagination">
+                    <li class="page-item"><a class="page-link p-0"><span class="prev-icon"></span></a></li>
                     <li class="page-item"><a class="page-link">1</a></li>
                     <li class="page-item"><a class="page-link">2</a></li>
                     <li class="page-item"><a class="page-link">3</a></li>
@@ -648,10 +614,10 @@
     </section>
 </main>
 <footer>
-    <div class="container-fluid border-style px-0">
+    <div class="container-fluid border-style py-5 px-0">
         <div class="width-container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-5">
+            <div class="grid-footer_container">
+                <div class="grid-item">
                     <h3 class="title-text text-1">Customer Services</h3>
                     <ul>
                         <li class="option-point"><a class="info-banner" href="#">Contact Us</a></li>
@@ -662,7 +628,7 @@
                         <li class="option-point"><a class="info-banner" href="#">Shipping & Returns</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="grid-item">
                     <h3 class="title-text text-1">About Us</h3>
                     <ul>
                         <li class="option-point"><a class="info-banner" href="#">About Us</a></li>
@@ -673,7 +639,7 @@
                         <li class="option-point"><a class="info-banner" href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-5">
+                <div class="grid-item">
                     <h3 class="title-text text-1">Catalog</h3>
                     <ul>
                         <li class="option-point"><a class="info-banner" href="#">Earrings</a></li>
@@ -684,10 +650,10 @@
                         <li class="option-point"><a class="info-banner" href="#">Studs</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="grid-item">
                     <h3 class="title-text text-1">Our Newsletter</h3>
-                    <p class="info-banner">Sign up for the latest Ice offers and exclusives.</p>
-                    <form action="#">
+                    <p class="info-banner m-0">Sign up for the latest Ice offers and exclusives.</p>
+                    <form action="#" class="my-3">
                         <div class="form-icon_container">
                             <input class="input-style" type="email" name="email" placeholder="Your email" required>
                             <button class="button-style" type="submit">
@@ -695,36 +661,50 @@
                             </button>
                         </div>
                     </form>
-                    <div class="flex-icon_container pt-4">
-                        <div class="bg-circle">
-                            <div class="icon-facebook"></div>
-                        </div>
-                        <div class="bg-circle">
-                            <div class="icon-twitter"></div>
-                        </div>
-                        <div class="bg-circle">
-                            <div class="icon-instagram"></div>
-                        </div>
-                        <div class="bg-circle">
-                            <div class="icon-youtube"></div>
-                        </div>
-                    </div>
+                    <ul class="flex-icon_container">
+                        <li class="bg-circle">
+                            <a class="icon-facebook" href="https://en-gb.facebook.com/"
+                               target="_blank"></a>
+                        </li>
+                        <li class="bg-circle">
+                            <a class="icon-twitter" href="https://twitter.com/i/flow/login"
+                               target="_blank"></a>
+                        </li>
+                        <li class="bg-circle">
+                            <a class="icon-instagram" href="https://www.instagram.com/"
+                               target="_blank"></a>
+                        </li>
+                        <li class="bg-circle">
+                            <a class="icon-youtube" href="https://www.youtube.com/"
+                               target="_blank"></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+<hr class="m-0">
 <footer>
     <div class="container-fluid px-0">
-        <div class="width-container px-1">
-            <div class="flex-footer_container ps-3 pe-0">
-                <p class="info-banner m-0">Copyright © 2023 Anastasia Hrynkevich</p>
+        <div class="width-container">
+            <div class="flex-footer_container">
+                <div>
+                    <p class="info-banner m-0">Copyright © 2023 Anastasia Hrynkevich</p>
+                </div>
                 <div class="img-payment"></div>
             </div>
         </div>
     </div>
 </footer>
+<div id="up-click" class="bg-scroll_up">
+    <button class="up-icon"></button>
+</div>
 
 <script src="js/products.js"></script>
+<script>
+    let utils = new Utilities();
+    utils.scrollUp();
+</script>
 </body>
 </html>

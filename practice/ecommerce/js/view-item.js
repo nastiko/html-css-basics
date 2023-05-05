@@ -72,8 +72,6 @@ class ShowDiffStyle {
 
         this.#imgTemplate.classList.add('active');
         this.#imgTemplate.src = event.target.dataset.image;
-
-
     }
 
     init() {
