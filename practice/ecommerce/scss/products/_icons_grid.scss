@@ -1,3 +1,5 @@
+@import "../helpers/variables";
+
 .icon-grid_3x3, .icon-grid_4x3 {
   background-repeat: no-repeat;
   background-size: contain;
@@ -15,5 +17,10 @@
 
 .icon-grid_4x3 {
   background-image: url("../img/grid-4x3.svg");
-  margin-right: 4px;
+  margin: 0 4px;
+}
+
+.vertical-line {
+  border-left: 2px solid $color-jupiter;
+  height: 35px;
 }

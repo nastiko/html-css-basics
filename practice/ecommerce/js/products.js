@@ -61,6 +61,3 @@ class SlideRange {
         }
     }
 }
-
-let slideRange = new SlideRange();
-slideRange.init('#range-input input', '.slider .progress', '.price-input input');

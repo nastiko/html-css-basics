@@ -108,8 +108,8 @@
         <div class="width-container">
             <nav class="position-nav_filter mb-5">
                 <div class="filter-container">
-                    <div class="icon-filter" data-bs-toggle="offcanvas" data-bs-target="#demo"></div>
-                    <div class="offcanvas offcanvas-start" id="demo">
+                    <div class="icon-filter" data-bs-toggle="offcanvas" data-bs-target="#filter"></div>
+                    <div class="offcanvas offcanvas-start" id="filter">
                         <div class="offcanvas-header mt-3 pb-0">
                             <h3 class="offcanvas-title">Collections</h3>
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
@@ -271,6 +271,7 @@
                 <div class="grids-block_style">
                     <ul class="grids-icon_position">
                         <li class="icon-grid_3x3"></li>
+                        <li class="vertical-line"></li>
                         <li class="icon-grid_4x3"></li>
                     </ul>
                 </div>
@@ -700,11 +701,16 @@
 <div id="up-click" class="bg-scroll_up">
     <button class="up-icon"></button>
 </div>
+</body>
 
+<script src="js/main.js"></script>
 <script src="js/products.js"></script>
 <script>
     let utils = new Utilities();
+    let slideRange = new SlideRange();
+
     utils.scrollUp();
+    slideRange.init('#range-input input', '.slider .progress', '.price-input input');
 </script>
-</body>
+
 </html>
