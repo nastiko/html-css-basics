@@ -1,0 +1,10 @@
+@import "../helpers/variables";
+
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  font-family: $font-lato;
+}
