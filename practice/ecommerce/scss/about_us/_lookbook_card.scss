@@ -1,0 +1,38 @@
+@import "../helpers/variables";
+
+.lookbook-img {
+  width: 100%;
+}
+
+.lookbook-card_item {
+  display: flex;
+  align-items: center;
+  font-family: $font-cormorant;
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  .lookbook-btn {
+    background-color: $color-white;
+    border-radius: 50%;
+    transition: all .2s ease;
+    cursor: pointer;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: $font-lato;
+      font-size: 1rem;
+      width: 40px;
+      height: 40px;
+
+      &:hover {
+        color: $color-white;
+      }
+    }
+
+    &:hover {
+      background-color: $color-sand;
+    }
+  }
+}
