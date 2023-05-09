@@ -1,7 +1,57 @@
 @import "../helpers/variables";
 
+.main-lookbook_block {
+  div:nth-child(2) {
+    top: 64%;
+    left: 65%;
+    @media only screen and (max-width: 48em) {
+      &:nth-child(2) {
+        left: 75%;
+      }
+    }
+
+    @media only screen and (max-width: 36em) {
+      &:nth-child(2) {
+        left: 80%;
+      }
+    }
+  }
+
+  div:nth-child(3) {
+    top: 25%;
+    left: 51%;
+  }
+
+  div:nth-child(4) {
+    bottom: 4%;
+    left: 37%;
+
+    @media only screen and (max-width: 48em) {
+      &:nth-child(4) {
+        left: 30%;
+      }
+    }
+
+    @media only screen and (max-width: 36em) {
+      &:nth-child(4) {
+        left: 25%;
+      }
+    }
+
+    @media only screen and (max-width: 26em) {
+      &:nth-child(4) {
+        left: 14%;
+      }
+    }
+  }
+}
+
 .lookbook-img {
   width: 100%;
+  @media only screen and (max-width: 48em) {
+    height: 400px;
+    object-fit: cover;
+  }
 }
 
 .lookbook-card_item {

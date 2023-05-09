@@ -3,6 +3,9 @@
 html {
   box-sizing: border-box;
   font-family: sans-serif;
+  @media only screen and (max-width: 92em) {
+    overflow-x: hidden;
+  }
 }
 
 body {
