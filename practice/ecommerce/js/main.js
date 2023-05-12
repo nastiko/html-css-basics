@@ -210,41 +210,79 @@ class Utilities {
     }
 }
 
-class Products {
-    #title;
-    #price;
-    #img;
+// class Products {
+//     #title;
+//     #price;
+//     #img;
+//
+//     constructor(title, price, img) {
+//         this.#title = title;
+//         this.#price = price;
+//         this.#img = img;
+//     }
+//
+//     async renderProducts() {
+//
+//         let response = await fetch('https://fakestoreapi.com/products/category/jewelery');
+//         let result = await response.json();
+//
+//         for await(let item of result) {
+//             this.#title = item.title;
+//             this.#price = item.price;
+//             this.#img = item.image;
+//             let template = await this.getTemplateBlockItem(this.#title, this.#price, this.#img);
+//             let container = document.querySelector('[data-container="week-collection"]');
+//             container.innerHTML += template;
+//         }
+//     }
+//
+//     async getTemplateBlockItem(title, price, img) {
+//         let response = await fetch('template/product_item.html');
+//         let result = await response.text();
+//
+//         result = result.replaceAll('VAR_TITLE', title);
+//         result = result.replaceAll('VAR_PRICE', price);
+//         result = result.replaceAll('VAR_IMG', img);
+//
+//         return result;
+//     }
+// }
 
-    constructor(title, price, img) {
-        this.#title = title;
-        this.#price = price;
-        this.#img = img;
-    }
+class Products {
+    #itemTemplate;
 
     async renderProducts() {
-
-        let response = await fetch('https://fakestoreapi.com/products/category/jewelery');
+        let container = document.querySelector('[data-container="week-collection"]');
+        let response = await fetch('https://anastasia.grinkevi.ch/api/products/get/');
         let result = await response.json();
+        let content = '';
 
         for await(let item of result) {
-            this.#title = item.title;
-            this.#price = item.price;
-            this.#img = item.image;
-            let template = await this.getTemplateBlockItem(this.#title, this.#price, this.#img);
-            let container = document.querySelector('[data-container="week-collection"]');
-            container.innerHTML += template;
+            let template = await this.getTemplateBlockItem(item.name, item.price, item.preview[0]);
+            content  += template;
         }
+
+        // paste all items HTML into container on the page
+        container.innerHTML = content;
     }
 
+    /**
+     * @param {string} title The date
+     * @param {string} price The string
+     * @param {string} img The string
+     */
     async getTemplateBlockItem(title, price, img) {
-        let response = await fetch('template/product_item.html');
-        let result = await response.text();
+        if(!this.#itemTemplate) {
+            let response = await fetch('template/product_item.html');
+            this.#itemTemplate = await response.text();
+        }
 
-        result = result.replaceAll('VAR_TITLE', title);
-        result = result.replaceAll('VAR_PRICE', price);
-        result = result.replaceAll('VAR_IMG', img);
+        let template = this.#itemTemplate;
+        template = template.replaceAll('VAR_TITLE', title);
+        template = template.replaceAll('VAR_PRICE', price);
+        template = template.replaceAll('VAR_IMG', img);
 
-        return result;
+        return template;
     }
 }
 
