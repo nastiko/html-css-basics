@@ -2,9 +2,41 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  justify-items: center;
-  gap: 2rem;
+  grid-template-areas: 'one two three four';
+  justify-content: space-between;
+
+  @media only screen and (max-width: 82em) {
+    grid-template-areas: 'one two' 'three four';
+    grid-row-gap: 2rem;
+    justify-content: space-around;
+  }
+
+  @media only screen and (max-width: 42em) {
+    grid-template-areas: 'one' 'two' 'three' 'four';
+    justify-items: center;
+    padding: 0 1rem;
+  }
+
+  @media only screen and (max-width: 23em) {
+    justify-content: space-around;
+  }
+
+  .grid-area:nth-child(1) {
+    grid-area: one;
+  }
+
+  .grid-area:nth-child(2) {
+    grid-area: two;
+    justify-items: end;
+  }
+
+  .grid-area:nth-child(3) {
+    grid-area: three;
+  }
+
+  .grid-area:nth-child(4) {
+    grid-area: four;
+  }
 
   .grid-area {
     position: relative;
@@ -16,8 +48,8 @@
       align-items: center;
 
       .img-style {
-        width: 230px;
-        height: 130px;
+        width: 330px;
+        height: 330px;
         object-fit: contain;
       }
 
@@ -35,7 +67,7 @@
           justify-content: center;
           width: 45px;
           height: 45px;
-          background-color: #ffffff;
+          background-color: $color-white;
           cursor: pointer;
           @extend %button;
 

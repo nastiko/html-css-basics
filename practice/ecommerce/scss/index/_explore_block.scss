@@ -5,8 +5,15 @@
   background-image: url("../img/bg_line.webp");
   padding-bottom: 4rem;
 
-  .grid-area {
-    position: relative;
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-items: center;
+    gap: 2rem;
+
+    .grid-area {
+      position: relative;
+    }
   }
 }
 

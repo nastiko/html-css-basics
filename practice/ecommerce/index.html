@@ -198,7 +198,7 @@
         <div class="width-container">
             <h5 class="highlight-text">On trend hot jewellery</h5>
             <h3 class="header-style">The Hot List</h3>
-            <div class="grid-basic_container">
+            <div class="grid-basic_container" data-container="hot-list">
                 <div class="grid">
                     <div class="img-container">
                         <div class="sale-display">
@@ -320,7 +320,6 @@
                             <p class="product-price">£125</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -581,7 +580,8 @@
 </body>
 <script src="js/main.js"></script>
 <script>
-    let products = new Products;
+    let products = new Products('[data-container="week-collection"]','Gold', 4, 1);
+    //let hotListProduct = new Products('[data-container="hot-list"]','Gold', 4, 1);
     let sliders = new Sliders();
     let blockSlider = new BlockSlider();
     let utils = new Utilities();
@@ -589,6 +589,7 @@
     let hotSale = new HotSale();
 
     products.renderProducts();
+    //hotListProduct.renderProducts();
     sliders.init('.carousel_slide', '.carousel_slide', '.slide-container', 'right-click', 'left-click', 'carousel_indicator');
     blockSlider.init('.wrapper');
     utils.init();
