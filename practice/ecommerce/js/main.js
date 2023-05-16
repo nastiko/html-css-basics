@@ -211,123 +211,262 @@ class Utilities {
 }
 
 class Products {
+    #API_SEARCH = 'https://anastasia.grinkevi.ch/api/products/search';
 
-    #dataContainer;
-    #category;
-    #limitItems;
-    #skipItems;
+    #type;
     #itemTemplate;
+    #mainBlock;
+    #category;
+    #skipItems;
+    #itemsCount;
+    #limitItems;
+    #pagination;
 
-    constructor(dataContainer, category, limitItems, skipItems) {
-        this.#dataContainer = document.querySelector(dataContainer);
-        this.#category = category;
+    constructor(mainBlock, limitItems, skipItems, category, type = 'default', pagination = '.pagination-position .pagination') {
+        this.#pagination = pagination;
         this.#limitItems = limitItems;
         this.#skipItems = skipItems;
+        this.#mainBlock = mainBlock;
+        this.#category = category;
+        this.#type = type;
+    }
+
+    async getProducts(limitItems, skipItems, category) {
+        // prepare query params
+        let params = {};
+        if (category) params.category = category;
+        if (limitItems) params.limit = limitItems;
+        if (skipItems) params.skip = skipItems;
+        let urlParams = new URLSearchParams(params).toString();
+
+        // get API response with products
+        let response = await fetch(`${this.#API_SEARCH}?${urlParams}`);
+        return await response.json();
     }
 
     async renderProducts() {
-        let response = await fetch(`https://anastasia.grinkevi.ch/api/products/search?price_from=12&category=${this.#category}&limit=${this.#limitItems}&skip=${this.#skipItems}`);
-        let result = await response.json();
+        let mainBlockEl = document.querySelector(this.#mainBlock);
+        let dataContainer = document.createElement('div');
+
+        let result = await this.getProducts(this.#limitItems, this.#skipItems, this.#category);
         let content = '';
 
+        // render each product template
         for await(let item of result) {
-            let template = await this.getTemplateBlockItem(item.name, item.price, item.preview[0]);
-            content  += template;
+            let template = await this.getTemplateBlockItem(this.#type, item.name, item.price, item.preview[0]);
+            content += template;
         }
 
         // paste all items HTML into container on the page
-        this.#dataContainer.innerHTML = content;
+        let dataContainerClass = '';
+        dataContainer.innerHTML = content;
+        switch (this.#type) {
+            case "favourites":
+                dataContainerClass = 'grid-container';
+                break;
+            case "hot":
+            case "default":
+                dataContainerClass = 'grid-basic_container';
+                break;
+        }
+        dataContainer.className = dataContainerClass;
+        mainBlockEl.querySelector(`.${dataContainerClass}`) ? mainBlockEl.querySelector(`.${dataContainerClass}`).remove() : '';
+        mainBlockEl.appendChild(dataContainer);
+
+        // apply sale on products
+        this.applySales();
+        // for all elements that have div[data-sale!="0"]
+        // foreach such element insert sale block
     }
 
     /**
-     * @param {string} title The date
-     * @param {string} price The string
-     * @param {string} img The string
+     * @param {string} type  Block type
+     * @param {string} title Product title
+     * @param {string} price Product price
+     * @param {string} img   Product image
      */
-    async getTemplateBlockItem(title, price, img) {
-        if(!this.#itemTemplate) {
-            let response = await fetch('template/jewellery_favourites.html');
+    async getTemplateBlockItem(type, title, price, img) {
+        let template = '';
+        //let sale = 'template/sale.html';
+
+        if (!this.#itemTemplate) {
+            switch (type) {
+                case 'hot':
+                    template = 'template/hot_list.html';
+                    // let imgContainer = document.querySelector('.img-container');
+                    // imgContainer.insertAdjacentElement('afterBegin', 'template/sale.html');
+                    //template = template.replaceAll('VAR_SALE', sale);
+                    //this.setSale();
+                    break;
+                case 'favourites':
+                    template = 'template/jewellery_favourites.html';
+                    break;
+                default:
+                case 'default':
+                    template = 'template/product_item.html';
+                    break;
+            }
+            let response = await fetch(template);
             this.#itemTemplate = await response.text();
         }
 
-        let template = this.#itemTemplate;
+        template = this.#itemTemplate;
         template = template.replaceAll('VAR_TITLE', title);
         template = template.replaceAll('VAR_PRICE', price);
         template = template.replaceAll('VAR_IMG', img);
 
         return template;
     }
+
+    async getAllProductsCount() {
+        if (!this.#itemsCount) {
+            let totalItems = await this.getProducts(false, false, this.#category);
+
+            this.#itemsCount = totalItems.length;
+        }
+        return this.#itemsCount;
+    }
+
+    async addPaginationNumbers() {
+        let pagesCount = Math.ceil(await this.getAllProductsCount() / this.#limitItems);
+        let content = document.createElement('div');
+
+        // add prev button
+        content.appendChild(this.getNavButton());
+
+        // hjghghgjhghghjghjghjghjgjhg
+        for (let i = 1; i <= pagesCount; i++) {
+            // create element for pagination
+            let pageNumber = document.createElement('div');
+            pageNumber.className = 'pagination-number' + (i === 1 ? ' active' : '');
+            pageNumber.innerHTML = i.toString();
+            pageNumber.dataset.index = i.toString();
+
+            // adding click event on each pagination element
+            this.addEventHandleActivePageNumber(pageNumber);
+
+            // save generated page element
+            content.appendChild(pageNumber);
+        }
+
+        // add next button
+        content.appendChild(this.getNavButton(false));
+
+        // paste pagination inside main element on the page
+        content.className = 'pagination-numbers';
+        let paginationEl = document.querySelector(this.#pagination);
+        paginationEl.appendChild(content);
+    }
+
+    addEventHandleActivePageNumber(pageNumber) {
+        pageNumber.addEventListener('click', (event) => {
+            // get current page number and clear previous selection
+            pageNumber = event.target;
+            pageNumber.parentElement.querySelector('.active').classList.remove('active');
+            pageNumber.classList.add('active');
+
+            // re-render products on the page
+            this.#skipItems = (pageNumber.dataset.index - 1) * this.#limitItems;
+            this.renderProducts();
+        });
+    }
+
+
+    getNavButton(prev = true) {
+        // add prev button
+        let elSpan = document.createElement('span');
+        let elBtn = document.createElement('div');
+        let elA = document.createElement('a');
+
+        elA.className = 'page-link p-0';
+        elBtn.className = 'page-item';
+        elSpan.className = prev ? 'prev-icon' : 'next-icon';
+        elBtn.dataset.btn = prev ? 'prev-btn' : 'next-btn';
+
+        elA.appendChild(elSpan);
+        elBtn.appendChild(elA);
+
+        return elBtn;
+    }
+
 }
 
-class Countdown {
-    constructor(days, hours, mins, secs, dateTo) {
-        this.days = days;
-        this.hours = hours;
-        this.mins = mins;
-        this.secs = secs;
-        this.dateTo = dateTo;
-    }
+// class Countdown {
+//
+//     #container;
+//     #days;
+//     #hours;
+//     #mins;
+//     #secs;
+//
+//     #dateTo;
+//
+//     countDownTo() {
+//         //countdown to
+//         let contDate = new Date(this.dateTo).getTime();
+//         //current time
+//         let now = new Date().getTime();
+//         //the finished number in milliseconds
+//         return contDate - now;
+//     }
+//
+//     calculateTime() {
+//         let seconds = 1000;
+//         let minutes = seconds * 60;
+//         let hours = minutes * 60;
+//         let days = hours * 24;
+//
+//         let textDay = Math.floor(this.countDownTo() / days);
+//         let textHour = Math.floor((this.countDownTo() % days) / hours);
+//         let textMinutes = Math.floor((this.countDownTo() % hours) / minutes);
+//         let textSecond = Math.floor((this.countDownTo() % minutes) / seconds);
+//
+//         this.#days.innerHTML = textDay;
+//         this.#hours.innerHTML = textHour;
+//         this.#mins.innerHTML = textMinutes;
+//         this.#secs.innerHTML = textSecond;
+//
+//         if (textDay < 100) {
+//             this.#days.innerHTML = '0' + textDay;
+//         } else if (textDay < 10) {
+//             this.#days.innerHTML = '00' + textDay;
+//         }
+//
+//         if (textHour < 10) {
+//             this.#hours.innerHTML = '0' + textHour;
+//         }
+//
+//         if (textMinutes < 10) {
+//             this.#mins.innerHTML = '0' + textMinutes;
+//         }
+//
+//         if (textSecond < 10) {
+//             this.#secs.innerHTML = '0' + textSecond;
+//         }
+//     }
+//
+//     setInterval() {
+//         let time = this;
+//         setInterval(() => time.calculateTime(), 1000);
+//     }
+//
+//     // init(container, days = '[data-container="days"]', hours = '[data-container="hours"]', mins = '[data-container="mins"]', secs = '[data-container="secs"]', date) {
+//     //     this.#container = document.getElementById(container);
+//     //     this.#days = this.#container.querySelector(days);
+//     //     this.#hours = this.#container.querySelector(hours);
+//     //     this.#mins = this.#container.querySelector(mins);
+//     //     this.#secs = this.#container.querySelector(secs);
+//     //     this.#dateTo = date;
+//     // }
+// }
 
-    countDownTo() {
-        //countdown to
-        let contDate = new Date(this.dateTo).getTime();
-        //current time
-        let now = new Date().getTime();
-        //the finished number in milliseconds
-        return contDate - now;
-    }
+// class HotSale extends Countdown {
+//     constructor() {
+//         super();
+//     }
+// }
 
-    calculateTime() {
-        let seconds = 1000;
-        let minutes = seconds * 60;
-        let hours = minutes * 60;
-        let days = hours * 24;
-
-        let textDay = Math.floor(this.countDownTo() / days);
-        let textHour = Math.floor((this.countDownTo() % days) / hours);
-        let textMinutes = Math.floor((this.countDownTo() % hours) / minutes);
-        let textSecond = Math.floor((this.countDownTo() % minutes) / seconds);
-
-        this.days.innerHTML = textDay;
-        this.hours.innerHTML = textHour;
-        this.mins.innerHTML = textMinutes;
-        this.secs.innerHTML = textSecond;
-
-        if (textDay < 100) {
-            this.days.innerHTML = '0' + textDay;
-        } else if (textDay < 10) {
-            this.days.innerHTML = '00' + textDay;
-        }
-
-        if (textHour < 10) {
-            this.hours.innerHTML = '0' + textHour;
-        }
-
-        if (textMinutes < 10) {
-            this.mins.innerHTML = '0' + textMinutes;
-        }
-
-        if (textSecond < 10) {
-            this.secs.innerHTML = '0' + textSecond;
-        }
-    }
-
-    setInterval() {
-        let time = this;
-        setInterval(() => time.calculateTime(), 1000);
-    }
-
-    init(daysId, hoursId, minsId, secsId, date) {
-        this.days = document.querySelector(daysId);
-        this.hours = document.querySelector(hoursId);
-        this.mins = document.querySelector(minsId);
-        this.secs = document.querySelector(secsId);
-        this.dateTo = date;
-    }
-}
-
-class HotSale extends Countdown {
-    constructor() {
-        super();
-    }
-}
+// let time = new Countdown();
+//
+// time.init('hot-list', 'December 31, 2023 00:00:00');
+// time.setInterval();

@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 
   .pagination {
     --bs-pagination-border-radius: none;
@@ -40,6 +41,30 @@
 
     .next-icon {
       background-image: url("../img/right_arrow.svg");
+    }
+
+    .pagination-numbers {
+      display: flex;
+      gap: 10px;
+
+      .pagination-number {
+        border-radius: 0;
+        color: #868686;
+        padding: 6px 15px;
+        cursor: pointer;
+        border: 1px solid #dee2e6;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+        &:is(:hover, :focus) {
+          color: var(--bs-white);
+          background-color: #cb8161;
+        }
+      }
+
+      .pagination-number.active {
+        color: var(--bs-white);
+        background-color: #cb8161;
+      }
     }
   }
 }
