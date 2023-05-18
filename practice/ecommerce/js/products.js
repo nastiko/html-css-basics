@@ -62,105 +62,78 @@ class SlideRange {
     }
 }
 
-// class Pagination {
-//
-//     #dataContainer;
-//     #paginationLimit;
-//     #itemTemplate;
-//     #paginationNumber;
-//     #allPageNumbers;
-//
-//     #API_SEARCH = 'https://anastasia.grinkevi.ch/api/products/search';
-//     #itemsCount;
-//
-//     constructor(paginationLimit) {
-//         this.#paginationLimit = paginationLimit;
-//     }
-//
-//     async renderProducts(page = 1) {
-//         let skip = this.#paginationLimit * (page - 1);
-//         let response = await fetch(`${this.#API_SEARCH}?limit=${this.#paginationLimit}&skip=${skip}`);
-//         let result = await response.json();
-//         let content = '';
-//
-//         for await(let item of result) {
-//             let template = await this.getTemplateBlockItem(item.name, item.price, item.preview[0]);
-//             content += template;
-//         }
-//
-//         // paste all items HTML into container on the page
-//         this.#dataContainer.innerHTML = content;
-//     }
-//
-//     /**
-//      * @param {string} title Product title
-//      * @param {string} price Product price
-//      * @param {string} img   Product image
-//      */
-//     async getTemplateBlockItem(title, price, img) {
-//         if (!this.#itemTemplate) {
-//             let response = await fetch('template/product_item.html');
-//             this.#itemTemplate = await response.text();
-//         }
-//
-//         let template = this.#itemTemplate;
-//         template = template.replaceAll('VAR_TITLE', title);
-//         template = template.replaceAll('VAR_PRICE', price);
-//         template = template.replaceAll('VAR_IMG', img);
-//
-//         return template;
-//     }
-//
-//     async getAllProducts() {
-//         if (!this.#itemsCount) {
-//             let response = await fetch(`${this.#API_SEARCH}`);
-//             let totalItems = await response.json();
-//
-//             this.#itemsCount = Math.ceil(totalItems.length / this.#paginationLimit);
-//         }
-//         return this.#itemsCount;
-//     }
-//
-//     async addPaginationNumbers() {
-//         // find number of page
-//         for (let i = 1; i <= await this.getAllProducts(); i++) {
-//             // create element for pagination
-//             let pageNumber = document.createElement('div');
-//             pageNumber.className = 'pagination-number' + (i === 1 ? ' active' : '');
-//             pageNumber.innerHTML = i.toString();
-//             pageNumber.setAttribute('page-index', i.toString());
-//
-//             //
-//             this.addEventHandleActivePageNumber(pageNumber);
-//
-//             //add page of Number in pagination
-//             this.#paginationNumber.appendChild(pageNumber);
-//         }
-//     }
-//
-//     addEventHandleActivePageNumber(pageNumber) {
-//         pageNumber.addEventListener('click', (event) => {
-//             //
-//             pageNumber = event.target;
-//             pageNumber.parentElement.querySelector('.active').classList.remove('active');
-//             let pageIndex = Number(pageNumber.getAttribute('page-index'));
-//             pageNumber.classList.add('active');
-//             //
-//             this.renderProducts(pageIndex);
-//         });
-//     }
-//
-//     init(dataContainer, prevBtn = '.next-icon', nextBtn = '.next-icon', paginationNumber = 'pagination-numbers') {
-//         this.#dataContainer = document.getElementById(dataContainer);
-//         this.#paginationNumber = document.getElementById(paginationNumber);
-//     }
-// }
+class Filter {
 
-// let pagination = new Pagination(12);
-//
-// pagination.init('all-products');
-// pagination.renderProducts();
-// pagination.addPaginationNumbers();
+    #API_SEARCH = 'https://anastasia.grinkevi.ch/api/products/search';
 
+    #mainBlock;
+    #countEarrings;
+    #countNecklaces;
+    #countBracelets;
+    #countRings;
+    #countInStock;
+
+    constructor(mainBlock, countEarrings = '.count-earrings', countNecklaces = '.count-necklaces',
+                countBracelets = '.count-bracelets', countRings = '.count-rings', countInStock = '.count-in_stock') {
+        this.#mainBlock = document.getElementById(mainBlock);
+        this.#countEarrings = this.#mainBlock.querySelector(countEarrings);
+        this.#countNecklaces = this.#mainBlock.querySelector(countNecklaces);
+        this.#countBracelets = this.#mainBlock.querySelector(countBracelets);
+        this.#countRings = this.#mainBlock.querySelector(countRings);
+        this.#countInStock = this.#mainBlock.querySelector(countInStock);
+    }
+
+    async getAPIProducts() {
+        // get API response with products
+        let response = await fetch(`${this.#API_SEARCH}`);
+        return await response.json();
+    }
+
+    async renderCountProducts() {
+
+        let result = await this.getAPIProducts();
+
+        let totalEarrings = 0;
+        let totalNecklaces = 0;
+        let totalBracelets = 0;
+        let totalRings = 0;
+        let totalInStock = 0
+
+        for await(let item of result) {
+            switch (item.categories[0]) {
+                case 'Earrings':
+                    totalEarrings++;
+                    break;
+                case 'Necklaces':
+                    totalNecklaces++;
+                    break;
+                case 'Bracelets':
+                    totalBracelets++;
+                    break;
+                case 'Rings':
+                    totalRings++;
+                    break;
+            }
+        }
+
+        for await(let item of result) {
+            item.in_stock ? totalInStock++ : 0;
+        }
+
+        this.#countEarrings.textContent = `${totalEarrings}`;
+        this.#countNecklaces.textContent = `${totalNecklaces}`;
+        this.#countBracelets.textContent = `${totalBracelets}`;
+        this.#countRings.textContent = `${totalRings}`;
+        this.#countInStock.textContent = `${totalInStock}`;
+    }
+
+    // async orderItemsByFilter() {
+    //
+    // }
+
+}
+
+let filter = new Filter('count-items_categories');
+filter.renderCountProducts();
 
 

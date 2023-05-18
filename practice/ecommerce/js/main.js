@@ -222,21 +222,25 @@ class Products {
     #limitItems;
     #pagination;
 
-    constructor(mainBlock, limitItems, skipItems, category, type = 'default', pagination = '.pagination-position .pagination') {
+    #sale;
+
+    constructor(mainBlock, limitItems, skipItems, category, type = 'default', pagination = '.pagination-position .pagination', sale = 0) {
         this.#pagination = pagination;
         this.#limitItems = limitItems;
         this.#skipItems = skipItems;
         this.#mainBlock = mainBlock;
         this.#category = category;
         this.#type = type;
+        this.#sale = sale;
     }
 
-    async getProducts(limitItems, skipItems, category) {
+    async getProducts(limitItems, skipItems, category, sale) {
         // prepare query params
         let params = {};
         if (category) params.category = category;
         if (limitItems) params.limit = limitItems;
         if (skipItems) params.skip = skipItems;
+        if (sale) params.sale = sale;
         let urlParams = new URLSearchParams(params).toString();
 
         // get API response with products
@@ -247,14 +251,16 @@ class Products {
     async renderProducts() {
         let mainBlockEl = document.querySelector(this.#mainBlock);
         let dataContainer = document.createElement('div');
+        let containerSaleCountdown = mainBlockEl.querySelector('.img-container');
 
         let result = await this.getProducts(this.#limitItems, this.#skipItems, this.#category);
         let content = '';
 
         // render each product template
         for await(let item of result) {
-            let template = await this.getTemplateBlockItem(this.#type, item.name, item.price, item.preview[0]);
+            let template = await this.getTemplateBlockItem(this.#type, item.name, item.price, item.preview[0], this.#sale);
             content += template;
+            containerSaleCountdown += template;
         }
 
         // paste all items HTML into container on the page
@@ -273,11 +279,15 @@ class Products {
         mainBlockEl.querySelector(`.${dataContainerClass}`) ? mainBlockEl.querySelector(`.${dataContainerClass}`).remove() : '';
         mainBlockEl.appendChild(dataContainer);
 
-        // apply sale on products
-        this.applySales();
+
+        //this.applySales();
         // for all elements that have div[data-sale!="0"]
         // foreach such element insert sale block
     }
+
+    // applySales() {
+    //
+    // }
 
     /**
      * @param {string} type  Block type
@@ -285,18 +295,14 @@ class Products {
      * @param {string} price Product price
      * @param {string} img   Product image
      */
-    async getTemplateBlockItem(type, title, price, img) {
+    async getTemplateBlockItem(type, title, price, img, sale) {
         let template = '';
-        //let sale = 'template/sale.html';
 
         if (!this.#itemTemplate) {
             switch (type) {
                 case 'hot':
+                    template = 'template/sale.html';
                     template = 'template/hot_list.html';
-                    // let imgContainer = document.querySelector('.img-container');
-                    // imgContainer.insertAdjacentElement('afterBegin', 'template/sale.html');
-                    //template = template.replaceAll('VAR_SALE', sale);
-                    //this.setSale();
                     break;
                 case 'favourites':
                     template = 'template/jewellery_favourites.html';
@@ -314,6 +320,7 @@ class Products {
         template = template.replaceAll('VAR_TITLE', title);
         template = template.replaceAll('VAR_PRICE', price);
         template = template.replaceAll('VAR_IMG', img);
+        template = template.replaceAll('VAR_SALE', sale);
 
         return template;
     }
@@ -334,7 +341,7 @@ class Products {
         // add prev button
         content.appendChild(this.getNavButton());
 
-        // hjghghgjhghghjghjghjghjgjhg
+        // pass through the pagination and show active page
         for (let i = 1; i <= pagesCount; i++) {
             // create element for pagination
             let pageNumber = document.createElement('div');
@@ -371,7 +378,6 @@ class Products {
         });
     }
 
-
     getNavButton(prev = true) {
         // add prev button
         let elSpan = document.createElement('span');
@@ -386,9 +392,20 @@ class Products {
         elA.appendChild(elSpan);
         elBtn.appendChild(elA);
 
+        elBtn.addEventListener('click', () => {
+            let element  = document.querySelector(this.#pagination).querySelector('div .active');
+            element = prev ? element.previousElementSibling : element.nextElementSibling;
+
+            if(!element || (element && element.className!=='pagination-number')) {
+                return;
+            }
+
+            // trigger click on the element
+            element.click();
+        });
+
         return elBtn;
     }
-
 }
 
 // class Countdown {
@@ -450,22 +467,22 @@ class Products {
 //         setInterval(() => time.calculateTime(), 1000);
 //     }
 //
-//     // init(container, days = '[data-container="days"]', hours = '[data-container="hours"]', mins = '[data-container="mins"]', secs = '[data-container="secs"]', date) {
-//     //     this.#container = document.getElementById(container);
-//     //     this.#days = this.#container.querySelector(days);
-//     //     this.#hours = this.#container.querySelector(hours);
-//     //     this.#mins = this.#container.querySelector(mins);
-//     //     this.#secs = this.#container.querySelector(secs);
-//     //     this.#dateTo = date;
-//     // }
+//     init(container, days = '[data-container="days"]', hours = '[data-container="hours"]', mins = '[data-container="mins"]', secs = '[data-container="secs"]', date) {
+//         this.#container = document.getElementById(container);
+//         this.#days = this.#container.querySelector(days);
+//         this.#hours = this.#container.querySelector(hours);
+//         this.#mins = this.#container.querySelector(mins);
+//         this.#secs = this.#container.querySelector(secs);
+//         this.#dateTo = date;
+//     }
 // }
-
+//
 // class HotSale extends Countdown {
 //     constructor() {
 //         super();
 //     }
 // }
-
+//
 // let time = new Countdown();
 //
 // time.init('hot-list', 'December 31, 2023 00:00:00');
