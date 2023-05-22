@@ -64,8 +64,6 @@ class SlideRange {
 
 class Filter {
 
-    #API_SEARCH = 'https://anastasia.grinkevi.ch/api/products/search';
-
     #mainBlock;
     #countEarrings;
     #countNecklaces;
@@ -73,8 +71,7 @@ class Filter {
     #countRings;
     #countInStock;
 
-    constructor(mainBlock, countEarrings = '.count-earrings', countNecklaces = '.count-necklaces',
-                countBracelets = '.count-bracelets', countRings = '.count-rings', countInStock = '.count-in_stock') {
+    constructor(mainBlock, countEarrings = '.count-earrings', countNecklaces = '.count-necklaces', countBracelets = '.count-bracelets', countRings = '.count-rings', countInStock = '.count-in_stock') {
         this.#mainBlock = document.getElementById(mainBlock);
         this.#countEarrings = this.#mainBlock.querySelector(countEarrings);
         this.#countNecklaces = this.#mainBlock.querySelector(countNecklaces);
@@ -82,16 +79,8 @@ class Filter {
         this.#countRings = this.#mainBlock.querySelector(countRings);
         this.#countInStock = this.#mainBlock.querySelector(countInStock);
     }
-
-    async getAPIProducts() {
-        // get API response with products
-        let response = await fetch(`${this.#API_SEARCH}`);
-        return await response.json();
-    }
-
     async renderCountProducts() {
-
-        let result = await this.getAPIProducts();
+        let result = await API.getProducts();
 
         let totalEarrings = 0;
         let totalNecklaces = 0;
@@ -114,9 +103,6 @@ class Filter {
                     totalRings++;
                     break;
             }
-        }
-
-        for await(let item of result) {
             item.in_stock ? totalInStock++ : 0;
         }
 
@@ -127,13 +113,24 @@ class Filter {
         this.#countInStock.textContent = `${totalInStock}`;
     }
 
-    // async orderItemsByFilter() {
-    //
-    // }
+    async renderCountProducts1() {
+        let result = await API.getProducts();
 
+        let data = [];
+        for await(let item of result) {
+            for(let category of item.categories) {
+                data[category] ??= 0;
+                data[category]++;
+            }
+        }
+
+        let countEl;
+        for(let item in data){
+            countEl = this.#mainBlock.querySelector(`li[data-category="${item}"] span.count`);
+            countEl ? countEl.innerHTML = data[item] : false;
+        }
+
+        return data;
+    }
 }
-
-let filter = new Filter('count-items_categories');
-filter.renderCountProducts();
-
 

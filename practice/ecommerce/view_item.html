@@ -133,34 +133,39 @@
                              data-image="img/view_item/size_600x600/ring_yellow%5B600x600%5D.webp"
                              alt="Yellow ring">
                     </div>
-                    <div class="block-color_wrap mb-3">
-                        <div class="filter-color active color-transparent"
+                   <!-- <div class="extra-imgs mb-3">
+                        <div class="mobile-img active"
+                             src="img/view_item/size_50x50/ring_transparent.webp"
                              data-image="img/view_item/size_600x600/ring_transparent%5B600x600%5D.webp"
                              data-bs-toggle="tooltip"
                              title="Transparent">
                         </div>
-                        <div class="filter-color color-slipperystone"
+                        <div class="mobile-img"
+                             src="img/view_item/size_50x50/ring_brown.webp"
                              data-image="img/view_item/size_600x600/ring_brown%5B600x600%5D.webp"
                              data-bs-toggle="tooltip"
                              title="Slippery Stone">
                         </div>
-                        <div class="filter-color color-twinningvine"
+                        <div class="mobile-img"
+                             src="img/view_item/size_50x50/ring_green.webp"
                              data-image="img/view_item/size_600x600/ring_green%5B600x600%5D.webp"
                              data-bs-toggle="tooltip"
                              title="Twinning Vine">
                         </div>
-                        <div class="filter-color color-eveningdress"
+                        <div class="mobile-img"
+                             src="img/view_item/size_50x50/ring_pink.webp"
                              data-image="img/view_item/size_600x600/ring_pink%5B600x600%5D.webp"
                              data-bs-toggle="tooltip"
                              title="Evening dress">
 
                         </div>
-                        <div class="filter-color color-haywain"
+                        <div class="mobile-img"
+                             src="img/view_item/size_50x50/ring_yellow.webp"
                              data-image="img/view_item/size_600x600/ring_yellow%5B600x600%5D.webp"
                              data-bs-toggle="tooltip"
                              title="Hay Wain">
                         </div>
-                    </div>
+                    </div>-->
                     <a class="link-popup">Size Guide</a>
                     <div class="popup">
                         <button class="popup-close_icon">
@@ -501,15 +506,18 @@
 <script src="js/main.js"></script>
 <script src="js/view-item.js"></script>
 <script>
-    let hotSale = new HotSale();
+    //let hotSale = new HotSale();
     let utils = new Utilities();
     let productInfo = new ProductInfo('.description');
     let sizeGuide = new PopUp('div.popup', '.popup-close_icon', '.link-popup');
     let showDiffStyle = new ShowDiffStyle('sample-img', 'active', '[data-image="featured"]');
     let mobileShowDiffStyle = new MobileShowDiffStyle('filter-color', 'active', '[data-image="featured"]');
 
-    hotSale.init('[data-days="35"]', '[data-hours="35"]', '[data-mins="35"]', '[data-secs="35"]', 'November 25, 2023 00:00:00');
-    hotSale.setInterval();
+    let urlParams = new URLSearchParams(window.location.search);
+    let data = API.getProduct(urlParams.get('id'));
+
+    //hotSale.init('[data-days="35"]', '[data-hours="35"]', '[data-mins="35"]', '[data-secs="35"]', 'November 25, 2023 00:00:00');
+    //hotSale.setInterval();
     utils.scrollUp();
     productInfo.init();
     sizeGuide.init();

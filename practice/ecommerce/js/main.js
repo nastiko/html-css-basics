@@ -211,56 +211,42 @@ class Utilities {
 }
 
 class Products {
-    #API_SEARCH = 'https://anastasia.grinkevi.ch/api/products/search';
 
     #type;
     #itemTemplate;
+    #discountTemplate;
+    #discountTimerTemplate;
     #mainBlock;
     #category;
     #skipItems;
-    #itemsCount;
     #limitItems;
-    #pagination;
+    #pagination = '.pagination-position .pagination';
+    #imageContainer = '.img-container';
 
-    #sale;
 
-    constructor(mainBlock, limitItems, skipItems, category, type = 'default', pagination = '.pagination-position .pagination', sale = 0) {
-        this.#pagination = pagination;
+    constructor(mainBlock, limitItems, skipItems, category, type = 'default') {
         this.#limitItems = limitItems;
         this.#skipItems = skipItems;
         this.#mainBlock = mainBlock;
         this.#category = category;
         this.#type = type;
-        this.#sale = sale;
     }
 
-    async getProducts(limitItems, skipItems, category, sale) {
-        // prepare query params
-        let params = {};
-        if (category) params.category = category;
-        if (limitItems) params.limit = limitItems;
-        if (skipItems) params.skip = skipItems;
-        if (sale) params.sale = sale;
-        let urlParams = new URLSearchParams(params).toString();
-
-        // get API response with products
-        let response = await fetch(`${this.#API_SEARCH}?${urlParams}`);
-        return await response.json();
-    }
-
+    /**
+     * Render product block
+     */
     async renderProducts() {
+        let content = '';
         let mainBlockEl = document.querySelector(this.#mainBlock);
         let dataContainer = document.createElement('div');
-        let containerSaleCountdown = mainBlockEl.querySelector('.img-container');
 
-        let result = await this.getProducts(this.#limitItems, this.#skipItems, this.#category);
-        let content = '';
+        let result = await API.getProducts(this.#limitItems, this.#skipItems, this.#category);
+
 
         // render each product template
-        for await(let item of result) {
-            let template = await this.getTemplateBlockItem(this.#type, item.name, item.price, item.preview[0], this.#sale);
+        for (let item of result) {
+            let template = await this.getProductTemplate(this.#type, item.name, item.price, item.preview[0], item.id, item.discount, item.discount_date_end);
             content += template;
-            containerSaleCountdown += template;
         }
 
         // paste all items HTML into container on the page
@@ -279,29 +265,31 @@ class Products {
         mainBlockEl.querySelector(`.${dataContainerClass}`) ? mainBlockEl.querySelector(`.${dataContainerClass}`).remove() : '';
         mainBlockEl.appendChild(dataContainer);
 
+        // apply sales block to our main product block
+        this.applyDiscount(mainBlockEl);
 
-        //this.applySales();
-        // for all elements that have div[data-sale!="0"]
-        // foreach such element insert sale block
+        // apply sale timer block to our main product block
+        this.applyDiscountTimer(mainBlockEl);
     }
 
-    // applySales() {
-    //
-    // }
-
     /**
-     * @param {string} type  Block type
-     * @param {string} title Product title
-     * @param {string} price Product price
-     * @param {string} img   Product image
+     * Load individual product HTML template
+     *
+     * @param {string} type     Block type
+     * @param {string} title    Product title
+     * @param {int} price       Product price
+     * @param {string} img      Product image
+     * @param {int} id          Product id
+     * @param {int} discount    Product discount percent
+     * @param {string} timer    Product discount date end
      */
-    async getTemplateBlockItem(type, title, price, img, sale) {
-        let template = '';
+    async getProductTemplate(type, title, price, img, id, discount, timer) {
+        let template;
+        let sale;
 
         if (!this.#itemTemplate) {
             switch (type) {
                 case 'hot':
-                    template = 'template/sale.html';
                     template = 'template/hot_list.html';
                     break;
                 case 'favourites':
@@ -316,26 +304,32 @@ class Products {
             this.#itemTemplate = await response.text();
         }
 
+        if (discount > 0) {
+            sale = 1;
+            price = Math.round(price * 0.01 * (100-discount));
+        } else {
+            sale = 0;
+            discount = 0;
+        }
+        if (!timer) timer = '0';
+
         template = this.#itemTemplate;
         template = template.replaceAll('VAR_TITLE', title);
-        template = template.replaceAll('VAR_PRICE', price);
+        template = template.replaceAll('VAR_ID', id);
+        template = template.replaceAll('VAR_PRICE', price.toString());
         template = template.replaceAll('VAR_IMG', img);
         template = template.replaceAll('VAR_SALE', sale);
+        template = template.replaceAll('VAR_DISCOUNT', discount.toString());
+        template = template.replaceAll('VAR_TIMER', timer);
 
         return template;
     }
 
-    async getAllProductsCount() {
-        if (!this.#itemsCount) {
-            let totalItems = await this.getProducts(false, false, this.#category);
-
-            this.#itemsCount = totalItems.length;
-        }
-        return this.#itemsCount;
-    }
-
+    /**
+     * Adding pagination for the current product block
+     */
     async addPaginationNumbers() {
-        let pagesCount = Math.ceil(await this.getAllProductsCount() / this.#limitItems);
+        let pagesCount = Math.ceil(await API.getAllProductsCount(this.#category) / this.#limitItems);
         let content = document.createElement('div');
 
         // add prev button
@@ -393,10 +387,10 @@ class Products {
         elBtn.appendChild(elA);
 
         elBtn.addEventListener('click', () => {
-            let element  = document.querySelector(this.#pagination).querySelector('div .active');
+            let element = document.querySelector(this.#pagination).querySelector('div .active');
             element = prev ? element.previousElementSibling : element.nextElementSibling;
 
-            if(!element || (element && element.className!=='pagination-number')) {
+            if (!element || (element && element.className !== 'pagination-number')) {
                 return;
             }
 
@@ -406,7 +400,84 @@ class Products {
 
         return elBtn;
     }
+
+    async applyDiscount(imageBlockEl) {
+        let template;
+
+        if (!this.#discountTemplate) {
+            let response = await fetch('template/discount.html');
+            this.#discountTemplate = await response.text();
+        }
+
+        let items = imageBlockEl.querySelectorAll("div[data-sale='1']");
+
+        for (let item of items) {
+            template = this.#discountTemplate;
+            template = template.replaceAll('VAR_DISCOUNT', item.dataset.discount);
+            let imageBlockEl = item.querySelector(this.#imageContainer);
+            imageBlockEl.innerHTML += template;
+        }
+    }
+
+    async applyDiscountTimer(imageBlockEl) {
+
+    }
+
+    async getData() {
+
+    }
 }
+
+class API {
+    static API_SEARCH = 'https://anastasia.grinkevi.ch/api/products/search';
+    static API_GET = 'https://anastasia.grinkevi.ch/api/products/get';
+
+    static async getProducts(limitItems, skipItems, category) {
+        // initialise cache if not yet ready
+        let cache = await caches.open('products_api');
+
+        // prepare query params
+        let params = {};
+        if (skipItems) params.skip = skipItems;
+        if (category) params.category = category;
+        if (limitItems) params.limit = limitItems;
+        let urlParams = new URLSearchParams(params).toString();
+        let url = `${this.API_SEARCH}?${urlParams}`;
+
+        let response = await cache.match(url);
+        if (!response) {
+            // add caching for API requests
+            await cache.add(url);
+            // get fetch result
+            response = await cache.match(url);
+        }
+
+        return response.json();
+    }
+    static async getAllProductsCount(category = false) {
+        let totalItems = await API.getProducts(false, false, category);
+        return totalItems.length;
+    }
+
+    static async getProduct(id) {
+        // initialise cache if not yet ready
+        let cache = await caches.open('products_api');
+
+        // prepare query params
+        let url = `${this.API_GET}/${id}`;
+
+        let response = await cache.match(url);
+        if (!response) {
+            // add caching for API requests
+            await cache.add(url);
+            // get fetch result
+            response = await cache.match(url);
+        }
+
+        return response.json();
+    }
+}
+
 
 // class Countdown {
 //

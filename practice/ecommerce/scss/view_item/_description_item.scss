@@ -108,9 +108,6 @@ body {
       display: flex;
       gap: 20px;
       padding-bottom: 1rem;
-      @media only screen and (max-width: 75em) {
-        display: none;
-      }
       @media only screen and (max-width: 80em) {
         padding-right: 1rem;
       }
@@ -124,18 +121,10 @@ body {
         height: auto;
         cursor: pointer;
 
-        @media only screen and (max-width: 30em) {
-          width: 86px;
+        @media only screen and (max-width: 75em) {
+          width: 49px;
+          height: 49px;
         }
-      }
-    }
-
-    .block-color_wrap {
-      display: none;
-      justify-content: flex-start;
-      gap: 20px;
-      @media only screen and (max-width: 75em) {
-        display: flex;
       }
     }
 
