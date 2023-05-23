@@ -80,9 +80,3 @@ class ShowDiffStyle {
         }
     }
 }
-
-class MobileShowDiffStyle extends ShowDiffStyle {
-    constructor(imgsSample, imgActive, imgTemplate) {
-        super(imgsSample, imgActive, imgTemplate);
-    }
-}

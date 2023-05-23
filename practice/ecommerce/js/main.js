@@ -245,7 +245,7 @@ class Products {
 
         // render each product template
         for (let item of result) {
-            let template = await this.getProductTemplate(this.#type, item.name, item.price, item.preview[0], item.id, item.discount, item.discount_date_end);
+            let template = await this.getProductTemplate(this.#type, item.name, item.price, item.images[0], item.id, item.discount, item.discount_date_end);
             content += template;
         }
 
@@ -306,7 +306,7 @@ class Products {
 
         if (discount > 0) {
             sale = 1;
-            price = Math.round(price * 0.01 * (100-discount));
+            price = Math.round(price * 0.01 * (100 - discount));
         } else {
             sale = 0;
             discount = 0;
@@ -422,11 +422,101 @@ class Products {
     async applyDiscountTimer(imageBlockEl) {
 
     }
+}
 
-    async getData() {
+class Product {
+    #color;
+    #price;
+    #title;
+    #image;
+    #preview;
+    #category;
+    #description;
+    #sdescription;
 
+    constructor(
+        color = 'product-color',
+        price = 'product-price',
+        title = 'product-title',
+        image = 'product-image',
+        preview = 'product-preview',
+        category = 'product-category',
+        description = 'product-description',
+        sdescription = 'product-short-description'
+    ) {
+        this.#color = document.getElementById(color);
+        this.#price = document.getElementById(price);
+        this.#title = document.getElementById(title);
+        this.#image = document.getElementById(image);
+        this.#preview = document.getElementById(preview);
+        this.#category = document.getElementById(category);
+        this.#description = document.getElementById(description);
+        this.#sdescription = document.getElementById(sdescription);
+    }
+
+    /**
+     *
+     * @param previewInstance
+     * @returns {Promise<void>}
+     */
+    async updateProductPageData(previewInstance) {
+        let urlParams = new URLSearchParams(window.location.search);
+        let productId = urlParams.get('id');
+        let productData = await this.getProductById(productId);
+
+        if (this.#color) {
+            this.#color.innerHTML = productData.color;
+        }
+
+        if (this.#price) {
+            this.#price.innerHTML = productData.price;
+        }
+
+        if (this.#image) {
+            this.#image.src = productData.images[0];
+        }
+
+        if (this.#title) {
+            this.#title.innerHTML = productData.name;
+        }
+
+        if (this.#preview) {
+            let img;
+            this.#preview.innerHTML = '';
+
+            // walk through all preview array images, generate HTML elements
+            // add generated img elements on the page
+            for (let i = 0; i < productData.preview.length; i++) {
+                img = document.createElement('img');
+                img.src = productData.preview[i];
+                img.dataset.image = productData.images[i];
+                img.className = 'sample-img' + (i === 1 ? ' active' : '');
+                img.alt = `Load image into Gallery viewer, ${productData.name}`;
+                this.#preview.appendChild(img);
+            }
+
+            // initialise preview click events
+            previewInstance.init();
+        }
+
+        if (this.#category) {
+            this.#category.innerHTML = productData.categories.join(', ');
+        }
+
+        if (this.#description) {
+            this.#description.innerHTML = productData.description;
+        }
+
+        if (this.#sdescription) {
+            this.#sdescription.innerHTML = productData.short_description;
+        }
+    }
+
+    async getProductById(id) {
+        return await API.getProduct(id);
     }
 }
+
 
 class API {
     static API_SEARCH = 'https://anastasia.grinkevi.ch/api/products/search';
@@ -454,12 +544,17 @@ class API {
 
         return response.json();
     }
+
     static async getAllProductsCount(category = false) {
         let totalItems = await API.getProducts(false, false, category);
         return totalItems.length;
     }
 
     static async getProduct(id) {
+        // check given ID
+        id = Number(id);
+        if (!id || id <= 0) id = 1;
+
         // initialise cache if not yet ready
         let cache = await caches.open('products_api');
 
