@@ -1,3 +1,4 @@
+// Showing more information when click on 'Description', 'Shipping' and 'Review' block and change rotation icons.
 class ProductInfo {
 
     #mainBlock;
@@ -28,6 +29,8 @@ class ProductInfo {
     }
 }
 
+
+// PopUp of the size guide
 class PopUp {
     #popUp;
     #linkPopUp;
@@ -53,6 +56,8 @@ class PopUp {
     }
 }
 
+
+// Toggle images and all previews images
 class ShowDiffStyle {
 
     #imgsSample;
