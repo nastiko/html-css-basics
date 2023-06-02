@@ -56,13 +56,63 @@
             </ul>
         </div>
         <div>
-            <ul class="gap-list_icons">
-                <li class="icon-person display-none_mobile"></li>
-                <li class="icon-like display-none_mobile"></li>
-                <li class="icon-bag me-3">
+            <div class="gap-list_icons">
+                <div class="icon-person display-none_mobile"></div>
+                <div class="icon-like display-none_mobile"></div>
+                <div class="icon-bag me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#cart">
                     <span class="amount-item">0</span>
-                </li>
-            </ul>
+                </div>
+                <div class="offcanvas offcanvas-end show" id="cart">
+                    <div class="offcanvas-header">
+                        <h1 class="offcanvas-title">Your cart</h1>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="offcanvas-flex_container">
+                            <a href="view_item.html">
+                                <img src="img/earrings_1.webp" alt="Earring">
+                            </a>
+                            <div class="info-container">
+                                <a href="view_item.html">
+                                    <h6 class="product-name">X Hoop earrings</h6>
+                                </a>
+                                <div class="add-remove_tem">
+                                    <button>-</button>
+                                    <input type="number" value="0" placeholder="0">
+                                    <button>+</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="icon-close"></div>
+                                <p>£100</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offcanvas-footer">
+                        <ul class="flex-icon_container">
+                            <li class="bg-circle">
+                                <a class="icon-facebook" href="https://en-gb.facebook.com/"
+                                   target="_blank"></a>
+                            </li>
+                            <li class="bg-circle">
+                                <a class="icon-twitter" href="https://twitter.com/i/flow/login"
+                                   target="_blank"></a>
+                            </li>
+                            <li class="bg-circle">
+                                <a class="icon-instagram" href="https://www.instagram.com/"
+                                   target="_blank"></a>
+                            </li>
+                        </ul>
+                        <hr>
+                        <div>
+                            <p>Subtotal:</p>
+                            <p>£100</p>
+                        </div>
+                        <small>Taxes and shipping calculated at checkout</small>
+                        <button>Checkout</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 </header>
