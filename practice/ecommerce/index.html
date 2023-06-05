@@ -76,40 +76,43 @@
                                 <a href="view_item.html">
                                     <h6 class="product-name">X Hoop earrings</h6>
                                 </a>
-                                <div class="add-remove_tem">
-                                    <button>-</button>
-                                    <input type="number" value="0" placeholder="0">
-                                    <button>+</button>
+                                <div class="add-remove_item">
+                                    <button class="p-0">
+                                        <span class="icon-minus"></span>
+                                    </button>
+                                    <strong class="m-0 amount-items">1</strong>
+                                    <button class="p-0">
+                                        <span class="icon-plus"></span>
+                                    </button>
                                 </div>
                             </div>
-                            <div>
-                                <div class="icon-close"></div>
+                            <div class="price-container">
+                                <span class="icon-close"></span>
                                 <p>£100</p>
                             </div>
                         </div>
                     </div>
                     <div class="offcanvas-footer">
                         <ul class="flex-icon_container">
-                            <li class="bg-circle">
-                                <a class="icon-facebook" href="https://en-gb.facebook.com/"
-                                   target="_blank"></a>
+                            <li class="bg-circle" data-bs-toggle="tooltip" title="Order Note">
+                                <a class="icon-calendar"></a>
                             </li>
-                            <li class="bg-circle">
-                                <a class="icon-twitter" href="https://twitter.com/i/flow/login"
-                                   target="_blank"></a>
+                            <li class="bg-circle" data-bs-toggle="tooltip" title="Add A Coupon">
+                                <a class="icon-percent"></a>
                             </li>
-                            <li class="bg-circle">
-                                <a class="icon-instagram" href="https://www.instagram.com/"
-                                   target="_blank"></a>
+                            <li class="bg-circle" data-bs-toggle="tooltip" title="Estimate Shipping">
+                                <a class="icon-delivery"></a>
                             </li>
                         </ul>
                         <hr>
-                        <div>
-                            <p>Subtotal:</p>
-                            <p>£100</p>
+                        <div class="total-box">
+                            <p class="total-item">Subtotal:</p>
+                            <p class="total-price">£100</p>
                         </div>
-                        <small>Taxes and shipping calculated at checkout</small>
-                        <button>Checkout</button>
+                        <p class="info-taxes">Taxes and shipping calculated at checkout</p>
+                        <button class="button-banners">
+                            <a class="link-style" href="#" type="submit">Check Out</a>
+                        </button>
                     </div>
                 </div>
             </div>

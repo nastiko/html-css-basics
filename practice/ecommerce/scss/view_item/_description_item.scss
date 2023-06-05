@@ -174,45 +174,6 @@ body {
         gap: 10px;
       }
 
-      .add-remove_tem {
-        height: 45px;
-        font-size: 18px;
-        color: $color-black;
-        font-weight: 300;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 15px;
-        border: 1px solid $color-lunar;
-
-        button {
-          background-color: transparent;
-          line-height: 24px;
-          border: none;
-          width: 38px;
-          height: 46px;
-
-          &:hover {
-            background-color: transparent;
-          }
-
-          .icon-minus, .icon-plus {
-            display: inline-block;
-            width: 25px;
-            height: 25px;
-            vertical-align: middle;
-          }
-
-          .icon-minus {
-            content: url("../img/minus.svg");
-          }
-
-          .icon-plus {
-            content: url("../img/plus.svg");
-          }
-        }
-      }
-
       button {
         flex: 1;
         height: 46px;
@@ -358,6 +319,46 @@ body {
           filter: invert(1);
         }
       }
+    }
+  }
+}
+
+.add-remove_item {
+  height: 45px;
+  font-size: 18px;
+  color: $color-black;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border: 1px solid $color-lunar;
+
+  button {
+    background-color: transparent !important;
+    line-height: 24px;
+    border: none;
+    width: 38px;
+    height: 46px;
+
+    &:hover {
+      background-color: transparent;
+      filter: invert(55%) sepia(35%) saturate(592%) hue-rotate(333deg) brightness(97%) contrast(87%);
+    }
+
+    .icon-minus, .icon-plus {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      vertical-align: middle;
+    }
+
+    .icon-minus {
+      content: url("../img/minus.svg");
+    }
+
+    .icon-plus {
+      content: url("../img/plus.svg");
     }
   }
 }
