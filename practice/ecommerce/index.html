@@ -59,7 +59,7 @@
             <div class="gap-list_icons">
                 <div class="icon-person display-none_mobile"></div>
                 <div class="icon-like display-none_mobile"></div>
-                <div class="icon-bag me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#cart">
+                <div class="icon-bag me-3" id="cart_button" type="button" data-bs-toggle="offcanvas" data-bs-target="#cart">
                     <span class="amount-item">0</span>
                 </div>
                 <div class="offcanvas offcanvas-end" id="cart">
@@ -69,7 +69,9 @@
                     </div>
                     <div class="offcanvas-body">
                         <!--render product in cart here-->
-                        <div class="offcanvas-flex_container">
+
+
+                        <!--<div class="offcanvas-flex_container">
                             <a href="view_item.html">
                                 <img src="img/earrings_1.webp" alt="Earring">
                             </a>
@@ -91,7 +93,10 @@
                                 <span class="icon-close"></span>
                                 <p>£100</p>
                             </div>
-                        </div>
+                        </div>-->
+
+
+
                     </div>
                     <div class="offcanvas-footer">
                         <ul class="flex-icon_container">
@@ -515,7 +520,7 @@
     let sliders = new Sliders();
     let blockSlider = new BlockSlider();
     let utils = new Utilities();
-    let cart = new Cart();
+    Cart.renderCart();
     //let time = new Countdown();
     //let hotSale = new HotSale();
 
@@ -524,7 +529,6 @@
     sliders.init('.carousel_slide', '.carousel_slide', '.slide-container', 'right-click', 'left-click', 'carousel_indicator');
     blockSlider.init('.wrapper');
     utils.init();
-    cart.init('.add-to-cart');
 
     // time.init('[data-days="25"]', '[data-hours="25"]', '[data-mins="25"]', '[data-secs="25"]', 'December 31, 2023 00:00:00');
     // time.setInterval();

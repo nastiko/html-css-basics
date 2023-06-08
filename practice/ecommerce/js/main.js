@@ -233,7 +233,7 @@ class Products {
     }
 
     /**
-     * Render product block
+     * Render products block
      */
     async renderProducts() {
         let content = '';
@@ -256,6 +256,9 @@ class Products {
             case "favourites":
                 dataContainerClass = 'grid-container';
                 break;
+            case "cart":
+                dataContainerClass = '#cart .offcanvas-body';
+                break;
             case "hot":
             case "default":
                 dataContainerClass = 'grid-basic_container';
@@ -270,6 +273,9 @@ class Products {
 
         // apply sale timer block to our main product block
         this.applyDiscountTimer(mainBlockEl);
+
+        // add to cart button events
+        Cart.init(mainBlockEl)
     }
 
     /**
@@ -294,6 +300,9 @@ class Products {
                     break;
                 case 'favourites':
                     template = 'template/jewellery_favourites.html';
+                    break;
+                case 'cart':
+                    template = 'template/cart_item.html';
                     break;
                 default:
                 case 'default':
