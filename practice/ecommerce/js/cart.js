@@ -12,13 +12,13 @@ class Cart {
             let productId = addToCartBtn[i].dataset.id;
             addToCartBtn[i].addEventListener('click', () => {
                 // show cart loading screen
-                document.getElementById('cart-loading').style.opacity = '0.5';
+                document.getElementById('loader').style.display = "block";
 
                 // add product to cart
                 Cart.addToCart(productId)
                     // hide loading screen
                     .then((value) => {
-                            document.getElementById('cart').style.opacity = '1'
+                            document.getElementById('loader').style.display = "none";
                         }
                     );
 
@@ -86,6 +86,16 @@ class Cart {
         dataContainer.className = dataContainerClass;
         mainBlockEl.querySelector(`.${dataContainerClass}`) ? mainBlockEl.querySelector(`.${dataContainerClass}`).remove() : '';
         mainBlockEl.appendChild(dataContainer);
+
+        // add event listeners for "remove" button click
+        this.addEventRemoveCartItem();
+
+        // check if cart is empty
+        if (cart.items.length > 0) {
+            document.getElementById('cart-empty').style.display = "none";
+        } else {
+            document.getElementById('cart-empty').style.display = "block";
+        }
     }
 
     /**
@@ -134,9 +144,75 @@ class Cart {
         } else {
             return {items: [], total: 0, itemQty: 0}
         }
+
     }
 
     static setCart(cart) {
         localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // remove item from cart
+    static addEventRemoveCartItem() {
+        let btnItem = document.querySelectorAll('.cart-remove');
+
+        for (let elem of btnItem) {
+            elem.addEventListener('click', function () {
+                let productId = parseInt(elem.dataset.id);
+                Cart.removeItem(productId);
+                Cart.renderCart();
+            });
+        }
+    }
+
+    static getItemByProductId(productId = "0") {
+        let cart = this.getCart();
+        // render each product template
+        for (let item of cart.items) {
+            if (parseInt(item.id) === parseInt(productId)) {
+                return item;
+            }
+        }
+
+        // if no cart element found with such product - report error
+        throw Error('Element not found');
+    }
+
+    static changeItemQty(productId, direction = '+') {
+        try {
+            let item = this.getItemByProductId(productId);
+            switch (direction) {
+                case "+":
+                    item.qty++;
+                    break;
+                case "-":
+                    item.qty--;
+                    break;
+                default:
+                    break;
+            }
+
+            if (item.qty <= 0) {
+                this.removeItem(productId);
+            }
+
+            return item.qty;
+        } catch (error){
+            alert(error);
+        } finally {
+
+        }
+    }
+
+    // remove item from cart
+    static removeItem(productId) {
+        let cart = this.getCart();
+        for (let cartItemId in cart.items) {
+            if (parseInt(cart.items[cartItemId].id) === parseInt(productId)) {
+                cart.items.splice(parseInt(cartItemId), 1);
+                break;
+            }
+        }
+        // save cart with removed product
+        this.setCart(cart);
     }
 }
