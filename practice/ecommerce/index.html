@@ -60,7 +60,7 @@
                 <div class="icon-person display-none_mobile"></div>
                 <div class="icon-like display-none_mobile"></div>
                 <div class="icon-bag me-3" id="cart_button" type="button" data-bs-toggle="offcanvas" data-bs-target="#cart">
-                    <span class="amount-item">0</span>
+                    <span id="total-qty" class="amount-item">0</span>
                 </div>
                 <div class="offcanvas offcanvas-end" id="cart">
                     <div class="offcanvas-header">
@@ -70,7 +70,6 @@
                     <div class="offcanvas-body">
                         <p id="cart-empty">Your basket is empty</p>
                         <!--render product in cart here-->
-                        <div id="loader"><div class="overlay"></div><div class="animation"></div></div>
                     </div>
                     <div class="offcanvas-footer">
                         <ul class="flex-icon_container">
@@ -87,7 +86,7 @@
                         <hr>
                         <div class="total-box">
                             <p class="total-item">Subtotal:</p>
-                            <p class="total-price">£100</p>
+                            <p id="subtotal" class="total-price">£100</p>
                         </div>
                         <p class="info-taxes">Taxes and shipping calculated at checkout</p>
                         <button class="button-banners">
@@ -488,6 +487,7 @@
 </body>
 <script src="js/main.js"></script>
 <script src="js/cart.js"></script>
+<script src="js/loader.js"></script>
 <script>
     let products = new Products('#week-collection', 4, 1, 'Gold', 'favourites');
     let hotListProduct = new Products('#hot-list', 4, 5, 'Gold', 'hot');
@@ -495,6 +495,8 @@
     let blockSlider = new BlockSlider();
     let utils = new Utilities();
     Cart.renderCart();
+
+    //setTimeout(showItem, 3000);
     //let time = new Countdown();
     //let hotSale = new HotSale();
 

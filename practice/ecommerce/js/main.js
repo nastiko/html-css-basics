@@ -236,10 +236,15 @@ class Products {
      * Render products block
      */
     async renderProducts() {
+        // show loader spinner
+        Loader.showLoader(this.#mainBlock, false);
+
+        // init variables
         let content = '';
         let mainBlockEl = document.querySelector(this.#mainBlock);
         let dataContainer = document.createElement('div');
 
+        // get products
         let result = await API.getProducts(this.#limitItems, this.#skipItems, this.#category);
 
 
@@ -275,7 +280,10 @@ class Products {
         this.applyDiscountTimer(mainBlockEl);
 
         // add to cart button events
-        Cart.init(mainBlockEl)
+        Cart.init(mainBlockEl);
+
+        // hide loader
+        Loader.hideLoader(this.#mainBlock);
     }
 
     /**

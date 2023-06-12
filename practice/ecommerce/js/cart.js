@@ -12,10 +12,10 @@ class Cart {
             let productId = addToCartBtn[i].dataset.id;
             addToCartBtn[i].addEventListener('click', () => {
                 // show cart loading screen
-                document.getElementById('loader').style.display = 'block';
+                Loader.showLoader(Cart.#mainBlockEl);
 
                 // add product to cart and hide loading screen after load
-                Cart.addToCart(productId).then((value) => document.getElementById('loader').style.display = 'none');
+                Cart.addToCart(productId).then((value) => Loader.hideLoader(Cart.#mainBlockEl));
 
                 // show main cart sidebar
                 document.getElementById('cart_button').click();
@@ -31,7 +31,6 @@ class Cart {
         for (let cartItem of cart.items) {
             if (cartItem.id === parseInt(productId)) {
                 cartItem.qty++;
-                cartItem.total = Math.round(cartItem.price * cartItem.qty);
                 found = true;
                 break;
             }
@@ -44,8 +43,7 @@ class Cart {
             cart.items.push({
                 id: product.id,
                 title: product.name,
-                price: productPrice,
-                total: productPrice,
+                price: product.price ,
                 image: product.preview[0],
                 qty: 1,
             });
@@ -84,6 +82,7 @@ class Cart {
 
         // add event listeners for "remove" button click
         this.addEventRemoveCartItem();
+        this.addEventClickItemQty();
 
         // check if cart is empty
         if (cart.items.length > 0) {
@@ -91,6 +90,14 @@ class Cart {
         } else {
             document.getElementById('cart-empty').style.display = "block";
         }
+
+        // render totals
+        let totalQtySpan = document.getElementById('total-qty');
+        let subtotal = document.getElementById('subtotal');
+
+        totalQtySpan.textContent = cart.itemQty;
+        subtotal.textContent = `£ ${cart.total}`;
+
     }
 
     /**
@@ -101,6 +108,8 @@ class Cart {
      * @param {string} img      Product image
      * @param {int}    qty       Product id
      * @param {int}    id       Product id
+     *
+     * @return string
      */
     static async renderCartItem(title, price, img, qty, id) {
         let template = await this.getCartItemTemplate();
@@ -143,6 +152,9 @@ class Cart {
     }
 
     static setCart(cart) {
+        // calculate totals
+        cart = Cart.calculateTotal(cart);
+
         localStorage.setItem('cart', JSON.stringify(cart));
     }
 
@@ -172,30 +184,62 @@ class Cart {
         throw Error('Element not found');
     }
 
-    static changeItemQty(productId, direction = '+') {
-        try {
-            let item = this.getItemByProductId(productId);
-            switch (direction) {
-                case "+":
-                    item.qty++;
-                    break;
-                case "-":
-                    item.qty--;
-                    break;
-                default:
-                    break;
-            }
+    static addEventClickItemQty() {
+        let btns = document.querySelectorAll('.item-qty');
 
-            if (item.qty <= 0) {
-                this.removeItem(productId);
-            }
-
-            return item.qty;
-        } catch (error) {
-            alert(error);
-        } finally {
-
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', () => Cart.changeItemQty(btns[i].dataset.id, btns[i].dataset.direction));
         }
+    }
+
+    static changeItemQty(productId, direction = '+') {
+        let item = this.getItemByProductId(productId);
+
+        switch (direction) {
+            case "+":
+                item.qty++;
+                break;
+            case "-":
+                item.qty--;
+                break;
+            default:
+                break;
+        }
+
+        if (item.qty <= 0) {
+            this.removeItem(productId);
+        } else {
+            let cart = this.getCart();
+            for (let cartItemId in cart.items) {
+                if (parseInt(cart.items[cartItemId].id) === parseInt(productId)) {
+                    cart.items[cartItemId].qty = item.qty;
+                    break;
+                }
+            }
+
+            // save cart with removed product
+            this.setCart(cart);
+        }
+
+        Cart.renderCart();
+
+        return item.qty;
+    }
+
+    static calculateTotal(cart) {
+        let cartTotal = 0;
+        let cartQty = 0;
+
+        for(let item of cart.items) {
+            item.total = Math.round(item.price * item.qty);
+            cartTotal += Math.round(item.price * item.qty);
+            cartQty += item.qty;
+        }
+
+        cart.total = cartTotal;
+        cart.itemQty = cartQty;
+
+        return cart;
     }
 
     // remove item from cart
