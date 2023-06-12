@@ -12,15 +12,10 @@ class Cart {
             let productId = addToCartBtn[i].dataset.id;
             addToCartBtn[i].addEventListener('click', () => {
                 // show cart loading screen
-                document.getElementById('loader').style.display = "block";
+                document.getElementById('loader').style.display = 'block';
 
-                // add product to cart
-                Cart.addToCart(productId)
-                    // hide loading screen
-                    .then((value) => {
-                            document.getElementById('loader').style.display = "none";
-                        }
-                    );
+                // add product to cart and hide loading screen after load
+                Cart.addToCart(productId).then((value) => document.getElementById('loader').style.display = 'none');
 
                 // show main cart sidebar
                 document.getElementById('cart_button').click();
@@ -196,7 +191,7 @@ class Cart {
             }
 
             return item.qty;
-        } catch (error){
+        } catch (error) {
             alert(error);
         } finally {
 
