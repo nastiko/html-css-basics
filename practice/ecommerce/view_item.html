@@ -16,7 +16,7 @@
 </head>
 <body>
 <header>
-    <nav class="desktop-device width-container border-0">
+    <nav class="desktop-device width-container">
         <div class="nav-menu_mobile" data-bs-toggle="offcanvas" data-bs-target="#nav-menu_mobile">
             <div class="icon-menu"></div>
         </div>
@@ -27,7 +27,7 @@
             </div>
             <div class="offcanvas-body">
                 <ul>
-                    <li><a class="offcanvas-list" href="#">Jewellery</a></li>
+                    <li><a class="offcanvas-list" href="products.html">Jewellery</a></li>
                     <li>
                         <hr>
                     </li>
@@ -35,11 +35,11 @@
                     <li>
                         <hr>
                     </li>
-                    <li><a class="offcanvas-list" href="#">Gifts</a></li>
+                    <li><a class="offcanvas-list" href="#">Blog</a></li>
                     <li>
                         <hr>
                     </li>
-                    <li><a class="offcanvas-list" href="#">Blog</a></li>
+                    <li><a class="offcanvas-list" href="about_us.html">About Us</a></li>
                     <li>
                         <hr>
                     </li>
@@ -49,32 +49,64 @@
         <a href="index.html" class="logo"></a>
         <div class="categories display-none_mobile">
             <ul class="gap-list_categories">
-                <li><a class="display-list_style" href="#">Jewellery</a></li>
+                <li><a class="display-list_style" href="products.html">Jewellery</a></li>
                 <li><a class="display-list_style" href="#">Sale</a></li>
-                <li><a class="display-list_style" href="#">Gifts</a></li>
                 <li><a class="display-list_style" href="#">Blog</a></li>
+                <li><a class="display-list_style" href="about_us.html">About Us</a></li>
             </ul>
         </div>
         <div>
-            <ul class="gap-list_icons">
-                <li class="icon-person display-none_mobile"></li>
-                <li class="icon-like display-none_mobile"></li>
-                <li class="icon-bag me-3">
-                    <span class="amount-item">0</span>
-                </li>
-            </ul>
+            <div class="gap-list_icons">
+                <div class="icon-person display-none_mobile"></div>
+                <div class="icon-like display-none_mobile"></div>
+                <div class="icon-bag me-3" id="cart_button" type="button" data-bs-toggle="offcanvas" data-bs-target="#cart">
+                    <span id="total-qty" class="amount-item">0</span>
+                </div>
+                <div class="offcanvas offcanvas-end" id="cart">
+                    <div class="offcanvas-header">
+                        <h1 class="offcanvas-title">Your cart</h1>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <p id="cart-empty">Your basket is empty</p>
+                        <!--render product in cart here-->
+                    </div>
+                    <div class="offcanvas-footer">
+                        <ul class="flex-icon_container">
+                            <li class="bg-circle" data-bs-toggle="tooltip" title="Order Note">
+                                <a class="icon-calendar"></a>
+                            </li>
+                            <li class="bg-circle" data-bs-toggle="tooltip" title="Add A Coupon">
+                                <a class="icon-percent"></a>
+                            </li>
+                            <li class="bg-circle" data-bs-toggle="tooltip" title="Estimate Shipping">
+                                <a class="icon-delivery"></a>
+                            </li>
+                        </ul>
+                        <hr>
+                        <div class="total-box">
+                            <p class="total-item">Subtotal:</p>
+                            <p id="subtotal" class="total-price">£100</p>
+                        </div>
+                        <p class="info-taxes">Taxes and shipping calculated at checkout</p>
+                        <button class="button-banners">
+                            <a class="link-style" href="#" type="submit">Check Out</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 </header>
 <hr class="m-0">
-<main>
+<main id="product-description_item">
     <section class="width-container">
         <div class="row wrap-flex_container">
             <div class="col-xl-5 col-lg-7 col-md-10 col-12 flex-wrap_imgs">
                 <div class="foundation-img">
                     <img class="show-img" data-image="featured"
-                         src="img/view_item/size_600x600/ring_transparent%5B600x600%5D.webp"
-                         alt="Transparent ring"
+                         src=""
+                         alt=""
                          id="product-image">
                 </div>
             </div>
@@ -108,9 +140,9 @@
                     <h3 class="title-block">Color</h3>
                     <div class="extra-imgs" id="product-preview">
                         <img class="sample-img active"
-                             src="img/view_item/size_150x150/ring_transparent%5B150x150%5D.webp"
-                             data-image="img/view_item/size_600x600/ring_transparent%5B600x600%5D.webp"
-                             alt="Transparent ring">
+                             src=""
+                             data-image=""
+                             alt="">
                     </div>
                     <a class="link-popup">Size Guide</a>
                     <div class="popup">
@@ -200,121 +232,7 @@
     <section class="container-fluid block-may_like">
         <div class="width-container">
             <h5 class="title-header">You may Also Like</h5>
-            <div id="may-list">
-<!--                <div class="grid">-->
-<!--                    <div class="img-container">-->
-<!--                        <img class="img-style_template" src="img/earrings_5.webp" alt="Oval Cut Earrings">-->
-<!--                    </div>-->
-<!--                    <div class="info-container">-->
-<!--                        <div class="flex-stars">-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <h3 class="product-name">-->
-<!--                                <a href="#">Oval Cut Earrings</a>-->
-<!--                            </h3>-->
-<!--                            <p class="product-price">£89</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="grid">-->
-<!--                    <div class="img-container">-->
-<!--                        <img class="img-style_template" src="img/necklaces_1.jpg" alt="Aquamarine & Diamond">-->
-<!--                    </div>-->
-<!--                    <div class="info-container">-->
-<!--                        <div class="flex-stars">-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <h3 class="product-name">-->
-<!--                                <a href="#">Aquamarine & Diamond</a>-->
-<!--                            </h3>-->
-<!--                            <p class="product-price">£115</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="grid">-->
-<!--                    <div class="img-container">-->
-<!--                        <img class="img-style_template" src="img/earrings_9.jpg" alt="Twins Earrings">-->
-<!--                    </div>-->
-<!--                    <div class="info-container">-->
-<!--                        <div class="flex-stars">-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <h3 class="product-name">-->
-<!--                                <a href="#">Twins Stars</a>-->
-<!--                            </h3>-->
-<!--                            <p class="product-price">£150</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="grid">-->
-<!--                    <div class="img-container">-->
-<!--                        <div class="sale-display">-->
-<!--                            <span class="red-box">35%</span>-->
-<!--                        </div>-->
-<!--                        <img class="img-style_template" src="img/rings_2.webp" alt="Triangle Ring">-->
-<!--                        <div id="countdown" class="time-box">-->
-<!--                            <div>-->
-<!--                                <span data-container="days" class="countdown">565</span>-->
-<!--                                <span class="block-box">days</span>-->
-<!--                            </div>-->
-<!--                            <div>-->
-<!--                                <span data-container="hours" class="countdown">08</span>-->
-<!--                                <span class="block-box">hours</span>-->
-<!--                            </div>-->
-<!--                            <div>-->
-<!--                                <span data-container="mins" class="countdown">07</span>-->
-<!--                                <span class="block-box">mins</span>-->
-<!--                            </div>-->
-<!--                            <div>-->
-<!--                                <span data-container="secs" class="countdown">25</span>-->
-<!--                                <span class="block-box">secs</span>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="flex-links">-->
-<!--                        <div class="icon-button" data-bs-toggle="tooltip" title="Add to Cart">-->
-<!--                            <div class="icon-bag">-->
-<!--                                <a href="#"></a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="icon-button" data-bs-toggle="tooltip" title="Wishlist">-->
-<!--                            <div class="icon-like">-->
-<!--                                <a href="#"></a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="info-container">-->
-<!--                        <div class="flex-stars">-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                            <span class="icon-star"></span>-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <h3 class="product-name">-->
-<!--                                <a href="#">Triangle Ring</a>-->
-<!--                            </h3>-->
-<!--                            <p class="product-price">£135</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-            </div>
+            <div id="may-list"></div>
         </div>
     </section>
 </main>
@@ -408,6 +326,8 @@
 <script src="js/main.js"></script>
 <script src="js/view-item.js"></script>
 <script src="js/countdown.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/loader.js"></script>
 <script>
 
     let product = new Product();
@@ -416,6 +336,7 @@
     let sizeGuide = new PopUp('div.popup', '.popup-close_icon', '.link-popup');
     let showDiffStyle = new ShowDiffStyle('sample-img', 'active', '[data-image="featured"]');
     let mayLikeList = new Products('#may-list', 4, 0, 'Bronze', 'hot');
+    Cart.renderCart();
 
     product.updateProductPageData(showDiffStyle);
     mayLikeList.renderProducts();

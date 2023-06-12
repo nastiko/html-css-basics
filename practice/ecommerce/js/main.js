@@ -261,9 +261,6 @@ class Products {
             case "favourites":
                 dataContainerClass = 'grid-container';
                 break;
-            case "cart":
-                dataContainerClass = '#cart .offcanvas-body';
-                break;
             case "hot":
             case "default":
                 dataContainerClass = 'grid-basic_container';
@@ -308,9 +305,6 @@ class Products {
                     break;
                 case 'favourites':
                     template = 'template/jewellery_favourites.html';
-                    break;
-                case 'cart':
-                    template = 'template/cart_item.html';
                     break;
                 default:
                 case 'default':

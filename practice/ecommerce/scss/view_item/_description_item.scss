@@ -85,7 +85,7 @@ body {
       text-transform: capitalize;
       @include font-weight(heavy);
       line-height: 1.2;
-      color: #000;
+      color: $color-black;
       @media only screen and (max-width: 30em) {
         font-size: 30px;
       }
@@ -101,7 +101,7 @@ body {
     .title-block {
       font-size: 16px;
       font-family: $font-cormorant;
-      color: #000;
+      color: $color-black;
     }
 
     .extra-imgs {

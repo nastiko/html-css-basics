@@ -96,7 +96,7 @@ class Cart {
         let subtotal = document.getElementById('subtotal');
 
         totalQtySpan.textContent = cart.itemQty;
-        subtotal.textContent = `£ ${cart.total}`;
+        subtotal.textContent = `£${cart.total}`;
 
     }
 

@@ -15,7 +15,7 @@
 </head>
 <body>
 <header>
-    <nav class="desktop-device width-container border-0">
+    <nav class="desktop-device width-container">
         <div class="nav-menu_mobile" data-bs-toggle="offcanvas" data-bs-target="#nav-menu_mobile">
             <div class="icon-menu"></div>
         </div>
@@ -26,7 +26,7 @@
             </div>
             <div class="offcanvas-body">
                 <ul>
-                    <li><a class="offcanvas-list" href="#">Jewellery</a></li>
+                    <li><a class="offcanvas-list" href="products.html">Jewellery</a></li>
                     <li>
                         <hr>
                     </li>
@@ -34,11 +34,11 @@
                     <li>
                         <hr>
                     </li>
-                    <li><a class="offcanvas-list" href="#">Gifts</a></li>
+                    <li><a class="offcanvas-list" href="#">Blog</a></li>
                     <li>
                         <hr>
                     </li>
-                    <li><a class="offcanvas-list" href="#">Blog</a></li>
+                    <li><a class="offcanvas-list" href="about_us.html">About Us</a></li>
                     <li>
                         <hr>
                     </li>
@@ -48,20 +48,52 @@
         <a href="index.html" class="logo"></a>
         <div class="categories display-none_mobile">
             <ul class="gap-list_categories">
-                <li><a class="display-list_style" href="#">Jewellery</a></li>
+                <li><a class="display-list_style" href="products.html">Jewellery</a></li>
                 <li><a class="display-list_style" href="#">Sale</a></li>
-                <li><a class="display-list_style" href="#">Gifts</a></li>
                 <li><a class="display-list_style" href="#">Blog</a></li>
+                <li><a class="display-list_style" href="about_us.html">About Us</a></li>
             </ul>
         </div>
         <div>
-            <ul class="gap-list_icons">
-                <li class="icon-person display-none_mobile"></li>
-                <li class="icon-like display-none_mobile"></li>
-                <li class="icon-bag me-3">
-                    <span class="amount-item">0</span>
-                </li>
-            </ul>
+            <div class="gap-list_icons">
+                <div class="icon-person display-none_mobile"></div>
+                <div class="icon-like display-none_mobile"></div>
+                <div class="icon-bag me-3" id="cart_button" type="button" data-bs-toggle="offcanvas" data-bs-target="#cart">
+                    <span id="total-qty" class="amount-item">0</span>
+                </div>
+                <div class="offcanvas offcanvas-end" id="cart">
+                    <div class="offcanvas-header">
+                        <h1 class="offcanvas-title">Your cart</h1>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <p id="cart-empty">Your basket is empty</p>
+                        <!--render product in cart here-->
+                    </div>
+                    <div class="offcanvas-footer">
+                        <ul class="flex-icon_container">
+                            <li class="bg-circle" data-bs-toggle="tooltip" title="Order Note">
+                                <a class="icon-calendar"></a>
+                            </li>
+                            <li class="bg-circle" data-bs-toggle="tooltip" title="Add A Coupon">
+                                <a class="icon-percent"></a>
+                            </li>
+                            <li class="bg-circle" data-bs-toggle="tooltip" title="Estimate Shipping">
+                                <a class="icon-delivery"></a>
+                            </li>
+                        </ul>
+                        <hr>
+                        <div class="total-box">
+                            <p class="total-item">Subtotal:</p>
+                            <p id="subtotal" class="total-price">£100</p>
+                        </div>
+                        <p class="info-taxes">Taxes and shipping calculated at checkout</p>
+                        <button class="button-banners">
+                            <a class="link-style" href="#" type="submit">Check Out</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 </header>
@@ -495,9 +527,11 @@
 </div>
 
 <script src="js/main.js"></script>
+<script src="js/cart.js"></script>
 <script>
     let utils = new Utilities();
     let blockSlider = new BlockSlider();
+    Cart.renderCart();
 
     utils.scrollUp();
     blockSlider.init('.wrapper');

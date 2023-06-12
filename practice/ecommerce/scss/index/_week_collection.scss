@@ -107,7 +107,17 @@
 }
 
 
-#week-collection, #hot-list{
+#week-collection, #hot-list {
   position: relative;
   min-height: 450px;
+}
+
+#all-products {
+  position: relative;
+  min-height: 1270px;
+}
+
+#product-description_item {
+  position: relative;
+  min-height: 1000px;
 }
