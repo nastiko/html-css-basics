@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@300;400;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/libraries/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <title>Checkout</title>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+<main class="grid-sections">
+    <section class="info-section">
+
+        <nav>
+            <a href="index.html" class="logo"></a>
+            <p class="page-highlighter">
+                <a class="prev-link" href="index.html">Home</a>
+                <span class="arrow-backup"></span>
+                <a>Products</a>
+            </p>
+        </nav>
+        <div class="form">
+            <form action="#">
+                <label for="email" class="form-label">Contact</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember"> Email me with news and offers
+                    </label>
+                </div>
+
+                <label class="form-label">Billing address</label>
+                <input type="text" class="form-control" placeholder="Country/Region" name="Country/Region">
+                <input type="text" class="form-control" placeholder="Country/Region" name="Country/Region">
+                <input type="text" class="form-control" placeholder="Country/Region" name="Country/Region">
+                <input type="text" class="form-control" placeholder="Country/Region" name="Country/Region">
+                <input type="text" class="form-control" placeholder="Country/Region" name="Country/Region">
+                <input type="text" class="form-control" placeholder="Country/Region" name="Country/Region">
+
+
+
+                <input type="text" placeholder="Country/Region">
+                <input type="text" placeholder="First name">
+                <input type="text" placeholder="Last name">
+                <input type="text" placeholder="Address">
+                <input type="text" placeholder="Apartment, suite, etc.">
+                <input type="text" placeholder="City">
+                <input type="text" placeholder="Postcode">
+                <input type="checkbox">
+                <span>Save this information for next time</span>
+
+                <div>
+                    <span>Return to products</span>
+                    <button type="submit">Continue to payment</button>
+                </div>
+
+                <label>Payment</label>
+                <p>All transactions are secure and encrypted.</p>
+                <div>
+                    <p>This store can’t accept payments right now.</p>
+                </div>
+                <span>Return to information</span>
+            </form>
+        </div>
+
+        <div>
+            All rights reserved Stellar © 2023 Anastasia Hrynkevich
+        </div>
+
+
+    </section>
+    <section>
+        <div class="offcanvas-flex_container" data-id="VAR_ID">
+            <a href="view_item.html?id=VAR_ID">
+                <img src="VAR_IMG" alt="VAR_TITLE">
+                <strong class="m-0 amount-items">VAR_QTY</strong>
+            </a>
+            <div class="info-container">
+                <a href="view_item.html?id=VAR_ID">
+                    <h6 class="product-name">Name</h6>
+                </a>
+            </div>
+            <div class="price-container">
+                <span class="icon-close cart-remove" data-id="VAR_ID"></span>
+                <p>£VAR_PRICE</p>
+            </div>
+        </div>
+        <form action="#">
+            <input type="text" placeholder="Discount code">
+            <button type="submit">Apply</button>
+        </form>
+        <div>
+            <p>Total</p>
+            <p>£0</p>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

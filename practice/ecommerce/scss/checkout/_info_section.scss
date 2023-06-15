@@ -1,0 +1,11 @@
+.info-section {
+  max-width: calc(638px + 5vw);
+}
+
+.logo {
+  display: block;
+  background: url("../img/logo.jpg") no-repeat center;
+  background-size: contain;
+  width: 150px;
+  height: 70px;
+}
