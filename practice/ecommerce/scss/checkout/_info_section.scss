@@ -1,5 +1,9 @@
 .info-section {
   max-width: calc(638px + 5vw);
+
+  .page-highlighter {
+    justify-content: flex-start;
+  }
 }
 
 .logo {
