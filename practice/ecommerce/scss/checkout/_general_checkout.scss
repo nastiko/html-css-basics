@@ -12,8 +12,14 @@ body {
 
 .grid-sections {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 'one two';
   min-height: 100vh;
+  gap: 3rem;
+
+  @media only screen and (max-width: 62em) {
+    grid-template-areas: 'two' 'one';
+    justify-content: space-around;
+  }
 
   .form-checkout {
     .form-title {

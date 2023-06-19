@@ -1,15 +1,99 @@
-.info-section {
-  max-width: calc(638px + 5vw);
+@import "../helpers/variables";
 
-  .page-highlighter {
-    justify-content: flex-start;
+.grid {
+
+  a {
+    color: $color-planetarium;
+    .icon-content{
+      content: url("../img/left_backup.svg");
+      filter: invert(10%) sepia(84%) saturate(5320%) hue-rotate(225deg) brightness(94%) contrast(91%);
+      display: inline-block;
+      height: 14px;
+      width: 14px;
+      vertical-align: text-top;
+      margin-right: 7px;
+    }
+
+    span {
+      font-size: 14px
+    }
+  }
+
+  nav {
+    .logo {
+      display: block;
+      background: url("../img/logo.jpg") no-repeat center;
+      background-size: contain;
+      width: 150px;
+      height: 70px;
+    }
+
+    .page-highlighter {
+      justify-content: flex-start;
+    }
+  }
+
+  .form-checkout {
+    .form-submit {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .btn-style {
+        font-size: 14px;
+        color: $color-white;
+        background-color: $color-planetarium;
+        padding: 21px;
+      }
+    }
+  }
+
+  .payment-block {
+    font-size: 14px;
+
+    .payment-subtitle {
+      color: $color-lunar;
+    }
+
+    .payment-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $color-satin_white;
+      border-radius: 5px;
+      padding-top: 25px;
+
+      .icon-error_card {
+        background-image: url("../img/error_card.svg");
+        background-repeat: no-repeat;
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    .flex-end {
+      display: flex;
+      justify-content: flex-end;
+      margin: 2rem 0;
+    }
+  }
+
+  .footer {
+    display: grid;
+    align-content: center;
+    font-size: 13px;
+    color: $color-lunar;
   }
 }
 
-.logo {
-  display: block;
-  background: url("../img/logo.jpg") no-repeat center;
-  background-size: contain;
-  width: 150px;
-  height: 70px;
+.grid:nth-child(1) {
+  grid-area: one;
+  display: grid;
+  grid-auto-rows: 130px 1fr 15px 60px;
+  justify-content: end;
+  grid-template-columns: 0.75fr;
+  border-right: 1px solid $color-lunar;
+  padding: 2rem 3rem 0 0;
 }
+

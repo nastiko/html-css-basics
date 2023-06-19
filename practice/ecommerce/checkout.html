@@ -15,8 +15,7 @@
 </head>
 <body>
 <main class="grid-sections">
-    <section class="info-section">
-
+    <section class="grid">
         <nav>
             <a href="index.html" class="logo"></a>
             <p class="page-highlighter">
@@ -78,26 +77,39 @@
                         time
                     </label>
                 </div>
-                <div>
-                    <span>Return to products</span>
-                    <button type="submit" class="btn btn-primary">Continue to payment</button>
+                <div class="form-submit mb-4">
+                    <a href="products.html">
+                        <span class="icon-content"></span>
+                        <span>Return to products</span>
+                    </a>
+                    <button type="submit" class="btn btn-style">Continue to payment</button>
                 </div>
 
-                <h2 class="form-title">Payment</h2>
-                <p>All transactions are secure and encrypted.</p>
-                <div>
-                    <p>This store can’t accept payments right now.</p>
+                <div class="payment-block">
+                    <h2 class="form-title">Payment</h2>
+                    <p class="payment-subtitle">All transactions are secure and encrypted.</p>
+                    <div class="payment-box">
+                        <div class="icon-error_card"></div>
+                        <p>This store can’t accept payments right now.</p>
+                    </div>
+                    <div class="flex-end">
+                        <a href="products.html">
+                            <span class="icon-content"></span>
+                            <span>Return to information</span>
+                        </a>
+                    </div>
                 </div>
-                <span>Return to information</span>
+
+
             </form>
         </div>
-
-        <div>
+        <hr>
+        <footer class="footer">
             All rights reserved Stellar © 2023 Anastasia Hrynkevich
-        </div>
-
-
+        </footer>
     </section>
+
+
     <section>
         <div class="offcanvas-flex_container" data-id="VAR_ID">
             <a href="view_item.html?id=VAR_ID">
