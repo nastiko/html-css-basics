@@ -74,15 +74,16 @@
 
   .icon-bag {
     background-image: url("../img/bag.svg");
-    .amount-item {
-      font-size: 11px;
-      background-color: $color-black;
-      color: $color-white;
-      border-radius: 50%;
-      position: relative;
-      top: -15px;
-      left: 17px;
-      padding: 2px 6px;
-    }
   }
+}
+
+.amount-item {
+  font-size: 11px;
+  background-color: $color-black;
+  color: $color-white;
+  border-radius: 50%;
+  position: relative;
+  top: -15px;
+  left: 17px;
+  padding: 2px 6px;
 }

@@ -4,7 +4,8 @@
 
   a {
     color: $color-planetarium;
-    .icon-content{
+
+    .icon-content {
       content: url("../img/left_backup.svg");
       filter: invert(10%) sepia(84%) saturate(5320%) hue-rotate(225deg) brightness(94%) contrast(91%);
       display: inline-block;
@@ -97,3 +98,59 @@
   padding: 2rem 3rem 0 0;
 }
 
+.items-total {
+  max-width: 418px;
+
+  .item-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      width: 72px;
+      height: 72px;
+      border: 1px solid $color-lunar;
+    }
+
+    .amount-item {
+      top: -35px;
+      left: -10px;
+    }
+
+    .product-name, p {
+      font-size: 12px;
+    }
+  }
+
+  .form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    .form-floating {
+      width: 100%;
+
+      .form-control {
+        &:focus {
+          border: 1px solid $color-satin_white;
+          box-shadow: none;
+        }
+      }
+
+      label {
+        opacity: .65;
+      }
+    }
+
+    .input-group-text {
+      height: calc(3.5rem + 2px);
+    }
+  }
+
+  .info-block {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+  }
+}
