@@ -14,126 +14,172 @@
     <script src="js/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
-<main class="grid-sections">
-    <section class="grid">
-        <nav>
-            <a href="index.html" class="logo"></a>
-            <p class="page-highlighter">
-                <a class="prev-link" href="index.html">Home</a>
-                <span class="arrow-backup"></span>
-                <a class="prev-link" href="#">Information</a>
-                <span class="arrow-backup"></span>
-                <a class="next-link" href="#">Payment</a>
-            </p>
-        </nav>
-        <div class="form-checkout">
-            <form action="#">
-                <h2 class="form-title mb-3">Contact</h2>
-                <div class="input-title form-control mb-1">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                <div class="form-check mb-4">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="remember"> Email me with news and offers
-                    </label>
-                </div>
-                <h2 class="form-title mb-3">Billing address</h2>
-                <div class="input-title form-control mb-3">
-                    <label class="form-label">Country/Region</label>
-                    <input type="text" name="country/region">
-                </div>
-                <div class="row mb-3">
-                    <div class="col input-title form-control">
-                        <label class="form-label">First name</label>
-                        <input type="text" name="first name">
-                    </div>
-                    <div class="col input-title form-control">
-                        <label class="form-label">Last name</label>
-                        <input type="text" name="last name">
-                    </div>
-                </div>
-                <div class="input-title form-control mb-3">
-                    <label class="form-label">Address</label>
-                    <input type="text" name="address">
-                </div>
-                <div class="input-title form-control mb-3">
-                    <label class="form-label">Apartment, suite, etc.</label>
-                    <input type="text" name="flat">
-                </div>
-                <div class="row mb-1">
-                    <div class="col input-title form-control">
-                        <label class="form-label">City</label>
-                        <input type="text" name="city">
-                    </div>
-                    <div class="col input-title form-control">
-                        <label class="form-label">Postcode</label>
-                        <input type="text" name="postcode">
-                    </div>
-                </div>
-                <div class="form-check mb-4">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="save info"> Save this information for next
-                        time
-                    </label>
-                </div>
-                <div class="form-submit mb-4">
-                    <a href="products.html">
-                        <span class="icon-content"></span>
-                        <span>Return to products</span>
-                    </a>
-                    <button type="submit" class="btn btn-style">Continue to payment</button>
-                </div>
-
-                <div class="payment-block">
-                    <h2 class="form-title">Payment</h2>
-                    <p class="payment-subtitle">All transactions are secure and encrypted.</p>
-                    <div class="payment-box">
-                        <div class="icon-error_card"></div>
-                        <p>This store can’t accept payments right now.</p>
-                    </div>
-                    <div class="flex-end">
-                        <a href="products.html">
-                            <span class="icon-content"></span>
-                            <span>Return to information</span>
+<main class="testimonial-grid">
+    <nav>
+        <a href="index.html" class="logo"></a>
+    </nav>
+    <aside class="container-fluid">
+        <div class="flex-wrap_info">
+            <div class="items-total desktop">
+                <div class="item-info mb-3" data-id="VAR_ID">
+                    <div class="d-flex align-items-center">
+                        <a href="view_item.html?id=VAR_ID">
+                            <img src="img/earrings_6.webp" alt="VAR_TITLE">
+                            <span class="amount-item">0</span>
+                        </a>
+                        <a href="view_item.html?id=VAR_ID">
+                            <h6 class="product-name">Name</h6>
                         </a>
                     </div>
+                    <p class="mb-0">£150</p>
                 </div>
-
-
-            </form>
-        </div>
-        <hr>
-        <footer class="footer">
-            All rights reserved Stellar © 2023 Anastasia Hrynkevich
-        </footer>
-    </section>
-    <section class="items-total">
-        <div class="item-info mb-3" data-id="VAR_ID">
-            <div class="d-flex align-items-center">
-                <a href="view_item.html?id=VAR_ID">
-                    <img src="img/earrings_6.webp" alt="VAR_TITLE">
-                    <span id="total-qty" class="amount-item">0</span>
-                </a>
-                <a href="view_item.html?id=VAR_ID">
-                    <h6 class="product-name">Name</h6>
-                </a>
+                <form class="form mb-2" action="#">
+                    <div class="form-floating mb-3 mt-3">
+                        <input type="text" class="form-control"
+                               placeholder="Discount code" name="discount">
+                        <label for="discount">Discount code</label>
+                    </div>
+                    <button class="input-group-text">Apply</button>
+                </form>
+                <div class="info-block">
+                    <p>Total</p>
+                    <p>£0</p>
+                </div>
             </div>
-            <p class="mb-0">£150</p>
-        </div>
-        <form class="form mb-2" action="#">
-            <div class="form-floating mb-3 mt-3">
-                <input type="text" class="form-control" id="discount" placeholder="Discount code" name="discount">
-                <label for="discount">Discount code</label>
+            <div class="description">
+                <div class="description-info">
+                    <button class="btn-description_info border-bottom" type="button">
+                        <span class="icon-basket"></span>
+                        Show order summary
+                        <span class="icon"></span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-answer_inner" id="product-description">
+                            <div class="items-total">
+                                <div class="item-info mb-3" data-id="VAR_ID">
+                                    <div class="d-flex align-items-center">
+                                        <a href="view_item.html?id=VAR_ID">
+                                            <img src="img/earrings_6.webp" alt="VAR_TITLE">
+                                            <span id="total-qty" class="amount-item">0</span>
+                                        </a>
+                                        <a href="view_item.html?id=VAR_ID">
+                                            <h6 class="product-name">Name</h6>
+                                        </a>
+                                    </div>
+                                    <p class="mb-0">£150</p>
+                                </div>
+                                <form class="form mb-2" action="#">
+                                    <div class="form-floating mb-3 mt-3">
+                                        <input type="text" class="form-control" id="discount"
+                                               placeholder="Discount code" name="discount">
+                                        <label for="discount">Discount code</label>
+                                    </div>
+                                    <button class="input-group-text">Apply</button>
+                                </form>
+                                <div class="info-block">
+                                    <p>Total</p>
+                                    <p>£0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button class="input-group-text">Apply</button>
+        </div>
+    </aside>
+    <div class="current-page">
+        <p class="page-highlighter">
+            <a class="prev-link" href="index.html">Home</a>
+            <span class="arrow-backup"></span>
+            <a class="prev-link" href="#">Information</a>
+            <span class="arrow-backup"></span>
+            <a class="next-link" href="#">Payment</a>
+        </p>
+    </div>
+    <div class="form-checkout">
+        <form action="#">
+            <h2 class="form-title mb-3">Contact</h2>
+            <div class="input-title form-control mb-1">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-check mb-4">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember"> Email me with news and offers
+                </label>
+            </div>
+            <h2 class="form-title mb-3">Billing address</h2>
+            <div class="input-title form-control mb-3">
+                <label class="form-label">Country/Region</label>
+                <input type="text" name="country/region">
+            </div>
+            <div class="row mb-3">
+                <div class="col input-title form-control">
+                    <label class="form-label">First name</label>
+                    <input type="text" name="first name">
+                </div>
+                <div class="col input-title form-control">
+                    <label class="form-label">Last name</label>
+                    <input type="text" name="last name">
+                </div>
+            </div>
+            <div class="input-title form-control mb-3">
+                <label class="form-label">Address</label>
+                <input type="text" name="address">
+            </div>
+            <div class="input-title form-control mb-3">
+                <label class="form-label">Apartment, suite, etc.</label>
+                <input type="text" name="flat">
+            </div>
+            <div class="row mb-1">
+                <div class="col input-title form-control">
+                    <label class="form-label">City</label>
+                    <input type="text" name="city">
+                </div>
+                <div class="col input-title form-control">
+                    <label class="form-label">Postcode</label>
+                    <input type="text" name="postcode">
+                </div>
+            </div>
+            <div class="form-check mb-4">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="save info"> Save this information for next
+                    time
+                </label>
+            </div>
+            <div class="form-submit mb-4">
+                <a href="products.html">
+                    <span class="icon-content"></span>
+                    <span>Return to products</span>
+                </a>
+                <button type="submit" class="btn btn-style">Continue to payment</button>
+            </div>
+            <div class="payment-block">
+                <h2 class="form-title">Payment</h2>
+                <p class="payment-subtitle">All transactions are secure and encrypted.</p>
+                <div class="payment-box">
+                    <div class="icon-error_card"></div>
+                    <p>This store can’t accept payments right now.</p>
+                </div>
+                <div class="flex-end">
+                    <a href="products.html">
+                        <span class="icon-content"></span>
+                        <span>Return to information</span>
+                    </a>
+                </div>
+            </div>
         </form>
-        <div class="info-block">
-            <p>Total</p>
-            <p>£0</p>
-        </div>
-    </section>
+    </div>
+    <hr>
+    <footer class="footer">
+        All rights reserved Stellar © 2023 Anastasia Hrynkevich
+    </footer>
 </main>
-
 </body>
+<script src="js/view-item.js"></script>
+<script>
+    let productInfo = new ProductInfo('.description');
+
+    productInfo.init();
+</script>
 </html>
