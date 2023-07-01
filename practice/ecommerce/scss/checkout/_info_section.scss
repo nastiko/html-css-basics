@@ -244,6 +244,24 @@
       }
     }
 
+    .input-control.success input {
+      border-color: #09c372;
+    }
+
+    .input-control.error input {
+      border-color: #ff3860;
+    }
+
+    .input-control .error {
+      color: #ff3860;
+      margin-top: 2px;
+      font-size: 12px;
+    }
+
+    .input-control.error textarea {
+      border-color: #ff3860;
+    }
+
     .form-submit {
       display: flex;
       justify-content: space-between;

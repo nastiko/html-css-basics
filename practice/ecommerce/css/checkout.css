@@ -274,6 +274,20 @@ body {
 .testimonial-grid .form-checkout .row .col {
   height: 53px;
 }
+.testimonial-grid .form-checkout .input-control.success input {
+  border-color: #09c372;
+}
+.testimonial-grid .form-checkout .input-control.error input {
+  border-color: #ff3860;
+}
+.testimonial-grid .form-checkout .input-control .error {
+  color: #ff3860;
+  margin-top: 2px;
+  font-size: 12px;
+}
+.testimonial-grid .form-checkout .input-control.error textarea {
+  border-color: #ff3860;
+}
 .testimonial-grid .form-checkout .form-submit {
   display: flex;
   justify-content: space-between;
