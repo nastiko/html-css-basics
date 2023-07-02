@@ -164,9 +164,9 @@ body {
   opacity: 0.65;
 }
 .testimonial-grid aside .flex-wrap_info .items-total .form .input-group-text {
-  height: calc(3.5rem + 2px);
   color: #ffffff;
   background-color: #b0b0b0;
+  padding: 13px;
 }
 .testimonial-grid aside .flex-wrap_info .items-total .info-block {
   display: flex;
@@ -274,18 +274,19 @@ body {
 .testimonial-grid .form-checkout .row .col {
   height: 53px;
 }
-.testimonial-grid .form-checkout .input-control.success input {
+.testimonial-grid .form-checkout .form-control.success {
+  color: #09c372;
   border-color: #09c372;
-}
-.testimonial-grid .form-checkout .input-control.error input {
-  border-color: #ff3860;
-}
-.testimonial-grid .form-checkout .input-control .error {
-  color: #ff3860;
   margin-top: 2px;
   font-size: 12px;
 }
-.testimonial-grid .form-checkout .input-control.error textarea {
+.testimonial-grid .form-checkout .form-control.error {
+  color: #ff3860;
+  border-color: #ff3860;
+  margin-top: 2px;
+  font-size: 12px;
+}
+.testimonial-grid .form-checkout .form-control.error textarea {
   border-color: #ff3860;
 }
 .testimonial-grid .form-checkout .form-submit {

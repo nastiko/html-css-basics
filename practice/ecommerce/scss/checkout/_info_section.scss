@@ -111,9 +111,9 @@
           }
 
           .input-group-text {
-            height: calc(3.5rem + 2px);
             color: $color-white;
             background-color: $color-palladium;
+            padding: 13px;
           }
         }
 
@@ -244,21 +244,21 @@
       }
     }
 
-    .input-control.success input {
+    .form-control.success {
+      color: #09c372;
       border-color: #09c372;
-    }
-
-    .input-control.error input {
-      border-color: #ff3860;
-    }
-
-    .input-control .error {
-      color: #ff3860;
       margin-top: 2px;
       font-size: 12px;
     }
 
-    .input-control.error textarea {
+    .form-control.error {
+      color: #ff3860;
+      border-color: #ff3860;
+      margin-top: 2px;
+      font-size: 12px;
+    }
+
+    .form-control.error textarea {
       border-color: #ff3860;
     }
 
