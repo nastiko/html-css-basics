@@ -281,6 +281,14 @@ a:hover {
 .testimonial-grid .current-page .page-highlighter {
   justify-content: flex-start;
 }
+.testimonial-grid .current-page .page-highlighter .default-page {
+  color: #000000;
+  cursor: default;
+}
+.testimonial-grid .current-page .page-highlighter .page-highlighter_inactive {
+  color: #868686;
+  cursor: default;
+}
 .testimonial-grid .form-checkout {
   grid-area: content;
   margin: 0 5rem;
@@ -396,6 +404,22 @@ a:hover {
 }
 .testimonial-grid .form-checkout #payment-info.active-block {
   display: none;
+}
+.testimonial-grid .block-review {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 15px 25px 0 25px;
+}
+.testimonial-grid .block-review .review-info {
+  display: flex;
+  flex: 1 100%;
+  flex-wrap: wrap;
+  column-gap: 3rem;
+}
+.testimonial-grid .block-review .review-info .width-item {
+  width: 120px;
 }
 .testimonial-grid .footer {
   display: grid;

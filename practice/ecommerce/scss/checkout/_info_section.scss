@@ -177,6 +177,16 @@
 
     .page-highlighter {
       justify-content: flex-start;
+
+      .default-page {
+        color: $color-black;
+        cursor: default;
+      }
+
+      .page-highlighter_inactive {
+        color: $color-lunar;
+        cursor: default;
+      }
     }
   }
 
@@ -320,6 +330,27 @@
     #payment-info.active-block {
       display: none;
     }
+  }
+
+  .block-review {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 15px 25px 0 25px;
+
+    .review-info {
+      display: flex;
+      flex: 1 100%;
+      flex-wrap: wrap;
+      column-gap: 3rem;
+
+      .width-item {
+        width: 120px;
+      }
+    }
+
+
   }
 
   .footer {

@@ -88,13 +88,13 @@
             </div>-->
         </div>
     </aside>
-    <div class="current-page">
+    <div id="highlighter-page" class="current-page">
         <p class="page-highlighter">
             <a class="prev-link" href="index.html">Home</a>
             <span class="arrow-backup"></span>
-            <a class="prev-link" href="#">Information</a>
+            <a class="default-page" href="#">Information</a>
             <span class="arrow-backup"></span>
-            <a class="next-link" href="#">Payment</a>
+            <a class="page-highlighter_inactive" href="#">Payment</a>
         </p>
     </div>
     <div id="form-checkout" class="form-checkout">
@@ -157,6 +157,27 @@
                 <button id="payment" type="submit" class="btn btn-style">Continue to payment</button>
             </div>
         </form>
+        <div class="block-review">
+            <div class="d-flex justify-content-between">
+                <div class="review-info">
+                    <p class="width-item">Contact</p>
+                    <p>Email</p>
+                </div>
+                <a>
+                    <span>Change</span>
+                </a>
+            </div>
+            <hr class="mt-0 mb-3">
+            <div class="d-flex justify-content-between">
+                <div class="review-info">
+                    <p class="width-item">Billing</p>
+                    <p>58 Flat, Bournemouth, BH8 8SX</p>
+                </div>
+                <a>
+                    <span>Change</span>
+                </a>
+            </div>
+        </div>
         <div id="payment-info" class="payment-block active-block">
             <h2 class="form-title">Payment</h2>
             <p class="payment-subtitle">All transactions are secure and encrypted.</p>
@@ -165,7 +186,7 @@
                 <p>This store can’t accept payments right now.</p>
             </div>
             <div class="flex-end">
-                <a href="products.html">
+                <a id="prev-highlighter_page" href="">
                     <span class="icon-content"></span>
                     <span>Return to information</span>
                 </a>
