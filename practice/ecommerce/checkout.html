@@ -39,11 +39,6 @@
                         <input id="discount" type="text" name="discount" value="">
                         <div class="error"></div>
                     </div>
-                    <!--<div class="form-floating mb-3 mt-3">
-
-                        <input id="discount" type="text" class="form-control"
-                               placeholder="Discount code" name="discount">
-                    </div>-->
                     <button id="apply-discount" class="input-group-text mb-1">Apply</button>
                 </form>
                 <div class="info-block">
@@ -51,7 +46,8 @@
                     <p>£0</p>
                 </div>
             </div>
-            <div class="description">
+            <!--Need to change mobile device style-->
+            <!-- <div class="description">
                 <div class="description-info">
                     <button class="btn-description_info border-bottom" type="button">
                         <span class="icon-basket"></span>
@@ -89,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </aside>
     <div class="current-page">
@@ -158,25 +154,24 @@
                     <span class="icon-content"></span>
                     <span>Return to products</span>
                 </a>
-                <button type="submit" class="btn btn-style">Continue to payment</button>
-            </div>
-            <div class="payment-block">
-                <h2 class="form-title">Payment</h2>
-                <p class="payment-subtitle">All transactions are secure and encrypted.</p>
-                <div class="payment-box">
-                    <div class="icon-error_card"></div>
-                    <p>This store can’t accept payments right now.</p>
-                </div>
-                <div class="flex-end">
-                    <a href="products.html">
-                        <span class="icon-content"></span>
-                        <span>Return to information</span>
-                    </a>
-                </div>
+                <button id="payment" type="submit" class="btn btn-style">Continue to payment</button>
             </div>
         </form>
+        <div id="payment-info" class="payment-block active-block">
+            <h2 class="form-title">Payment</h2>
+            <p class="payment-subtitle">All transactions are secure and encrypted.</p>
+            <div class="payment-box">
+                <div class="icon-error_card"></div>
+                <p>This store can’t accept payments right now.</p>
+            </div>
+            <div class="flex-end">
+                <a href="products.html">
+                    <span class="icon-content"></span>
+                    <span>Return to information</span>
+                </a>
+            </div>
+        </div>
     </div>
-    <hr>
     <footer class="footer">
         All rights reserved Stellar © 2023 Anastasia Hrynkevich
     </footer>
@@ -185,8 +180,8 @@
 <script src="js/view-item.js"></script>
 <script src="js/checkout.js"></script>
 <script>
-    let productInfo = new ProductInfo('.description');
+    //let productInfo = new ProductInfo('.description');
 
-    productInfo.init();
+    //productInfo.init();
 </script>
 </html>

@@ -66,10 +66,69 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.text-1 {
+  font-size: 16px;
+}
+
+.text-2 {
+  font-size: 32px;
+}
+
+.text-3 {
+  font-size: 48px;
+}
+
+.text-4 {
+  font-size: 64px;
+}
+
+.text-5 {
+  font-size: 80px;
+}
+
+.text-6 {
+  font-size: 96px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  font-size: 12px;
+  color: #000000;
+  text-decoration: none;
+}
+a:hover {
+  color: #cb8161;
+}
+
+.flex-wrap_info .description .add-cart .icon-button, .button-banners, .grid-container .grid-area .blocks-position .flex-links .icon-button {
+  color: #ffffff;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: ease all 0.35s;
+}
+.flex-wrap_info .description .add-cart .icon-button:hover, .button-banners:hover, .grid-container .grid-area .blocks-position .flex-links .icon-button:hover {
+  background-color: #cb8161;
+  border-color: #cb8161 !important;
+  color: #ffffff;
+}
+
+.width-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/*PRODUCTS PAGE*/
 .testimonial-grid {
   display: grid;
   grid-template-columns: 2fr 1.5fr;
-  grid-template-areas: "header disclosure " "subheader disclosure " "content disclosure " "hr disclosure " "footer disclosure ";
+  grid-template-rows: 90px 40px 1fr 75px;
+  grid-template-areas: "header disclosure " "subheader disclosure " "content disclosure " "footer disclosure ";
   min-height: 100vh;
 }
 @media only screen and (max-width: 62em) {
@@ -153,14 +212,11 @@ body {
   align-items: center;
   gap: 15px;
 }
-.testimonial-grid aside .flex-wrap_info .items-total .form .form-floating {
-  width: 100%;
-}
-.testimonial-grid aside .flex-wrap_info .items-total .form .form-floating .form-control:focus {
+.testimonial-grid aside .flex-wrap_info .items-total .form .form-control:focus {
   border: 1px solid #ced4da;
   box-shadow: none;
 }
-.testimonial-grid aside .flex-wrap_info .items-total .form .form-floating label {
+.testimonial-grid aside .flex-wrap_info .items-total .form label {
   opacity: 0.65;
 }
 .testimonial-grid aside .flex-wrap_info .items-total .form .input-group-text {
@@ -271,9 +327,6 @@ body {
   --bs-gutter-x: 0;
   gap: 25px;
 }
-.testimonial-grid .form-checkout .row .col {
-  height: 53px;
-}
 .testimonial-grid .form-checkout .form-control.success {
   color: #09c372;
   border-color: #09c372;
@@ -341,14 +394,8 @@ body {
 .testimonial-grid .form-checkout a span {
   font-size: 14px;
 }
-.testimonial-grid hr {
-  grid-area: hr;
-  margin: 0 5rem;
-}
-@media only screen and (max-width: 32em) {
-  .testimonial-grid hr {
-    margin: 1rem 1rem 0 1rem;
-  }
+.testimonial-grid .form-checkout #payment-info.active-block {
+  display: none;
 }
 .testimonial-grid .footer {
   display: grid;
@@ -357,6 +404,7 @@ body {
   color: #868686;
   grid-area: footer;
   margin: 0 5rem 1rem 5rem;
+  border-top: 1px solid #868686;
 }
 @media only screen and (max-width: 62em) {
   .testimonial-grid .footer {

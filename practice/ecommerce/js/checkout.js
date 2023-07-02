@@ -89,3 +89,28 @@ class ValidationForm {
 let validation = new ValidationForm('form-checkout');
 validation.validationInput();
 validation.init();
+
+class Toggle {
+
+    #sectionCheckoutBlock;
+    #btnPayment;
+    #blockPayment;
+
+    togglePaymentBlock(event) {
+        event.preventDefault();
+        this.#blockPayment.classList.toggle('active-block');
+    }
+
+
+
+    init(sectionCheckout, btnPayment = '#payment', blockPayment = '#payment-info') {
+        this.#sectionCheckoutBlock = document.getElementById(sectionCheckout);
+        this.#btnPayment = this.#sectionCheckoutBlock.querySelector(btnPayment);
+        this.#blockPayment = this.#sectionCheckoutBlock.querySelector(blockPayment);
+
+        this.#btnPayment.addEventListener('click', (event) => this.togglePaymentBlock(event));
+    }
+}
+
+let toggle = new Toggle()
+toggle.init('form-checkout');
