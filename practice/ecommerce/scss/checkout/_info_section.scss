@@ -327,7 +327,7 @@
       }
     }
 
-    #payment-info.active-block {
+    #payment-info.active-block, #block-review.active-block {
       display: none;
     }
   }
@@ -343,14 +343,26 @@
       display: flex;
       flex: 1 100%;
       flex-wrap: wrap;
-      column-gap: 3rem;
 
       .width-item {
         width: 120px;
       }
+
+      .text-style {
+        color: $color-black;
+      }
     }
 
+    a {
+      &:is(:hover, :focus, :active) {
+        color: $color-planetarium;
+      }
 
+      .link-point {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
   }
 
   .footer {

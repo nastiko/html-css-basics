@@ -9,12 +9,45 @@ class ValidationForm {
 
     #validationResult = true;
 
-    constructor(form, email = '#email', firstName = '#first-name', discount = 'discount', applyDiscountBtn = 'apply-discount') {
+    #formReview;
+    #btnPayment;
+    #blockPayment;
+    #blockReview;
+
+    #sectionHighlighterBlock;
+    #defaultPage;
+    #nextInactiveSpan;
+
+    #btnReturnToInfoPage;
+
+    constructor(form,
+                sectionHighlighterBlock,
+                email = '#email',
+                firstName = '#first-name',
+                discount = 'discount',
+                applyDiscountBtn = 'apply-discount',
+                formReview = '#form-review',
+                btnPayment = '#payment',
+                blockPayment = '#payment-info',
+                blockReview = '#block-review',
+                defaultPage = '.default-page',
+                nextInactiveSpan = '.page-highlighter_inactive',
+                btnReturnToInfoPage = '#prev-highlighter_page') {
         this.#form = document.getElementById(form);
         this.#email = this.#form.querySelector(email);
         this.#firstName = this.#form.querySelector(firstName);
         this.#discount = document.getElementById(discount);
         this.#applyDiscountBtn = document.getElementById(applyDiscountBtn);
+
+        this.#formReview = this.#form.querySelector(formReview);
+        this.#btnPayment = this.#form.querySelector(btnPayment);
+        this.#blockPayment = this.#form.querySelector(blockPayment);
+        this.#blockReview = this.#form.querySelector(blockReview);
+        this.#btnReturnToInfoPage = this.#form.querySelector(btnReturnToInfoPage)
+
+        this.#sectionHighlighterBlock = document.getElementById(sectionHighlighterBlock);
+        this.#defaultPage = this.#sectionHighlighterBlock.querySelector(defaultPage);
+        this.#nextInactiveSpan = this.#sectionHighlighterBlock.querySelector(nextInactiveSpan);
     }
 
     getEmailValue() {
@@ -78,8 +111,6 @@ class ValidationForm {
         } else {
             this.setSuccess(this.#firstName);
         }
-
-
     }
 
     applyDiscount(event) {
@@ -93,37 +124,18 @@ class ValidationForm {
         event.preventDefault();
     }
 
-    init() {
-        this.#applyDiscountBtn.addEventListener('click', (event) => this.applyDiscount(event));
-        this.#discount.addEventListener('keyup', () => this.removeStyles());
-
-    }
-
-}
-
-let validation = new ValidationForm('form-checkout');
-validation.validationInput();
-validation.init();
-
-class Toggle {
-
-    #sectionCheckoutBlock;
-    #btnPayment;
-    #blockPayment;
-
-    #sectionHighlighterBlock;
-    #defaultPage;
-    #nextInactiveSpan;
-
-    #BtnReturnToInfoPage;
-
+    // add hidden payment block
     togglePaymentBlock(event) {
         event.preventDefault();
         this.#blockPayment.classList.toggle('active-block');
+        this.#blockReview.classList.toggle('active-block');
+
+        this.#formReview.style.display = 'none';
 
         this.getHighlighterPage();
     }
 
+    // get color:black of the current page when payment block appears
     getHighlighterPage() {
         this.#defaultPage.classList.remove('default-page');
         this.#defaultPage.classList.add('prev-link');
@@ -132,6 +144,7 @@ class Toggle {
         this.#nextInactiveSpan.classList.add('default-page');
     }
 
+    // make the prev link of the previous page color:grey
     getPrevHighlighterPage(event) {
         event.preventDefault();
         this.#nextInactiveSpan.classList.add('page-highlighter_inactive');
@@ -145,28 +158,17 @@ class Toggle {
         // }
     }
 
-
-    init(sectionCheckout,
-         sectionHighlighter,
-         btnPayment = '#payment',
-         blockPayment = '#payment-info',
-         defaultPage = '.default-page',
-         nextInactiveSpan = '.page-highlighter_inactive',
-         btnReturnInfoPage = '#prev-highlighter_page') {
-
-        this.#sectionCheckoutBlock = document.getElementById(sectionCheckout);
-        this.#btnPayment = this.#sectionCheckoutBlock.querySelector(btnPayment);
-        this.#blockPayment = this.#sectionCheckoutBlock.querySelector(blockPayment);
-        this.#BtnReturnToInfoPage = this.#sectionCheckoutBlock.querySelector(btnReturnInfoPage)
-
-        this.#sectionHighlighterBlock = document.getElementById(sectionHighlighter);
-        this.#defaultPage = this.#sectionHighlighterBlock.querySelector(defaultPage);
-        this.#nextInactiveSpan = this.#sectionHighlighterBlock.querySelector(nextInactiveSpan);
+    init() {
+        this.#applyDiscountBtn.addEventListener('click', (event) => this.applyDiscount(event));
+        this.#discount.addEventListener('keyup', () => this.removeStyles());
 
         this.#btnPayment.addEventListener('click', (event) => this.togglePaymentBlock(event));
-        this.#BtnReturnToInfoPage.addEventListener('click', (event) => this.getPrevHighlighterPage(event));
+        this.#btnReturnToInfoPage.addEventListener('click', (event) => this.getPrevHighlighterPage(event));
+
     }
+
 }
 
-let toggle = new Toggle()
-toggle.init('form-checkout', 'highlighter-page');
+let validation = new ValidationForm('form-checkout', 'highlighter-page');
+validation.validationInput();
+validation.init();

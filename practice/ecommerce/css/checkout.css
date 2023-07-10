@@ -402,7 +402,7 @@ a:hover {
 .testimonial-grid .form-checkout a span {
   font-size: 14px;
 }
-.testimonial-grid .form-checkout #payment-info.active-block {
+.testimonial-grid .form-checkout #payment-info.active-block, .testimonial-grid .form-checkout #block-review.active-block {
   display: none;
 }
 .testimonial-grid .block-review {
@@ -416,10 +416,19 @@ a:hover {
   display: flex;
   flex: 1 100%;
   flex-wrap: wrap;
-  column-gap: 3rem;
 }
 .testimonial-grid .block-review .review-info .width-item {
   width: 120px;
+}
+.testimonial-grid .block-review .review-info .text-style {
+  color: #000000;
+}
+.testimonial-grid .block-review a:is(:hover, :focus, :active) {
+  color: #0056A8;
+}
+.testimonial-grid .block-review a .link-point {
+  text-decoration: underline;
+  cursor: pointer;
 }
 .testimonial-grid .footer {
   display: grid;
