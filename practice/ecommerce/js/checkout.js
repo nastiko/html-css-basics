@@ -13,6 +13,7 @@ class ValidationForm {
     #btnPayment;
     #blockPayment;
     #blockReview;
+    #changeInfo;
 
     #sectionHighlighterBlock;
     #defaultPage;
@@ -30,6 +31,7 @@ class ValidationForm {
                 btnPayment = '#payment',
                 blockPayment = '#payment-info',
                 blockReview = '#block-review',
+                changeInfo = '.link-point',
                 defaultPage = '.default-page',
                 nextInactiveSpan = '.page-highlighter_inactive',
                 btnReturnToInfoPage = '#prev-highlighter_page') {
@@ -48,6 +50,8 @@ class ValidationForm {
         this.#sectionHighlighterBlock = document.getElementById(sectionHighlighterBlock);
         this.#defaultPage = this.#sectionHighlighterBlock.querySelector(defaultPage);
         this.#nextInactiveSpan = this.#sectionHighlighterBlock.querySelector(nextInactiveSpan);
+
+        this.#changeInfo = this.#blockReview.querySelectorAll(changeInfo);
     }
 
     getEmailValue() {
@@ -153,9 +157,9 @@ class ValidationForm {
         this.#defaultPage.classList.add('default-page');
         this.#defaultPage.classList.remove('prev-link');
 
-        // if (this.#blockPayment.style.display === 'block') {
-        //     this.#blockPayment.style.visibility = 'none';
-        // }
+        this.#blockPayment.classList.toggle('active-block');
+        this.#blockReview.classList.toggle('active-block');
+        this.#formReview.style.display = 'block';
     }
 
     init() {
@@ -164,6 +168,10 @@ class ValidationForm {
 
         this.#btnPayment.addEventListener('click', (event) => this.togglePaymentBlock(event));
         this.#btnReturnToInfoPage.addEventListener('click', (event) => this.getPrevHighlighterPage(event));
+
+        for(let i = 0; i < this.#changeInfo.length; i++) {
+            this.#changeInfo[i].addEventListener('click', (event) => this.getPrevHighlighterPage(event));
+        }
 
     }
 
