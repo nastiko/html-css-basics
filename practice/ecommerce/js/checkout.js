@@ -1,7 +1,11 @@
 class ValidationForm {
     #form;
     #email;
+    #country;
     #firstName;
+    #address;
+    #flat;
+    #postcode;
 
     #setDiscount = 'sale-25';
     #discount;
@@ -24,7 +28,11 @@ class ValidationForm {
     constructor(form,
                 sectionHighlighterBlock,
                 email = '#email',
+                country = '#country',
                 firstName = '#first-name',
+                address = '#address',
+                flat='#flat',
+                postcode = '#postcode',
                 discount = 'discount',
                 applyDiscountBtn = 'apply-discount',
                 formReview = '#form-review',
@@ -37,7 +45,11 @@ class ValidationForm {
                 btnReturnToInfoPage = '#prev-highlighter_page') {
         this.#form = document.getElementById(form);
         this.#email = this.#form.querySelector(email);
+        this.#country = this.#form.querySelector(country);
         this.#firstName = this.#form.querySelector(firstName);
+        this.#address = this.#form.querySelector(address);
+        this.#flat = this.#form.querySelector(flat);
+        this.#postcode = this.#form.querySelector(postcode);
         this.#discount = document.getElementById(discount);
         this.#applyDiscountBtn = document.getElementById(applyDiscountBtn);
 
@@ -58,8 +70,24 @@ class ValidationForm {
         return this.#email.value.trim();
     }
 
+    getCountryValue() {
+        return this.#country.value.trim();
+    }
+
     getFirstNameValue() {
         return this.#firstName.value.trim();
+    }
+
+    getAddressValue() {
+        return this.#address.value.trim();
+    }
+
+    getFlatValue() {
+        return this.#flat.value.trim();
+    }
+
+    getPostcodeValue() {
+        return this.#postcode.value.trim();
     }
 
     setError(elem, message) {
@@ -84,7 +112,8 @@ class ValidationForm {
 
     removeStyles() {
         let userValue = this.#discount.value;
-        console.log(userValue);
+
+        // Discount input
         if (userValue === '') {
             let inputControl = this.#discount.parentElement;
             let errorDisplay = inputControl.querySelector('.error');
@@ -95,6 +124,8 @@ class ValidationForm {
         }
     }
 
+
+    // Email input
     isValidEmail() {
         return this.#email.value.toLowerCase().match(
             /^[^]+\@[a-zA-z]+\.[a-zA-Z]{2,4}$/);
@@ -104,16 +135,49 @@ class ValidationForm {
         // Email
         if (this.getEmailValue() === '') {
             this.setError(this.#email, 'Email is required');
-        } else if (!this.isValidEmail(this.getEmailValue())) {
+        } else if (!this.isValidEmail(this.#email)) {
             this.setError(this.#email, 'Provide a valid email address');
+        } else {
+            this.setSuccess(this.#email, '');
         }
-        this.setSuccess(this.#email, '');
+
+        //Country
+       if(this.getCountryValue() === '') {
+           this.setError(this.#country, 'Country is required');
+       } else if(this.getCountryValue().length < 2) {
+           this.setError(this.#country, 'Country must be at least 2 character.');
+       } else {
+           this.setSuccess(this.#country, '');
+       }
 
         // First Name
         if (this.getFirstNameValue() === '') {
             this.setError(this.#firstName, 'Name is required');
         } else {
-            this.setSuccess(this.#firstName);
+            this.setSuccess(this.#firstName, '');
+        }
+
+        // Address
+        if (this.getAddressValue() === '') {
+            this.setError(this.#address, 'Address is required');
+        } else if(this.getAddressValue().length < 5) {
+            this.setError(this.#address, 'Address must be at least 5 character.');
+        } else {
+            this.setSuccess(this.#address, '');
+        }
+
+        // Flat
+        if (this.getFlatValue() === '') {
+            this.setError(this.#flat, 'Flat is required');
+        } else {
+            this.setSuccess(this.#flat, '');
+        }
+
+        // Postcode
+        if (this.getPostcodeValue() === '') {
+            this.setError(this.#postcode, 'Postcode is required');
+        } else {
+            this.setSuccess(this.#postcode, '');
         }
     }
 
@@ -162,21 +226,50 @@ class ValidationForm {
         this.#formReview.style.display = 'block';
     }
 
+    handleSubmit() {
+        //validate? true / false
+        if(!validation.validationInput()){
+            return;
+        }
+
+        let status = document.createElement('div');
+        status.id = 'form-status';
+        status.classList.add('submit-style');
+        this.#form.appendChild(status);
+
+        let data = new FormData(this.#form);
+        fetch(this.#form.action, {
+            method: this.#form.method,
+            body: data,
+        }).then(response => {
+            if (response.ok) {
+                status.innerHTML = 'Thanks for your submission!';
+                this.#form.reset();
+            } else {
+                status.innerHTML = 'Oops! There was a problem submitting your form';
+            }
+        }).catch(error => {
+            status.innerHTML = 'Oops! There was a problem submitting your form';
+        });
+    }
+
     init() {
         this.#applyDiscountBtn.addEventListener('click', (event) => this.applyDiscount(event));
         this.#discount.addEventListener('keyup', () => this.removeStyles());
+        this.#email.addEventListener('keyup', () => this.removeStyles());
 
-        this.#btnPayment.addEventListener('click', (event) => this.togglePaymentBlock(event));
+        this.#btnPayment.addEventListener('click', () => this.handleSubmit());
+
+        //this.#btnPayment.addEventListener('click', (event) => this.togglePaymentBlock(event));
         this.#btnReturnToInfoPage.addEventListener('click', (event) => this.getPrevHighlighterPage(event));
 
         for(let i = 0; i < this.#changeInfo.length; i++) {
             this.#changeInfo[i].addEventListener('click', (event) => this.getPrevHighlighterPage(event));
         }
-
     }
 
 }
 
 let validation = new ValidationForm('form-checkout', 'highlighter-page');
-validation.validationInput();
+//validation.validationInput();
 validation.init();
