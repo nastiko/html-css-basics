@@ -271,5 +271,5 @@ class ValidationForm {
 }
 
 let validation = new ValidationForm('form-checkout', 'highlighter-page');
-//validation.validationInput();
+validation.validationInput();
 validation.init();
