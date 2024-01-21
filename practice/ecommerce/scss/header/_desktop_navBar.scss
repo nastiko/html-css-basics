@@ -1,79 +1,82 @@
 @import '../helpers/variables';
 @import '../helpers/placeholder';
 
-.desktop-device {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.sticky {
   background-color: $color-white;
   border-bottom: 1px solid $color-placebo;
-  position: relative;
-  z-index: 100;
-  @media only screen and (max-width: 100em) {
-    padding: 0 1rem;
-  }
 
-  .logo {
-    background: url("../img/logo.jpg") no-repeat center;
-    background-size: contain;
-    width: 150px;
-    height: 70px;
-  }
-
-  .style-list {
+  .desktop-device {
     display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    @media only screen and (max-width: 100em) {
+      padding: 0 1rem;
+    }
 
-  .categories {
-    .gap-list_categories {
-      @extend .style-list;
-      @include gap(50px);
+    .logo {
+      background: url("../img/logo.jpg") no-repeat center;
+      background-size: contain;
+      width: 150px;
+      height: 70px;
+    }
 
-      .display-list_style {
-        color: #000;
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
+    .style-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-        &:hover {
-          color: $color-sand;
+    .categories {
+      .gap-list_categories {
+        @extend .style-list;
+        @include gap(50px);
+
+        .display-list_style {
+          color: #000;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+
+          &:hover {
+            color: $color-sand;
+          }
         }
       }
     }
-  }
 
-  .gap-list_icons {
-    @extend .style-list;
-    @include gap(20px);
-    cursor: pointer;
-  }
-
-  .nav-menu_mobile {
-    display: none;
-    @media only screen and (max-width: 50em) {
-      display: block !important;
+    .gap-list_icons {
+      @extend .style-list;
+      @include gap(20px);
+      cursor: pointer;
     }
-  }
 
-  .icon-person, .icon-like, .icon-bag {
-    @extend .style-icon;
-    cursor: pointer;
-  }
+    .nav-menu_mobile {
+      display: none;
+      @media only screen and (max-width: 50em) {
+        display: block !important;
+      }
+    }
 
-  .icon-person {
-    background-image: url("../img/person.svg");
-  }
+    .icon-person, .icon-like, .icon-bag {
+      @extend .style-icon;
+      cursor: pointer;
+    }
 
-  .icon-like {
-    background-image: url("../img/like.svg");
-    color: black;
-  }
+    .icon-person {
+      background-image: url("../img/person.svg");
+    }
 
-  .icon-bag {
-    background-image: url("../img/bag.svg");
+    .icon-like {
+      background-image: url("../img/like.svg");
+      color: black;
+    }
+
+    .icon-bag {
+      background-image: url("../img/bag.svg");
+    }
   }
 }
 
