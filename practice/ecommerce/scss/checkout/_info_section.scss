@@ -345,7 +345,10 @@
       flex-wrap: wrap;
 
       .width-item {
-        width: 120px;
+        width: 15%;
+        @media only screen and (max-width: 62em) {
+          width: 25%;
+        }
       }
 
       .text-style {

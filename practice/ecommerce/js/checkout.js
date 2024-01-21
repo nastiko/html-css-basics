@@ -260,7 +260,7 @@ class ValidationForm {
 
         this.#btnPayment.addEventListener('click', () => this.handleSubmit());
 
-        //this.#btnPayment.addEventListener('click', (event) => this.togglePaymentBlock(event));
+        this.#btnPayment.addEventListener('click', (event) => this.togglePaymentBlock(event));
         this.#btnReturnToInfoPage.addEventListener('click', (event) => this.getPrevHighlighterPage(event));
 
         for(let i = 0; i < this.#changeInfo.length; i++) {
