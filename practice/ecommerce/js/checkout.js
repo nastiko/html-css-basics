@@ -251,7 +251,7 @@ class ValidationForm {
         }).catch(error => {
             status.innerHTML = 'Oops! There was a problem submitting your form';
         });
-    }
+    }K
 
     init() {
         this.#applyDiscountBtn.addEventListener('click', (event) => this.applyDiscount(event));
@@ -260,7 +260,7 @@ class ValidationForm {
 
         this.#btnPayment.addEventListener('click', () => this.handleSubmit());
 
-        this.#btnPayment.addEventListener('click', (event) => this.togglePaymentBlock(event));
+        //this.#btnPayment.addEventListener('click', (event) => this.togglePaymentBlock(event));
         this.#btnReturnToInfoPage.addEventListener('click', (event) => this.getPrevHighlighterPage(event));
 
         for(let i = 0; i < this.#changeInfo.length; i++) {
@@ -271,5 +271,5 @@ class ValidationForm {
 }
 
 let validation = new ValidationForm('form-checkout', 'highlighter-page');
-validation.validationInput();
+//validation.validationInput();
 validation.init();
