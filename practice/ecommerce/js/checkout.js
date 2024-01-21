@@ -11,13 +11,14 @@ class ValidationForm {
     #discount;
     #applyDiscountBtn;
 
-    #validationResult = true;
+    #validationResult = false;
 
     #formReview;
     #btnPayment;
     #blockPayment;
     #blockReview;
     #changeInfo;
+    #infoLink;
 
     #sectionHighlighterBlock;
     #defaultPage;
@@ -31,7 +32,7 @@ class ValidationForm {
                 country = '#country',
                 firstName = '#first-name',
                 address = '#address',
-                flat='#flat',
+                flat = '#flat',
                 postcode = '#postcode',
                 discount = 'discount',
                 applyDiscountBtn = 'apply-discount',
@@ -40,6 +41,7 @@ class ValidationForm {
                 blockPayment = '#payment-info',
                 blockReview = '#block-review',
                 changeInfo = '.link-point',
+                infoLink = '#infoLink',
                 defaultPage = '.default-page',
                 nextInactiveSpan = '.page-highlighter_inactive',
                 btnReturnToInfoPage = '#prev-highlighter_page') {
@@ -64,6 +66,7 @@ class ValidationForm {
         this.#nextInactiveSpan = this.#sectionHighlighterBlock.querySelector(nextInactiveSpan);
 
         this.#changeInfo = this.#blockReview.querySelectorAll(changeInfo);
+        this.#infoLink = this.#sectionHighlighterBlock.querySelector(infoLink);
     }
 
     getEmailValue() {
@@ -132,6 +135,8 @@ class ValidationForm {
     }
 
     validationInput() {
+        this.#validationResult = true;
+
         // Email
         if (this.getEmailValue() === '') {
             this.setError(this.#email, 'Email is required');
@@ -142,13 +147,13 @@ class ValidationForm {
         }
 
         //Country
-       if(this.getCountryValue() === '') {
-           this.setError(this.#country, 'Country is required');
-       } else if(this.getCountryValue().length < 2) {
-           this.setError(this.#country, 'Country must be at least 2 character.');
-       } else {
-           this.setSuccess(this.#country, '');
-       }
+        if (this.getCountryValue() === '') {
+            this.setError(this.#country, 'Country is required');
+        } else if (this.getCountryValue().length < 2) {
+            this.setError(this.#country, 'Country must be at least 2 character.');
+        } else {
+            this.setSuccess(this.#country, '');
+        }
 
         // First Name
         if (this.getFirstNameValue() === '') {
@@ -160,7 +165,7 @@ class ValidationForm {
         // Address
         if (this.getAddressValue() === '') {
             this.setError(this.#address, 'Address is required');
-        } else if(this.getAddressValue().length < 5) {
+        } else if (this.getAddressValue().length < 5) {
             this.setError(this.#address, 'Address must be at least 5 character.');
         } else {
             this.setSuccess(this.#address, '');
@@ -179,6 +184,8 @@ class ValidationForm {
         } else {
             this.setSuccess(this.#postcode, '');
         }
+
+        return this.#validationResult;
     }
 
     applyDiscount(event) {
@@ -193,8 +200,7 @@ class ValidationForm {
     }
 
     // add hidden payment block
-    togglePaymentBlock(event) {
-        event.preventDefault();
+    togglePaymentBlock() {
         this.#blockPayment.classList.toggle('active-block');
         this.#blockReview.classList.toggle('active-block');
 
@@ -226,50 +232,30 @@ class ValidationForm {
         this.#formReview.style.display = 'block';
     }
 
-    handleSubmit() {
+    handleSubmit(event) {
+        event.preventDefault();
+
         //validate? true / false
-        if(!validation.validationInput()){
+        if (!this.validationInput()) {
             return;
         }
 
-        let status = document.createElement('div');
-        status.id = 'form-status';
-        status.classList.add('submit-style');
-        this.#form.appendChild(status);
-
-        let data = new FormData(this.#form);
-        fetch(this.#form.action, {
-            method: this.#form.method,
-            body: data,
-        }).then(response => {
-            if (response.ok) {
-                status.innerHTML = 'Thanks for your submission!';
-                this.#form.reset();
-            } else {
-                status.innerHTML = 'Oops! There was a problem submitting your form';
-            }
-        }).catch(error => {
-            status.innerHTML = 'Oops! There was a problem submitting your form';
-        });
-    }K
+        this.togglePaymentBlock();
+    }
 
     init() {
         this.#applyDiscountBtn.addEventListener('click', (event) => this.applyDiscount(event));
         this.#discount.addEventListener('keyup', () => this.removeStyles());
         this.#email.addEventListener('keyup', () => this.removeStyles());
 
-        this.#btnPayment.addEventListener('click', () => this.handleSubmit());
+        this.#btnPayment.addEventListener('click', (event) => this.handleSubmit(event));
 
-        //this.#btnPayment.addEventListener('click', (event) => this.togglePaymentBlock(event));
         this.#btnReturnToInfoPage.addEventListener('click', (event) => this.getPrevHighlighterPage(event));
 
-        for(let i = 0; i < this.#changeInfo.length; i++) {
+        this.#infoLink.addEventListener('click', (event) => this.getPrevHighlighterPage(event));
+
+        for (let i = 0; i < this.#changeInfo.length; i++) {
             this.#changeInfo[i].addEventListener('click', (event) => this.getPrevHighlighterPage(event));
         }
     }
-
 }
-
-let validation = new ValidationForm('form-checkout', 'highlighter-page');
-//validation.validationInput();
-validation.init();

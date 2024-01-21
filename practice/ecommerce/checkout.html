@@ -92,7 +92,7 @@
         <p class="page-highlighter">
             <a class="prev-link" href="index.html">Home</a>
             <span class="arrow-backup"></span>
-            <a class="default-page" href="#">Information</a>
+            <a id="infoLink" class="default-page" href="#">Information</a>
             <span class="arrow-backup"></span>
             <a class="page-highlighter_inactive" href="#">Payment</a>
         </p>
@@ -205,8 +205,7 @@
 <script src="js/view-item.js"></script>
 <script src="js/checkout.js"></script>
 <script>
-    //let productInfo = new ProductInfo('.description');
-
-    //productInfo.init();
+    let validation = new ValidationForm('form-checkout', 'highlighter-page');
+    validation.init();
 </script>
 </html>
