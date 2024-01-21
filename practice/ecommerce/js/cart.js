@@ -28,7 +28,7 @@ class Cart {
 
         // check if we already have same item in cart, then increment qty
         let found = false;
-        for (let cartItem of cart.items) {
+        for (let cartItem in cart.items) {
             if (cartItem.id === parseInt(productId)) {
                 cartItem.qty++;
                 found = true;
