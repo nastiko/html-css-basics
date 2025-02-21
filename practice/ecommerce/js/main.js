@@ -530,8 +530,8 @@ class Product {
 
 
 class API {
-    static API_SEARCH = 'https://anastasia.grinkevi.ch/api/products/search';
-    static API_GET = 'https://anastasia.grinkevi.ch/api/products/get';
+    static API_SEARCH = 'https://anastasia-web.dev/api/products/search';
+    static API_GET = 'https://anastasia-web.dev/api/products/get';
 
     static async getProducts(limitItems, skipItems, category) {
         // initialise cache if not yet ready
